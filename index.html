@@ -370,7 +370,7 @@
                             </a>
 
                             <!-- Email Direct -->
-                            <a href="mailto:nurkarim2004@gmail.com" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl bg-slate-200/50 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-indigo-500 dark:text-indigo-300 border border-slate-300/30 dark:border-slate-700/30 transition-all text-xs sm:text-sm hover:-translate-y-0.5 active:scale-95 shadow-sm shrink-0" title="Email Direct">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurkarim2004@gmail.com" target="_blank" rel="noopener noreferrer" onclick="openEmailDirect(event)" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl bg-slate-200/50 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-indigo-500 dark:text-indigo-300 border border-slate-300/30 dark:border-slate-700/30 transition-all text-xs sm:text-sm hover:-translate-y-0.5 active:scale-95 shadow-sm shrink-0" title="Email Direct">
                                 <i class="fa-regular fa-envelope text-sm sm:text-base"></i>
                             </a>
                         </div>
@@ -1117,7 +1117,7 @@
 
                             <div class="space-y-4">
                                 <!-- Email Info Line -->
-                                <div class="flex items-center gap-3.5 group">
+                                <div class="flex items-center gap-3.5 group cursor-pointer" onclick="openEmailDirect(event)">
                                     <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 flex items-center justify-center text-base shadow-sm border border-slate-200/20 dark:border-slate-800/20 shrink-0">
                                         <i class="fa-regular fa-envelope"></i>
                                     </div>
@@ -1125,7 +1125,7 @@
                                         <span class="text-[8px] font-black uppercase text-slate-400 dark:text-slate-500 tracking-widest leading-none font-mono" data-en="Email Address" data-id="Alamat Email">Alamat Email</span>
                                         <span class="text-xs font-bold text-slate-800 dark:text-slate-200 truncate mt-1 select-all font-mono">nurkarim2004@gmail.com</span>
                                     </div>
-                                    <button onclick="copyToClipboardText('nurkarim2004@gmail.com', this)" class="p-1.5 text-xs text-indigo-500 hover:text-indigo-600 border border-slate-200 dark:border-slate-800/85 hover:bg-slate-50 rounded-lg shrink-0 transition-all active:scale-95" title="Copy email">
+                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com', this)" class="p-1.5 text-xs text-indigo-500 hover:text-indigo-600 border border-slate-200 dark:border-slate-800/85 hover:bg-slate-50 rounded-lg shrink-0 transition-all active:scale-95" title="Copy email">
                                         <i class="fa-regular fa-copy"></i>
                                     </button>
                                 </div>
@@ -1870,6 +1870,30 @@
             setTimeout(() => {
                 btnElement.innerHTML = originalIcon;
             }, 2000);
+        }
+
+        // DIRECT EMAIL COMPOSER WITH HYBRID FALLBACKS
+        function openEmailDirect(event) {
+            if (event) event.preventDefault();
+            const email = 'nurkarim2004@gmail.com';
+            
+            // 1. Copy email automatically to clipboard
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // 2. Open Gmail Web compose directly in new tab
+            const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+            window.open(gmailComposeUrl, '_blank');
+
+            // 3. Trigger notification toast
+            showiOSNotificationToast(
+                (currentLanguage === 'en') ? "Email copied & Gmail Web opened!" : "Email disalin & Gmail Web dibuka!",
+                "📧"
+            );
         }
 
         // LERP CURSOR HERO PARALLAX
