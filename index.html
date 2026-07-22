@@ -1226,6 +1226,43 @@
         </div>
     </div>
 
+    <!-- MODAL 4: FLOATING GOOGLE DRIVE EMBED PREVIEW -->
+    <div id="driveModal" class="fixed inset-0 z-[160] bg-black/80 backdrop-blur-md hidden items-center justify-center p-2 sm:p-4 font-inter">
+        <div class="w-full max-w-5xl h-[88vh] bg-white dark:bg-brand-darkCard rounded-2xl border border-slate-200/50 dark:border-slate-800 shadow-2xl flex flex-col overflow-hidden relative apple-spring-card">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-4 py-3 bg-slate-100 dark:bg-slate-900 border-b border-slate-200/60 dark:border-slate-800 shrink-0">
+                <div class="flex items-center gap-2.5 min-w-0 pr-2">
+                    <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-pink-500 text-white flex items-center justify-center text-xs shrink-0 shadow-md">
+                        <i class="fa-brands fa-google-drive"></i>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <h3 id="driveModalTitle" class="text-xs sm:text-sm font-black truncate text-slate-900 dark:text-white font-sans">Preview Google Drive</h3>
+                        <span class="text-[9px] text-slate-400 font-mono truncate">Pratinjau Mengambang Web Portofolio</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-2 shrink-0">
+                    <a id="driveExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition-all flex items-center gap-1.5 active:scale-95 shadow-sm">
+                        <span data-en="Open External" data-id="Buka Tab Baru">Buka Tab Baru</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </a>
+                    <button onclick="closeDriveModal()" class="w-8 h-8 rounded-lg bg-slate-200/80 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-all active:scale-95">
+                        <i class="fa-solid fa-xmark text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Body Frame -->
+            <div class="relative flex-1 bg-slate-950 w-full h-full overflow-hidden">
+                <div id="driveLoadingSpinner" class="absolute inset-0 flex flex-col items-center justify-center bg-slate-900 text-white gap-3 z-10">
+                    <div class="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                    <span class="text-xs font-bold font-mono text-indigo-300">Memuat Berkas Google Drive...</span>
+                </div>
+                <iframe id="driveFrame" class="w-full h-full border-0 relative z-20" onload="document.getElementById('driveLoadingSpinner').classList.add('hidden')" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
     <div id="iosToast" class="fixed bottom-6 right-6 z-[150] transform translate-y-[100px] opacity-0 transition-all duration-500 pointer-events-none font-inter">
         <div class="bg-slate-900/95 dark:bg-slate-800/95 text-white px-4 py-3 rounded-xl shadow-apple-hover text-xs font-bold flex items-center gap-2.5 border border-slate-700/50 backdrop-blur-md max-w-sm">
             <span id="toastIcon">💡</span>
@@ -1462,12 +1499,14 @@
                         `</div>`;
                 }
 
+                const safeTitle = item.title.replace(/'/g, "\\'");
+
                 card.innerHTML = `
                     <div class="flex flex-col gap-3 font-inter">
-                        <div onclick="window.open('${item.link}', '_blank')" class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200/20 dark:border-slate-800/40 cursor-pointer">
+                        <div onclick="openDriveModal('${item.link}', '${safeTitle}')" class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200/20 dark:border-slate-800/40 cursor-pointer">
                             <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center z-20 backdrop-blur-[2px] transition-all duration-300">
                                 <div class="w-10 h-10 rounded-full bg-white/90 dark:bg-slate-900/90 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300 ease-out mb-2">
-                                    <i class="fa-solid fa-link text-xs"></i>
+                                    <i class="fa-brands fa-google-drive text-sm"></i>
                                 </div>
                                 <span class="px-3 py-1 bg-white/20 border border-white/30 rounded-lg text-white text-[10px] font-black tracking-wider flex items-center gap-1 shadow-md">
                                     ${(currentLanguage === 'en') ? 'Explore Assets' : 'Tinjau Hasil Karya'} <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
@@ -2108,6 +2147,74 @@
                 modal.classList.remove('flex');
             }
         }
+
+        /* --- FLOATING GOOGLE DRIVE EMBED PREVIEW SYSTEM --- */
+        function extractDriveFolderId(url) {
+            if (!url) return null;
+            const folderMatch = url.match(/\/folders\/([a-zA-Z0-9_-]+)/);
+            if (folderMatch && folderMatch[1]) return folderMatch[1];
+            
+            const fileMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+            if (fileMatch && fileMatch[1]) return { type: 'file', id: fileMatch[1] };
+
+            const idParam = url.match(/id=([a-zA-Z0-9_-]+)/);
+            if (idParam && idParam[1]) return idParam[1];
+
+            return null;
+        }
+
+        function convertToEmbedDriveUrl(url) {
+            const extracted = extractDriveFolderId(url);
+            if (typeof extracted === 'object' && extracted !== null && extracted.type === 'file') {
+                return `https://drive.google.com/file/d/${extracted.id}/preview`;
+            } else if (typeof extracted === 'string' && extracted) {
+                return `https://drive.google.com/embeddedfolderview?id=${extracted}#grid`;
+            }
+            return url;
+        }
+
+        function openDriveModal(rawUrl, title = "Preview Dokumen Drive") {
+            const modal = document.getElementById('driveModal');
+            const iframe = document.getElementById('driveFrame');
+            const spinner = document.getElementById('driveLoadingSpinner');
+            const titleEl = document.getElementById('driveModalTitle');
+            const externalBtn = document.getElementById('driveExternalBtn');
+
+            if (!modal || !iframe) return;
+
+            const embedUrl = convertToEmbedDriveUrl(rawUrl);
+
+            if (spinner) spinner.classList.remove('hidden');
+            iframe.src = embedUrl;
+
+            if (titleEl) titleEl.textContent = title;
+            if (externalBtn) externalBtn.href = rawUrl;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            showiOSNotificationToast((currentLanguage === 'en') ? "Floating Drive Preview opened!" : "Pratinjau Drive Mengambang Dibuka!", "📂");
+        }
+
+        function closeDriveModal() {
+            const modal = document.getElementById('driveModal');
+            const iframe = document.getElementById('driveFrame');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+            if (iframe) iframe.src = "";
+        }
+
+        // Intercept all Google Drive links automatically across the website
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="drive.google.com"]');
+            if (link) {
+                e.preventDefault();
+                const url = link.href;
+                let title = link.getAttribute('data-drive-title') || link.innerText.trim() || "Preview Berkas Google Drive";
+                openDriveModal(url, title);
+            }
+        });
     </script>
 </body>
 </html>
