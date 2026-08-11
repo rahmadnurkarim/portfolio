@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Robust FontAwesome CDN for bulletproof icons -->
+    <!-- FontAwesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,7 +50,7 @@
             transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        /* Custom Premium Minimalist Scrollbar */
+        /* Custom Minimalist Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -66,7 +66,6 @@
             background: rgba(99, 102, 241, 0.45);
         }
 
-        /* Hide scrollbars for horizontal carousel/rows */
         .scrollbar-none {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -75,7 +74,7 @@
             display: none;
         }
 
-        /* Glassmorphism Filters matching Apple design specs */
+        /* Glassmorphism Filters */
         .glass-nav {
             background: rgba(245, 245, 247, 0.75);
             backdrop-filter: blur(30px);
@@ -86,7 +85,6 @@
             background: rgba(11, 15, 25, 0.75);
         }
 
-        /* Blur transition class for nav-blur interactive features */
         .blur-transition {
             transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -96,7 +94,7 @@
             pointer-events: none;
         }
 
-        /* Tactile Spring Physics Card Transitions */
+        /* Card Transitions */
         .apple-spring-card {
             transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
                         box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
@@ -159,7 +157,7 @@
             color: #818cf8 !important;
         }
 
-        /* Secure Edit Mode Overlay Indicators */
+        /* Edit Mode Overlay */
         [contenteditable="true"] {
             outline: 2px dashed rgba(236, 72, 153, 0.6) !important;
             outline-offset: 4px;
@@ -202,11 +200,12 @@
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-brand-darkBg dark:text-slate-100 antialiased selection:bg-indigo-500 selection:text-white overflow-x-hidden">
 
+    <!-- Admin Edit Mode Banner -->
     <div id="adminTopBanner" class="fixed top-0 left-0 w-full bg-gradient-to-r from-pink-600 via-indigo-700 to-indigo-900 text-white z-[100] px-6 py-3 flex flex-wrap items-center justify-between shadow-2xl font-sans text-xs sm:text-sm font-semibold hidden">
         <div class="flex items-center gap-3">
             <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse border border-white"></span>
             <div>
-                <span class="font-extrabold" data-en="SUPER DYNAMIC EDIT MODE ACTIVE:" data-id="MODE EDIT SUPER DINAMIS AKTIF:">SUPER DYNAMIC EDIT MODE ACTIVE:</span>
+                <span class="font-extrabold" data-en="SUPER DYNAMIC EDIT MODE ACTIVE:" data-id="MODE EDIT SUPER DINAMIS AKTIF:">MODE EDIT SUPER DINAMIS AKTIF:</span>
                 <span class="font-medium ml-1" data-en="Click directly on any text to edit inline! Works globally." data-id="Klik langsung pada teks mana saja untuk mengedit! Bekerja global.">Klik langsung pada teks mana saja untuk mengedit! Bekerja global.</span>
             </div>
         </div>
@@ -221,12 +220,14 @@
         </div>
     </div>
 
+    <!-- Ambient background glows -->
     <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
         <div class="ambient-blur ambient-float-1 absolute -top-40 -left-40 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-indigo-500/10 dark:bg-indigo-500/5"></div>
         <div class="ambient-blur ambient-float-2 absolute top-[30%] -right-40 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] rounded-full bg-pink-500/10 dark:bg-pink-500/5"></div>
         <div class="ambient-blur ambient-float-1 absolute bottom-20 left-[20%] w-[280px] sm:w-[450px] h-[280px] sm:h-[450px] rounded-full bg-emerald-500/10 dark:bg-emerald-500/5"></div>
     </div>
 
+    <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-slate-200/40 dark:border-slate-800/40 glass-nav shadow-apple-soft">
         <div class="w-full h-[2px] bg-slate-200/30 dark:bg-slate-800/40 absolute bottom-0 left-0">
             <div id="scrollProgressTrack" class="h-full bg-gradient-to-r from-indigo-500 via-pink-500 to-indigo-600 w-0 transition-all duration-75"></div>
@@ -259,11 +260,13 @@
                     <span id="realtimeClockHeader">WIB --:--:--</span>
                 </div>
 
+                <!-- Language Selector -->
                 <button onclick="toggleGlobalLanguageSuite()" class="px-2.5 py-2 rounded-lg bg-slate-200/50 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-800 dark:text-slate-200 text-[11px] sm:text-xs font-black transition-all border border-slate-300/30 dark:border-slate-700/30 flex items-center gap-1 active:scale-95" aria-label="Toggle language">
                     <i class="fa-solid fa-globe text-xs sm:text-sm"></i>
                     <span id="langDisplayLabel" class="font-mono">ID</span>
                 </button>
 
+                <!-- Dark Mode Toggle -->
                 <button id="themeToggle" class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-200/50 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 flex items-center justify-center text-slate-800 dark:text-slate-200 transition-all border border-slate-300/30 dark:border-slate-700/30 active:scale-95" aria-label="Toggle theme">
                     <i class="fa-solid fa-moon dark:hidden text-sm sm:text-base"></i>
                     <i class="fa-solid fa-sun hidden dark:block text-sm sm:text-base"></i>
@@ -304,37 +307,38 @@
     </header>
 
     <main class="pt-14 sm:pt-20">
+        <!-- 1. HERO SECTION -->
         <section id="hero" class="relative py-8 sm:py-12 lg:py-20 overflow-hidden flex items-center min-h-0 lg:min-h-[80vh]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                     
                     <div class="lg:col-span-7 flex flex-col items-start gap-3 sm:gap-4 text-left">
-                        <span id="hero-tag" data-editable-id="hero-tag" data-en="🚀 Available for Freelance &amp; Contract" data-id="🚀 Tersedia untuk Freelance &amp; Kontrak Kerja" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-100/80 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] sm:text-[11px] font-black uppercase tracking-wider border border-indigo-200/50 dark:border-indigo-900/40 font-mono">
+                        <span id="hero-tag" data-editable-id="hero-tag" data-en="🚀 Available for Freelance &amp; Full-time Roles" data-id="🚀 Tersedia untuk Freelance &amp; Kontrak Kerja" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-100/80 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] sm:text-[11px] font-black uppercase tracking-wider border border-indigo-200/50 dark:border-indigo-900/40 font-mono">
                             🚀 Tersedia untuk Freelance &amp; Kontrak Kerja
                         </span>
                         
                         <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] text-slate-900 dark:text-white">
-                            <span id="hero-title" data-editable-id="hero-title" data-en="Creative Portfolio of" data-id="Portofolio Kreatif dari">Creative Portfolio of</span><br>
-                            <span class="animated-text-name font-extrabold pb-1 select-all">Rahmad Nur Karim</span>
+                            <span id="hero-title" data-editable-id="hero-title" data-en="Creative &amp; Digital Portfolio" data-id="Portofolio Kreatif &amp; Digital">Portofolio Kreatif &amp; Digital</span><br>
+                            <span class="animated-text-name font-extrabold pb-1 select-all">Rahmad Nur Karim, S.Pd.</span>
                         </h1>
 
                         <div class="h-6 sm:h-8 flex items-center">
                             <span id="textRotator" class="text-indigo-600 dark:text-indigo-400 font-extrabold text-xs sm:text-base lg:text-lg tracking-wide min-h-[1.2rem] typing-cursor font-inter"></span>
                         </div>
                         
-                        <p id="hero-desc" data-editable-id="hero-desc" data-en="Graduated Cum Laude from Universitas Lampung (S.Pd.) with GPA 3.90/4.00. Experienced graphic design, web development &amp; administration consultant with 2,000+ visual assets delivered globally." data-id="Lulusan dengan predikat Cum Laude dari Universitas Lampung (S.Pd.) dengan IPK 3.90/4.00. Konsultan desain grafis, web developer &amp; administrasi berpengalaman dengan 2.000+ aset visual yang dikirimkan secara global." class="text-slate-600 dark:text-slate-400 text-xs sm:text-[14px] leading-relaxed max-w-xl font-medium font-inter">
-                            Lulusan dengan predikat Cum Laude dari Universitas Lampung (S.Pd.) dengan IPK 3.90/4.00. Konsultan desain grafis, web developer &amp; administrasi berpengalaman dengan 2.000+ aset visual yang dikirimkan secara global.
+                        <p id="hero-desc" data-editable-id="hero-desc" data-en="Economics Education Graduate from Universitas Lampung (GPA 3.90/4.00 - Cum Laude). Experienced in Creative Design, Digital Communication, AI &amp; Prompt Engineering, Web Development, and Workflow Automation." data-id="Lulusan Pendidikan Ekonomi Universitas Lampung (IPK 3,90/4,00 - Cum Laude). Berpengalaman dalam Creative Design, Digital Communication, AI &amp; Prompt Engineering, Web Development, serta Workflow Automation." class="text-slate-600 dark:text-slate-400 text-xs sm:text-[14px] leading-relaxed max-w-xl font-medium font-inter">
+                            Lulusan Pendidikan Ekonomi Universitas Lampung (IPK 3,90/4,00 - Cum Laude). Berpengalaman dalam Creative Design, Digital Communication, AI &amp; Prompt Engineering, Web Development, serta Workflow Automation.
                         </p>
                         
                         <div class="flex flex-row items-center justify-start gap-1.5 w-full overflow-x-auto scrollbar-none mt-2 sm:mt-4 pb-1 font-inter">
                             <a href="#contact" class="px-3 py-2.5 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-bold text-xs sm:text-sm text-center shadow-lg hover:shadow-indigo-500/20 active:scale-95 transition-all flex items-center justify-center gap-1.5 shrink-0">
                                 <i class="fa-solid fa-paper-plane text-[9px] sm:text-xs"></i>
-                                <span id="cta-contact-text" data-editable-id="cta-contact-text" data-en="Hire Me" data-id="Hubungi Saya">Hubungi Saya</span>
+                                <span id="cta-contact-text" data-editable-id="cta-contact-text" data-en="Get in Touch" data-id="Hubungi Saya">Hubungi Saya</span>
                             </a>
                             
                             <a href="https://drive.google.com/drive/folders/1gZ8hxUaahyUVbZqoWZghBt6N6CJLnOVf?usp=drive_link" target="_blank" rel="noopener noreferrer" class="px-3 py-2.5 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-slate-200/50 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-700 dark:text-slate-300 border border-slate-300/30 dark:border-slate-700/30 font-bold text-xs sm:text-sm hover:-translate-y-0.5 active:scale-95 transition-all flex items-center justify-center gap-1.5 shadow-sm shrink-0">
                                 <i class="fa-solid fa-download text-[9px] sm:text-xs animate-bounce"></i>
-                                <span data-en="Download CV" data-id="Unduh CV">Unduh CV</span>
+                                <span data-en="Download CV (PDF)" data-id="Unduh CV (PDF)">Unduh CV (PDF)</span>
                             </a>
 
                             <a href="https://wa.me/6282279362591" target="_blank" rel="noopener noreferrer" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl bg-slate-200/50 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-emerald-600 dark:text-emerald-400 border border-slate-300/30 dark:border-slate-700/30 transition-all text-xs sm:text-sm hover:-translate-y-0.5 active:scale-95 shadow-sm shrink-0" title="WhatsApp Business">
@@ -364,8 +368,8 @@
                                     🏆
                                 </div>
                                 <div class="flex flex-col font-inter">
-                                    <span id="pill-title" data-editable-id="pill-title" data-en="Graduation Honors" data-id="Predikat Kelulusan" class="text-[8px] sm:text-[9px] uppercase font-black tracking-widest text-slate-400 dark:text-slate-500">Graduation Honors</span>
-                                    <span id="pill-desc" data-editable-id="pill-desc" data-en="Cum Laude • GPA 3.90" data-id="Cum Laude • IPK 3.90" class="text-[10px] sm:text-xs font-black text-slate-900 dark:text-white mt-0.5 font-mono">Cum Laude • GPA 3.90</span>
+                                    <span id="pill-title" data-editable-id="pill-title" data-en="Academic Honors" data-id="Predikat Kelulusan" class="text-[8px] sm:text-[9px] uppercase font-black tracking-widest text-slate-400 dark:text-slate-500">Predikat Kelulusan</span>
+                                    <span id="pill-desc" data-editable-id="pill-desc" data-en="Cum Laude • GPA 3.90" data-id="Cum Laude • IPK 3,90" class="text-[10px] sm:text-xs font-black text-slate-900 dark:text-white mt-0.5 font-mono">Cum Laude • IPK 3,90</span>
                                 </div>
                             </div>
                         </div>
@@ -375,11 +379,12 @@
             </div>
         </section>
 
+        <!-- 2. ABOUT SECTION (PROFESSIONAL PERSONA) -->
         <section id="about" class="py-16 bg-slate-100/50 dark:bg-slate-900/25 border-y border-slate-200/50 dark:border-slate-800/50 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
-                    <span id="about-tag" data-editable-id="about-tag" data-en="Professional Persona" data-id="Overview Profesional" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Professional Persona</span>
-                    <h2 id="about-title" data-editable-id="about-title" data-en="Integrating Academic Excellence &amp; Digital Strategy" data-id="Integrasi Keunggulan Akademis &amp; Strategi Digital" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Integrating Academic Excellence &amp; Digital Strategy</h2>
+                    <span id="about-tag" data-editable-id="about-tag" data-en="Professional Persona" data-id="Persona Profesional" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Persona Profesional</span>
+                    <h2 id="about-title" data-editable-id="about-title" data-en="Integrating Academic Excellence &amp; Digital Strategy" data-id="Menggabungkan Keunggulan Akademis &amp; Strategi Digital" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Menggabungkan Keunggulan Akademis &amp; Strategi Digital</h2>
                     <div class="w-12 h-1 bg-indigo-500 rounded-full mt-2"></div>
                 </div>
 
@@ -387,12 +392,12 @@
                     
                     <div class="lg:col-span-7 p-5 sm:p-8 rounded-2xl bg-white dark:bg-brand-darkCard border border-slate-200/50 dark:border-slate-800 flex flex-col justify-between gap-5 sm:gap-6 shadow-apple-soft">
                         <div class="space-y-3 sm:space-y-4">
-                            <h3 id="about-h3" data-editable-id="about-h3" data-en="Synthesizing Academic Excellence &amp; Practical Graphic Communications" data-id="Menyinergikan Keunggulan Akademis &amp; Komunikasi Grafis Praktis" class="text-base sm:text-xl font-black text-slate-900 dark:text-white leading-snug">Synthesizing Academic Excellence &amp; Practical Graphic Communications</h3>
-                            <p id="about-desc1" data-editable-id="about-desc1" data-en="Graduating with a Bachelor's Degree in Economic Education (S.Pd.) with a near-perfect Cumulative Grade Point Average of 3.90/4.00, I possess a versatile interdisciplinary skillset that integrates education, modern digital marketing strategy, visual research, and public relations." data-id="Lulus dengan gelar Sarjana Pendidikan Ekonomi (S.Pd.) dengan IPK hampir sempurna 3.90/4.00, saya memiliki keahlian interdisipliner yang menggabungkan pendidikan, strategi pemasaran digital modern, riset visual, dan hubungan masyarakat." class="text-slate-600 dark:text-slate-400 text-xs sm:text-[13px] leading-relaxed font-medium font-inter">
-                                Lulus dengan gelar Sarjana Pendidikan Ekonomi (S.Pd.) dengan IPK hampir sempurna 3.90/4.00, saya memiliki keahlian interdisipliner yang menggabungkan pendidikan, strategi pemasaran digital modern, riset visual, dan hubungan masyarakat.
+                            <h3 id="about-h3" data-editable-id="about-h3" data-en="Synthesizing Academic Excellence &amp; Practical Graphic Communications" data-id="Sintesis Keunggulan Akademis &amp; Komunikasi Visual Praktis" class="text-base sm:text-xl font-black text-slate-900 dark:text-white leading-snug">Sintesis Keunggulan Akademis &amp; Komunikasi Visual Praktis</h3>
+                            <p id="about-desc1" data-editable-id="about-desc1" data-en="Graduated with Cum Laude honors from Universitas Lampung (S.Pd.) with a GPA of 3.90/4.00, I possess interdisciplinary expertise combining education, digital communication strategy, AI-assisted workflows, and administration." data-id="Lulus dengan predikat Cum Laude dari Universitas Lampung (S.Pd.) dengan IPK 3,90/4,00, saya memiliki keahlian interdisipliner yang menggabungkan pendidikan, strategi komunikasi digital, AI-assisted workflow, dan administrasi." class="text-slate-600 dark:text-slate-400 text-xs sm:text-[13px] leading-relaxed font-medium font-inter">
+                                Lulus dengan predikat Cum Laude dari Universitas Lampung (S.Pd.) dengan IPK 3,90/4,00, saya memiliki keahlian interdisipliner yang menggabungkan pendidikan, strategi komunikasi digital, AI-assisted workflow, dan administrasi.
                             </p>
-                            <p id="about-desc2" data-editable-id="about-desc2" data-en="I specialize in crafting complex visual assets that not only drive aesthetic superiority but satisfy target communications goals. Over the years, I've successfully served 40+ clients and governmental institutions, producing robust social media plans, core visual branding, and interactive digital elements." data-id="Saya berspesialisasi dalam merancang aset visual kompleks yang tidak hanya mengutamakan estetika superior tetapi juga mencapai tujuan komunikasi. Selama bertahun-tahun, saya telah melayani 40+ klien dan lembaga pemerintah, memproduksi perencanaan media sosial, branding visual inti, dan elemen digital interaktif." class="text-slate-600 dark:text-slate-400 text-xs sm:text-[13px] leading-relaxed font-medium font-inter">
-                                Saya berspesialisasi dalam merancang aset visual kompleks yang tidak hanya mengutamakan estetika superior tetapi juga mencapai tujuan komunikasi. Selama bertahun-tahun, saya telah melayani 40+ klien dan lembaga pemerintah, memproduksi perencanaan media sosial, branding visual inti, dan elemen digital interaktif.
+                            <p id="about-desc2" data-editable-id="about-desc2" data-en="I specialize in designing visual assets and digital systems that balance superior aesthetics with effective communication goals, having served 40+ clients, government institutions, and educational organizations." data-id="Saya berspesialisasi dalam merancang aset visual dan sistem digital yang mengutamakan estetika superior sekaligus mencapai tujuan komunikasi. Berpengalaman menangani 40+ klien, instansi pemerintah, dan lembaga pendidikan." class="text-slate-600 dark:text-slate-400 text-xs sm:text-[13px] leading-relaxed font-medium font-inter">
+                                Saya berspesialisasi dalam merancang aset visual dan sistem digital yang mengutamakan estetika superior sekaligus mencapai tujuan komunikasi. Berpengalaman menangani 40+ klien, instansi pemerintah, dan lembaga pendidikan.
                             </p>
                         </div>
 
@@ -412,6 +417,7 @@
                         </div>
                     </div>
 
+                    <!-- 3. CORE COMPETENCIES -->
                     <div class="lg:col-span-5 flex flex-col justify-between gap-3 sm:gap-4 font-inter">
                         <h4 id="competency-title" data-editable-id="competency-title" class="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-400 font-mono" data-en="Core Competencies" data-id="Kompetensi Utama">Kompetensi Utama</h4>
                         
@@ -420,8 +426,8 @@
                                 <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-sm sm:text-md">
                                     <i class="fa-solid fa-crown"></i>
                                 </div>
-                                <span id="comp1-title" data-editable-id="comp1-title" class="text-xs font-black text-slate-900 dark:text-white" data-en="Brand Identity" data-id="Brand Identitas">Brand Identity</span>
-                                <span id="comp1-desc" data-editable-id="comp1-desc" class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 leading-normal" data-en="Developing cohesive brand books and core styling guidelines." data-id="Mengembangkan brand book kohesif dan pedoman visual yang kuat.">Developing cohesive brand books and core styling guidelines.</span>
+                                <span id="comp1-title" data-editable-id="comp1-title" class="text-xs font-black text-slate-900 dark:text-white" data-en="Brand Identity" data-id="Brand Identity">Brand Identity</span>
+                                <span id="comp1-desc" data-editable-id="comp1-desc" class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 leading-normal" data-en="Developing cohesive brand identity, brand guidelines, and digital visual strategies." data-id="Pengembangan identitas merek, brand guideline, dan strategi visual branding digital.">Pengembangan identitas merek, brand guideline, dan strategi visual branding digital.</span>
                             </div>
 
                             <div class="p-3 sm:p-4 rounded-xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-brand-darkCard hover:shadow-lg hover:border-indigo-500/30 transition-all flex flex-col gap-2 apple-spring-card">
@@ -429,7 +435,7 @@
                                     <i class="fa-solid fa-arrow-trend-up"></i>
                                 </div>
                                 <span id="comp2-title" data-editable-id="comp2-title" class="text-xs font-black text-slate-900 dark:text-white" data-en="Digital Strategy" data-id="Strategi Digital">Strategi Digital</span>
-                                <span id="comp2-desc" data-editable-id="comp2-desc" class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 leading-normal" data-en="Optimizing visual templates to boost reach &amp; conversion." data-id="Mengoptimasi templat visual untuk mendongkrak jangkauan &amp; konversi.">Optimizing visual templates to boost reach &amp; conversion.</span>
+                                <span id="comp2-desc" data-editable-id="comp2-desc" class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 leading-normal" data-en="Social media content optimization, visual communication, and digital campaign planning." data-id="Optimalisasi konten media sosial, komunikasi visual, dan perencanaan kampanye digital.">Optimalisasi konten media sosial, komunikasi visual, dan perencanaan kampanye digital.</span>
                             </div>
 
                             <div class="p-3 sm:p-4 rounded-xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-brand-darkCard hover:shadow-lg hover:border-indigo-500/30 transition-all flex flex-col gap-2 apple-spring-card">
@@ -437,15 +443,15 @@
                                     <i class="fa-solid fa-palette"></i>
                                 </div>
                                 <span id="comp3-title" data-editable-id="comp3-title" class="text-xs font-black text-slate-900 dark:text-white" data-en="Graphic Design" data-id="Desain Grafis">Desain Grafis</span>
-                                <span id="comp3-desc" data-editable-id="comp3-desc" class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 leading-normal" data-en="Expert use of Adobe Photoshop, Illustrator, and Canva." data-id="Keahlian tinggi menggunakan Adobe Photoshop, Illustrator, dan Canva.">Expert use of Adobe Photoshop, Illustrator, and Canva.</span>
+                                <span id="comp3-desc" data-editable-id="comp3-desc" class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 leading-normal" data-en="Proficiency in Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, and AI tools." data-id="Penguasaan Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, dan tools AI.">Penguasaan Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, dan tools AI.</span>
                             </div>
 
                             <div class="p-3 sm:p-4 rounded-xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-brand-darkCard hover:shadow-lg hover:border-indigo-500/30 transition-all flex flex-col gap-2 apple-spring-card">
                                 <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-sm sm:text-md">
                                     <i class="fa-regular fa-file-lines"></i>
                                 </div>
-                                <span id="comp4-title" data-editable-id="comp4-title" class="text-xs font-black text-slate-900 dark:text-white" data-en="Administration" data-id="Administrasi">Administration</span>
-                                <span id="comp4-desc" data-editable-id="comp4-desc" class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 leading-normal" data-en="Advanced academic workflow management and document processing." data-id="Manajemen alur kerja akademik tingkat lanjut dan pemrosesan dokumen.">Advanced academic workflow management and document processing.</span>
+                                <span id="comp4-title" data-editable-id="comp4-title" class="text-xs font-black text-slate-900 dark:text-white" data-en="Administration &amp; Automation" data-id="Administrasi &amp; Otomasi">Administrasi &amp; Otomasi</span>
+                                <span id="comp4-desc" data-editable-id="comp4-desc" class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 leading-normal" data-en="Data management, spreadsheet automation, and Google Apps Script workflows." data-id="Pengelolaan data, otomatisasi spreadsheet, dan workflow berbasis Google Apps Script.">Pengelolaan data, otomatisasi spreadsheet, dan workflow berbasis Google Apps Script.</span>
                             </div>
                         </div>
                     </div>
@@ -454,11 +460,12 @@
             </div>
         </section>
 
+        <!-- 4. ACADEMIC BACKGROUND -->
         <section id="education" class="py-16 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
-                    <span id="edu-tag" data-editable-id="edu-tag" data-en="Academic Background" data-id="Latar Belakang Akademik" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Academic Background</span>
-                    <h2 id="edu-title" data-editable-id="edu-title" data-en="Academic Journey &amp; Honors" data-id="Perjalanan Akademik &amp; Penghargaan" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Academic Journey &amp; Honors</h2>
+                    <span id="edu-tag" data-editable-id="edu-tag" data-en="Academic Background" data-id="Latar Belakang Pendidikan" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Latar Belakang Pendidikan</span>
+                    <h2 id="edu-title" data-editable-id="edu-title" data-en="Academic Journey &amp; Honors" data-id="Perjalanan Akademis &amp; Penghargaan" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Perjalanan Akademis &amp; Penghargaan</h2>
                     <div class="w-12 h-1 bg-indigo-500 rounded-full mt-2"></div>
                 </div>
 
@@ -472,11 +479,11 @@
                             </div>
                             <div class="flex flex-col">
                                 <h3 id="edu-inst" data-editable-id="edu-inst" data-en="UNIVERSITAS LAMPUNG" data-id="UNIVERSITAS LAMPUNG" class="text-sm sm:text-lg font-black text-slate-900 dark:text-white uppercase leading-none">UNIVERSITAS LAMPUNG</h3>
-                                <p id="edu-degree" data-editable-id="edu-degree" data-en="S1 Economic Education (Bachelor of Education)" data-id="S1 Pendidikan Ekonomi" class="text-[11px] sm:text-xs font-bold text-indigo-600 dark:text-indigo-400 mt-1 sm:mt-1.5 font-inter">S1 Pendidikan Ekonomi</p>
+                                <p id="edu-degree" data-editable-id="edu-degree" data-en="S1 Economic Education (Bachelor of Education)" data-id="S1 Pendidikan Ekonomi (S.Pd.)" class="text-[11px] sm:text-xs font-bold text-indigo-600 dark:text-indigo-400 mt-1 sm:mt-1.5 font-inter">S1 Pendidikan Ekonomi (S.Pd.)</p>
                             </div>
                         </div>
                         <div class="text-left md:text-right shrink-0">
-                            <span id="edu-duration" data-editable-id="edu-duration" data-en="AUGUST 2022 - MARCH 2026" data-id="AGUSTUS 2022 - MARET 2026" class="inline-flex px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[9px] sm:text-[10px] font-black tracking-widest font-mono">AUGUST 2022 - MARCH 2026</span>
+                            <span id="edu-duration" data-editable-id="edu-duration" data-en="AUGUST 2022 - MARCH 2026" data-id="AGUSTUS 2022 - MARET 2026" class="inline-flex px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[9px] sm:text-[10px] font-black tracking-widest font-mono">AGUSTUS 2022 - MARET 2026</span>
                         </div>
                     </div>
 
@@ -486,28 +493,28 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 font-inter">
                             <div class="p-3 sm:p-4 rounded-xl bg-slate-100/40 dark:bg-slate-900/40 border border-slate-200/30 dark:border-slate-800/80 flex gap-2.5 sm:gap-3 apple-spring-card">
                                 <div class="text-emerald-500 text-sm sm:text-base shrink-0"><i class="fa-solid fa-circle-check"></i></div>
-                                <p id="edu-ach1" data-editable-id="edu-ach1" data-en="Completed the full Bachelor's degree curriculum in just &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;3.4 years&lt;/strong&gt; with Cum Laude honours." data-id="Menyelesaikan studi Sarjana dalam waktu hanya &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;3,4 tahun&lt;/strong&gt; dengan predikat kelulusan Cum Laude." class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">Menyelesaikan studi Sarjana dalam waktu hanya <strong class="text-slate-800 dark:text-white font-mono">3,4 tahun</strong> dengan predikat kelulusan Cum Laude.</p>
+                                <p id="edu-ach1" data-editable-id="edu-ach1" data-en="Completed undergraduate degree program in &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;3.4 years&lt;/strong&gt; with Cum Laude honors (GPA 3.90/4.00)." data-id="Menyelesaikan studi Sarjana dalam waktu hanya &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;3,4 tahun&lt;/strong&gt; dengan predikat kelulusan Cum Laude (IPK 3,90/4,00)." class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">Menyelesaikan studi Sarjana dalam waktu hanya <strong class="text-slate-800 dark:text-white font-mono">3,4 tahun</strong> dengan predikat kelulusan Cum Laude (IPK 3,90/4,00).</p>
                             </div>
 
                             <div class="p-3 sm:p-4 rounded-xl bg-slate-100/40 dark:bg-slate-900/40 border border-slate-200/30 dark:border-slate-800/80 flex gap-2.5 sm:gap-3 apple-spring-card">
                                 <div class="text-indigo-500 text-sm sm:text-base shrink-0"><i class="fa-solid fa-circle-check"></i></div>
-                                <p id="edu-ach2" data-editable-id="edu-ach2" data-en="Recipient of the highly-selective &lt;strong class='text-slate-850 dark:text-white'&gt;YBM PLN Scholarship&lt;/strong&gt; and Kemendikbudristek MSIB Awardee." data-id="Penerima Beasiswa &lt;strong class='text-slate-850 dark:text-white'&gt;YBM PLN Tingkat Nasional&lt;/strong&gt; yang kompetitif &amp; Awardee MSIB Kemendikbudristek." class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">Penerima Beasiswa <strong class="text-slate-850 dark:text-white">YBM PLN Tingkat Nasional</strong> yang kompetitif &amp; Awardee MSIB Kemendikbudristek.</p>
+                                <p id="edu-ach2" data-editable-id="edu-ach2" data-en="Recipient of the prestigious &lt;strong class='text-slate-850 dark:text-white'&gt;National YBM PLN Scholarship&lt;/strong&gt; and MSIB Kemendikbudristek Awardee." data-id="Penerima Beasiswa &lt;strong class='text-slate-850 dark:text-white'&gt;YBM PLN Tingkat Nasional&lt;/strong&gt; yang kompetitif &amp; Awardee MSIB Kemendikbudristek." class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">Penerima Beasiswa <strong class="text-slate-850 dark:text-white">YBM PLN Tingkat Nasional</strong> yang kompetitif &amp; Awardee MSIB Kemendikbudristek.</p>
                             </div>
 
                             <div class="p-3 sm:p-4 rounded-xl bg-slate-100/40 dark:bg-slate-900/40 border border-slate-200/30 dark:border-slate-800/80 flex gap-2.5 sm:gap-3 apple-spring-card">
                                 <div class="text-indigo-500 text-sm sm:text-base shrink-0"><i class="fa-solid fa-circle-check"></i></div>
-                                <p id="edu-ach3" data-editable-id="edu-ach3" data-en="Served as &lt;strong class='text-slate-850 dark:text-white'&gt;Assistant Lecturer (Asisten Dosen)&lt;/strong&gt; specializing in visual systems and spreadsheet administration." data-id="Mengabdi sebagai &lt;strong class='text-slate-850 dark:text-white'&gt;Asisten Dosen (Asdos)&lt;/strong&gt; yang berspesialisasi dalam sistem visual dan administrasi spreadsheet." class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">Mengabdi sebagai <strong class="text-slate-850 dark:text-white">Asisten Dosen (Asdos)</strong> yang berspesialisasi dalam sistem visual dan administrasi spreadsheet.</p>
+                                <p id="edu-ach3" data-editable-id="edu-ach3" data-en="Served as &lt;strong class='text-slate-850 dark:text-white'&gt;Teaching &amp; Research Assistant&lt;/strong&gt; specializing in media, visual strategy, and administrative workflows." data-id="Mengabdi sebagai &lt;strong class='text-slate-850 dark:text-white'&gt;Asisten Dosen &amp; Peneliti Pembelajaran&lt;/strong&gt; berspesialisasi dalam media, komunikasi visual, dan administrasi." class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">Mengabdi sebagai <strong class="text-slate-850 dark:text-white">Asisten Dosen &amp; Peneliti Pembelajaran</strong> berspesialisasi dalam media, komunikasi visual, dan administrasi.</p>
                             </div>
 
                             <div class="p-3 sm:p-4 rounded-xl bg-slate-100/40 dark:bg-slate-900/40 border border-slate-200/30 dark:border-slate-800/80 flex gap-2.5 sm:gap-3 apple-spring-card">
                                 <div class="text-indigo-500 text-sm sm:text-base shrink-0"><i class="fa-solid fa-circle-check"></i></div>
-                                <p id="edu-ach4" data-editable-id="edu-ach4" data-en="Published &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;3 SINTA-indexed research works&lt;/strong&gt; and co-secured &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;2 intellectual properties (HaKI)&lt;/strong&gt;." data-id="Mempublikasikan &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;3 karya ilmiah terindeks SINTA&lt;/strong&gt; dan mencatatkan &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;2 Hak Kekayaan Intelektual (HaKI)&lt;/strong&gt;." class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">Mempublikasikan <strong class="text-slate-800 dark:text-white font-mono">3 karya ilmiah terindeks SINTA</strong> dan mencatatkan <strong class="text-slate-800 dark:text-white font-mono">2 Hak Kekayaan Intelektual (HaKI)</strong>.</p>
+                                <p id="edu-ach4" data-editable-id="edu-ach4" data-en="Published &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;3 SINTA-indexed research journals&lt;/strong&gt; and registered &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;2 Intellectual Property Rights (HaKI)&lt;/strong&gt;." data-id="Mempublikasikan &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;3 karya ilmiah terindeks SINTA&lt;/strong&gt; dan mencatatkan &lt;strong class='text-slate-800 dark:text-white font-mono'&gt;2 Hak Kekayaan Intelektual (HaKI)&lt;/strong&gt;." class="text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">Mempublikasikan <strong class="text-slate-800 dark:text-white font-mono">3 karya ilmiah terindeks SINTA</strong> dan mencatatkan <strong class="text-slate-800 dark:text-white font-mono">2 Hak Kekayaan Intelektual (HaKI)</strong>.</p>
                             </div>
                         </div>
 
                         <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-indigo-500/10 via-pink-500/5 to-indigo-500/5 dark:bg-indigo-950/20 border border-indigo-200/40 dark:border-indigo-900/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-4 sm:mt-6 font-inter">
                             <div class="flex-1">
-                                <span id="edu-thesis-lbl" data-editable-id="edu-thesis-lbl" data-en="Skripsi / Undergraduate Thesis Topic" data-id="Topik Skripsi / Riset Ilmiah" class="text-[8px] sm:text-[9px] uppercase font-black tracking-widest text-indigo-700 dark:text-indigo-400 font-mono">Skripsi / Undergraduate Thesis Topic</span>
+                                <span id="edu-thesis-lbl" data-editable-id="edu-thesis-lbl" data-en="Undergraduate Thesis Title" data-id="Judul Skripsi" class="text-[8px] sm:text-[9px] uppercase font-black tracking-widest text-indigo-700 dark:text-indigo-400 font-mono">Judul Skripsi</span>
                                 <p id="edu-thesis-title" data-editable-id="edu-thesis-title" data-en='“The Influence of Financial Literacy and Parental Income on Lifestyle through Financial Management Behavior in High School Students”' data-id='“Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”' class="text-[11px] sm:text-xs text-slate-800 dark:text-slate-300 font-extrabold mt-1 leading-relaxed">“Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”</p>
                             </div>
                             <button onclick="toggleThesisModalSuite()" class="px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs shadow-md shadow-indigo-500/10 whitespace-nowrap self-stretch sm:self-auto text-center flex items-center justify-center gap-1.5 active:scale-95 transition-all">
@@ -521,11 +528,12 @@
             </div>
         </section>
 
+        <!-- 5. SECTION EXPERIENCE -->
         <section id="experience" class="py-12 bg-slate-100/50 dark:bg-slate-900/25 border-y border-slate-200/50 dark:border-slate-800/50 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
-                    <span id="exp-tag" data-editable-id="exp-tag" data-en="Professional Career" data-id="Jalur Karier Profesional" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Professional Career</span>
-                    <h2 id="exp-title" data-editable-id="exp-title" data-en="Work &amp; Industry Experience" data-id="Pengalaman Kerja &amp; Industri" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Work &amp; Industry Experience</h2>
+                    <span id="exp-tag" data-editable-id="exp-tag" data-en="Work Experience" data-id="Pengalaman Kerja" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Pengalaman Kerja</span>
+                    <h2 id="exp-title" data-editable-id="exp-title" data-en="Work &amp; Industry Experience" data-id="Pengalaman Karir &amp; Industri" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Pengalaman Karir &amp; Industri</h2>
                     <div class="w-12 h-1 bg-indigo-500 rounded-full mt-2"></div>
                 </div>
 
@@ -568,10 +576,9 @@
                                 <span id="career1-dur" data-editable-id="career1-dur" data-en="March 2024 - March 2026" data-id="Maret 2024 - Maret 2026" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] font-black whitespace-nowrap font-mono">Maret 2024 - Maret 2026</span>
                             </div>
                             <ul class="list-disc pl-5 text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium space-y-2">
-                                <li id="career1-bullet1" data-editable-id="career1-bullet1" data-en="Managed academic administration for 6 lecturers through research files, accreditation documents, and lesson structures using Google Apps Script and Spreadsheet automation, boosting workflow efficiency by 40%." data-id="Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet, meningkatkan efisiensi kerja sebesar 40%.">Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet, meningkatkan efisiensi kerja sebesar 40%.</li>
+                                <li id="career1-bullet1" data-editable-id="career1-bullet1" data-en="Managed academic administration for 6 lecturers through research files, accreditation documents, and lesson structures using Google Apps Script and Spreadsheet automation." data-id="Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet.">Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet.</li>
                                 <li id="career1-bullet2" data-editable-id="career1-bullet2" data-en="Developed spreadsheet systems to catalog 300+ students' academic data, thesis developments, and progress reportings." data-id="Mengembangkan sistem spreadsheet untuk mendata 300+ data akademik mahasiswa, kemajuan skripsi, dan laporan berkala.">Mengembangkan sistem spreadsheet untuk mendata 300+ data akademik mahasiswa, kemajuan skripsi, dan laporan berkala.</li>
                                 <li id="career1-bullet3" data-editable-id="career1-bullet3" data-en="Produced 100+ institutional designs, documentation videos, and marketing feeds to highlight economic program events." data-id="Memproduksi 100+ media publikasi institusi, dokumentasi video, dan konten promosi digital program studi Pendidikan Ekonomi.">Memproduksi 100+ media publikasi institusi, dokumentasi video, dan konten promosi digital program studi Pendidikan Ekonomi.</li>
-                                <li id="career1-bullet4" data-editable-id="career1-bullet4" data-en="Collaborated as Creative Crew for official Unila Company Profiles to secure top-tier national accreditation scores." data-id="Berkontribusi penuh sebagai tim kreatif profil institusi untuk mensukseskan akreditasi unggul tingkat nasional.">Berkontribusi penuh sebagai tim kreatif profil institusi untuk mensukseskan akreditasi unggul tingkat nasional.</li>
                             </ul>
                         </div>
 
@@ -579,14 +586,13 @@
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4">
                                 <div>
                                     <h4 id="career2-job" data-editable-id="career2-job" data-en="Freelance Graphic Designer &amp; Digital Creative" data-id="Desainer Grafis &amp; Kreator Konten Digital Freelance" class="text-sm sm:text-base font-black text-slate-900 dark:text-white tracking-tight leading-snug">Desainer Grafis &amp; Kreator Konten Digital Freelance</h4>
-                                    <p id="career2-comp" data-editable-id="career2-comp" data-en="Self-Employed (40+ Clients)" data-id="Wiraswasta Mandiri (40+ Klien)" class="text-xs text-indigo-600 dark:text-indigo-400 font-extrabold mt-0.5">Self-Employed (40+ Clients)</p>
+                                    <p id="career2-comp" data-editable-id="career2-comp" data-en="Self-Employed (40+ Clients)" data-id="Wiraswasta Mandiri (40+ Klien)" class="text-xs text-indigo-600 dark:text-indigo-400 font-extrabold mt-0.5">Wiraswasta Mandiri (40+ Klien)</p>
                                 </div>
                                 <span id="career2-dur" data-editable-id="career2-dur" data-en="January 2023 - Present" data-id="Januari 2023 - Sekarang" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] font-black whitespace-nowrap font-mono">Januari 2023 - Sekarang</span>
                             </div>
                             <ul class="list-disc pl-5 text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium space-y-2">
                                 <li id="career2-bullet1" data-editable-id="career2-bullet1" data-en="Executed 100+ graphic branding designs for 40+ clients covering social layouts, print brochures, and custom UI visuals." data-id="Menyelesaikan 100+ desain branding untuk 40+ klien, mencakup desain media sosial, brosur cetak, dan visual UI khusus.">Menyelesaikan 100+ desain branding untuk 40+ klien, mencakup desain media sosial, brosur cetak, dan visual UI khusus.</li>
                                 <li id="career2-bullet2" data-editable-id="career2-bullet2" data-en="Created over 1,000 unique assets (banners, Instagram assets, corporate layouts, and video components)." data-id="Membuat lebih dari 1.000 aset unik berupa spanduk, aset Instagram, pamflet korporat, dan komponen video.">Membuat lebih dari 1.000 aset unik berupa spanduk, aset Instagram, pamflet korporat, dan komponen video.</li>
-                                <li id="career2-bullet3" data-editable-id="career2-bullet3" data-en="Integrated Google Sheets automate routines with Google Apps Script to manage clients' registrations." data-id="Mengintegrasikan sistem pendaftaran otomatis Google Apps Script dan spreadsheet untuk kemudahan alur kerja klien.">Mengintegrasikan sistem pendaftaran otomatis Google Apps Script dan spreadsheet untuk kemudahan alur kerja klien.</li>
                             </ul>
                         </div>
 
@@ -596,12 +602,11 @@
                                     <h4 id="career3-job" data-editable-id="career3-job" data-en="Graphic Designer (Full-time Contract)" data-id="Desainer Grafis (Kontrak Kerja Penuh)" class="text-sm sm:text-base font-black text-slate-900 dark:text-white tracking-tight leading-snug">Desainer Grafis (Kontrak Kerja Penuh)</h4>
                                     <p id="career3-comp" data-editable-id="career3-comp" data-en="Fana Creative Agency" data-id="Fana Creative Agency" class="text-xs text-indigo-600 dark:text-indigo-400 font-extrabold mt-0.5">Fana Creative Agency</p>
                                 </div>
-                                <span id="career3-dur" data-editable-id="career3-dur" data-en="August - December 2025" data-id="Agustus - Desember 2025" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] font-black whitespace-nowrap font-mono">Agustus - Desember 2025</span>
+                                <span id="career3-dur" data-editable-id="career3-dur" data-en="August 2025 - December 2025" data-id="Agustus 2025 - Desember 2025" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] font-black whitespace-nowrap font-mono">Agustus 2025 - Desember 2025</span>
                             </div>
                             <ul class="list-disc pl-5 text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium space-y-2">
                                 <li id="career3-bullet1" data-editable-id="career3-bullet1" data-en="Constructed 100+ visual and promotional design assets for 10+ commercial MSME and corporate partners." data-id="Membuat 100+ aset desain promosi dan materi visual untuk lebih dari 10+ UMKM dan korporasi mitra bisnis.">Membuat 100+ aset desain promosi dan materi visual untuk lebih dari 10+ UMKM dan korporasi mitra bisnis.</li>
                                 <li id="career3-bullet2" data-editable-id="career3-bullet2" data-en="Boosted active organic engagement of client accounts by 30-50% through high-conversion graphics." data-id="Meningkatkan performa interaksi organik media sosial klien rata-rata sebesar 30-50% melalui konten dengan konversi tinggi.">Meningkatkan performa interaksi organik media sosial klien rata-rata sebesar 30-50% melalui konten dengan konversi tinggi.</li>
-                                <li id="career3-bullet3" data-editable-id="career3-bullet3" data-en="Reduced revision turnaround times by 25% through direct communication of client briefs into visual assets." data-id="Memtotong waktu tunggu proses revisi hingga 25% melalui penerjemahan detail brief ke dalam aset fungsional secara instan.">Memotong waktu tunggu proses revisi hingga 25% melalui penerjemahan detail brief ke dalam aset fungsional secara instan.</li>
                             </ul>
                         </div>
 
@@ -611,7 +616,7 @@
                                     <h4 id="career4-job" data-editable-id="career4-job" data-en="Graphic Designer Intern" data-id="Magang Desainer Grafis" class="text-sm sm:text-base font-black text-slate-900 dark:text-white tracking-tight leading-snug">Magang Desainer Grafis</h4>
                                     <p id="career4-comp" data-editable-id="career4-comp" data-en="Lampung Folk" data-id="Lampung Folk" class="text-xs text-indigo-600 dark:text-indigo-400 font-extrabold mt-0.5">Lampung Folk</p>
                                 </div>
-                                <span id="career4-dur" data-editable-id="career4-dur" data-en="October - December 2025" data-id="Oktober - Desember 2025" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] font-black whitespace-nowrap font-mono">Oktober - Desember 2025</span>
+                                <span id="career4-dur" data-editable-id="career4-dur" data-en="October 2025 - December 2025" data-id="Oktober 2025 - Desember 2025" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] font-black whitespace-nowrap font-mono">Oktober 2025 - Desember 2025</span>
                             </div>
                             <ul class="list-disc pl-5 text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium space-y-2">
                                 <li id="career4-bullet1" data-editable-id="career4-bullet1" data-en="Designed 50+ creative layouts highlighting folklore, cultural values, and local directories of Lampung." data-id="Mendesain 50+ materi kreatif bertema kearifan lokal, sejarah rakyat, dan info terpadu pariwisata Lampung.">Mendesain 50+ materi kreatif bertema kearifan lokal, sejarah rakyat, dan info terpadu pariwisata Lampung.</li>
@@ -630,7 +635,6 @@
                             <ul class="list-disc pl-5 text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium space-y-2">
                                 <li id="career5-bullet1" data-editable-id="career5-bullet1" data-en="Engineered over 1,000 official graphic resources supporting graduation sets, campus enrollments, and national events." data-id="Mendesain lebih dari 1.000+ aset visual resmi humas Unila guna mendukung rangkaian wisuda, promosi pendaftaran, dan acara nasional.">Mendesain lebih dari 1.000+ aset visual resmi humas Unila guna mendukung rangkaian wisuda, promosi pendaftaran, dan acara nasional.</li>
                                 <li id="career5-bullet2" data-editable-id="career5-bullet2" data-en="Boosted official Instagram followers to over 180,000 organically using structured data templates." data-id="Mengakselerasi pertumbuhan pengikut Instagram institusi secara organik hingga mencapai lebih dari 180.000 pengikut aktif.">Mengakselerasi pertumbuhan pengikut Instagram institusi secara organik hingga mencapai lebih dari 180.000 pengikut aktif.</li>
-                                <li id="career5-bullet3" data-editable-id="career5-bullet3" data-en="Actively contributed to Unila's record achievement of 4 Gold &amp; 1 Bronze Medals at Anugerah Diktisaintek 2024." data-id="Turut berperan aktif membawa Universitas Lampung meraih 4 Medali Emas &amp; 1 Perunggu di ajang bergengsi Anugerah Diktisaintek 2024.">Turut berperan aktif membawa Universitas Lampung meraih 4 Medali Emas &amp; 1 Perunggu di ajang bergengsi Anugerah Diktisaintek 2024.</li>
                             </ul>
                         </div>
 
@@ -640,7 +644,7 @@
                                     <h4 id="career6-job" data-editable-id="career6-job" data-en="Graphic Designer (MSIB Intern)" data-id="Desainer Grafis (Magang MSIB)" class="text-sm sm:text-base font-black text-slate-900 dark:text-white tracking-tight leading-snug">Desainer Grafis (Magang MSIB)</h4>
                                     <p id="career6-comp" data-editable-id="career6-comp" data-en="Dinas Kominfo Kab. Pesawaran" data-id="Dinas Kominfo Kab. Pesawaran" class="text-xs text-indigo-600 dark:text-indigo-400 font-extrabold mt-0.5">Dinas Kominfo Kab. Pesawaran</p>
                                 </div>
-                                <span id="career6-dur" data-editable-id="career6-dur" data-en="August - December 2024" data-id="Agustus - Desember 2024" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] font-black whitespace-nowrap font-mono">Agustus - Desember 2024</span>
+                                <span id="career6-dur" data-editable-id="career6-dur" data-en="August 2024 - December 2024" data-id="Agustus 2024 - Desember 2024" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 text-[10px] font-black whitespace-nowrap font-mono">Agustus 2024 - Desember 2024</span>
                             </div>
                             <ul class="list-disc pl-5 text-[11px] sm:text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium space-y-2">
                                 <li id="career6-bullet1" data-editable-id="career6-bullet1" data-en="Created over 80 infographic designs detailing local public statistics and digital transparency reports." data-id="Mendesain lebih dari 80+ materi informasi kebijakan publik, pengumuman daerah, dan laporan akuntabilitas pemerintah daerah.">Mendesain lebih dari 80+ materi informasi kebijakan publik, pengumuman daerah, dan laporan akuntabilitas pemerintah daerah.</li>
@@ -653,11 +657,12 @@
             </div>
         </section>
 
+        <!-- 6. SECTION ORGANIZATIONS -->
         <section id="organizations" class="py-16 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
-                    <span id="org-tag" data-editable-id="org-tag" data-en="Leadership &amp; Impact" data-id="Kepemimpinan &amp; Dampak" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Leadership &amp; Impact</span>
-                    <h2 id="org-title" data-editable-id="org-title" data-en="Organizational Contributions" data-id="Kontribusi &amp; Aktivitas Organisasi" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Organizational Contributions</h2>
+                    <span id="org-tag" data-editable-id="org-tag" data-en="Organizational Experience" data-id="Pengalaman Organisasi" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Pengalaman Organisasi</span>
+                    <h2 id="org-title" data-editable-id="org-title" data-en="Leadership &amp; Organizational Impact" data-id="Kepemimpinan &amp; Kontribusi Organisasi" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Kepemimpinan &amp; Kontribusi Organisasi</h2>
                     <div class="w-12 h-1 bg-indigo-500 rounded-full mt-2"></div>
                 </div>
 
@@ -666,7 +671,7 @@
                     <div class="p-6 rounded-2xl bg-white dark:bg-brand-darkCard border border-slate-200/50 dark:border-slate-800 flex flex-col justify-between shadow-apple-soft apple-spring-card">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">
-                                <span data-en="Media Lead" data-id="Kreatif Publikasi">Media Lead</span>
+                                <span data-en="Media &amp; Documentation Officer" data-id="Staf Media &amp; Dokumentasi">Staf Media &amp; Dokumentasi</span>
                                 <span class="text-slate-400 font-mono">2025</span>
                             </div>
                             <div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-800/40">
@@ -690,7 +695,7 @@
                     <div class="p-6 rounded-2xl bg-white dark:bg-brand-darkCard border border-slate-200/50 dark:border-slate-800 flex flex-col justify-between shadow-apple-soft apple-spring-card">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">
-                                <span data-en="Vice Chairman" data-id="Wakil Ketua Umum">Vice Chairman</span>
+                                <span data-en="Vice President / Vice Chairman" data-id="Wakil Ketua Umum">Wakil Ketua Umum</span>
                                 <span class="text-slate-400 font-mono">2024 - 2025</span>
                             </div>
                             <div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-800/40">
@@ -714,7 +719,7 @@
                     <div class="p-6 rounded-2xl bg-white dark:bg-brand-darkCard border border-slate-200/50 dark:border-slate-800 flex flex-col justify-between shadow-apple-soft apple-spring-card">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">
-                                <span data-en="Media Staff" data-id="Staff Publikasi">Media Staff</span>
+                                <span data-en="Media Staff" data-id="Staf Media">Staf Media</span>
                                 <span class="text-slate-400 font-mono">2024</span>
                             </div>
                             <div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-800/40">
@@ -738,7 +743,7 @@
                     <div class="p-6 rounded-2xl bg-white dark:bg-brand-darkCard border border-slate-200/50 dark:border-slate-800 flex flex-col justify-between shadow-apple-soft apple-spring-card">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">
-                                <span data-en="Media Staff" data-id="Staff Kreatif Media">Media Staff</span>
+                                <span data-en="Media Staff" data-id="Staf Media">Staf Media</span>
                                 <span class="text-slate-400 font-mono">2023 - 2024</span>
                             </div>
                             <div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-800/40">
@@ -762,7 +767,7 @@
                     <div class="p-6 rounded-2xl bg-white dark:bg-brand-darkCard border border-slate-200/50 dark:border-slate-800 flex flex-col justify-between shadow-apple-soft apple-spring-card">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">
-                                <span data-en="Media Staff" data-id="Staff Humas &amp; Media">Media Staff</span>
+                                <span data-en="Media Staff" data-id="Staf Media">Staf Media</span>
                                 <span class="text-slate-400 font-mono">2023</span>
                             </div>
                             <div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-800/40">
@@ -787,6 +792,7 @@
             </div>
         </section>
 
+        <!-- PORTFOLIO GALLERY -->
         <section id="portfolio" class="py-16 bg-slate-100/50 dark:bg-slate-900/25 border-y border-slate-200/50 dark:border-slate-800/50 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
@@ -808,11 +814,12 @@
             </div>
         </section>
 
+        <!-- 7. SECTION ACHIEVEMENTS & CREDENTIALS -->
         <section id="achievements" class="py-16 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
-                    <span id="ach-section-tag" data-editable-id="ach-section-tag" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Sertifikasi &amp; Tanda Kehormatan</span>
-                    <h2 id="ach-section-title" data-editable-id="ach-section-title" data-en="National Awards &amp; Scientific Recognitions" data-id="Penghargaan Nasional &amp; Rekognisi Publik" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Penghargaan Nasional &amp; Rekognisi Publik</h2>
+                    <span id="ach-section-tag" data-editable-id="ach-section-tag" data-en="Achievements &amp; Credentials" data-id="Prestasi &amp; Sertifikasi" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Prestasi &amp; Sertifikasi</span>
+                    <h2 id="ach-section-title" data-editable-id="ach-section-title" data-en="Awards, Certifications &amp; Recognition" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Penghargaan, Sertifikasi &amp; Pengakuan</h2>
                     <div class="w-12 h-1 bg-indigo-500 rounded-full mt-2"></div>
                 </div>
 
@@ -824,24 +831,24 @@
                                 <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg shadow-sm">
                                     <i class="fa-solid fa-trophy"></i>
                                 </div>
-                                <h3 id="ach-card1-title" data-editable-id="ach-card1-title" class="text-sm sm:text-base font-black text-slate-900 dark:text-white">Penghargaan Kompetisi Nasional</h3>
+                                <h3 id="ach-card1-title" data-editable-id="ach-card1-title" data-en="National Competition Awards" data-id="Kompetisi Tingkat Nasional" class="text-sm sm:text-base font-black text-slate-900 dark:text-white">Kompetisi Tingkat Nasional</h3>
                             </div>
                             <ul class="space-y-3 text-xs sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-amber-500 mt-0.5">🏆</span>
-                                    <span id="ach-card1-bullet1" data-editable-id="ach-card1-bullet1" data-en="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Juara 1&lt;/strong&gt; Lomba Desain Poster Nasional, DPM FEB Universitas Brawijaya (2023)." data-id="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Juara 1&lt;/strong&gt; Lomba Desain Poster Nasional, DPM FEB Universitas Brawijaya (2023)."><strong>Juara 1</strong> Lomba Desain Poster Nasional, DPM FEB Universitas Brawijaya (2023).</span>
+                                    <span id="ach-card1-bullet1" data-editable-id="ach-card1-bullet1" data-en="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;1st Winner&lt;/strong&gt; National Poster Design Competition, DPM FEB Universitas Brawijaya (2023)." data-id="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Juara 1&lt;/strong&gt; Lomba Desain Poster Nasional, DPM FEB Universitas Brawijaya (2023)."><strong>Juara 1</strong> Lomba Desain Poster Nasional, DPM FEB Universitas Brawijaya (2023).</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-amber-500 mt-0.5">🏆</span>
-                                    <span id="ach-card1-bullet2" data-editable-id="ach-card1-bullet2" data-en="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Best Presentation&lt;/strong&gt;, Lomba Infografis Nasional Komadiksi Festival, Universitas Sebelas Maret (2025)." data-id="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Presentasi Terbaik&lt;/strong&gt;, Lomba Infografis Nasional Komadiksi Festival, Universitas Sebelas Maret (2025)."><strong>Presentasi Terbaik</strong>, Lomba Infografis Nasional Komadiksi Festival, Universitas Sebelas Maret (2025).</span>
+                                    <span id="ach-card1-bullet2" data-editable-id="ach-card1-bullet2" data-en="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Best Presentation&lt;/strong&gt;, National Infographics Competition Komadiksi Festival, Universitas Sebelas Maret (2025)." data-id="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Presentasi Terbaik&lt;/strong&gt;, Lomba Infografis Nasional Komadiksi Festival, Universitas Sebelas Maret (2025)."><strong>Presentasi Terbaik</strong>, Lomba Infografis Nasional Komadiksi Festival, Universitas Sebelas Maret (2025).</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-indigo-500 mt-0.5">🏅</span>
-                                    <span id="ach-card1-bullet3" data-editable-id="ach-card1-bullet3" data-en="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Finalis Top 10&lt;/strong&gt; Lomba Poster Ilmiah Nasional, Universitas Sriwijaya (2025)." data-id="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Finalis Top 10&lt;/strong&gt; Lomba Poster Ilmiah Nasional, Universitas Sriwijaya (2025)."><strong>Finalis Top 10</strong> Lomba Poster Ilmiah Nasional, Universitas Sriwijaya (2025).</span>
+                                    <span id="ach-card1-bullet3" data-editable-id="ach-card1-bullet3" data-en="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Top 10 Finalist&lt;/strong&gt; National Scientific Poster Competition, Universitas Sriwijaya (2025)." data-id="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Finalis Top 10&lt;/strong&gt; Lomba Poster Ilmiah Nasional, Universitas Sriwijaya (2025)."><strong>Finalis Top 10</strong> Lomba Poster Ilmiah Nasional, Universitas Sriwijaya (2025).</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-indigo-500 mt-0.5">🏅</span>
-                                    <span id="ach-card1-bullet4" data-editable-id="ach-card1-bullet4" data-en="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Finalis Top 10&lt;/strong&gt; Lomba Esai Nasional, Komadiksi Festival, Universitas Sebelas Maret (2024)." data-id="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Finalis Top 10&lt;/strong&gt; Lomba Esai Nasional, Komadiksi Festival, Universitas Sebelas Maret (2024)."><strong>Finalis Top 10</strong> Lomba Esai Nasional, Komadiksi Festival, Universitas Sebelas Maret (2024).</span>
+                                    <span id="ach-card1-bullet4" data-editable-id="ach-card1-bullet4" data-en="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Top 10 Finalist&lt;/strong&gt; National Essay Competition, Komadiksi Festival, Universitas Sebelas Maret (2024)." data-id="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Finalis Top 10&lt;/strong&gt; Lomba Esai Nasional, Komadiksi Festival, Universitas Sebelas Maret (2024)."><strong>Finalis Top 10</strong> Lomba Esai Nasional, Komadiksi Festival, Universitas Sebelas Maret (2024).</span>
                                 </li>
                             </ul>
                         </div>
@@ -856,20 +863,20 @@
                                 <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shadow-sm">
                                     <i class="fa-solid fa-microphone text-sm"></i>
                                 </div>
-                                <h3 id="ach-card2-title" data-editable-id="ach-card2-title" class="text-sm sm:text-base font-black text-slate-900 dark:text-white">Rekognisi Profesional</h3>
+                                <h3 id="ach-card2-title" data-editable-id="ach-card2-title" data-en="Professional Recognition &amp; Speaker/Judge" data-id="Pengakuan Profesional &amp; Juri/Pemateri" class="text-sm sm:text-base font-black text-slate-900 dark:text-white">Pengakuan Profesional &amp; Juri/Pemateri</h3>
                             </div>
                             <ul class="space-y-3 text-xs sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-indigo-600 dark:text-indigo-400 mt-1 shrink-0"><i class="fa-solid fa-signature"></i></span>
-                                    <span id="ach-card2-bullet1" data-editable-id="ach-card2-bullet1" data-en="&lt;strong class='text-slate-850' dark:text-slate-200&gt;National Judge Position&lt;/strong&gt;: Trusted as creative poster and short film national design arbiter for top universities." data-id="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Juri Kompetisi Nasional&lt;/strong&gt;: Dipercaya sebagai juri kompetisi poster kreatif nasional &amp; film pendek di berbagai universitas."><strong>Juri Kompetisi Nasional</strong>: Dipercaya sebagai juri kompetisi poster kreatif nasional & film pendek di berbagai universitas.</span>
+                                    <span id="ach-card2-bullet1" data-editable-id="ach-card2-bullet1" data-en="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;National Competition Judge&lt;/strong&gt;: Trusted as poster and short film design judge across multiple universities." data-id="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Juri Kompetisi Nasional&lt;/strong&gt;: Dipercaya sebagai juri kompetisi poster kreatif nasional &amp; film pendek di berbagai universitas."><strong>Juri Kompetisi Nasional</strong>: Dipercaya sebagai juri kompetisi poster kreatif nasional &amp; film pendek di berbagai universitas.</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-indigo-600 dark:text-indigo-400 mt-1 shrink-0"><i class="fa-solid fa-chalkboard-user"></i></span>
-                                    <span id="ach-card2-bullet2" data-editable-id="ach-card2-bullet2" data-en="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Featured Speaker&lt;/strong&gt;: Instructed design layout and personal branding sessions for 800+ total audience." data-id="&lt;strong class='text-slate-850' dark:text-slate-200&gt;Narasumber Pelatihan&lt;/strong&gt;: Berpengalaman mengisi pelatihan desain grafis, esai ilmiah, dan personal branding untuk 800+ audiens."><strong>Narasumber Pelatihan</strong>: Berpengalaman mengisi pelatihan desain grafis, esai ilmiah, dan personal branding untuk 800+ audiens.</span>
+                                    <span id="ach-card2-bullet2" data-editable-id="ach-card2-bullet2" data-en="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Featured Speaker&lt;/strong&gt;: Conducted workshops on graphic design, scientific essays, and personal branding for 800+ total audience." data-id="&lt;strong class='text-slate-850 dark:text-slate-200'&gt;Narasumber Pelatihan&lt;/strong&gt;: Berpengalaman mengisi pelatihan desain grafis, esai ilmiah, dan personal branding untuk 800+ audiens."><strong>Narasumber Pelatihan</strong>: Berpengalaman mengisi pelatihan desain grafis, esai ilmiah, dan personal branding untuk 800+ audiens.</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-emerald-600 dark:text-emerald-400 mt-1 shrink-0"><i class="fa-solid fa-shield-halved"></i></span>
-                                    <span id="ach-card2-bullet3" data-editable-id="ach-card2-bullet3" data-en="Co-secured &lt;strong class='text-slate-850' dark:text-slate-200&gt;2 Intellectual Property Patents (HaKI)&lt;/strong&gt; registered under Kemenkumham RI." data-id="Mempunyai &lt;strong class='text-slate-850' dark:text-slate-200&gt;2 Hak Kekayaan Intelektual (HaKI)&lt;/strong&gt; resmi terdaftar di Dirjen KI Kemenkumham RI.">Mempunyai <strong>2 Hak Kekayaan Intelektual (HaKI)</strong> resmi terdaftar di Dirjen KI Kemenkumham RI.</span>
+                                    <span id="ach-card2-bullet3" data-editable-id="ach-card2-bullet3" data-en="Co-secured &lt;strong class='text-slate-850 dark:text-slate-200'&gt;2 Intellectual Property Patents (HaKI)&lt;/strong&gt; registered under Kemenkumham RI." data-id="Mempunyai &lt;strong class='text-slate-850 dark:text-slate-200'&gt;2 Hak Kekayaan Intelektual (HaKI)&lt;/strong&gt; resmi terdaftar di Dirjen KI Kemenkumham RI.">Mempunyai <strong>2 Hak Kekayaan Intelektual (HaKI)</strong> resmi terdaftar di Dirjen KI Kemenkumham RI.</span>
                                 </li>
                             </ul>
                         </div>
@@ -882,6 +889,7 @@
             </div>
         </section>
 
+        <!-- LICENSES & CERTIFICATIONS -->
         <section id="credentials" class="py-16 bg-slate-100/50 dark:bg-slate-900/25 border-y border-slate-200/50 dark:border-slate-800/50 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
@@ -895,7 +903,7 @@
                     <div class="p-4 rounded-xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-brand-darkCard flex flex-col justify-between shadow-sm hover:shadow-md apple-spring-card transition-all">
                         <div class="flex flex-col gap-2">
                             <div class="flex items-center justify-between text-[9px] uppercase font-bold tracking-wider text-slate-400 font-mono">
-                                <span data-en="Language Competence" data-id="Kompetensi Bahasa">Language Competence</span>
+                                <span data-en="Language Competence" data-id="Kompetensi Bahasa">Kompetensi Bahasa</span>
                                 <span>2025</span>
                             </div>
                             <h3 id="cert1-title" data-editable-id="cert1-title" class="text-xs font-black text-slate-900 dark:text-white leading-snug">TOEFL English Prediction Standard (Score 450)</h3>
@@ -960,11 +968,12 @@
             </div>
         </section>
 
+        <!-- RESEARCH & INNOVATION -->
         <section id="publications" class="py-16 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
-                    <span id="pub-section-tag" data-editable-id="pub-section-tag" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono" data-en="Academic Outputs" data-id="Publikasi &amp; Kekayaan Intelektual">Publikasi &amp; Kekayaan Intelektual</span>
-                    <h2 id="pub-section-title" data-editable-id="pub-section-title" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Jurnal Ilmiah &amp; Hak Cipta</h2>
+                    <span id="pub-section-tag" data-editable-id="pub-section-tag" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono" data-en="Research &amp; Innovation (SINTA &amp; IP Rights)" data-id="Riset &amp; Inovasi (SINTA &amp; HaKI)">Riset &amp; Inovasi (SINTA &amp; HaKI)</span>
+                    <h2 id="pub-section-title" data-editable-id="pub-section-title" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white" data-en="Scientific Journals &amp; Intellectual Property" data-id="Jurnal Ilmiah &amp; Hak Cipta">Jurnal Ilmiah &amp; Hak Cipta</h2>
                     <div class="w-12 h-1 bg-indigo-500 rounded-full mt-2"></div>
                 </div>
 
@@ -1017,11 +1026,12 @@
             </div>
         </section>
 
+        <!-- 8. SECTION CONTACT -->
         <section id="contact" class="py-16 bg-slate-100/50 dark:bg-slate-900/25 border-t border-slate-200/50 dark:border-slate-800/50 animate-reveal">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
-                    <span id="contact-section-tag" data-editable-id="contact-section-tag" data-en="Let's Collaborate" data-id="Mari Berkolaborasi" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Let's Collaborate</span>
-                    <h2 id="contact-section-title" data-editable-id="contact-section-title" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Let's Connect &amp; Work Together</h2>
+                    <span id="contact-section-tag" data-editable-id="contact-section-tag" data-en="Get in Touch" data-id="Hubungi Saya" class="text-[11px] font-black tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-mono">Hubungi Saya</span>
+                    <h2 id="contact-section-title" data-editable-id="contact-section-title" data-en="Let’s Connect &amp; Collaborate" data-id="Mari Berkolaborasi &amp; Terhubung" class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Mari Berkolaborasi &amp; Terhubung</h2>
                     <div class="w-12 h-1 bg-indigo-500 rounded-full mt-2"></div>
                 </div>
 
@@ -1030,8 +1040,8 @@
                     <div class="lg:col-span-5 p-6 rounded-2xl bg-white dark:bg-brand-darkCard border border-slate-200/50 dark:border-slate-800 flex flex-col justify-between gap-6 shadow-apple-soft">
                         <div class="space-y-4">
                             <h3 id="contact-sub-title" data-editable-id="contact-sub-title" data-en="Contact Directory" data-id="Detail Kontak" class="text-base font-black text-slate-900 dark:text-white">Detail Kontak</h3>
-                            <p id="contact-desc" data-editable-id="contact-desc" data-en="Send a project brief directly or query about graphic layout commissions. I respond within 1 business day." data-id="Kirimkan detail brief proyek secara langsung atau tanyakan tentang lisensi desain. Saya akan merespons dalam 1 hari kerja." class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-                                Kirimkan detail brief proyek secara langsung atau tanyakan tentang lisensi desain. Saya akan merespons dalam 1 hari kerja.
+                            <p id="contact-desc" data-editable-id="contact-desc" data-en="Do you have a creative project, branding needs, or collaboration opportunities? Feel free to reach out." data-id="Apakah Anda memiliki proyek kreatif, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya." class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                                Apakah Anda memiliki proyek kreatif, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya.
                             </p>
 
                             <div class="space-y-4">
@@ -1043,8 +1053,9 @@
                                         <span class="text-[8px] font-black uppercase text-slate-400 dark:text-slate-500 tracking-widest leading-none font-mono" data-en="Email Address" data-id="Alamat Email">Alamat Email</span>
                                         <span class="text-xs font-bold text-slate-800 dark:text-slate-200 truncate mt-1 select-all font-mono">nurkarim2004@gmail.com</span>
                                     </div>
-                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com', this)" class="p-1.5 text-xs text-indigo-500 hover:text-indigo-600 border border-slate-200 dark:border-slate-800/85 hover:bg-slate-50 rounded-lg shrink-0 transition-all active:scale-95" title="Copy email">
-                                        <i class="fa-regular fa-copy"></i>
+                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com', this)" class="px-2.5 py-1.5 text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 border border-slate-200 dark:border-slate-800/85 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg shrink-0 transition-all active:scale-95 flex items-center gap-1 font-bold" title="Send Email">
+                                        <i class="fa-regular fa-paper-plane"></i>
+                                        <span data-en="Send Email" data-id="Kirim Email">Kirim Email</span>
                                     </button>
                                 </div>
 
@@ -1056,9 +1067,10 @@
                                         <span class="text-[8px] font-black uppercase text-slate-400 dark:text-slate-500 tracking-widest leading-none font-mono" data-en="WhatsApp Direct" data-id="Hubungi WhatsApp">Hubungi WhatsApp</span>
                                         <span class="text-xs font-bold text-slate-800 dark:text-slate-200 mt-1 select-all font-mono">+62 822-7936-2591</span>
                                     </div>
-                                    <button onclick="copyToClipboardText('+6282279362591', this)" class="p-1.5 text-xs text-indigo-500 hover:text-indigo-600 border border-slate-200 dark:border-slate-800/85 hover:bg-slate-50 rounded-lg shrink-0 transition-all active:scale-95" title="Copy number">
-                                        <i class="fa-regular fa-copy"></i>
-                                    </button>
+                                    <a href="https://wa.me/6282279362591" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-xs text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 border border-slate-200 dark:border-slate-800/85 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg shrink-0 transition-all active:scale-95 flex items-center gap-1 font-bold" title="Chat via WhatsApp">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        <span data-en="Chat via WhatsApp" data-id="Chat via WhatsApp">Chat via WhatsApp</span>
+                                    </a>
                                 </div>
 
                                 <div class="flex items-center gap-3.5">
@@ -1117,6 +1129,7 @@
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="py-10 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-brand-darkBg flex flex-col items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 w-full text-center md:text-left font-inter">
             <div class="flex flex-col gap-1">
@@ -1138,6 +1151,7 @@
         </div>
     </footer>
 
+    <!-- KEYBOARD NAV GUIDE -->
     <div id="keyboardGuide" class="fixed bottom-6 right-6 z-[80] hidden lg:flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/90 dark:bg-slate-900/95 border border-slate-200/40 dark:border-slate-800/80 shadow-apple-soft backdrop-blur-md">
         <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
         <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest flex items-center gap-2 font-mono">
@@ -1229,7 +1243,6 @@
     <!-- MODAL 4: FLOATING GOOGLE DRIVE EMBED PREVIEW -->
     <div id="driveModal" class="fixed inset-0 z-[160] bg-black/80 backdrop-blur-md hidden items-center justify-center p-2 sm:p-4 font-inter">
         <div class="w-full max-w-5xl h-[88vh] bg-white dark:bg-brand-darkCard rounded-2xl border border-slate-200/50 dark:border-slate-800 shadow-2xl flex flex-col overflow-hidden relative apple-spring-card">
-            <!-- Modal Header -->
             <div class="flex items-center justify-between px-4 py-3 bg-slate-100 dark:bg-slate-900 border-b border-slate-200/60 dark:border-slate-800 shrink-0">
                 <div class="flex items-center gap-2.5 min-w-0 pr-2">
                     <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-pink-500 text-white flex items-center justify-center text-xs shrink-0 shadow-md">
@@ -1252,7 +1265,6 @@
                 </div>
             </div>
 
-            <!-- Modal Body Frame -->
             <div class="relative flex-1 bg-slate-950 w-full h-full overflow-hidden">
                 <div id="driveLoadingSpinner" class="absolute inset-0 flex flex-col items-center justify-center bg-slate-900 text-white gap-3 z-10">
                     <div class="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
@@ -1263,6 +1275,7 @@
         </div>
     </div>
 
+    <!-- TOAST NOTIFICATION -->
     <div id="iosToast" class="fixed bottom-6 right-6 z-[150] transform translate-y-[100px] opacity-0 transition-all duration-500 pointer-events-none font-inter">
         <div class="bg-slate-900/95 dark:bg-slate-800/95 text-white px-4 py-3 rounded-xl shadow-apple-hover text-xs font-bold flex items-center gap-2.5 border border-slate-700/50 backdrop-blur-md max-w-sm">
             <span id="toastIcon">💡</span>
@@ -1670,17 +1683,17 @@
 
         const ROTATOR_WORDS_EN = [
             "Full-Stack Web Developer",
-            "Administration Consultant",
+            "Administration & Automation Specialist",
             "Graphic Designer",
-            "Corporate Communication Specialist",
-            "Digital Branding Expert"
+            "Digital Communication Consultant",
+            "Brand Identity Strategist"
         ];
         const ROTATOR_WORDS_ID = [
             "Full-Stack Web Developer",
-            "Spesialis Administrasi Kerja",
+            "Spesialis Administrasi & Otomasi",
             "Desainer Grafis Profesional",
-            "Ahli Komunikasi Korporat",
-            "Konsultan Digital Branding"
+            "Konsultan Komunikasi Digital",
+            "Strategis Branding Identity"
         ];
         let rotatorWordIdx = 0;
         let charIndex = 0;
@@ -1877,7 +1890,7 @@
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                <span>${(currentLanguage === 'en') ? 'Transmitting brief...' : 'Mengirimkan pesan...'}</span>
+                <span>${(currentLanguage === 'en') ? 'Transmitting message...' : 'Mengirimkan pesan...'}</span>
             `;
 
             const formData = new FormData(form);
@@ -2205,7 +2218,7 @@
             if (iframe) iframe.src = "";
         }
 
-        // Intercept all Google Drive links automatically across the website
+        // Intercept Google Drive links automatically
         document.addEventListener('click', function(e) {
             const link = e.target.closest('a[href*="drive.google.com"]');
             if (link) {
