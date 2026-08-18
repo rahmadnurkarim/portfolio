@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahmad Nur Karim, S.Pd. — Portofolio</title>
+    <title>Rahmad Nur Karim, S.Pd. — Portofolio Kreatif & Spesialis Komunikasi Digital</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -46,16 +46,14 @@
     </script>
 
     <style>
-        /* High-Contrast Non-Flat Yellow Grid Background */
         body {
             background-color: #FFD700;
             color: #000000;
             background-image: 
-                linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
-                linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px),
-                radial-gradient(rgba(0, 0, 0, 0.22) 1.5px, transparent 0);
-            background-size: 24px 24px, 24px 24px, 12px 12px;
-            background-position: -1px -1px, -1px -1px, 0 0;
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 0);
+            background-size: 20px 20px, 20px 20px, 16px 16px;
         }
         
         /* Raw Street Poster Styles */
@@ -76,6 +74,100 @@
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             font-weight: 700;
+        }
+
+        /* Standardized Lambe-Lambe Link & Button Component System */
+        .btn-lambe-primary {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            border: 3px solid #000000;
+            box-shadow: 4px 4px 0px 0px #000000;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+        }
+        .btn-lambe-primary:hover {
+            background-color: #000000;
+            color: #FFD700;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000000;
+        }
+        .btn-lambe-primary:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #000000;
+        }
+
+        .btn-lambe-secondary {
+            background-color: #FFFFFF;
+            color: #000000;
+            border: 3px solid #000000;
+            box-shadow: 4px 4px 0px 0px #000000;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+        }
+        .btn-lambe-secondary:hover {
+            background-color: #FF6600;
+            color: #FFFFFF;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000000;
+        }
+        .btn-lambe-secondary:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #000000;
+        }
+
+        .btn-lambe-dark {
+            background-color: #000000;
+            color: #FFD700;
+            border: 3px solid #000000;
+            box-shadow: 4px 4px 0px 0px #000000;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+        }
+        .btn-lambe-dark:hover {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000000;
+        }
+        .btn-lambe-dark:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #000000;
+        }
+
+        .btn-lambe-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #000000;
+            padding: 0.375rem 0.75rem;
+            background-color: #FFFFFF;
+            border: 2px solid #000000;
+            box-shadow: 3px 3px 0px 0px #000000;
+            transition: all 0.15s ease-in-out;
+            cursor: pointer;
+        }
+        .btn-lambe-link:hover {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+        .btn-lambe-link:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px 0px #000000;
         }
 
         /* Custom Scrollbar */
@@ -108,8 +200,8 @@
             border-bottom: 4px solid #000000;
         }
 
-        /* Active Filter States */
-        .portfolio-filter-btn.active {
+        /* Active Filter & Tab States */
+        .portfolio-filter-btn.active, .achieve-tab-btn.active {
             background-color: #FF0000 !important;
             color: #FFFFFF !important;
             box-shadow: 4px 4px 0px 0px #000000 !important;
@@ -150,7 +242,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Multilingual Greeting Watermark Animation */
         @keyframes floatGreeting {
             0%, 100% { transform: translateY(0px) scale(1); opacity: 0.15; }
             50% { transform: translateY(-10px) scale(1.05); opacity: 0.35; }
@@ -158,38 +249,12 @@
         .greeting-watermark {
             animation: floatGreeting 4s ease-in-out infinite;
         }
-
-        /* 3D Motion Entrance Animation for Intro Overlay */
-        @keyframes motion3DEnter {
-            0% {
-                opacity: 0;
-                transform: perspective(1000px) rotateX(45deg) rotateY(-20deg) translateZ(-500px) scale(0.5);
-            }
-            70% {
-                transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) translateZ(30px) scale(1.02);
-            }
-            100% {
-                opacity: 1;
-                transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0deg) scale(1);
-            }
-        }
-        .animate-3d-intro {
-            animation: motion3DEnter 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            transform-style: preserve-3d;
-        }
-
-        .intro-exit-3d {
-            transform: perspective(1000px) rotateX(-30deg) translateZ(-600px) scale(0.6) !important;
-            opacity: 0 !important;
-            transition: all 0.6s cubic-bezier(0.5, 0, 0.75, 0);
-        }
     </style>
 </head>
 <body class="bg-lambe-yellow text-black antialiased selection:bg-lambe-red selection:text-white overflow-x-hidden font-sans">
 
-    <!-- INTRO OVERLAY (3D MOTION ENTRANCE + MULTILINGUAL GREETINGS) -->
-    <div id="introOverlay" class="fixed inset-0 z-[200] bg-black/95 text-white flex flex-col items-center justify-center p-4 transition-all duration-700 font-heading select-none [perspective:1000px]">
-        <!-- Floating Transparent Greetings Backdrop -->
+    <!-- INTRO OVERLAY -->
+    <div id="introOverlay" class="fixed inset-0 z-[200] bg-black/95 text-white flex flex-col items-center justify-center p-4 transition-opacity duration-700 font-heading select-none">
         <div class="absolute inset-0 overflow-hidden pointer-events-none flex flex-wrap items-center justify-center opacity-20 gap-6 sm:gap-12 p-6 font-impact text-2xl sm:text-5xl uppercase tracking-widest text-lambe-yellow">
             <span class="greeting-watermark" style="animation-delay: 0s;">HALO</span>
             <span class="greeting-watermark" style="animation-delay: 0.3s;">HELLO</span>
@@ -203,7 +268,7 @@
             <span class="greeting-watermark" style="animation-delay: 2.7s;">ANYOUNG</span>
         </div>
 
-        <div id="introCard3D" class="relative z-10 flex flex-col items-center text-center gap-5 max-w-lg animate-3d-intro">
+        <div class="relative z-10 flex flex-col items-center text-center gap-4 max-w-lg">
             <div class="px-4 py-1.5 bg-lambe-red text-white border-2 border-white text-xs sm:text-sm font-mono font-bold tracking-widest uppercase shadow-hard">
                 <span id="multilingualGreetingText" class="text-lambe-yellow font-extrabold">HALO</span> • <span data-en="WELCOME" data-id="SELAMAT DATANG">SELAMAT DATANG</span>
             </div>
@@ -212,7 +277,7 @@
                 WELCOME TO MY PORTFOLIO
             </h1>
 
-            <button onclick="dismissIntroOverlay()" class="mt-2 px-8 py-3 bg-lambe-yellow text-black border-3 border-white hover:bg-lambe-red hover:text-white font-impact uppercase text-base tracking-wider shadow-hard active:translate-y-1 transition-all flex items-center gap-2">
+            <button onclick="dismissIntroOverlay()" class="mt-4 btn-lambe-primary px-6 py-2.5 text-sm flex items-center gap-2">
                 <span>EXPLORE NOW</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
@@ -236,19 +301,18 @@
                 </div>
             </a>
 
-            <nav class="hidden xl:flex items-center gap-1 bg-white p-1.5 border-3 border-black shadow-hard-sm font-heading font-bold text-xs uppercase tracking-wider">
+            <nav class="hidden lg:flex items-center gap-1 bg-white p-1.5 border-3 border-black shadow-hard-sm font-heading font-bold text-xs uppercase tracking-wider">
                 <a href="#about" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="About" data-id="Tentang">Tentang</a>
                 <a href="#education" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Education" data-id="Pendidikan">Pendidikan</a>
                 <a href="#experience" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Experience" data-id="Pengalaman">Pengalaman</a>
                 <a href="#organizations" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Organizations" data-id="Organisasi">Organisasi</a>
                 <a href="#portfolio" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Portfolio" data-id="Portofolio">Portofolio</a>
-                <a href="#achievements" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Awards" data-id="Prestasi">Prestasi</a>
-                <a href="#credentials" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Certifications" data-id="Sertifikasi">Sertifikasi</a>
+                <a href="#achievements" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Awards &amp; Certs" data-id="Penghargaan">Penghargaan</a>
                 <a href="#contact" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Contact" data-id="Kontak">Kontak</a>
             </nav>
 
             <div class="flex items-center gap-2">
-                <div class="hidden lg:flex items-center gap-2 px-3 py-1 bg-white border-2 border-black font-mono text-[11px] font-bold text-black shadow-hard-sm">
+                <div class="hidden xl:flex items-center gap-2 px-3 py-1 bg-white border-2 border-black font-mono text-[11px] font-bold text-black shadow-hard-sm">
                     <span class="w-2.5 h-2.5 rounded-full bg-lambe-red animate-pulse"></span>
                     <span id="realtimeClockHeader">WIB --:--:--</span>
                 </div>
@@ -259,85 +323,73 @@
                     <span id="langDisplayLabel" class="font-mono">ID</span>
                 </button>
 
-                <button id="mobileMenuBtn" class="xl:hidden w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center shadow-hard-sm active:translate-y-0.5">
+                <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center shadow-hard-sm active:translate-y-0.5">
                     <i id="mobileMenuIcon" class="fa-solid fa-bars text-base"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobileMenu" class="hidden xl:hidden border-t-4 border-black bg-lambe-yellow py-4 px-6 flex flex-col gap-2 font-heading font-extrabold uppercase text-sm">
-            <div class="lg:hidden flex items-center justify-between p-2 bg-white border-2 border-black font-mono text-xs text-black mb-2 shadow-hard-sm">
-                <span data-en="Indonesia Time:" data-id="Waktu Indonesia:">Waktu Indonesia:</span>
-                <span id="realtimeClockMobile">--:--:--</span>
-            </div>
+        <div id="mobileMenu" class="hidden lg:hidden border-t-4 border-black bg-lambe-yellow py-4 px-6 flex flex-col gap-2 font-heading font-extrabold uppercase text-sm">
             <a href="#about" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="About" data-id="Tentang">Tentang</a>
             <a href="#education" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Education" data-id="Pendidikan">Pendidikan</a>
             <a href="#experience" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Experience" data-id="Pengalaman">Pengalaman</a>
             <a href="#organizations" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Organizations" data-id="Organisasi">Organisasi</a>
             <a href="#portfolio" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Portfolio" data-id="Portofolio">Portofolio</a>
-            <a href="#achievements" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Awards" data-id="Prestasi">Prestasi</a>
-            <a href="#credentials" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Certifications" data-id="Sertifikasi">Sertifikasi</a>
+            <a href="#achievements" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Awards &amp; Certs" data-id="Penghargaan">Penghargaan</a>
             <a href="#contact" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Contact" data-id="Kontak">Kontak</a>
         </div>
     </header>
 
     <main class="pt-16 sm:pt-20">
-        <!-- 1. HERO SECTION (BERANDA - LEFT ALIGNED) -->
-        <section id="hero" class="relative py-12 sm:py-16 lg:py-20 overflow-hidden border-b-4 border-black">
+        <!-- 1. HERO SECTION (BG: YELLOW) -->
+        <section id="hero" class="relative py-12 sm:py-16 lg:py-20 overflow-hidden border-b-4 border-black bg-lambe-yellow">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                     
-                    <!-- Left-aligned text content -->
                     <div class="lg:col-span-7 flex flex-col items-start justify-start text-left gap-4">
-                        
-                        <!-- Tag Badge Left-aligned -->
-                        <span id="hero-tag" data-en="🚀 Available for Freelance &amp; Full-time Roles" data-id="🚀 TERSEDIA UNTUK FREELANCE &amp; KONTRAK KERJA" class="poster-badge px-3.5 py-1.5 bg-lambe-red text-white text-xs sm:text-sm tracking-wider">
-                            🚀 TERSEDIA UNTUK FREELANCE &amp; KONTRAK KERJA
+                        <span id="hero-tag" data-en="🚀 Creative Designer &amp; Digital Communication Specialist" data-id="🚀 CREATIVE DESIGNER &amp; DIGITAL COMMUNICATION SPECIALIST" class="poster-badge px-3.5 py-1.5 bg-lambe-red text-white text-xs sm:text-sm tracking-wider">
+                            🚀 CREATIVE DESIGNER &amp; DIGITAL COMMUNICATION SPECIALIST
                         </span>
                         
-                        <!-- Title Left-aligned -->
                         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-impact tracking-tight leading-none text-black uppercase text-left">
                             <span id="hero-title" data-en="Portfolio" data-id="PORTOFOLIO">PORTOFOLIO</span><br>
                             <span class="animated-text-name font-impact pb-1 select-all">RAHMAD NUR KARIM, S.PD.</span>
                         </h1>
 
-                        <!-- Rotator Typing Box Left-aligned -->
                         <div class="h-9 flex items-center justify-start bg-black text-lambe-yellow px-4 border-3 border-black font-mono text-xs sm:text-base font-bold shadow-hard-sm">
                             <span id="textRotator" class="typing-cursor"></span>
                         </div>
                         
-                        <!-- Description Card Left-aligned -->
-                        <p id="hero-desc" data-en="Economics Education Graduate from Universitas Lampung (GPA 3.90/4.00 - Cum Laude). Experienced in Creative Design, Digital Communication, AI &amp; Prompt Engineering, Web Development, and Workflow Automation." data-id="Lulusan Pendidikan Ekonomi Universitas Lampung (IPK 3,90/4,00 - Cum Laude). Berpengalaman dalam Creative Design, Digital Communication, AI &amp; Prompt Engineering, Web Development, serta Workflow Automation." class="text-black text-xs sm:text-sm leading-relaxed font-medium bg-white p-4 sm:p-5 border-3 border-black shadow-hard text-left">
-                            Lulusan Pendidikan Ekonomi Universitas Lampung (IPK 3,90/4,00 - Cum Laude). Berpengalaman dalam Creative Design, Digital Communication, AI &amp; Prompt Engineering, Web Development, serta Workflow Automation.
+                        <p id="hero-desc" data-en="Professional Creative Designer &amp; Digital Communication Specialist. Expert in Brand Identity, Visual Strategy, AI-assisted Workflows, Web Development, and Google Apps Script Automation." data-id="Profesional Kreatif &amp; Spesialis Komunikasi Digital. Berkeahlian dalam Brand Identity, Strategi Visual, AI-assisted Workflows, Web Development, serta Otomasi Google Apps Script." class="text-black text-xs sm:text-sm leading-relaxed font-medium bg-white p-4 sm:p-5 border-3 border-black shadow-hard text-left">
+                            Profesional Kreatif &amp; Spesialis Komunikasi Digital. Berkeahlian dalam Brand Identity, Strategi Visual, AI-assisted Workflows, Web Development, serta Otomasi Google Apps Script.
                         </p>
                         
-                        <!-- CTA Buttons Row Left-aligned -->
                         <div class="flex flex-wrap items-center justify-start gap-2 sm:gap-3 w-full mt-2 font-heading font-extrabold uppercase">
-                            <a href="#contact" class="px-5 py-3 bg-lambe-red hover:bg-black text-white font-bold text-xs sm:text-sm border-3 border-black shadow-hard active:translate-y-1 transition-all flex items-center justify-center gap-2 shrink-0">
+                            <a href="#contact" class="btn-lambe-primary px-5 py-3 text-xs sm:text-sm flex items-center justify-center gap-2 shrink-0">
                                 <i class="fa-solid fa-paper-plane text-xs"></i>
                                 <span id="cta-contact-text" data-en="Get in Touch" data-id="HUBUNGI SAYA">HUBUNGI SAYA</span>
                             </a>
                             
-                            <a href="https://drive.google.com/drive/folders/1gZ8hxUaahyUVbZqoWZghBt6N6CJLnOVf?usp=drive_link" target="_blank" rel="noopener noreferrer" class="px-5 py-3 bg-white hover:bg-lambe-orange text-black hover:text-white border-3 border-black shadow-hard active:translate-y-1 transition-all flex items-center justify-center gap-2 shrink-0 text-xs sm:text-sm">
-                                <i class="fa-solid fa-download text-xs"></i>
-                                <span data-en="MY CV" data-id="CV SAYA">CV SAYA</span>
+                            <!-- Drive Link triggers floating modal preview -->
+                            <a href="https://drive.google.com/drive/folders/1gZ8hxUaahyUVbZqoWZghBt6N6CJLnOVf?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'CV Rahmad Nur Karim, S.Pd.')" class="btn-lambe-secondary px-5 py-3 flex items-center justify-center gap-2 shrink-0 text-xs sm:text-sm">
+                                <i class="fa-solid fa-file-pdf text-xs"></i>
+                                <span data-en="Download CV (PDF)" data-id="UNDUH CV (PDF)">UNDUH CV (PDF)</span>
                             </a>
 
-                            <a href="https://www.instagram.com/k.ariiimm/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-orange text-white border-3 border-black shadow-hard hover:bg-black transition-all active:translate-y-1 shrink-0" title="Instagram Profile">
+                            <a href="https://www.instagram.com/k.ariiimm/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-orange text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Instagram Profile">
                                 <i class="fa-brands fa-instagram text-base"></i>
                             </a>
 
-                            <a href="https://www.linkedin.com/in/rahmad-nur-karim/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-blue text-white border-3 border-black shadow-hard hover:bg-black transition-all active:translate-y-1 shrink-0" title="LinkedIn Profile">
+                            <a href="https://www.linkedin.com/in/rahmad-nur-karim/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-blue text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="LinkedIn Profile">
                                 <i class="fa-brands fa-linkedin-in text-base"></i>
                             </a>
 
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurkarim2004@gmail.com" target="_blank" rel="noopener noreferrer" onclick="openEmailDirect(event)" class="w-11 h-11 flex items-center justify-center bg-lambe-pink text-white border-3 border-black shadow-hard hover:bg-black transition-all active:translate-y-1 shrink-0" title="Email Direct">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurkarim2004@gmail.com" target="_blank" rel="noopener noreferrer" onclick="openEmailDirect(event)" class="w-11 h-11 flex items-center justify-center bg-lambe-pink text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Email Direct">
                                 <i class="fa-regular fa-envelope text-base"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Right Column Profile Image with Parallax -->
                     <div class="lg:col-span-5 flex justify-center items-center mt-4 lg:mt-0">
                         <div class="relative w-64 sm:w-80 aspect-square max-w-full">
                             <div class="absolute -inset-2 bg-lambe-pink border-4 border-black rotate-2 shadow-hard"></div>
@@ -348,11 +400,11 @@
 
                             <div id="badgeParallaxCard" class="absolute -bottom-4 -left-4 bg-lambe-yellow text-black border-3 border-black p-2.5 shadow-hard z-20 flex items-center gap-2.5 -rotate-2">
                                 <div class="w-9 h-9 bg-lambe-red text-white border-2 border-black flex items-center justify-center text-base font-impact">
-                                    🏆
+                                    🎓
                                 </div>
                                 <div class="flex flex-col font-heading text-left">
-                                    <span id="pill-title" data-en="Academic Honors" data-id="Predikat Kelulusan" class="text-[9px] uppercase font-bold tracking-widest text-black">Predikat Kelulusan</span>
-                                    <span id="pill-desc" data-en="Cum Laude • GPA 3.90" data-id="Cum Laude • IPK 3,90" class="text-xs font-black text-black font-mono">Cum Laude • IPK 3,90</span>
+                                    <span id="pill-title" data-en="Academic Background" data-id="Latar Belakang Akademik" class="text-[9px] uppercase font-bold tracking-widest text-black">Latar Belakang Akademik</span>
+                                    <span id="pill-desc" data-en="Universitas Lampung • S.Pd." data-id="Universitas Lampung • S.Pd." class="text-xs font-black text-black font-mono">Universitas Lampung • S.Pd.</span>
                                 </div>
                             </div>
                         </div>
@@ -362,12 +414,12 @@
             </div>
         </section>
 
-        <!-- 2. ABOUT SECTION -->
+        <!-- 2. ABOUT SECTION (BG: WHITE) -->
         <section id="about" class="py-16 bg-white border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="about-tag" data-en="Professional Persona" data-id="Persona Profesional" class="poster-badge px-3 py-1 bg-lambe-orange text-white text-xs">Persona Profesional</span>
-                    <h2 id="about-title" data-en="Integrating Academic Excellence &amp; Digital Strategy" data-id="Menggabungkan Keunggulan Akademis &amp; Strategi Digital" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Menggabungkan Keunggulan Akademis &amp; Strategi Digital</h2>
+                    <span id="about-tag" data-en="Professional Profile" data-id="Profil Profesional" class="poster-badge px-3 py-1 bg-lambe-orange text-white text-xs">Profil Profesional</span>
+                    <h2 id="about-title" data-en="Creative Designer &amp; Digital Communication" data-id="Creative Designer &amp; Digital Communication" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Creative Designer &amp; Digital Communication</h2>
                     <div class="w-20 h-2 bg-lambe-red border-2 border-black"></div>
                 </div>
 
@@ -375,66 +427,76 @@
                     
                     <div class="lg:col-span-7 p-6 sm:p-8 bg-lambe-cream poster-card flex flex-col justify-between gap-6">
                         <div class="space-y-4">
-                            <h3 id="about-h3" data-en="Synthesizing Academic Excellence &amp; Practical Graphic Communications" data-id="Sintesis Keunggulan Akademis &amp; Komunikasi Visual Praktis" class="text-lg sm:text-2xl font-impact uppercase text-black leading-tight">Sintesis Keunggulan Akademis &amp; Komunikasi Visual Praktis</h3>
-                            <p id="about-desc1" data-en="Graduated with Cum Laude honors from Universitas Lampung (S.Pd.) with a GPA of 3.90/4.00, I possess interdisciplinary expertise combining education, digital communication strategy, AI-assisted workflows, and administration." data-id="Lulus dengan predikat Cum Laude dari Universitas Lampung (S.Pd.) dengan IPK 3,90/4,00, saya memiliki keahlian interdisipliner yang menggabungkan pendidikan, strategi komunikasi digital, AI-assisted workflow, dan administrasi." class="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium">
-                                Lulus dengan predikat Cum Laude dari Universitas Lampung (S.Pd.) dengan IPK 3,90/4,00, saya memiliki keahlian interdisipliner yang menggabungkan pendidikan, strategi komunikasi digital, AI-assisted workflow, dan administrasi.
+                            <p id="about-desc1" 
+                               data-en="Economics Education Graduate from Universitas Lampung with cross-disciplinary professional experience in Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflows, Prompt Engineering, and Web Development across government institutions, higher education, creative agencies, organizations, and independent projects." 
+                               data-id="Lulusan Pendidikan Ekonomi Universitas Lampung dengan pengalaman profesional lintas bidang dalam Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflow, Prompt Engineering, dan Web Development melalui pengalaman di institusi pemerintah, perguruan tinggi, creative agency, organisasi, dan proyek independen." 
+                               class="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium">
+                                Lulusan Pendidikan Ekonomi Universitas Lampung dengan pengalaman profesional lintas bidang dalam Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflow, Prompt Engineering, dan Web Development melalui pengalaman di institusi pemerintah, perguruan tinggi, creative agency, organisasi, dan proyek independen.
                             </p>
-                            <p id="about-desc2" data-en="I specialize in designing visual assets and digital systems that balance superior aesthetics with effective communication goals, having served 40+ clients, government institutions, and educational organizations." data-id="Saya berspesialisasi dalam merancang aset visual dan sistem digital yang mengutamakan estetika superior sekaligus mencapai tujuan komunikasi. Berpengalaman menangani 40+ klien, instansi pemerintah, dan lembaga pendidikan." class="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium">
-                                Saya berspesialisasi dalam merancang aset visual dan sistem digital yang mengutamakan estetika superior sekaligus mencapai tujuan komunikasi. Berpengalaman menangani 40+ klien, instansi pemerintah, dan lembaga pendidikan.
+                            <p id="about-desc2" 
+                               data-en="Proven track record of producing 2,000+ visual communication assets, handling 300+ data and administrative documents, and building 6+ digital projects based on AI, web, and automation. Possesses expertise in Graphic Design, Digital Marketing, Content Strategy, Visual Communication, UI/UX, Prompt Engineering, AI-Assisted Development, HTML, Google Apps Script, Spreadsheet Automation, Project Management, and Stakeholder Management." 
+                               data-id="Berpengalaman menghasilkan 2.000+ aset komunikasi visual, menangani 300+ data dan dokumen administratif, serta membuat 6+ proyek digital berbasis AI, web, dan automation. Memiliki kompetensi dalam Graphic Design, Digital Marketing, Content Strategy, Visual Communication, UI/UX, Prompt Engineering, AI-Assisted Development, HTML, Google Apps Script, Spreadsheet Automation, Project Management, dan Stakeholder Management." 
+                               class="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium">
+                                Berpengalaman menghasilkan 2.000+ aset komunikasi visual, menangani 300+ data dan dokumen administratif, serta membuat 6+ proyek digital berbasis AI, web, dan automation. Memiliki kompetensi dalam Graphic Design, Digital Marketing, Content Strategy, Visual Communication, UI/UX, Prompt Engineering, AI-Assisted Development, HTML, Google Apps Script, Spreadsheet Automation, Project Management, dan Stakeholder Management.
+                            </p>
+                            <p id="about-desc3"
+                               data-en="Synthesizes creative thinking, analytical thinking, technology, communication, and strategic execution to deliver impactful creative, digital, and administrative solutions for diverse organizations."
+                               data-id="Menggabungkan creative thinking, analytical thinking, teknologi, komunikasi, dan strategic execution untuk menghasilkan solusi kreatif, digital, dan administratif yang efektif bagi berbagai institusi dan organisasi."
+                               class="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium border-t-2 border-black/10 pt-3">
+                                Menggabungkan creative thinking, analytical thinking, teknologi, komunikasi, dan strategic execution untuk menghasilkan solusi kreatif, digital, dan administratif yang efektif bagi berbagai institusi dan organisasi.
                             </p>
                         </div>
 
                         <div class="grid grid-cols-3 gap-4 pt-4 border-t-3 border-black font-mono">
                             <div class="flex flex-col bg-lambe-yellow p-3 border-2 border-black text-center shadow-hard-sm">
-                                <span id="stat-assets" class="text-xl sm:text-3xl font-black text-black" data-target="2000" data-suffix="+">0+</span>
+                                <span id="stat-assets" class="text-xl sm:text-3xl font-black text-black">2000+</span>
                                 <span id="about-stat1-lbl" data-en="Visual Assets" data-id="Aset Desain" class="text-[9px] uppercase font-bold tracking-wider text-black">Aset Desain</span>
                             </div>
                             <div class="flex flex-col bg-lambe-pink text-white p-3 border-2 border-black text-center shadow-hard-sm">
-                                <span id="stat-clients" class="text-xl sm:text-3xl font-black text-white" data-target="40" data-suffix="+">0+</span>
+                                <span id="stat-clients" class="text-xl sm:text-3xl font-black text-white">40+</span>
                                 <span id="about-stat2-lbl" data-en="Happy Clients" data-id="Klien Puas" class="text-[9px] uppercase font-bold tracking-wider text-white">Klien Puas</span>
                             </div>
                             <div class="flex flex-col bg-lambe-blue text-white p-3 border-2 border-black text-center shadow-hard-sm">
-                                <span id="stat-years" class="text-xl sm:text-3xl font-black text-white" data-target="3.4" data-decimals="1">0.0</span>
+                                <span id="stat-years" class="text-xl sm:text-3xl font-black text-white">3.4</span>
                                 <span id="about-stat3-lbl" data-en="Years Study" data-id="Masa Studi" class="text-[9px] uppercase font-bold tracking-wider text-white">Masa Studi</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 3. CORE COMPETENCIES -->
                     <div class="lg:col-span-5 flex flex-col justify-between gap-4 font-heading">
                         <h4 id="competency-title" class="text-xs font-mono font-bold uppercase tracking-widest text-black bg-lambe-yellow px-2 py-1 border-2 border-black self-start" data-en="Core Competencies" data-id="Kompetensi Utama">Kompetensi Utama</h4>
                         
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
                             <div class="p-4 border-3 border-black bg-lambe-yellow text-black hover:bg-black hover:text-white transition-colors shadow-hard flex flex-col gap-2">
                                 <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-bold">
-                                    <i class="fa-solid fa-crown"></i>
+                                    <i class="fa-solid fa-palette"></i>
                                 </div>
-                                <span id="comp1-title" class="text-sm font-extrabold uppercase" data-en="Brand Identity" data-id="Brand Identity">Brand Identity</span>
-                                <span id="comp1-desc" class="text-[11px] leading-normal font-sans font-medium" data-en="Developing cohesive brand identity, brand guidelines, and digital visual strategies." data-id="Pengembangan identitas merek, brand guideline, dan strategi visual branding digital.">Pengembangan identitas merek, brand guideline, dan strategi visual branding digital.</span>
+                                <span class="text-sm font-extrabold uppercase">Creative Design</span>
+                                <span class="text-[11px] leading-normal font-sans font-medium">Brand Identity, Social Media Design, Visual Communication, Layout Design.</span>
                             </div>
 
                             <div class="p-4 border-3 border-black bg-lambe-orange text-white hover:bg-black hover:text-lambe-yellow transition-colors shadow-hard flex flex-col gap-2">
                                 <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-bold">
-                                    <i class="fa-solid fa-arrow-trend-up"></i>
+                                    <i class="fa-solid fa-bullhorn"></i>
                                 </div>
-                                <span id="comp2-title" class="text-sm font-extrabold uppercase" data-en="Digital Strategy" data-id="Strategi Digital">Strategi Digital</span>
-                                <span id="comp2-desc" class="text-[11px] leading-normal font-sans font-medium" data-en="Social media content optimization, visual communication, and digital campaign planning." data-id="Optimalisasi konten media sosial, komunikasi visual, dan perencanaan kampanye digital.">Optimalisasi konten media sosial, komunikasi visual, dan perencanaan kampanye digital.</span>
+                                <span class="text-sm font-extrabold uppercase">Digital Communication</span>
+                                <span class="text-[11px] leading-normal font-sans font-medium">Content Strategy, Social Media Management, Public Relations, Digital Campaign.</span>
                             </div>
 
                             <div class="p-4 border-3 border-black bg-lambe-pink text-white hover:bg-black hover:text-lambe-pink transition-colors shadow-hard flex flex-col gap-2">
                                 <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-bold">
-                                    <i class="fa-solid fa-palette"></i>
+                                    <i class="fa-solid fa-robot"></i>
                                 </div>
-                                <span id="comp3-title" class="text-sm font-extrabold uppercase" data-en="Graphic Design" data-id="Desain Grafis">Desain Grafis</span>
-                                <span id="comp3-desc" class="text-[11px] leading-normal font-sans font-medium" data-en="Proficiency in Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, and AI tools." data-id="Penguasaan Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, dan tools AI.">Penguasaan Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, dan tools AI.</span>
+                                <span class="text-sm font-extrabold uppercase">Technology &amp; Automation</span>
+                                <span class="text-[11px] leading-normal font-sans font-medium">AI-Assisted Workflow, Prompt Engineering, Web Development, Google Apps Script, Spreadsheet Automation.</span>
                             </div>
 
                             <div class="p-4 border-3 border-black bg-lambe-blue text-white hover:bg-black hover:text-lambe-blue transition-colors shadow-hard flex flex-col gap-2">
                                 <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-bold">
-                                    <i class="fa-regular fa-file-lines"></i>
+                                    <i class="fa-solid fa-folder-tree"></i>
                                 </div>
-                                <span id="comp4-title" class="text-sm font-extrabold uppercase" data-en="Administration &amp; Automation" data-id="Administrasi &amp; Otomasi">Administrasi &amp; Otomasi</span>
-                                <span id="comp4-desc" class="text-[11px] leading-normal font-sans font-medium" data-en="Data management, spreadsheet automation, and Google Apps Script workflows." data-id="Pengelolaan data, otomatisasi spreadsheet, dan workflow berbasis Google Apps Script.">Pengelolaan data, otomatisasi spreadsheet, dan workflow berbasis Google Apps Script.</span>
+                                <span class="text-sm font-extrabold uppercase">Administration &amp; Systems</span>
+                                <span class="text-[11px] leading-normal font-sans font-medium">Data Management, Institutional Administration, Process Optimization, Archiving Systems.</span>
                             </div>
                         </div>
                     </div>
@@ -443,12 +505,12 @@
             </div>
         </section>
 
-        <!-- 4. ACADEMIC BACKGROUND -->
-        <section id="education" class="py-16 border-b-4 border-black">
+        <!-- 3. SECTION PENDIDIKAN (BG: CREAM) -->
+        <section id="education" class="py-16 bg-lambe-cream border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="edu-tag" data-en="Academic Background" data-id="Latar Belakang Pendidikan" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs">Latar Belakang Pendidikan</span>
-                    <h2 id="edu-title" data-en="Academic Journey &amp; Honors" data-id="Perjalanan Akademis &amp; Penghargaan" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Perjalanan Akademis &amp; Penghargaan</h2>
+                    <span id="edu-tag" data-en="Academic Record" data-id="Rekam Akademik" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs">Rekam Akademik</span>
+                    <h2 id="edu-title" data-en="Pendidikan &amp; Rekam Akademik" data-id="Pendidikan &amp; Rekam Akademik" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Pendidikan &amp; Rekam Akademik</h2>
                     <div class="w-20 h-2 bg-black"></div>
                 </div>
 
@@ -460,57 +522,53 @@
                                 <img src="https://lh3.googleusercontent.com/d/1-AintN3IU9Fkc1xLJfXZ-mIGlRrY1P19" alt="Universitas Lampung" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=UNILA'">
                             </div>
                             <div class="flex flex-col font-heading">
-                                <h3 id="edu-inst" data-en="UNIVERSITAS LAMPUNG" data-id="UNIVERSITAS LAMPUNG" class="text-lg sm:text-2xl font-impact text-black uppercase leading-none">UNIVERSITAS LAMPUNG</h3>
-                                <p id="edu-degree" data-en="S1 Economic Education (Bachelor of Education)" data-id="S1 Pendidikan Ekonomi (S.Pd.)" class="text-xs sm:text-sm font-bold text-lambe-red mt-1">S1 Pendidikan Ekonomi (S.Pd.)</p>
+                                <h3 id="edu-inst" class="text-lg sm:text-2xl font-impact text-black uppercase leading-none">UNIVERSITAS LAMPUNG</h3>
+                                <p id="edu-degree" class="text-xs sm:text-sm font-bold text-lambe-red mt-1">S1 Pendidikan Ekonomi (S.Pd.)</p>
                             </div>
                         </div>
                         <div class="text-left md:text-right shrink-0 font-mono">
-                            <span id="edu-duration" data-en="AUGUST 2022 - MARCH 2026" data-id="AGUSTUS 2022 - MARET 2026" class="inline-block px-3 py-1 bg-black text-lambe-yellow border-2 border-black text-xs font-bold">AGUSTUS 2022 - MARET 2026</span>
+                            <span id="edu-duration" class="inline-block px-3 py-1 bg-black text-lambe-yellow border-2 border-black text-xs font-bold">AGUSTUS 2022 – MARET 2026</span>
                         </div>
                     </div>
 
                     <div class="mt-8 space-y-6">
-                        <h4 id="edu-contrib-title" data-en="Academic Achievements &amp; Contributions" data-id="Pencapaian &amp; Kontribusi Akademis" class="text-xs font-mono font-bold uppercase tracking-widest text-black bg-lambe-orange text-white px-2 py-1 border-2 border-black inline-block">Pencapaian &amp; Kontribusi Akademis</h4>
+                        <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-black bg-lambe-orange text-white px-2 py-1 border-2 border-black inline-block" data-en="Academic Achievement" data-id="Pencapaian Akademik">Pencapaian Akademik</h4>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard flex gap-3">
-                                <div class="text-lambe-red text-lg font-bold shrink-0"><i class="fa-solid fa-square-check"></i></div>
-                                <p id="edu-ach1" data-en="Completed undergraduate degree program in &lt;strong class='font-mono bg-lambe-yellow px-1 border border-black'&gt;3.4 years&lt;/strong&gt; with Cum Laude honors (GPA 3.90/4.00)." data-id="Menyelesaikan studi Sarjana dalam waktu hanya &lt;strong class='font-mono bg-lambe-yellow px-1 border border-black text-black'&gt;3,4 tahun&lt;/strong&gt; dengan predikat kelulusan Cum Laude (IPK 3,90/4,00)." class="text-xs sm:text-sm text-black font-medium">Menyelesaikan studi Sarjana dalam waktu hanya <strong class="font-mono bg-lambe-yellow px-1 border border-black text-black">3,4 tahun</strong> dengan predikat kelulusan Cum Laude (IPK 3,90/4,00).</p>
-                            </div>
-
-                            <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard flex gap-3">
-                                <div class="text-lambe-orange text-lg font-bold shrink-0"><i class="fa-solid fa-square-check"></i></div>
-                                <p id="edu-ach2" data-en="Recipient of the prestigious &lt;strong class='font-bold'&gt;National YBM PLN Scholarship&lt;/strong&gt; and MSIB Kemendikbudristek Awardee." data-id="Penerima Beasiswa &lt;strong class='font-bold'&gt;YBM PLN Tingkat Nasional&lt;/strong&gt; yang kompetitif &amp; Awardee MSIB Kemendikbudristek." class="text-xs sm:text-sm text-black font-medium">Penerima Beasiswa <strong class="font-bold">YBM PLN Tingkat Nasional</strong> yang kompetitif &amp; Awardee MSIB Kemendikbudristek.</p>
-                            </div>
-
-                            <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard flex gap-3">
-                                <div class="text-lambe-blue text-lg font-bold shrink-0"><i class="fa-solid fa-square-check"></i></div>
-                                <p id="edu-ach3" data-en="Served as &lt;strong class='font-bold'&gt;Teaching &amp; Research Assistant&lt;/strong&gt; specializing in media, visual strategy, and administrative workflows." data-id="Mengabdi sebagai &lt;strong class='font-bold'&gt;Asisten Dosen &amp; Peneliti Pembelajaran&lt;/strong&gt; berspesialisasi dalam media, komunikasi visual, dan administrasi." class="text-xs sm:text-sm text-black font-medium">Mengabdi sebagai <strong class="font-bold">Asisten Dosen &amp; Peneliti Pembelajaran</strong> berspesialisasi dalam media, komunikasi visual, dan administrasi.</p>
-                            </div>
-
-                            <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard flex gap-3">
-                                <div class="text-lambe-pink text-lg font-bold shrink-0"><i class="fa-solid fa-square-check"></i></div>
-                                <p id="edu-ach4" data-en="Published &lt;strong class='font-mono bg-lambe-yellow px-1 border border-black text-black'&gt;3 SINTA-indexed research journals&lt;/strong&gt; and registered &lt;strong class='font-mono bg-lambe-yellow px-1 border border-black text-black'&gt;2 Intellectual Property Rights (HaKI)&lt;/strong&gt;." data-id="Mempublikasikan &lt;strong class='font-mono bg-lambe-yellow px-1 border border-black text-black'&gt;3 karya ilmiah terindeks SINTA&lt;/strong&gt; dan mencatatkan &lt;strong class='font-mono bg-lambe-yellow px-1 border border-black text-black'&gt;2 Hak Kekayaan Intelektual (HaKI)&lt;/strong&gt;." class="text-xs sm:text-sm text-black font-medium">Mempublikasikan <strong class="font-mono bg-lambe-yellow px-1 border border-black text-black">3 karya ilmiah terindeks SINTA</strong> dan mencatatkan <strong class="font-mono bg-lambe-yellow px-1 border border-black text-black">2 Hak Kekayaan Intelektual (HaKI)</strong>.</p>
+                        <div class="p-5 bg-lambe-cream border-2 border-black shadow-hard flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="text-lambe-red text-2xl font-bold shrink-0"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <p class="text-xs sm:text-sm text-black font-medium">
+                                    Menyelesaikan studi Sarjana dalam waktu <strong class="font-mono bg-lambe-yellow px-1 border border-black text-black">3,4 tahun</strong> dengan predikat <strong class="font-bold">Cum Laude</strong> dan <strong class="font-mono bg-lambe-yellow px-1 border border-black text-black">IPK 3,90 / 4,00</strong>.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="p-5 bg-black text-white border-3 border-black shadow-hard flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6 font-heading">
-                            <div class="flex-1">
-                                <span id="edu-thesis-lbl" data-en="Undergraduate Thesis Title" data-id="Judul Skripsi" class="text-xs uppercase font-bold tracking-widest text-lambe-yellow font-mono">Judul Skripsi</span>
-                                <p id="edu-thesis-title" data-en='“The Influence of Financial Literacy and Parental Income on Lifestyle through Financial Management Behavior in High School Students”' data-id='“Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”' class="text-xs sm:text-sm text-white font-bold mt-1 leading-relaxed">“Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”</p>
+                        <div class="p-5 bg-black text-white border-3 border-black shadow-hard flex flex-col gap-3 font-heading">
+                            <div>
+                                <span class="text-xs uppercase font-bold tracking-widest text-lambe-yellow font-mono">Judul Skripsi</span>
+                                <p class="text-xs sm:text-sm text-white font-bold mt-1 leading-relaxed">
+                                    “Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”
+                                </p>
                             </div>
-                            <button onclick="toggleThesisModalSuite()" class="px-4 py-2.5 bg-lambe-red hover:bg-lambe-yellow hover:text-black text-white font-extrabold text-xs uppercase border-2 border-white shadow-hard-sm active:translate-y-0.5 transition-all flex items-center justify-center gap-2">
-                                <span data-en="View Abstract" data-id="Lihat Abstrak">Lihat Abstrak</span>
-                                <i class="fa-solid fa-up-right-from-square"></i>
+                        </div>
+
+                        <div class="pt-4 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-4 font-heading">
+                            <div class="text-xs font-mono font-extrabold text-black">
+                                <i class="fa-solid fa-folder-open text-lambe-red mr-1"></i> Terhubung dengan Dokumen Skripsi, Jurnal SINTA, &amp; HaKI
+                            </div>
+                            <button onclick="toggleAcademicDocsModal()" class="btn-lambe-primary w-full sm:w-auto px-6 py-3 text-xs sm:text-sm flex items-center justify-center gap-2">
+                                <span>🎓 DOKUMEN AKADEMIK</span>
+                                <i class="fa-solid fa-chevron-down"></i>
                             </button>
                         </div>
+
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- 5. SECTION EXPERIENCE -->
+        <!-- 4. SECTION PENGALAMAN KERJA (BG: WHITE) -->
         <section id="experience" class="py-16 bg-white border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
@@ -552,85 +610,85 @@
                         <div id="careerPanel-1" class="career-panel-item">
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
-                                    <h4 id="career1-job" data-en="Media, Administrative &amp; Teaching Research Assistant" data-id="Media, Administrasi &amp; Asisten Peneliti Pembelajaran" class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Media, Administrasi &amp; Asisten Peneliti Pembelajaran</h4>
-                                    <p id="career1-comp" data-en="Prodi Pendidikan Ekonomi FKIP Unila" data-id="Prodi Pendidikan Ekonomi FKIP Unila" class="text-xs font-bold text-lambe-red mt-0.5">Prodi Pendidikan Ekonomi FKIP Unila</p>
+                                    <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Media, Administrasi &amp; Asisten Peneliti Pembelajaran</h4>
+                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Prodi Pendidikan Ekonomi FKIP Unila</p>
                                 </div>
-                                <span id="career1-dur" data-en="March 2024 - March 2026" data-id="Maret 2024 - Maret 2026" class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Maret 2024 - Maret 2026</span>
+                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Maret 2024 - Maret 2026</span>
                             </div>
                             <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
-                                <li id="career1-bullet1" data-en="Managed academic administration for 6 lecturers through research files, accreditation documents, and lesson structures using Google Apps Script and Spreadsheet automation." data-id="Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet.">Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet.</li>
-                                <li id="career1-bullet2" data-en="Developed spreadsheet systems to catalog 300+ students' academic data, thesis developments, and progress reportings." data-id="Mengembangkan sistem spreadsheet untuk mendata 300+ data akademik mahasiswa, kemajuan skripsi, dan laporan berkala.">Mengembangkan sistem spreadsheet untuk mendata 300+ data akademik mahasiswa, kemajuan skripsi, dan laporan berkala.</li>
-                                <li id="career1-bullet3" data-en="Produced 100+ institutional designs, documentation videos, and marketing feeds to highlight economic program events." data-id="Memproduksi 100+ media publikasi institusi, dokumentasi video, dan konten promosi digital program studi Pendidikan Ekonomi.">Memproduksi 100+ media publikasi institusi, dokumentasi video, dan konten promosi digital program studi Pendidikan Ekonomi.</li>
+                                <li>Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet.</li>
+                                <li>Mengembangkan sistem spreadsheet untuk mendata 300+ data akademik mahasiswa, kemajuan skripsi, dan laporan berkala.</li>
+                                <li>Memproduksi 100+ media publikasi institusi, dokumentasi video, dan konten promosi digital program studi Pendidikan Ekonomi.</li>
                             </ul>
                         </div>
 
                         <div id="careerPanel-2" class="career-panel-item hidden">
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
-                                    <h4 id="career2-job" data-en="Freelance Graphic Designer &amp; Digital Creative" data-id="Desainer Grafis &amp; Kreator Konten Digital Freelance" class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis &amp; Kreator Konten Digital Freelance</h4>
-                                    <p id="career2-comp" data-en="Self-Employed (40+ Clients)" data-id="Wiraswasta Mandiri (40+ Klien)" class="text-xs font-bold text-lambe-red mt-0.5">Wiraswasta Mandiri (40+ Klien)</p>
+                                    <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis &amp; Kreator Konten Digital Freelance</h4>
+                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Wiraswasta Mandiri (40+ Klien)</p>
                                 </div>
-                                <span id="career2-dur" data-en="January 2023 - Present" data-id="Januari 2023 - Sekarang" class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Januari 2023 - Sekarang</span>
+                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Januari 2023 - Sekarang</span>
                             </div>
                             <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
-                                <li id="career2-bullet1" data-en="Executed 100+ graphic branding designs for 40+ clients covering social layouts, print brochures, and custom UI visuals." data-id="Menyelesaikan 100+ desain branding untuk 40+ klien, mencakup desain media sosial, brosur cetak, dan visual UI khusus.">Menyelesaikan 100+ desain branding untuk 40+ klien, mencakup desain media sosial, brosur cetak, dan visual UI khusus.</li>
-                                <li id="career2-bullet2" data-en="Created over 1,000 unique assets (banners, Instagram assets, corporate layouts, and video components)." data-id="Membuat lebih dari 1.000 aset unik berupa spanduk, aset Instagram, pamflet korporat, dan komponen video.">Membuat lebih dari 1.000 aset unik berupa spanduk, aset Instagram, pamflet korporat, dan komponen video.</li>
+                                <li>Menyelesaikan 100+ desain branding untuk 40+ klien, mencakup desain media sosial, brosur cetak, dan visual UI khusus.</li>
+                                <li>Membuat lebih dari 1.000 aset unik berupa spanduk, aset Instagram, pamflet korporat, dan komponen video.</li>
                             </ul>
                         </div>
 
                         <div id="careerPanel-3" class="career-panel-item hidden">
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
-                                    <h4 id="career3-job" data-en="Graphic Designer (Full-time Contract)" data-id="Desainer Grafis (Kontrak Kerja Penuh)" class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis (Kontrak Kerja Penuh)</h4>
-                                    <p id="career3-comp" data-en="Fana Creative Agency" data-id="Fana Creative Agency" class="text-xs font-bold text-lambe-red mt-0.5">Fana Creative Agency</p>
+                                    <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis (Kontrak Kerja Penuh)</h4>
+                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Fana Creative Agency</p>
                                 </div>
-                                <span id="career3-dur" data-en="August 2025 - December 2025" data-id="Agustus 2025 - Desember 2025" class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Agustus 2025 - Desember 2025</span>
+                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Agustus 2025 - Desember 2025</span>
                             </div>
                             <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
-                                <li id="career3-bullet1" data-en="Constructed 100+ visual and promotional design assets for 10+ commercial MSME and corporate partners." data-id="Membuat 100+ aset desain promosi dan materi visual untuk lebih dari 10+ UMKM dan korporasi mitra bisnis.">Membuat 100+ aset desain promosi dan materi visual untuk lebih dari 10+ UMKM dan korporasi mitra bisnis.</li>
-                                <li id="career3-bullet2" data-en="Boosted active organic engagement of client accounts by 30-50% through high-conversion graphics." data-id="Meningkatkan performa interaksi organik media sosial klien rata-rata sebesar 30-50% melalui konten dengan konversi tinggi.">Meningkatkan performa interaksi organik media sosial klien rata-rata sebesar 30-50% melalui konten dengan konversi tinggi.</li>
+                                <li>Membuat 100+ aset desain promosi dan materi visual untuk lebih dari 10+ UMKM dan korporasi mitra bisnis.</li>
+                                <li>Meningkatkan performa interaksi organik media sosial klien rata-rata sebesar 30-50% melalui konten dengan konversi tinggi.</li>
                             </ul>
                         </div>
 
                         <div id="careerPanel-4" class="career-panel-item hidden">
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
-                                    <h4 id="career4-job" data-en="Graphic Designer Intern" data-id="Magang Desainer Grafis" class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Magang Desainer Grafis</h4>
-                                    <p id="career4-comp" data-en="Lampung Folk" data-id="Lampung Folk" class="text-xs font-bold text-lambe-red mt-0.5">Lampung Folk</p>
+                                    <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Magang Desainer Grafis</h4>
+                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Lampung Folk</p>
                                 </div>
-                                <span id="career4-dur" data-en="October 2025 - December 2025" data-id="Oktober 2025 - Desember 2025" class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Oktober 2025 - Desember 2025</span>
+                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Oktober 2025 - Desember 2025</span>
                             </div>
                             <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
-                                <li id="career4-bullet1" data-en="Designed 50+ creative layouts highlighting folklore, cultural values, and local directories of Lampung." data-id="Mendesain 50+ materi kreatif bertema kearifan lokal, sejarah rakyat, dan info terpadu pariwisata Lampung.">Mendesain 50+ materi kreatif bertema kearifan lokal, sejarah rakyat, dan info terpadu pariwisata Lampung.</li>
-                                <li id="career4-bullet2" data-en="Enhanced content impressions up to 20,000 - 50,000 accounts monthly through optimized visual structures." data-id="Mendongkrak tayangan konten bulanan hingga mencapai 20.000 - 50.000 akun melalui desain yang ramah seluler.">Mendongkrak tayangan konten bulanan hingga mencapai 20.000 - 50.000 akun melalui desain yang ramah seluler.</li>
+                                <li>Mendesain 50+ materi kreatif bertema kearifan lokal, sejarah rakyat, dan info terpadu pariwisata Lampung.</li>
+                                <li>Mendongkrak tayangan konten bulanan hingga mencapai 20.000 - 50.000 akun melalui desain yang ramah seluler.</li>
                             </ul>
                         </div>
 
                         <div id="careerPanel-5" class="career-panel-item hidden">
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
-                                    <h4 id="career5-job" data-en="Official Corporate Graphic Designer" data-id="Desainer Grafis Humas Korporat Resmi" class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis Humas Korporat Resmi</h4>
-                                    <p id="career5-comp" data-en="Humas Universitas Lampung" data-id="Humas Universitas Lampung" class="text-xs font-bold text-lambe-red mt-0.5">Humas Universitas Lampung</p>
+                                    <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis Humas Korporat Resmi</h4>
+                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Humas Universitas Lampung</p>
                                 </div>
-                                <span id="career5-dur" data-en="January 2023 - December 2025" data-id="Januari 2023 - Desember 2025" class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Januari 2023 - Desember 2025</span>
+                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Januari 2023 - Desember 2025</span>
                             </div>
                             <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
-                                <li id="career5-bullet1" data-en="Engineered over 1,000 official graphic resources supporting graduation sets, campus enrollments, and national events." data-id="Mendesain lebih dari 1.000+ aset visual resmi humas Unila guna mendukung rangkaian wisuda, promosi pendaftaran, dan acara nasional.">Mendesain lebih dari 1.000+ aset visual resmi humas Unila guna mendukung rangkaian wisuda, promosi pendaftaran, dan acara nasional.</li>
-                                <li id="career5-bullet2" data-en="Boosted official Instagram followers to over 180,000 organically using structured data templates." data-id="Mengakselerasi pertumbuhan pengikut Instagram institusi secara organik hingga mencapai lebih dari 180.000 pengikut aktif.">Mengakselerasi pertumbuhan pengikut Instagram institusi secara organik hingga mencapai lebih dari 180.000 pengikut aktif.</li>
+                                <li>Mendesain lebih dari 1.000+ aset visual resmi humas Unila guna mendukung rangkaian wisuda, promosi pendaftaran, dan acara nasional.</li>
+                                <li>Mengakselerasi pertumbuhan pengikut Instagram institusi secara organik hingga mencapai lebih dari 180.000 pengikut aktif.</li>
                             </ul>
                         </div>
 
                         <div id="careerPanel-6" class="career-panel-item hidden">
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
-                                    <h4 id="career6-job" data-en="Graphic Designer (MSIB Intern)" data-id="Desainer Grafis (Magang MSIB)" class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis (Magang MSIB)</h4>
-                                    <p id="career6-comp" data-en="Dinas Kominfo Kab. Pesawaran" data-id="Dinas Kominfo Kab. Pesawaran" class="text-xs font-bold text-lambe-red mt-0.5">Dinas Kominfo Kab. Pesawaran</p>
+                                    <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis (Magang MSIB)</h4>
+                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Dinas Kominfo Kab. Pesawaran</p>
                                 </div>
-                                <span id="career6-dur" data-en="August 2024 - December 2024" data-id="Agustus 2024 - Desember 2024" class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Agustus 2024 - Desember 2024</span>
+                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Agustus 2024 - Desember 2024</span>
                             </div>
                             <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
-                                <li id="career6-bullet1" data-en="Created over 80 infographic designs detailing local public statistics and digital transparency reports." data-id="Mendesain lebih dari 80+ materi informasi kebijakan publik, pengumuman daerah, dan laporan akuntabilitas pemerintah daerah.">Mendesain lebih dari 80+ materi informasi kebijakan publik, pengumuman daerah, dan laporan akuntabilitas pemerintah daerah.</li>
-                                <li id="career6-bullet2" data-en="Contributed to Pesawaran Regency's achievement of the prestigious 'Informatif' national category award." data-id="Berpartisipasi aktif dalam mengantarkan Kabupaten Pesawaran memenangkan predikat bergengsi sebagai Kabupaten 'Informatif'.">Berpartisipasi aktif dalam mengantarkan Kabupaten Pesawaran memenangkan predikat bergengsi sebagai Kabupaten 'Informatif'.</li>
+                                <li>Mendesain lebih dari 80+ materi informasi kebijakan publik, pengumuman daerah, dan laporan akuntabilitas pemerintah daerah.</li>
+                                <li>Berpartisipasi aktif dalam mengantarkan Kabupaten Pesawaran memenangkan predikat bergengsi sebagai Kabupaten 'Informatif'.</li>
                             </ul>
                         </div>
 
@@ -639,140 +697,134 @@
             </div>
         </section>
 
-        <!-- 6. SECTION ORGANIZATIONS -->
-        <section id="organizations" class="py-16 border-b-4 border-black">
+        <!-- 5. SECTION ORGANISASI (BG: YELLOW) -->
+        <section id="organizations" class="py-16 bg-lambe-yellow border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
                     <span id="org-tag" data-en="Organizational Experience" data-id="Pengalaman Organisasi" class="poster-badge px-3 py-1 bg-lambe-blue text-white text-xs">Pengalaman Organisasi</span>
-                    <h2 id="org-title" data-en="Leadership &amp; Organizational Impact" data-id="Kepemimpinan &amp; Kontribusi Organisasi" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Kepemimpinan &amp; Kontribusi Organisasi</h2>
+                    <h2 id="org-title" data-en="Kepemimpinan &amp; Kontribusi Organisasi" data-id="Kepemimpinan &amp; Kontribusi Organisasi" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Kepemimpinan &amp; Kontribusi Organisasi</h2>
                     <div class="w-20 h-2 bg-lambe-red border-2 border-black"></div>
                 </div>
 
-                <!-- Organization Grid: 1 Column on HP Mobile, 2-3 Columns on Tablet/Desktop -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch max-w-6xl mx-auto w-full font-heading">
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 items-stretch max-w-6xl mx-auto w-full font-heading">
                     
-                    <!-- Org Card 1 -->
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
                         <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
-                                <span class="truncate" data-en="Media &amp; Documentation" data-id="Staf Media &amp; Dok.">Staf Media &amp; Dok.</span>
+                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                                <span class="truncate">Staf Media &amp; Dok.</span>
                                 <span class="px-1.5 py-0.5 bg-lambe-orange text-white border border-black shrink-0">2025</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-8 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
+                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1walGjQqkXRcuW0mq7DSlOmESY1tvQ6lp" alt="KKN MBKM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KKN'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">Universitas Lampung</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">KKN Tematik MBKM</span>
+                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">Universitas Lampung</span>
+                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">KKN Tematik MBKM</span>
                                 </div>
                             </div>
-                            <h3 id="org1-title" data-en="KKN MBKM Desa Toto Katon" data-id="KKN MBKM Desa Toto Katon" class="text-sm sm:text-base font-impact text-black uppercase leading-tight">KKN MBKM Desa Toto Katon</h3>
-                            <p id="org1-desc" data-en="Engineered village identity media, publication routes, and promotional materials for 10+ empowerment programs." data-id="Menyusun penuh peta informasi publik, visualisasi pengenalan potensi warga, dan promosi media sosial desa." class="text-xs font-sans text-slate-700 leading-normal font-medium">Menyusun penuh peta informasi publik, visualisasi pengenalan potensi warga, dan promosi media sosial desa.</p>
+                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">KKN MBKM Desa Toto Katon</h3>
+                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Menyusun penuh peta informasi publik, visualisasi pengenalan potensi warga, dan promosi media sosial desa.</p>
                         </div>
-                        <a href="https://www.instagram.com/kkn.desatotokaton2025/" target="_blank" rel="noopener noreferrer" class="mt-4 pt-3 border-t-2 border-black text-xs font-bold text-lambe-red uppercase hover:underline flex items-center gap-1">
-                            <span data-en="Explore Instagram" data-id="Buka IG">Buka IG</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        <a href="https://www.instagram.com/kkn.desatotokaton2025/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                            <span>Buka IG</span>
+                            <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
-                    <!-- Org Card 2 -->
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
                         <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
-                                <span class="truncate" data-en="Vice President" data-id="Wakil Ketua Umum">Wakil Ketua Umum</span>
+                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                                <span class="truncate">Wakil Ketua Umum</span>
                                 <span class="px-1.5 py-0.5 bg-lambe-pink text-white border border-black shrink-0">24-25</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-8 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
+                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1NYaHsv4olOMTOydxxZztSZqaIMv8xRQt" alt="KSPM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KSPM'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">KSPM FKIP Unila</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">GIS Syariah</span>
+                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">KSPM FKIP Unila</span>
+                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">GIS Syariah</span>
                                 </div>
                             </div>
-                            <h3 id="org2-title" data-en="KSPM FKIP Universitas Lampung" data-id="KSPM FKIP Universitas Lampung" class="text-sm sm:text-base font-impact text-black uppercase leading-tight">KSPM FKIP Universitas Lampung</h3>
-                            <p id="org2-desc" data-en="Coordinated 25+ finance educational events and built 80+ stock market materials, securing National GIS Award III." data-id="Mengakselerasi sistem pemahaman pasar modal, memimpin koordinasi acara literasi saham, serta mengantarkan GIS Unila ke Juara Nasional III." class="text-xs font-sans text-slate-700 leading-normal font-medium">Mengakselerasi sistem pemahaman pasar modal, memimpin koordinasi acara literasi saham, serta mengantarkan GIS Unila ke Juara Nasional III.</p>
+                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">KSPM FKIP Universitas Lampung</h3>
+                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Mengakselerasi sistem pemahaman pasar modal, memimpin koordinasi acara literasi saham, serta mengantarkan GIS Unila ke Juara Nasional III.</p>
                         </div>
-                        <a href="https://www.instagram.com/kspm_fkipunila/" target="_blank" rel="noopener noreferrer" class="mt-4 pt-3 border-t-2 border-black text-xs font-bold text-lambe-red uppercase hover:underline flex items-center gap-1">
-                            <span data-en="Explore Instagram" data-id="Buka IG">Buka IG</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        <a href="https://www.instagram.com/kspm_fkipunila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                            <span>Buka IG</span>
+                            <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
-                    <!-- Org Card 3 -->
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
                         <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
-                                <span class="truncate" data-en="Media Staff" data-id="Staf Media">Staf Media</span>
+                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                                <span class="truncate">Staf Media</span>
                                 <span class="px-1.5 py-0.5 bg-lambe-green text-white border border-black shrink-0">2024</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-8 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
+                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1YbgklKeI2c0UB00uXbd8IB2K7bSGaMu1" alt="SRE Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=SRE'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">SRE Unila</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Renewable Energy</span>
+                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">SRE Unila</span>
+                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">Renewable Energy</span>
                                 </div>
                             </div>
-                            <h3 id="org3-title" data-en="SRE Universitas Lampung" data-id="SRE Universitas Lampung" class="text-sm sm:text-base font-impact text-black uppercase leading-tight">SRE Universitas Lampung</h3>
-                            <p id="org3-desc" data-en="Designed clean green-energy campaign layouts, driving organization visual audience reach up by 67%." data-id="Mendesain info grafis ramah lingkungan, dekarbonisasi industri, serta kampanye hijau yang menaikkan jangkauan media sebesar 67%." class="text-xs font-sans text-slate-700 leading-normal font-medium">Mendesain info grafis ramah lingkungan, dekarbonisasi industri, serta kampanye hijau yang menaikkan jangkauan media sebesar 67%.</p>
+                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">SRE Universitas Lampung</h3>
+                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Mendesain info grafis ramah lingkungan, dekarbonisasi industri, serta kampanye hijau yang menaikkan jangkauan media sebesar 67%.</p>
                         </div>
-                        <a href="https://www.instagram.com/sre.unila/" target="_blank" rel="noopener noreferrer" class="mt-4 pt-3 border-t-2 border-black text-xs font-bold text-lambe-red uppercase hover:underline flex items-center gap-1">
-                            <span data-en="Explore Instagram" data-id="Buka IG">Buka IG</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        <a href="https://www.instagram.com/sre.unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                            <span>Buka IG</span>
+                            <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
-                    <!-- Org Card 4 -->
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
                         <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
-                                <span class="truncate" data-en="Media Staff" data-id="Staf Media">Staf Media</span>
+                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                                <span class="truncate">Staf Media</span>
                                 <span class="px-1.5 py-0.5 bg-lambe-yellow text-black border border-black shrink-0">23-24</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-8 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
+                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1-34XM4ZABXrK4YTUGNWpO-2dPUKEtvVw" alt="ASSETS Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=ASSETS'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">ASSETS Unila</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Hima Pend. Ekonomi</span>
+                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">ASSETS Unila</span>
+                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">Hima Pend. Ekonomi</span>
                                 </div>
                             </div>
-                            <h3 id="org4-title" data-en="Himpunan Mahasiswa ASSETS Unila" data-id="Himpunan Mahasiswa ASSETS Unila" class="text-sm sm:text-base font-impact text-black uppercase leading-tight">Himpunan Mahasiswa ASSETS Unila</h3>
-                            <p id="org4-desc" data-en="Produced 100+ graphic sets for 30+ programs, leading to 50% social reach growth for the department." data-id="Memproduksi 100+ aset pamflet promosi program studi, mempercantik feeds Instagram, dan meningkatkan engagement hingga 50%." class="text-xs font-sans text-slate-700 leading-normal font-medium">Memproduksi 100+ aset pamflet promosi program studi, mempercantik feeds Instagram, dan meningkatkan engagement hingga 50%.</p>
+                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">Himpunan Mahasiswa ASSETS Unila</h3>
+                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Memproduksi 100+ aset pamflet promosi program studi, mempercantik feeds Instagram, dan meningkatkan engagement hingga 50%.</p>
                         </div>
-                        <a href="https://www.instagram.com/assets_unila/" target="_blank" rel="noopener noreferrer" class="mt-4 pt-3 border-t-2 border-black text-xs font-bold text-lambe-red uppercase hover:underline flex items-center gap-1">
-                            <span data-en="Explore Instagram" data-id="Buka IG">Buka IG</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        <a href="https://www.instagram.com/assets_unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                            <span>Buka IG</span>
+                            <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
-                    <!-- Org Card 5 -->
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
                         <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
-                                <span class="truncate" data-en="Media Staff" data-id="Staf Media">Staf Media</span>
+                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                                <span class="truncate">Staf Media</span>
                                 <span class="px-1.5 py-0.5 bg-lambe-orange text-white border border-black shrink-0">2023</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-8 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
+                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1Dn7vKWBI0pD48Kcxlne2cX1PL2woLk8u" alt="BEM Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=BEM'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">BEM Unila</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Eksekutif Mahasiswa</span>
+                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">BEM Unila</span>
+                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">Eksekutif Mahasiswa</span>
                                 </div>
                             </div>
-                            <h3 id="org5-title" data-en="BEM Universitas Lampung" data-id="BEM Universitas Lampung" class="text-sm sm:text-base font-impact text-black uppercase leading-tight">BEM Universitas Lampung</h3>
-                            <p id="org5-desc" data-en="Designed 150+ media outputs for official campaigns, pushing accounts to over 45k organic audiences." data-id="Merancang 150+ desain rilis kemahasiswaan, poster aksi publik, serta pamflet infografis yang menjangkau 45.000+ audiens nasional." class="text-xs font-sans text-slate-700 leading-normal font-medium">Merancang 150+ desain rilis kemahasiswaan, poster aksi publik, serta pamflet infografis yang menjangkau 45.000+ audiens nasional.</p>
+                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">BEM Universitas Lampung</h3>
+                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Merancang 150+ desain rilis kemahasiswaan, poster aksi publik, serta pamflet infografis yang menjangkau 45.000+ audiens nasional.</p>
                         </div>
-                        <a href="https://www.instagram.com/bem_unila/" target="_blank" rel="noopener noreferrer" class="mt-4 pt-3 border-t-2 border-black text-xs font-bold text-lambe-red uppercase hover:underline flex items-center gap-1">
-                            <span data-en="Explore Instagram" data-id="Buka IG">Buka IG</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        <a href="https://www.instagram.com/bem_unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                            <span>Buka IG</span>
+                            <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
@@ -780,7 +832,7 @@
             </div>
         </section>
 
-        <!-- PORTFOLIO GALLERY -->
+        <!-- 6. SECTION PORTOFOLIO (BG: WHITE) -->
         <section id="portfolio" class="py-16 bg-white border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
@@ -797,160 +849,187 @@
                     <button onclick="filterPortfolio('webdev')" id="filter-webdev" class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Web Development" data-id="Web Dev">Web Dev</button>
                 </div>
 
-                <!-- Portfolio Grid: 1 Column on HP Mobile (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`) -->
-                <div id="portfolioGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch w-full max-w-6xl mx-auto">
+                <!-- Portfolio Grid: 2 Columns on Mobile, 3 on Large Screens -->
+                <div id="portfolioGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 items-stretch w-full max-w-6xl mx-auto">
                     <!-- Dynamic Portfolio Items populated by JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- 7. SECTION ACHIEVEMENTS & CREDENTIALS -->
-        <section id="achievements" class="py-16 border-b-4 border-black">
+        <!-- 7. SECTION PENGHARGAAN, SERTIFIKASI & PENGAKUAN (BG: CREAM) -->
+        <section id="achievements" class="py-16 bg-lambe-cream border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="ach-section-tag" data-en="Achievements &amp; Credentials" data-id="Prestasi &amp; Sertifikasi" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs">Prestasi &amp; Sertifikasi</span>
-                    <h2 id="ach-section-title" data-en="Awards, Certifications &amp; Recognition" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Penghargaan, Sertifikasi &amp; Pengakuan</h2>
+                    <span id="ach-section-tag" data-en="Achievements, Credentials &amp; Recognition" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs">Penghargaan, Sertifikasi &amp; Pengakuan</span>
+                    <h2 id="ach-section-title" data-en="Penghargaan, Sertifikasi &amp; Pengakuan" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Penghargaan, Sertifikasi &amp; Pengakuan</h2>
                     <div class="w-20 h-2 bg-black"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto w-full">
+                <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-10 font-heading font-extrabold uppercase">
+                    <button onclick="switchAchieveTab('competitions')" id="achTab-competitions" class="achieve-tab-btn active px-4 py-2 text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">01 — Kompetisi Nasional</button>
+                    <button onclick="switchAchieveTab('certifications')" id="achTab-certifications" class="achieve-tab-btn px-4 py-2 text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">02 — Sertifikasi &amp; Kredensial</button>
+                    <button onclick="switchAchieveTab('recognition')" id="achTab-recognition" class="achieve-tab-btn px-4 py-2 text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">03 — Pengakuan Profesional</button>
+                    <button onclick="switchAchieveTab('scholarships')" id="achTab-scholarships" class="achieve-tab-btn px-4 py-2 text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">04 — Beasiswa &amp; Program Nasional</button>
+                </div>
+
+                <div class="max-w-5xl mx-auto w-full">
                     
-                    <div class="p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
+                    <!-- 01 — Kompetisi Nasional -->
+                    <div id="achPanel-competitions" class="achieve-panel p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
                         <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-11 h-11 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-xl shadow-hard-sm">
+                            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
+                                <div class="w-10 h-10 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-lg shadow-hard-sm">
                                     <i class="fa-solid fa-trophy"></i>
                                 </div>
-                                <h3 id="ach-card1-title" data-en="National Competition Awards" data-id="Kompetisi Tingkat Nasional" class="text-lg sm:text-2xl font-impact text-black uppercase">Kompetisi Tingkat Nasional</h3>
+                                <h3 class="text-lg sm:text-2xl font-impact text-black uppercase">Kompetisi Tingkat Nasional</h3>
                             </div>
-                            <ul class="space-y-3 text-xs sm:text-sm text-slate-800 font-sans font-medium">
-                                <li class="flex items-start gap-3 bg-lambe-cream p-3 border-2 border-black shadow-hard-sm">
-                                    <span class="text-lg">🏆</span>
-                                    <span id="ach-card1-bullet1" data-en="&lt;strong class='font-bold text-black'&gt;1st Winner&lt;/strong&gt; National Poster Design Competition, DPM FEB Universitas Brawijaya (2023)." data-id="&lt;strong class='font-bold text-black'&gt;Juara 1&lt;/strong&gt; Lomba Desain Poster Nasional, DPM FEB Universitas Brawijaya (2023)."><strong>Juara 1</strong> Lomba Desain Poster Nasional, DPM FEB Universitas Brawijaya (2023).</span>
-                                </li>
-                                <li class="flex items-start gap-3 bg-lambe-cream p-3 border-2 border-black shadow-hard-sm">
-                                    <span class="text-lg">🏆</span>
-                                    <span id="ach-card1-bullet2" data-en="&lt;strong class='font-bold text-black'&gt;Best Presentation&lt;/strong&gt;, National Infographics Competition Komadiksi Festival, Universitas Sebelas Maret (2025)." data-id="&lt;strong class='font-bold text-black'&gt;Presentasi Terbaik&lt;/strong&gt;, Lomba Infografis Nasional Komadiksi Festival, Universitas Sebelas Maret (2025)."><strong>Presentasi Terbaik</strong>, Lomba Infografis Nasional Komadiksi Festival, Universitas Sebelas Maret (2025).</span>
-                                </li>
-                                <li class="flex items-start gap-3 bg-lambe-cream p-3 border-2 border-black shadow-hard-sm">
-                                    <span class="text-lg">🏅</span>
-                                    <span id="ach-card1-bullet3" data-en="&lt;strong class='font-bold text-black'&gt;Top 10 Finalist&lt;/strong&gt; National Scientific Poster Competition, Universitas Sriwijaya (2025)." data-id="&lt;strong class='font-bold text-black'&gt;Finalis Top 10&lt;/strong&gt; Lomba Poster Ilmiah Nasional, Universitas Sriwijaya (2025)."><strong>Finalis Top 10</strong> Lomba Poster Ilmiah Nasional, Universitas Sriwijaya (2025).</span>
-                                </li>
-                                <li class="flex items-start gap-3 bg-lambe-cream p-3 border-2 border-black shadow-hard-sm">
-                                    <span class="text-lg">🏅</span>
-                                    <span id="ach-card1-bullet4" data-en="&lt;strong class='font-bold text-black'&gt;Top 10 Finalist&lt;/strong&gt; National Essay Competition, Komadiksi Festival, Universitas Sebelas Maret (2024)." data-id="&lt;strong class='font-bold text-black'&gt;Finalis Top 10&lt;/strong&gt; Lomba Esai Nasional, Komadiksi Festival, Universitas Sebelas Maret (2024)."><strong>Finalis Top 10</strong> Lomba Esai Nasional, Komadiksi Festival, Universitas Sebelas Maret (2024).</span>
-                                </li>
-                            </ul>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-800 font-sans font-medium">
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-1">
+                                    <span class="text-lambe-red font-mono font-extrabold text-xs">JUARA 1</span>
+                                    <strong class="font-extrabold text-black">Lomba Desain Poster Nasional</strong>
+                                    <span class="text-xs text-slate-600">DPM FEB Universitas Brawijaya · 2023</span>
+                                </div>
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-1">
+                                    <span class="text-lambe-orange font-mono font-extrabold text-xs">PRESENTASI TERBAIK</span>
+                                    <strong class="font-extrabold text-black">Lomba Infografis Nasional</strong>
+                                    <span class="text-xs text-slate-600">Komadiksi Festival, Universitas Sebelas Maret · 2025</span>
+                                </div>
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-1">
+                                    <span class="text-lambe-blue font-mono font-extrabold text-xs">FINALIS TOP 10</span>
+                                    <strong class="font-extrabold text-black">Lomba Poster Ilmiah Nasional</strong>
+                                    <span class="text-xs text-slate-600">Universitas Sriwijaya · 2025</span>
+                                </div>
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-1">
+                                    <span class="text-lambe-pink font-mono font-extrabold text-xs">FINALIS TOP 10</span>
+                                    <strong class="font-extrabold text-black">Lomba Esai Nasional</strong>
+                                    <span class="text-xs text-slate-600">Komadiksi Festival, Universitas Sebelas Maret · 2024</span>
+                                </div>
+                            </div>
                         </div>
-                        <button onclick="openCredentialModal('Awards')" class="mt-6 w-full py-3 bg-black hover:bg-lambe-red text-lambe-yellow hover:text-white font-impact uppercase text-sm border-2 border-black shadow-hard active:translate-y-0.5 transition-all">
-                            <span data-en="View Verified Documents" data-id="Lihat Sertifikat Dokumen">Lihat Sertifikat Dokumen</span>
-                        </button>
+                        <a href="https://drive.google.com/drive/folders/1e3gHto6qCq1IcLvVRhiNA4Snj2XnYHWQ?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti Sertifikat Lomba Nasional')" class="btn-lambe-dark mt-6 w-full py-3 text-sm flex items-center justify-center gap-2">
+                            <span>[ Lihat Bukti Sertifikat Lomba ]</span>
+                            <i class="fa-solid fa-up-right-from-square text-xs"></i>
+                        </a>
                     </div>
 
-                    <div class="p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
+                    <!-- 02 — Sertifikasi & Kredensial -->
+                    <div id="achPanel-certifications" class="achieve-panel hidden p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
                         <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-11 h-11 bg-black text-lambe-pink border-2 border-black flex items-center justify-center text-xl shadow-hard-sm">
+                            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
+                                <div class="w-10 h-10 bg-black text-lambe-green border-2 border-black flex items-center justify-center text-lg shadow-hard-sm">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-2xl font-impact text-black uppercase">Sertifikasi &amp; Kredensial Formal</h3>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                    <div>
+                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-yellow px-1.5 border border-black inline-block mb-1">TOEFL Standard</span>
+                                        <h4 class="text-xs sm:text-sm font-impact uppercase text-black">TOEFL English Prediction Standard (Score 450)</h4>
+                                        <p class="text-[11px] font-sans text-slate-700 mt-1">Universitas Lampung · 2025</p>
+                                    </div>
+                                    <a href="https://drive.google.com/drive/folders/1wjlPjCTf58tktigu_yGJk3HHol9-Bamb?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat TOEFL Standard')" class="btn-lambe-link mt-3 self-start">
+                                        <span>[ Lihat Kredensial ]</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                    <div>
+                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-orange text-white px-1.5 border border-black inline-block mb-1">Kehumasan &amp; Media</span>
+                                        <h4 class="text-xs sm:text-sm font-impact uppercase text-black">Onboarding PR &amp; Media Relations Certification</h4>
+                                        <p class="text-[11px] font-sans text-slate-700 mt-1">Humas Universitas Lampung · 2025</p>
+                                    </div>
+                                    <a href="https://drive.google.com/drive/folders/1OZGdb8IAwf0vLoC5SJTqJQRyOdrcI0je?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat PR &amp; Media Relations')" class="btn-lambe-link mt-3 self-start">
+                                        <span>[ Lihat Kredensial ]</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                    <div>
+                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-pink text-white px-1.5 border border-black inline-block mb-1">Kemendikbudristek RI</span>
+                                        <h4 class="text-xs sm:text-sm font-impact uppercase text-black">Graphic Designer MSIB National Certification</h4>
+                                        <p class="text-[11px] font-sans text-slate-700 mt-1">Kemendikbudristek RI · 2024</p>
+                                    </div>
+                                    <a href="https://drive.google.com/drive/folders/1LxMRNnzRp2ENHvZWuNtyJfbiKw8PkfEy?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat MSIB Kemendikbudristek')" class="btn-lambe-link mt-3 self-start">
+                                        <span>[ Lihat Kredensial ]</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                    <div>
+                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-blue text-white px-1.5 border border-black inline-block mb-1">Pelatihan Visual</span>
+                                        <h4 class="text-xs sm:text-sm font-impact uppercase text-black">Professional Visual &amp; Color Theory Training</h4>
+                                        <p class="text-[11px] font-sans text-slate-700 mt-1">UKM Penelitian Universitas Lampung · 2022</p>
+                                    </div>
+                                    <a href="https://drive.google.com/drive/folders/1MXQloB9L9eYrIbEd9ZnjHxaVPoVhZyQg?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat Color Theory &amp; Visual')" class="btn-lambe-link mt-3 self-start">
+                                        <span>[ Lihat Kredensial ]</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03 — Pengakuan Profesional -->
+                    <div id="achPanel-recognition" class="achieve-panel hidden p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
+                                <div class="w-10 h-10 bg-black text-lambe-pink border-2 border-black flex items-center justify-center text-lg shadow-hard-sm">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
-                                <h3 id="ach-card2-title" data-en="Professional Recognition &amp; Speaker/Judge" data-id="Pengakuan Profesional &amp; Juri/Pemateri" class="text-lg sm:text-2xl font-impact text-black uppercase">Pengakuan Profesional &amp; Juri/Pemateri</h3>
+                                <h3 class="text-lg sm:text-2xl font-impact text-black uppercase">Pengakuan Profesional (Juri &amp; Pemateri)</h3>
                             </div>
-                            <ul class="space-y-3 text-xs sm:text-sm text-slate-800 font-sans font-medium">
-                                <li class="flex items-start gap-3 bg-lambe-cream p-3 border-2 border-black shadow-hard-sm">
-                                    <span class="text-lambe-red font-bold shrink-0"><i class="fa-solid fa-signature text-base"></i></span>
-                                    <span id="ach-card2-bullet1" data-en="&lt;strong class='font-bold text-black'&gt;National Competition Judge&lt;/strong&gt;: Trusted as poster and short film design judge across multiple universities." data-id="&lt;strong class='font-bold text-black'&gt;Juri Kompetisi Nasional&lt;/strong&gt;: Dipercaya sebagai juri kompetisi poster kreatif nasional &amp; film pendek di berbagai universitas."><strong>Juri Kompetisi Nasional</strong>: Dipercaya sebagai juri kompetisi poster kreatif nasional &amp; film pendek di berbagai universitas.</span>
-                                </li>
-                                <li class="flex items-start gap-3 bg-lambe-cream p-3 border-2 border-black shadow-hard-sm">
-                                    <span class="text-lambe-blue font-bold shrink-0"><i class="fa-solid fa-chalkboard-user text-base"></i></span>
-                                    <span id="ach-card2-bullet2" data-en="&lt;strong class='font-bold text-black'&gt;Featured Speaker&lt;/strong&gt;: Conducted workshops on graphic design, scientific essays, and personal branding for 800+ total audience." data-id="&lt;strong class='font-bold text-black'&gt;Narasumber Pelatihan&lt;/strong&gt;: Berpengalaman mengisi pelatihan desain grafis, esai ilmiah, dan personal branding untuk 800+ audiens."><strong>Narasumber Pelatihan</strong>: Berpengalaman mengisi pelatihan desain grafis, esai ilmiah, dan personal branding untuk 800+ audiens.</span>
-                                </li>
-                                <li class="flex items-start gap-3 bg-lambe-cream p-3 border-2 border-black shadow-hard-sm">
-                                    <span class="text-lambe-orange font-bold shrink-0"><i class="fa-solid fa-shield-halved text-base"></i></span>
-                                    <span id="ach-card2-bullet3" data-en="Co-secured &lt;strong class='font-bold text-black'&gt;2 Intellectual Property Patents (HaKI)&lt;/strong&gt; registered under Kemenkumham RI." data-id="Mempunyai &lt;strong class='font-bold text-black'&gt;2 Hak Kekayaan Intelektual (HaKI)&lt;/strong&gt; resmi terdaftar di Dirjen KI Kemenkumham RI.">Mempunyai <strong>2 Hak Kekayaan Intelektual (HaKI)</strong> resmi terdaftar di Dirjen KI Kemenkumham RI.</span>
-                                </li>
-                            </ul>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-mono font-bold bg-lambe-red text-white px-2 py-0.5 border border-black">JURI</span>
+                                        <a href="https://drive.google.com/drive/folders/1XB6c7EBgiknoiI9sAP5BAEtEEXsAD_s7?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti SK &amp; Sertifikat Juri')" class="btn-lambe-link text-[10px] py-1 px-2">[ Bukti SK / Sertifikat ]</a>
+                                    </div>
+                                    <h4 class="text-sm font-impact text-black uppercase">Juri Kompetisi Nasional</h4>
+                                    <p class="text-xs font-sans text-slate-700">Dipercaya sebagai juri pada kompetisi poster kreatif dan film pendek di lingkungan perguruan tinggi.</p>
+                                </div>
+
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-mono font-bold bg-lambe-blue text-white px-2 py-0.5 border border-black">PEMATERI</span>
+                                        <a href="https://drive.google.com/drive/folders/1kFyolybGEhmaHZexWsrwE2SdMqKDLLew?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti SK &amp; Sertifikat Pemateri')" class="btn-lambe-link text-[10px] py-1 px-2">[ Bukti SK / Sertifikat ]</a>
+                                    </div>
+                                    <h4 class="text-sm font-impact text-black uppercase">Narasumber &amp; Pemateri Pelatihan</h4>
+                                    <p class="text-xs font-sans text-slate-700">Mengisi pelatihan terkait desain grafis, esai ilmiah, dan personal branding untuk berbagai audiens mahasiswa &amp; umum.</p>
+                                </div>
+                            </div>
                         </div>
-                        <button onclick="openCredentialModal('Certifications')" class="mt-6 w-full py-3 bg-black hover:bg-lambe-pink text-lambe-yellow hover:text-white font-impact uppercase text-sm border-2 border-black shadow-hard active:translate-y-0.5 transition-all">
-                            <span data-en="View Patent Archives" data-id="Lihat Paten Dokumen">Lihat Paten Dokumen</span>
-                        </button>
                     </div>
 
-                </div>
-            </div>
-        </section>
-
-        <!-- LICENSES & CERTIFICATIONS -->
-        <section id="credentials" class="py-16 bg-white border-b-4 border-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="cred-section-tag" class="poster-badge px-3 py-1 bg-lambe-green text-white text-xs" data-en="Formal Qualifications" data-id="Kualifikasi Formal">Kualifikasi Formal</span>
-                    <h2 id="cred-section-title" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black" data-en="Licenses &amp; Certifications" data-id="Sertifikasi &amp; Lisensi">Sertifikasi &amp; Lisensi</h2>
-                    <div class="w-20 h-2 bg-lambe-yellow border-2 border-black"></div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch w-full font-heading">
-                    
-                    <div class="p-5 bg-lambe-cream poster-card flex flex-col justify-between">
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center justify-between text-[10px] uppercase font-mono font-bold text-black">
-                                <span data-en="Language Competence" data-id="Kompetensi Bahasa">Kompetensi Bahasa</span>
-                                <span class="bg-lambe-yellow text-black px-1.5 border border-black">2025</span>
+                    <!-- 04 — Beasiswa & Program Nasional -->
+                    <div id="achPanel-scholarships" class="achieve-panel hidden p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
+                                <div class="w-10 h-10 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-lg shadow-hard-sm">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <h3 class="text-lg sm:text-2xl font-impact text-black uppercase">Beasiswa &amp; Program Nasional</h3>
                             </div>
-                            <h3 id="cert1-title" class="text-sm font-impact text-black uppercase leading-snug">TOEFL English Prediction Standard (Score 450)</h3>
-                            <p id="cert1-desc" class="text-xs font-sans font-medium text-slate-700 leading-normal">
-                                Certified comprehension in listening, structure &amp; written expressions by Universitas Lampung.
-                            </p>
-                        </div>
-                        <a href="https://drive.google.com/drive/folders/1wjlPjCTf58tktigu_yGJk3HHol9-Bamb?usp=drive_link" target="_blank" rel="noopener noreferrer" class="mt-4 pt-2 border-t-2 border-black flex items-center gap-2 text-xs font-bold uppercase text-lambe-red hover:underline active:translate-y-0.5">
-                            <span data-en="Verify Credential" data-id="Verifikasi Kredensial">Verifikasi Kredensial</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                    <div>
+                                        <span class="text-xs font-mono font-bold bg-lambe-orange text-white px-2 py-0.5 border border-black inline-block mb-1">BEASISWA NASIONAL</span>
+                                        <h4 class="text-sm font-impact uppercase text-black">Awardee YBM PLN — Tingkat Nasional</h4>
+                                        <p class="text-xs font-sans text-slate-700 mt-1">Penerima beasiswa kepemimpinan dan akademik nasional dari Yayasan Baitul Maal PLN.</p>
+                                    </div>
+                                </div>
 
-                    <div class="p-5 bg-lambe-cream poster-card flex flex-col justify-between">
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center justify-between text-[10px] uppercase font-mono font-bold text-black">
-                                <span data-en="PR &amp; Media Relations" data-id="Kehumasan Media">PR &amp; Media Relations</span>
-                                <span class="bg-lambe-orange text-white px-1.5 border border-black">2025</span>
+                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                    <div>
+                                        <span class="text-xs font-mono font-bold bg-lambe-pink text-white px-2 py-0.5 border border-black inline-block mb-1">PROGRAM KEMENDIKBUDRISTEK</span>
+                                        <h4 class="text-sm font-impact uppercase text-black">Awardee MSIB — Program Nasional Kemendikbudristek</h4>
+                                        <p class="text-xs font-sans text-slate-700 mt-1">Peserta terpilih Magang dan Studi Independen Bersertifikat (MSIB) Angkatan Nasional.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 id="cert2-title" class="text-sm font-impact text-black uppercase leading-snug">Onboarding PR &amp; Media Relations Certification</h3>
-                            <p id="cert2-desc" class="text-xs font-sans font-medium text-slate-700 leading-normal">
-                                Corporate communication, media strategy, and crisis management by Humas Unila.
-                            </p>
                         </div>
-                        <a href="https://drive.google.com/drive/folders/1OZGdb8IAwf0vLoC5SJTqJQRyOdrcI0je?usp=drive_link" target="_blank" rel="noopener noreferrer" class="mt-4 pt-2 border-t-2 border-black flex items-center gap-2 text-xs font-bold uppercase text-lambe-red hover:underline active:translate-y-0.5">
-                            <span data-en="Verify Credential" data-id="Verifikasi Kredensial">Verifikasi Kredensial</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-
-                    <div class="p-5 bg-lambe-cream poster-card flex flex-col justify-between">
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center justify-between text-[10px] uppercase font-mono font-bold text-black">
-                                <span data-en="Kemendikbudristek MSIB" data-id="MSIB Nasional">Kemendikbudristek MSIB</span>
-                                <span class="bg-lambe-pink text-white px-1.5 border border-black">2024</span>
-                            </div>
-                            <h3 id="cert3-title" class="text-sm font-impact text-black uppercase leading-snug">Graphic Designer MSIB National Certification</h3>
-                            <p id="cert3-desc" class="text-xs font-sans font-medium text-slate-700 leading-normal">
-                                Design Thinking, Brand Systems, UI/UX fundamentals, and Project Management by Kemendikbudristek RI.
-                            </p>
-                        </div>
-                        <a href="https://drive.google.com/drive/folders/1LxMRNnzRp2ENHvZWuNtyJfbiKw8PkfEy?usp=drive_link" target="_blank" rel="noopener noreferrer" class="mt-4 pt-2 border-t-2 border-black flex items-center gap-2 text-xs font-bold uppercase text-lambe-red hover:underline active:translate-y-0.5">
-                            <span data-en="Verify Credential" data-id="Verifikasi Kredensial">Verifikasi Kredensial</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-
-                    <div class="p-5 bg-lambe-cream poster-card flex flex-col justify-between">
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center justify-between text-[10px] uppercase font-mono font-bold text-black">
-                                <span data-en="Graphic Design" data-id="Desain Grafis">Graphic Design</span>
-                                <span class="bg-lambe-blue text-white px-1.5 border border-black">2022</span>
-                            </div>
-                            <h3 id="cert4-title" class="text-sm font-impact text-black uppercase leading-snug">Professional Visual &amp; Color Theory Training</h3>
-                            <p id="cert4-desc" class="text-xs font-sans font-medium text-slate-700 leading-normal">
-                                Creative tools mastery (Ps, Ai, Corel) and color theories by UKM Penelitian Unila.
-                            </p>
-                        </div>
-                        <a href="https://drive.google.com/drive/folders/1MXQloB9L9eYrIbEd9ZnjHxaVPoVhZyQg?usp=drive_link" target="_blank" rel="noopener noreferrer" class="mt-4 pt-2 border-t-2 border-black flex items-center gap-2 text-xs font-bold uppercase text-lambe-red hover:underline active:translate-y-0.5">
-                            <span data-en="Verify Credential" data-id="Verifikasi Kredensial">Verifikasi Kredensial</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
+                        <a href="https://drive.google.com/drive/folders/16nbUGEk8auZfTGBLe692GQoFjZoweUy4?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Dokumen Beasiswa &amp; Program Nasional')" class="btn-lambe-dark mt-6 w-full py-3 text-sm flex items-center justify-center gap-2">
+                            <span>[ Lihat Dokumen Pendukung ]</span>
+                            <i class="fa-solid fa-up-right-from-square text-xs"></i>
                         </a>
                     </div>
 
@@ -958,65 +1037,7 @@
             </div>
         </section>
 
-        <!-- RESEARCH & INNOVATION -->
-        <section id="publications" class="py-16 border-b-4 border-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="pub-section-tag" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs" data-en="Research &amp; Innovation (SINTA &amp; IP Rights)" data-id="Riset &amp; Inovasi (SINTA &amp; HaKI)">Riset &amp; Inovasi (SINTA &amp; HaKI)</span>
-                    <h2 id="pub-section-title" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black" data-en="Scientific Journals &amp; Intellectual Property" data-id="Jurnal Ilmiah &amp; Hak Cipta">Jurnal Ilmiah &amp; Hak Cipta</h2>
-                    <div class="w-20 h-2 bg-black"></div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto w-full font-heading">
-                    
-                    <div class="space-y-4">
-                        <h3 id="pub-sub-title" class="text-xs font-mono font-bold uppercase tracking-wider text-black bg-black text-white p-2 border-2 border-black" data-en="Scientific Journals (Indexed SINTA)" data-id="Jurnal Ilmiah Nasional (Terindeks SINTA)">Jurnal Ilmiah Nasional (Terindeks SINTA)</h3>
-                        
-                        <div class="p-4 bg-white poster-card flex flex-col gap-2">
-                            <span class="text-[9px] uppercase font-bold tracking-widest text-white bg-lambe-red border border-black px-2 py-0.5 self-start font-mono">SINTA-Indexed</span>
-                            <p id="pub1-text" class="text-xs sm:text-sm font-extrabold text-black leading-snug uppercase" data-en='“Penerapan Komunikasi Interpersonal Berbasis Local Wisdom untuk Meningkatkan Komitmen Berorganisasi ‘Kaum Santri’ di Rajabasa”' data-id='“Penerapan Komunikasi Interpersonal Berbasis Local Wisdom untuk Meningkatkan Komitmen Berorganisasi ‘Kaum Santri’ di Rajabasa”'>“Penerapan Komunikasi Interpersonal Berbasis Local Wisdom untuk Meningkatkan Komitmen Berorganisasi ‘Kaum Santri’ di Rajabasa”</p>
-                            <p id="pub1-author" class="text-[11px] font-sans text-slate-600 font-medium">Author: Karim, R. N. et al. (2025) • Jurnal Kebudayaan &amp; Pendidikan.</p>
-                            <a href="https://garuda.kemdiktisaintek.go.id/documents/detail/4694081" target="_blank" rel="noopener noreferrer" class="text-xs font-extrabold text-black hover:underline inline-flex items-center gap-1 uppercase active:translate-y-0.5"><span data-en="Read Publication" data-id="Baca Karya Riset">Baca Karya Riset</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i></a>
-                        </div>
-
-                        <div class="p-4 bg-white poster-card flex flex-col gap-2">
-                            <span class="text-[9px] uppercase font-bold tracking-widest text-white bg-lambe-red border border-black px-2 py-0.5 self-start font-mono">SINTA-Indexed</span>
-                            <p id="pub2-text" class="text-xs sm:text-sm font-extrabold text-black leading-snug uppercase" data-en='“Project-Based Learning Approach Based on Interpersonal Communication in Improving Vocational School Students’ Work Readiness”' data-id='“Project-Based Learning Approach Based on Interpersonal Communication in Improving Vocational High School Students’ Work Readiness”'>“Project-Based Learning Approach Based on Interpersonal Communication in Improving Vocational High School Students’ Work Readiness”</p>
-                            <p id="pub2-author" class="text-[11px] font-sans text-slate-600 font-medium">Author: Karim, R. N. et al. (2025) • JPIPS FKIP Unila.</p>
-                            <a href="https://jpips.fkip.unila.ac.id/index.php/e3j/article/view/113" target="_blank" rel="noopener noreferrer" class="text-xs font-extrabold text-black hover:underline inline-flex items-center gap-1 uppercase active:translate-y-0.5"><span data-en="Read Publication" data-id="Baca Karya Riset">Baca Karya Riset</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i></a>
-                        </div>
-
-                        <div class="p-4 bg-white poster-card flex flex-col gap-2">
-                            <span class="text-[9px] uppercase font-bold tracking-widest text-white bg-lambe-red border border-black px-2 py-0.5 self-start font-mono">SINTA-Indexed</span>
-                            <p id="pub3-text" class="text-xs sm:text-sm font-extrabold text-black leading-snug uppercase" data-en='“The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”' data-id='“The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”'>“The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”</p>
-                            <p id="pub3-author" class="text-[11px] font-sans text-slate-600 font-medium">Author: Karim, R. N. et al. (2025) • Jurnal Kependidikan Ekonomi.</p>
-                            <a href="https://jos.unsoed.ac.id/index.php/seej/article/view/18756" target="_blank" rel="noopener noreferrer" class="text-xs font-extrabold text-black hover:underline inline-flex items-center gap-1 uppercase active:translate-y-0.5"><span data-en="Read Publication" data-id="Baca Karya Riset">Baca Karya Riset</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h3 id="patent-sub-title" class="text-xs font-mono font-bold uppercase tracking-wider text-black bg-black text-white p-2 border-2 border-black" data-en="Visual Designs Patents &amp; HaKI" data-id="Hak Cipta Seni Desain (HaKI)">Hak Cipta Seni Desain (HaKI)</h3>
-                        
-                        <div class="p-4 bg-white poster-card flex flex-col gap-2">
-                            <span class="text-[9px] uppercase font-bold tracking-widest text-white bg-lambe-green border border-black px-2 py-0.5 self-start font-mono">Official Patent (HaKI)</span>
-                            <p id="patent1-text" class="text-xs sm:text-sm font-extrabold text-black leading-snug uppercase" data-en="“Sertifikat Hak Cipta Karya Seni Desain Grafis Corporate Identity Program Studi Pendidikan Ekonomi FKIP Unila”" data-id="“Sertifikat Hak Cipta Karya Seni Desain Grafis Corporate Identity Program Studi Pendidikan Ekonomi FKIP Unila”">“Sertifikat Hak Cipta Karya Seni Desain Grafis Corporate Identity Program Studi Pendidikan Ekonomi FKIP Unila”</p>
-                            <p id="patent1-reg" class="text-[11px] font-sans text-slate-600 font-medium">Reg: No. EC00202399120 • Dirjen Kekayaan Intelektual Kemenkumham RI.</p>
-                            <a href="https://drive.google.com/drive/folders/1PJkSfxrsWK50TOrkkT9j1RNepu8Dk1en?usp=drive_copy" target="_blank" rel="noopener noreferrer" class="text-xs font-extrabold text-black hover:underline inline-flex items-center gap-1 uppercase active:translate-y-0.5"><span data-en="View Certificate" data-id="Buka Dokumen Asli">Buka Dokumen Asli</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i></a>
-                        </div>
-
-                        <div class="p-4 bg-white poster-card flex flex-col gap-2">
-                            <span class="text-[9px] uppercase font-bold tracking-widest text-white bg-lambe-green border border-black px-2 py-0.5 self-start font-mono">Official Patent (HaKI)</span>
-                            <p id="patent2-text" class="text-xs sm:text-sm font-extrabold text-black leading-snug uppercase" data-en="“Sertifikat Hak Cipta Publikasi Desain Media Informasi &amp; Pengabdian Kemasyarakatan Berkelanjutan”" data-id="“Sertifikat Hak Cipta Publikasi Desain Media Informasi &amp; Pengabdian Kemasyarakatan Berkelanjutan”">“Sertifikat Hak Cipta Publikasi Desain Media Informasi &amp; Pengabdian Kemasyarakatan Berkelanjutan”</p>
-                            <p id="patent2-reg" class="text-[11px] font-sans text-slate-600 font-medium">Reg: No. EC00202399182 • Dirjen Kekayaan Intelektual Kemenkumham RI.</p>
-                            <a href="https://drive.google.com/drive/folders/1PJkSfxrsWK50TOrkkT9j1RNepu8Dk1en?usp=drive_copy" target="_blank" rel="noopener noreferrer" class="text-xs font-extrabold text-black hover:underline inline-flex items-center gap-1 uppercase active:translate-y-0.5"><span data-en="View Certificate" data-id="Buka Dokumen Asli">Buka Dokumen Asli</span> <i class="fa-solid fa-up-right-from-square text-[10px]"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 8. SECTION CONTACT -->
+        <!-- 8. SECTION KONTAK (BG: WHITE) -->
         <section id="contact" class="py-16 bg-white border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
@@ -1043,7 +1064,7 @@
                                         <span class="text-[9px] font-mono font-bold uppercase text-black leading-none" data-en="Email Address" data-id="Alamat Email">Alamat Email</span>
                                         <span class="text-xs font-mono font-bold text-black truncate mt-1 select-all">nurkarim2004@gmail.com</span>
                                     </div>
-                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com', this)" class="px-2.5 py-1.5 text-xs text-white bg-black border border-black font-bold uppercase active:translate-y-0.5 flex items-center gap-1" title="Send Email">
+                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com', this)" class="btn-lambe-dark text-xs py-1.5 px-3 flex items-center gap-1" title="Send Email">
                                         <i class="fa-regular fa-paper-plane"></i>
                                         <span data-en="Send" data-id="Kirim">Kirim</span>
                                     </button>
@@ -1094,7 +1115,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" id="formSubmitBtn" class="w-full py-3.5 bg-lambe-red hover:bg-black text-white font-impact uppercase text-base border-3 border-black shadow-hard active:translate-y-1 transition-all flex items-center justify-center gap-2">
+                        <button type="submit" id="formSubmitBtn" class="btn-lambe-primary w-full py-3.5 text-base flex items-center justify-center gap-2">
                             <span data-en="Transmit Secure Message (WhatsApp)" data-id="Kirimkan Pesan Aman (WhatsApp)">Kirimkan Pesan Aman (WhatsApp)</span>
                         </button>
                     </form>
@@ -1122,75 +1143,99 @@
         </div>
     </footer>
 
-    <!-- KEYBOARD NAV GUIDE -->
-    <div id="keyboardGuide" class="fixed bottom-6 right-6 z-[80] hidden lg:flex items-center gap-2.5 px-4 py-2 bg-lambe-yellow text-black border-3 border-black shadow-hard font-mono">
-        <span class="w-3 h-3 rounded-full bg-lambe-red animate-ping"></span>
-        <span class="text-[10px] font-extrabold uppercase tracking-widest flex items-center gap-2">
-            <span data-en="Keyboard Nav:" data-id="Sistem Navigasi:">Sistem Navigasi:</span>
-            <kbd class="px-1.5 py-0.5 bg-black text-white border border-black text-xs font-mono">H</kbd> Hero
-            <kbd class="px-1.5 py-0.5 bg-black text-white border border-black text-xs font-mono">P</kbd> Port
-            <kbd class="px-1.5 py-0.5 bg-black text-white border border-black text-xs font-mono">C</kbd> Contact
-        </span>
-    </div>
-
-    <!-- MODAL 1: THESIS ABSTRACT -->
-    <div id="thesisModal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="w-full max-w-xl bg-lambe-cream border-4 border-black shadow-hard-lg p-6 sm:p-8 flex flex-col gap-4 relative font-sans">
+    <!-- MODAL 1: INTEGRATED ACADEMIC DOCUMENTS MODAL (SKRIPSI, SINTA JOURNALS & HAKI) -->
+    <div id="academicDocsModal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="w-full max-w-2xl bg-lambe-cream border-4 border-black shadow-hard-lg p-6 sm:p-8 flex flex-col gap-5 relative font-sans max-h-[90vh] overflow-y-auto">
             
             <div class="flex items-center justify-between border-b-3 border-black pb-3">
                 <div class="flex items-center gap-2">
                     <span class="text-xl">🎓</span>
-                    <h3 class="text-base sm:text-lg font-impact uppercase text-black" data-en="Thesis Abstract Summary" data-id="Abstrak Skripsi Lengkap">Abstrak Skripsi Lengkap</h3>
+                    <h3 class="text-base sm:text-xl font-impact uppercase text-black">Dokumen Akademik Universitas Lampung</h3>
                 </div>
-                <button onclick="toggleThesisModalSuite()" class="w-8 h-8 bg-black text-white hover:bg-lambe-red flex items-center justify-center border-2 border-black transition-all active:scale-95">
+                <button onclick="toggleAcademicDocsModal()" class="w-8 h-8 bg-black text-white hover:bg-lambe-red flex items-center justify-center border-2 border-black transition-all active:scale-95">
                     <i class="fa-solid fa-xmark text-sm"></i>
                 </button>
             </div>
 
-            <div class="space-y-3 max-h-[50vh] overflow-y-auto pr-2 text-left">
-                <p id="thesis-modal-title" data-en="&lt;strong class='font-extrabold text-black'&gt;Title:&lt;/strong&gt; The Influence of Financial Literacy and Parental Income on Lifestyle through Financial Management Behavior in High School Students." data-id="&lt;strong class='font-extrabold text-black'&gt;Judul:&lt;/strong&gt; Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa." class="text-xs sm:text-sm text-black leading-relaxed font-bold">
-                    <strong class="font-extrabold text-black">Judul:</strong> Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa.
-                </p>
-                
-                <p id="thesis-modal-desc" data-en="This research addresses critical financial planning workflows for secondary students, using path analysis to discover key relationships between domestic resources, systematic economic knowledge, and active standard lifestyles. It highlights the critical mediation role played by robust financial management behaviors." data-id="Riset ilmiah ini membahas sistem perencanaan keuangan bagi siswa, menggunakan model analisis jalur (path analysis) untuk mengidentifikasi korelasi antara pendapatan rumah tangga, tingkat literasi ekonomi, dan gaya hidup aktif siswa. Hasil penelitian membuktikan peran mediasi krusial yang dipegang oleh perilaku pengelolaan finansial terstruktur." class="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">
+            <!-- 1. SKRIPSI ABSTRAK -->
+            <div class="space-y-3 text-left bg-white p-4 border-2 border-black shadow-hard-sm">
+                <span class="text-[10px] font-mono font-bold uppercase bg-lambe-yellow px-2 py-0.5 border border-black inline-block">01 — SKRIPSI SARJANA</span>
+                <h4 class="text-xs sm:text-sm text-black font-extrabold leading-snug">
+                    “Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”
+                </h4>
+                <p class="text-xs text-slate-700 leading-relaxed font-medium">
                     Riset ilmiah ini membahas sistem perencanaan keuangan bagi siswa, menggunakan model analisis jalur (path analysis) untuk mengidentifikasi korelasi antara pendapatan rumah tangga, tingkat literasi ekonomi, dan gaya hidup aktif siswa. Hasil penelitian membuktikan peran mediasi krusial yang dipegang oleh perilaku pengelolaan finansial terstruktur.
                 </p>
+                <div class="pt-2 flex items-center justify-between border-t border-slate-200">
+                    <span class="text-[10px] text-slate-500 font-mono">Perpustakaan Unila ID: 96457</span>
+                    <a href="https://digilib.unila.ac.id/96457/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px]">
+                        <span>Buka Digilib Unila</span>
+                        <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
+                    </a>
+                </div>
+            </div>
 
-                <p class="text-xs text-lambe-red font-extrabold font-mono" data-en="Specialized SINTA Academic Index Reference Code: unila.ac.id/96457" data-id="Telah Terpublikasi di Database Perpustakaan Universitas Lampung: unila.ac.id/96457">Telah Terpublikasi di Database Perpustakaan Universitas Lampung: unila.ac.id/96457</p>
+            <!-- 2. JURNAL SINTA -->
+            <div class="space-y-3 text-left bg-white p-4 border-2 border-black shadow-hard-sm font-heading">
+                <span class="text-[10px] font-mono font-bold uppercase bg-lambe-red text-white px-2 py-0.5 border border-black inline-block">02 — 3 PUBLIKASI SINTA</span>
+                
+                <div class="space-y-3 font-sans">
+                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
+                        <strong class="text-xs text-black font-extrabold">1. “Penerapan Komunikasi Interpersonal Berbasis Local Wisdom untuk Meningkatkan Komitmen Berorganisasi ‘Kaum Santri’ di Rajabasa”</strong>
+                        <span class="text-[10px] text-slate-600 font-mono">Garuda Kemdiktisaintek • Karim, R. N. et al. (2025)</span>
+                        <a href="https://garuda.kemdiktisaintek.go.id/documents/detail/4694081" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[9px] py-1 self-start">
+                            <span>Baca Jurnal Garuda</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
+                        </a>
+                    </div>
+
+                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
+                        <strong class="text-xs text-black font-extrabold">2. “Project-Based Learning Approach Based on Interpersonal Communication in Improving Vocational School Students’ Work Readiness”</strong>
+                        <span class="text-[10px] text-slate-600 font-mono">JPIPS FKIP Unila • Karim, R. N. et al. (2025)</span>
+                        <a href="https://jpips.fkip.unila.ac.id/index.php/e3j/article/view/113" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[9px] py-1 self-start">
+                            <span>Baca Jurnal JPIPS</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
+                        </a>
+                    </div>
+
+                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
+                        <strong class="text-xs text-black font-extrabold">3. “The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”</strong>
+                        <span class="text-[10px] text-slate-600 font-mono">Jurnal Kependidikan Ekonomi • Karim, R. N. et al. (2025)</span>
+                        <a href="https://jos.unsoed.ac.id/index.php/seej/article/view/18756" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[9px] py-1 self-start">
+                            <span>Baca Jurnal SEEJ</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. HAKI -->
+            <div class="space-y-3 text-left bg-white p-4 border-2 border-black shadow-hard-sm font-heading">
+                <span class="text-[10px] font-mono font-bold uppercase bg-lambe-green text-white px-2 py-0.5 border border-black inline-block">03 — 2 HAK KEKAYAAN INTELEKTUAL (HAKI)</span>
+                
+                <div class="space-y-3 font-sans">
+                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
+                        <strong class="text-xs text-black font-extrabold">1. Hak Cipta Corporate Identity Program Studi Pendidikan Ekonomi FKIP Unila</strong>
+                        <span class="text-[10px] text-slate-600 font-mono">Reg: No. EC00202399120 • Dirjen KI Kemenkumham RI</span>
+                    </div>
+
+                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
+                        <strong class="text-xs text-black font-extrabold">2. Hak Cipta Publikasi Desain Media Informasi &amp; Pengabdian Kemasyarakatan</strong>
+                        <span class="text-[10px] text-slate-600 font-mono">Reg: No. EC00202399182 • Dirjen KI Kemenkumham RI</span>
+                    </div>
+                </div>
+
+                <a href="https://drive.google.com/drive/folders/1PJkSfxrsWK50TOrkkT9j1RNepu8Dk1en?usp=drive_copy" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat HaKI Kemenkumham RI')" class="btn-lambe-dark text-xs py-2 w-full flex items-center justify-center gap-1.5 mt-2">
+                    <span>Lihat Sertifikat HaKI Kemenkumham</span>
+                    <i class="fa-solid fa-up-right-from-square text-xs"></i>
+                </a>
             </div>
 
             <div class="flex items-center justify-end gap-3 pt-3 border-t-3 border-black font-heading font-extrabold uppercase">
-                <button onclick="toggleThesisModalSuite()" class="px-4 py-2 bg-black text-white border-2 border-black text-xs" data-en="Close View" data-id="Tutup">Tutup</button>
-                <a href="https://digilib.unila.ac.id/96457/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-lambe-red text-white border-2 border-black text-xs shadow-hard-sm flex items-center gap-1.5 active:translate-y-0.5">
-                    <span data-en="Access Library File" data-id="Buka Dokumen Asli">Buka Dokumen Asli</span>
-                    <i class="fa-solid fa-up-right-from-square"></i>
-                </a>
+                <button onclick="toggleAcademicDocsModal()" class="btn-lambe-secondary px-5 py-2 text-xs">Tutup Modal</button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 3: CREDENTIAL VIEW DIRECTORY -->
-    <div id="credentialModal" class="fixed inset-0 z-50 overflow-y-auto hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 font-sans">
-        <div class="w-full max-w-md bg-lambe-cream border-4 border-black shadow-hard-lg p-6 flex flex-col gap-4">
-            <div class="flex items-center justify-between pb-3 border-b-3 border-black font-heading">
-                <h3 id="credentialTitle" class="text-base font-impact uppercase text-black">Verifikasi Kredensial</h3>
-                <button onclick="closeCredentialModalSuite()" class="w-8 h-8 bg-black text-white hover:bg-lambe-red flex items-center justify-center border-2 border-black text-sm active:scale-95">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            
-            <p class="text-xs text-slate-800 font-medium text-left" data-en="Official certificates and national qualifications of Rahmad Nur Karim are securely compiled on official Google Drive archives. Click a category link below to review raw details." data-id="Sertifikasi resmi dan kualifikasi nasional Rahmad Nur Karim dikompilasi secara aman pada penyimpanan arsip resmi Google Drive. Klik link kategori di bawah ini untuk meninjau secara transparan.">
-                Sertifikasi resmi dan kualifikasi nasional Rahmad Nur Karim dikompilasi secara aman pada penyimpanan arsip resmi Google Drive. Klik link kategori di bawah ini untuk meninjau secara transparan.
-            </p>
-
-            <div id="credentialModalList" class="flex flex-col gap-3 font-heading">
-                <!-- Dynamically injected via openCredentialModal(type) -->
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 4: FLOATING GOOGLE DRIVE EMBED PREVIEW -->
-    <div id="driveModal" class="fixed inset-0 z-[160] bg-black/85 backdrop-blur-sm hidden items-center justify-center p-2 sm:p-4 font-sans">
+    <!-- MODAL FLOATING GOOGLE DRIVE EMBED PREVIEW SYSTEM -->
+    <div id="driveModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-[160] bg-black/85 backdrop-blur-sm hidden items-center justify-center p-2 sm:p-4 font-sans">
         <div class="w-full max-w-5xl h-[88vh] bg-lambe-cream border-4 border-black shadow-hard-lg flex flex-col overflow-hidden relative">
             <div class="flex items-center justify-between px-4 py-3 bg-lambe-yellow text-black border-b-4 border-black shrink-0 font-heading">
                 <div class="flex items-center gap-2 min-w-0 pr-2">
@@ -1199,13 +1244,13 @@
                     </div>
                     <div class="flex flex-col min-w-0">
                         <h3 id="driveModalTitle" class="text-sm font-impact uppercase truncate text-black">Preview Google Drive</h3>
-                        <span class="text-[9px] text-black font-mono font-bold truncate">Pratinjau Mengambang Web Portofolio</span>
+                        <span class="text-[9px] text-black font-mono font-bold truncate">Pratinjau Mengambang Web Portofolio • Tetap di Website</span>
                     </div>
                 </div>
                 
                 <div class="flex items-center gap-2 shrink-0">
-                    <a id="driveExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-lambe-red text-white text-xs font-extrabold uppercase border-2 border-black shadow-hard-sm hover:bg-black transition-all flex items-center gap-1.5 active:translate-y-0.5">
-                        <span data-en="Open External" data-id="Buka Tab Baru">Buka Tab Baru</span>
+                    <a id="driveExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-lambe-primary text-xs px-3 py-1.5 flex items-center gap-1.5">
+                        <span>Buka Tab Baru</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                     </a>
                     <button onclick="closeDriveModal()" class="w-8 h-8 bg-black text-white hover:bg-lambe-red border-2 border-black flex items-center justify-center transition-all active:scale-95">
@@ -1214,7 +1259,7 @@
                 </div>
             </div>
 
-            <div class="relative flex-1 bg-black w-full h-full overflow-hidden">
+            <div class="relative flex-1 bg-black w-full h-full overflow-hidden flex flex-col items-center justify-center">
                 <div id="driveLoadingSpinner" class="absolute inset-0 flex flex-col items-center justify-center bg-black text-white gap-3 z-10">
                     <div class="w-10 h-10 border-4 border-lambe-yellow border-t-transparent animate-spin"></div>
                     <span class="text-xs font-bold font-mono text-lambe-yellow">Memuat Berkas Google Drive...</span>
@@ -1399,12 +1444,10 @@
             setupLOBScrollProgress();
             setupKeyboardShortcutIntersections();
             setupLerpHeroParallax();
-            setupMetricsObserver();
             updateIndonesianClock();
             setInterval(updateIndonesianClock, 1000);
             startMultilingualGreetingCycle();
             
-            // Auto dismiss intro overlay after 3.2 seconds if not closed manually
             setTimeout(() => {
                 dismissIntroOverlay();
             }, 3200);
@@ -1421,16 +1464,12 @@
         }
 
         function dismissIntroOverlay() {
-            const card3D = document.getElementById('introCard3D');
             const overlay = document.getElementById('introOverlay');
-            if (card3D) {
-                card3D.classList.add('intro-exit-3d');
-            }
             if (overlay) {
                 overlay.classList.add('opacity-0', 'pointer-events-none');
                 setTimeout(() => {
                     overlay.style.display = 'none';
-                }, 650);
+                }, 700);
             }
         }
 
@@ -1470,19 +1509,19 @@
 
             filtered.forEach(item => {
                 const card = document.createElement('div');
-                card.className = "p-3.5 sm:p-4 bg-lambe-cream poster-card flex flex-col justify-between overflow-hidden relative group font-heading";
+                card.className = "p-2.5 sm:p-4 bg-lambe-cream poster-card flex flex-col justify-between overflow-hidden relative group font-heading";
                 
                 const displayDesc = (currentLanguage === 'en') ? item.descEN : item.descID;
                 const categoryLabel = (item.category === 'branding') 
-                    ? ((currentLanguage === 'en') ? 'BRANDING &amp; LOGO' : 'BRANDING &amp; LOGO') 
+                    ? 'BRANDING & LOGO' 
                     : (item.category === 'webdev')
-                    ? ((currentLanguage === 'en') ? 'WEB DEVELOPMENT' : 'WEB DEV')
-                    : ((currentLanguage === 'en') ? 'SOCIAL MEDIA &amp; CLIENTS' : 'KLIEN SOSIAL MEDIA');
+                    ? 'WEB DEV'
+                    : 'KLIEN SOSIAL MEDIA';
 
                 let linksHTML = '';
                 if (item.links && item.links.length > 0) {
-                    linksHTML = `<div class="flex flex-wrap gap-1.5 mt-2">` + 
-                        item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="px-2 py-0.5 text-[10px] font-bold uppercase bg-black text-white hover:bg-lambe-yellow hover:text-black border border-black transition-all flex items-center gap-1 active:translate-y-0.5"><i class="fa-solid fa-globe text-[8px]"></i> ${l.name}</a>`).join('') +
+                    linksHTML = `<div class="flex flex-wrap gap-1 mt-2">` + 
+                        item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[9px] sm:text-[10px] px-1.5 py-0.5"><i class="fa-solid fa-globe text-[8px]"></i> ${l.name}</a>`).join('') +
                         `</div>`;
                 }
 
@@ -1490,12 +1529,12 @@
 
                 card.innerHTML = `
                     <div class="flex flex-col gap-2.5 font-sans">
-                        <div onclick="openDriveModal('${item.link}', '${safeTitle}')" class="relative w-full aspect-video border-2 border-black overflow-hidden bg-black cursor-pointer">
+                        <div onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="relative w-full aspect-video border-2 border-black overflow-hidden bg-black cursor-pointer">
                             <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center z-20 transition-all duration-200">
-                                <div class="w-10 h-10 bg-lambe-yellow text-black border-2 border-black flex items-center justify-center shadow-hard-sm mb-2">
-                                    <i class="fa-brands fa-google-drive text-base"></i>
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-lambe-yellow text-black border-2 border-black flex items-center justify-center shadow-hard-sm mb-1 sm:mb-2">
+                                    <i class="fa-brands fa-google-drive text-xs sm:text-base"></i>
                                 </div>
-                                <span class="px-3 py-1 bg-lambe-red border border-black text-white text-[10px] font-impact uppercase tracking-wider flex items-center gap-1 shadow-hard-sm">
+                                <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-lambe-red border border-black text-white text-[8px] sm:text-[10px] font-impact uppercase tracking-wider flex items-center gap-1 shadow-hard-sm">
                                     ${(currentLanguage === 'en') ? 'Explore Assets' : 'Tinjau Hasil Karya'} <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
                                 </span>
                             </div>
@@ -1503,19 +1542,19 @@
                         </div>
 
                         <div class="flex flex-col gap-1 text-left">
-                            <span class="inline-block text-[9px] uppercase font-bold tracking-wider text-white bg-black px-1.5 py-0.5 self-start font-mono">
+                            <span class="inline-block text-[8px] sm:text-[9px] uppercase font-bold tracking-wider text-white bg-black px-1.5 py-0.5 self-start font-mono">
                                 ${categoryLabel}
                             </span>
-                            <h3 class="text-sm font-impact text-black uppercase leading-tight font-heading mt-0.5">${item.title}</h3>
-                            <p class="text-xs text-slate-700 leading-normal font-medium">${displayDesc}</p>
+                            <h3 class="text-xs sm:text-sm font-impact text-black uppercase leading-tight font-heading mt-0.5">${item.title}</h3>
+                            <p class="text-[10px] sm:text-[11px] text-slate-700 leading-normal line-clamp-2 sm:line-clamp-3 font-medium">${displayDesc}</p>
                             ${linksHTML}
                         </div>
                     </div>
 
                     <div class="mt-3 pt-2 border-t-2 border-black flex items-center justify-between font-heading">
-                        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-xs font-extrabold uppercase text-lambe-red hover:underline flex items-center gap-1 active:translate-y-0.5">
-                            <span>${(currentLanguage === 'en') ? 'Explore Project' : 'Buka Proyek'}</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
-                        </a>
+                        <button onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="btn-lambe-link self-start">
+                            <span>${(currentLanguage === 'en') ? 'Explore Project' : 'Pratinjau Karya'}</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
+                        </button>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -1559,62 +1598,6 @@
             
             const headerClock = document.getElementById('realtimeClockHeader');
             if (headerClock) headerClock.textContent = formattedDisplay;
-
-            const mobileClock = document.getElementById('realtimeClockMobile');
-            if (mobileClock) mobileClock.textContent = `WIB ${timeString}`;
-        }
-
-        function animateCountUp(elementId, targetVal, decimals = 0, suffix = "") {
-            const el = document.getElementById(elementId);
-            if (!el) return;
-
-            const duration = 2000; 
-            const frameRate = 60;
-            const totalFrames = Math.round(duration / (1000 / frameRate));
-            let currentFrame = 0;
-
-            function easeOutQuad(t) {
-                return t * (2 - t);
-            }
-
-            const interval = setInterval(() => {
-                currentFrame++;
-                const progress = easeOutQuad(currentFrame / totalFrames);
-                const currentVal = progress * targetVal;
-
-                if (decimals > 0) {
-                    el.textContent = currentVal.toFixed(decimals) + suffix;
-                } else {
-                    el.textContent = Math.floor(currentVal).toLocaleString('id-ID') + suffix;
-                }
-
-                if (currentFrame >= totalFrames) {
-                    if (decimals > 0) {
-                        el.textContent = targetVal.toFixed(decimals) + suffix;
-                    } else {
-                        el.textContent = Math.floor(targetVal).toLocaleString('id-ID') + suffix;
-                    }
-                    clearInterval(interval);
-                }
-            }, 1000 / frameRate);
-        }
-
-        function setupMetricsObserver() {
-            const metricsSection = document.getElementById('about');
-            if (!metricsSection) return;
-
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCountUp("stat-assets", 2000, 0, "+");
-                        animateCountUp("stat-clients", 40, 0, "+");
-                        animateCountUp("stat-years", 3.4, 1, "");
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            observer.observe(metricsSection);
         }
 
         function switchCareerTab(id) {
@@ -1638,18 +1621,37 @@
             if (targetPanel) targetPanel.classList.remove('hidden');
         }
 
+        function switchAchieveTab(tabName) {
+            document.querySelectorAll('.achieve-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.achieve-panel').forEach(panel => panel.classList.add('hidden'));
+
+            const activeBtn = document.getElementById(`achTab-${tabName}`);
+            const activePanel = document.getElementById(`achPanel-${tabName}`);
+
+            if (activeBtn) activeBtn.classList.add('active');
+            if (activePanel) activePanel.classList.remove('hidden');
+        }
+
+        function toggleAcademicDocsModal() {
+            const modal = document.getElementById('academicDocsModal');
+            if (modal) {
+                modal.classList.toggle('hidden');
+                modal.classList.toggle('flex');
+            }
+        }
+
         const ROTATOR_WORDS_EN = [
-            "Full-Stack Web Developer",
-            "Administration & Automation Specialist",
-            "Graphic Designer",
-            "Digital Communication Consultant",
+            "Creative Designer",
+            "Digital Communication Specialist",
+            "AI Workflow Engineer",
+            "Google Apps Script Developer",
             "Brand Identity Strategist"
         ];
         const ROTATOR_WORDS_ID = [
-            "Full-Stack Web Developer",
-            "Spesialis Administrasi & Otomasi",
-            "Desainer Grafis Profesional",
-            "Konsultan Komunikasi Digital",
+            "Creative Designer",
+            "Spesialis Komunikasi Digital",
+            "AI Workflow Engineer",
+            "Google Apps Script Developer",
             "Strategis Branding Identity"
         ];
         let rotatorWordIdx = 0;
@@ -1733,6 +1735,12 @@
                     const contactEl = document.getElementById('contact');
                     if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
                     showiOSNotificationToast("Navigating to Contact Form", "📨");
+                } else if (key === 'ESCAPE') {
+                    closeDriveModal();
+                    const academicModal = document.getElementById('academicDocsModal');
+                    if (academicModal && !academicModal.classList.contains('hidden')) {
+                        toggleAcademicDocsModal();
+                    }
                 }
             });
         }
@@ -1856,119 +1864,44 @@
             }, 4000);
         }
 
-        function toggleThesisModalSuite() {
-            const modal = document.getElementById('thesisModal');
-            if (modal) {
-                modal.classList.toggle('hidden');
-                modal.classList.toggle('flex');
-            }
-        }
-
-        function openCredentialModal(type) {
-            const modal = document.getElementById('credentialModal');
-            const listContainer = document.getElementById('credentialModalList');
-            const titleEl = document.getElementById('credentialTitle');
-
-            if (!modal || !listContainer) return;
-
-            if (type === 'Awards') {
-                if (titleEl) titleEl.textContent = (currentLanguage === 'en') ? "National Competition Awards Credentials" : "Kredensial Penghargaan Kompetisi Nasional";
-                listContainer.innerHTML = `
-                    <a href="https://drive.google.com/drive/folders/16nbUGEk8auZfTGBLe692GQoFjZoweUy4?usp=drive_link" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-lambe-yellow text-black border-2 border-black hover:bg-black hover:text-white transition-all flex items-center justify-between group active:translate-y-0.5 shadow-hard-sm">
-                        <div class="flex items-center gap-3">
-                            <span class="text-xl shrink-0">📁</span>
-                            <div class="flex flex-col text-left">
-                                <span class="text-xs font-bold uppercase">${(currentLanguage === 'en') ? 'Academic Certificates' : 'Sertifikat Akademik'}</span>
-                                <span class="text-[9px] font-mono font-bold">${(currentLanguage === 'en') ? 'Compiles 30+ Qualified Certifications' : 'Menyimpan 30+ Sertifikasi Berkualifikasi'}</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-up-right-from-square text-sm group-hover:translate-x-0.5 transition-transform"></i>
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1e3gHto6qCq1IcLvVRhiNA4Snj2XnYHWQ?usp=drive_link" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-lambe-orange text-white border-2 border-black hover:bg-black hover:text-lambe-yellow transition-all flex items-center justify-between group active:translate-y-0.5 shadow-hard-sm">
-                        <div class="flex items-center gap-3">
-                            <span class="text-xl shrink-0">📁</span>
-                            <div class="flex flex-col text-left">
-                                <span class="text-xs font-bold uppercase">${(currentLanguage === 'en') ? 'Competition Certificates' : 'Sertifikat Lomba'}</span>
-                                <span class="text-[9px] font-mono font-bold">${(currentLanguage === 'en') ? 'Won Various National Competitions' : 'Meraih berbagai perlombaan nasional'}</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-up-right-from-square text-sm group-hover:translate-x-0.5 transition-transform"></i>
-                    </a>
-                `;
-            } else if (type === 'Certifications') {
-                if (titleEl) titleEl.textContent = (currentLanguage === 'en') ? "Professional Recognitions Credentials" : "Kredensial Rekognisi Profesional";
-                listContainer.innerHTML = `
-                    <a href="https://drive.google.com/drive/folders/1XB6c7EBgiknoiI9sAP5BAEtEEXsAD_s7?usp=drive_link" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-lambe-pink text-white border-2 border-black hover:bg-black hover:text-lambe-yellow transition-all flex items-center justify-between group active:translate-y-0.5 shadow-hard-sm">
-                        <div class="flex items-center gap-3">
-                            <span class="text-xl shrink-0">📁</span>
-                            <div class="flex flex-col text-left">
-                                <span class="text-xs font-bold uppercase">${(currentLanguage === 'en') ? 'Judge Certificates' : 'Sertifikat Juri'}</span>
-                                <span class="text-[9px] font-mono font-bold">${(currentLanguage === 'en') ? 'National and International Judge' : 'Menjadi juri nasional dan internasional'}</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-up-right-from-square text-sm group-hover:translate-x-0.5 transition-transform"></i>
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1kFyolybGEhmaHZexWsrwE2SdMqKDLLew?usp=drive_link" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-lambe-blue text-white border-2 border-black hover:bg-black hover:text-lambe-yellow transition-all flex items-center justify-between group active:translate-y-0.5 shadow-hard-sm">
-                        <div class="flex items-center gap-3">
-                            <span class="text-xl shrink-0">📁</span>
-                            <div class="flex flex-col text-left">
-                                <span class="text-xs font-bold uppercase">${(currentLanguage === 'en') ? 'Speaker Certificates' : 'Sertifikat Pemateri'}</span>
-                                <span class="text-[9px] font-mono font-bold">${(currentLanguage === 'en') ? 'Speaker and Workshop Trainer' : 'Menjadi pemateri dan pelatihan'}</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-up-right-from-square text-sm group-hover:translate-x-0.5 transition-transform"></i>
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1PJkSfxrsWK50TOrkkT9j1RNepu8Dk1en?usp=drive_link" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-lambe-red text-white border-2 border-black hover:bg-black hover:text-lambe-yellow transition-all flex items-center justify-between group active:translate-y-0.5 shadow-hard-sm">
-                        <div class="flex items-center gap-3">
-                            <span class="text-xl shrink-0">📁</span>
-                            <div class="flex flex-col text-left">
-                                <span class="text-xs font-bold uppercase">HaKI</span>
-                                <span class="text-[9px] font-mono font-bold">${(currentLanguage === 'en') ? 'Holds Intellectual Property Rights' : 'Mempunyai HaKI'}</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-up-right-from-square text-sm group-hover:translate-x-0.5 transition-transform"></i>
-                    </a>
-                `;
-            }
-
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeCredentialModalSuite() {
-            const modal = document.getElementById('credentialModal');
-            if (modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
-        }
-
-        /* --- FLOATING GOOGLE DRIVE EMBED PREVIEW SYSTEM --- */
+        /* --- FLOATING DRIVE PREVIEW ENGINE --- */
         function extractDriveFolderId(url) {
             if (!url) return null;
-            const folderMatch = url.match(/\/folders\/([a-zA-Z0-9_-]+)/);
-            if (folderMatch && folderMatch[1]) return folderMatch[1];
             
             const fileMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
             if (fileMatch && fileMatch[1]) return { type: 'file', id: fileMatch[1] };
 
-            const idParam = url.match(/id=([a-zA-Z0-9_-]+)/);
-            if (idParam && idParam[1]) return idParam[1];
+            const folderMatch = url.match(/\/folders\/([a-zA-Z0-9_-]+)/);
+            if (folderMatch && folderMatch[1]) return { type: 'folder', id: folderMatch[1] };
+
+            const idParam = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+            if (idParam && idParam[1]) return { type: 'folder', id: idParam[1] };
 
             return null;
         }
 
         function convertToEmbedDriveUrl(url) {
+            if (!url) return '';
             const extracted = extractDriveFolderId(url);
-            if (typeof extracted === 'object' && extracted !== null && extracted.type === 'file') {
-                return `https://drive.google.com/file/d/${extracted.id}/preview`;
-            } else if (typeof extracted === 'string' && extracted) {
-                return `https://drive.google.com/embeddedfolderview?id=${extracted}#grid`;
+            if (extracted) {
+                if (extracted.type === 'file') {
+                    return `https://drive.google.com/file/d/${extracted.id}/preview`;
+                } else if (extracted.type === 'folder') {
+                    return `https://drive.google.com/embeddedfolderview?id=${extracted.id}#grid`;
+                }
             }
             return url;
         }
 
-        function openDriveModal(rawUrl, title = "Preview Dokumen Drive") {
+        function handleDriveLinkClick(e, rawUrl, title) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            openDriveModal(rawUrl, title);
+        }
+
+        function openDriveModal(rawUrl, title = "Preview Google Drive") {
             const modal = document.getElementById('driveModal');
             const iframe = document.getElementById('driveFrame');
             const spinner = document.getElementById('driveLoadingSpinner');
@@ -2000,7 +1933,13 @@
             if (iframe) iframe.src = "";
         }
 
-        // Intercept Google Drive links automatically
+        function handleBackdropClick(e) {
+            if (e.target.id === 'driveModal') {
+                closeDriveModal();
+            }
+        }
+
+        // Global Event Interceptor for Google Drive Links
         document.addEventListener('click', function(e) {
             const link = e.target.closest('a[href*="drive.google.com"]');
             if (link) {
