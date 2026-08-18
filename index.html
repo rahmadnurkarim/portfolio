@@ -46,17 +46,52 @@
     </script>
 
     <style>
+        /* Standarisasi Pola Grid Selaras & Konsisten di Seluruh Halaman (24px Grid Standard) */
         body {
             background-color: #FFD700;
             color: #000000;
             background-image: 
-                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-                radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 0);
-            background-size: 20px 20px, 20px 20px, 16px 16px;
+                linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px),
+                radial-gradient(rgba(0, 0, 0, 0.22) 1.5px, transparent 0);
+            background-size: 24px 24px, 24px 24px, 12px 12px;
+            background-position: -1px -1px, -1px -1px, 0 0;
+            background-attachment: fixed;
         }
-        
-        /* Raw Street Poster Styles */
+
+        .bg-grid-yellow, .bg-grid-pattern {
+            background-color: #FFD700 !important;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px),
+                radial-gradient(rgba(0, 0, 0, 0.22) 1.5px, transparent 0) !important;
+            background-size: 24px 24px, 24px 24px, 12px 12px !important;
+            background-position: -1px -1px, -1px -1px, 0 0 !important;
+            background-attachment: fixed !important;
+        }
+
+        .bg-grid-light {
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 2px, transparent 2px),
+                radial-gradient(rgba(0, 0, 0, 0.15) 1.5px, transparent 0) !important;
+            background-size: 24px 24px, 24px 24px, 12px 12px !important;
+            background-position: -1px -1px, -1px -1px, 0 0 !important;
+            background-attachment: fixed !important;
+        }
+
+        .bg-grid-dark {
+            background-color: #000000 !important;
+            background-image: 
+                linear-gradient(rgba(255, 215, 0, 0.16) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(255, 215, 0, 0.16) 2px, transparent 2px),
+                radial-gradient(rgba(255, 215, 0, 0.22) 1.5px, transparent 0) !important;
+            background-size: 24px 24px, 24px 24px, 12px 12px !important;
+            background-position: -1px -1px, -1px -1px, 0 0 !important;
+            background-attachment: fixed !important;
+        }
+
+        /* Style Kartu Street Poster */
         .poster-card {
             border: 3px solid #000000;
             box-shadow: 5px 5px 0px 0px #000000;
@@ -76,7 +111,7 @@
             font-weight: 700;
         }
 
-        /* Standardized Lambe-Lambe Link & Button Component System */
+        /* Sistem Tombol & Tautan Neo-Brutalist */
         .btn-lambe-primary {
             background-color: #FF0000;
             color: #FFFFFF;
@@ -170,7 +205,7 @@
             box-shadow: 1px 1px 0px 0px #000000;
         }
 
-        /* Custom Scrollbar */
+        /* Scrollbar kustom */
         ::-webkit-scrollbar {
             width: 10px;
             height: 10px;
@@ -196,11 +231,10 @@
         }
 
         .street-nav {
-            background: #FFD700;
             border-bottom: 4px solid #000000;
         }
 
-        /* Active Filter & Tab States */
+        /* Status Aktif Filter & Tab */
         .portfolio-filter-btn.active, .achieve-tab-btn.active {
             background-color: #FF0000 !important;
             color: #FFFFFF !important;
@@ -215,7 +249,7 @@
             font-weight: 800;
         }
 
-        /* Typing cursor */
+        /* Kursor Mesin Ketik */
         .typing-cursor::after {
             content: '█';
             animation: blinkCursor 0.7s infinite;
@@ -226,7 +260,7 @@
             50% { opacity: 0; }
         }
 
-        /* Animated Title Gradient */
+        /* Animasi Gradasi Judul */
         .animated-text-name {
             background: linear-gradient(90deg, #FF0000, #FF6600, #FF1493, #0066CC);
             background-size: 300% 300%;
@@ -251,10 +285,10 @@
         }
     </style>
 </head>
-<body class="bg-lambe-yellow text-black antialiased selection:bg-lambe-red selection:text-white overflow-x-hidden font-sans">
+<body class="bg-grid-yellow text-black antialiased selection:bg-lambe-red selection:text-white overflow-x-hidden font-sans">
 
-    <!-- INTRO OVERLAY -->
-    <div id="introOverlay" class="fixed inset-0 z-[200] bg-black/95 text-white flex flex-col items-center justify-center p-4 transition-opacity duration-700 font-heading select-none">
+    <!-- OVERLAY INTRO -->
+    <div id="introOverlay" class="fixed inset-0 z-[200] bg-grid-dark text-white flex flex-col items-center justify-center p-4 transition-opacity duration-700 font-heading select-none">
         <div class="absolute inset-0 overflow-hidden pointer-events-none flex flex-wrap items-center justify-center opacity-20 gap-6 sm:gap-12 p-6 font-impact text-2xl sm:text-5xl uppercase tracking-widest text-lambe-yellow">
             <span class="greeting-watermark" style="animation-delay: 0s;">HALO</span>
             <span class="greeting-watermark" style="animation-delay: 0.3s;">HELLO</span>
@@ -268,24 +302,24 @@
             <span class="greeting-watermark" style="animation-delay: 2.7s;">ANYOUNG</span>
         </div>
 
-        <div class="relative z-10 flex flex-col items-center text-center gap-4 max-w-lg">
+        <div class="relative z-10 flex flex-col items-center text-center gap-2.5 max-w-lg">
             <div class="px-4 py-1.5 bg-lambe-red text-white border-2 border-white text-xs sm:text-sm font-mono font-bold tracking-widest uppercase shadow-hard">
                 <span id="multilingualGreetingText" class="text-lambe-yellow font-extrabold">HALO</span> • <span data-en="WELCOME" data-id="SELAMAT DATANG">SELAMAT DATANG</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl font-impact tracking-wider uppercase text-lambe-yellow leading-none">
+            <h1 class="text-3xl sm:text-5xl font-impact tracking-wider uppercase text-lambe-yellow leading-[0.88] my-1">
                 WELCOME TO MY PORTFOLIO
             </h1>
 
-            <button onclick="dismissIntroOverlay()" class="mt-4 btn-lambe-primary px-6 py-2.5 text-sm flex items-center gap-2">
+            <button onclick="dismissIntroOverlay()" class="mt-2 btn-lambe-primary px-6 py-2.5 text-sm flex items-center gap-2">
                 <span>EXPLORE NOW</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
     </div>
 
-    <!-- Navigation Bar -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 street-nav">
+    <!-- Bilah Navigasi -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 street-nav bg-grid-yellow">
         <div class="w-full h-1.5 bg-black absolute bottom-0 left-0">
             <div id="scrollProgressTrack" class="h-full bg-lambe-red w-0 transition-all duration-75"></div>
         </div>
@@ -317,7 +351,7 @@
                     <span id="realtimeClockHeader">WIB --:--:--</span>
                 </div>
 
-                <!-- Language Selector -->
+                <!-- Pemilih Bahasa -->
                 <button onclick="toggleGlobalLanguageSuite()" class="px-3 py-1.5 bg-lambe-orange text-white border-2 border-black text-xs font-heading font-black tracking-wider shadow-hard-sm hover:bg-black hover:text-lambe-yellow transition-all flex items-center gap-1.5 active:translate-y-0.5" aria-label="Toggle language">
                     <i class="fa-solid fa-globe text-xs"></i>
                     <span id="langDisplayLabel" class="font-mono">ID</span>
@@ -329,7 +363,7 @@
             </div>
         </div>
 
-        <div id="mobileMenu" class="hidden lg:hidden border-t-4 border-black bg-lambe-yellow py-4 px-6 flex flex-col gap-2 font-heading font-extrabold uppercase text-sm">
+        <div id="mobileMenu" class="hidden lg:hidden border-t-4 border-black bg-grid-yellow py-4 px-6 flex flex-col gap-2 font-heading font-extrabold uppercase text-sm">
             <a href="#about" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="About" data-id="Tentang">Tentang</a>
             <a href="#education" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Education" data-id="Pendidikan">Pendidikan</a>
             <a href="#experience" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Experience" data-id="Pengalaman">Pengalaman</a>
@@ -341,8 +375,8 @@
     </header>
 
     <main class="pt-16 sm:pt-20">
-        <!-- 1. HERO SECTION (BG: YELLOW) -->
-        <section id="hero" class="relative py-12 sm:py-16 lg:py-20 overflow-hidden border-b-4 border-black bg-lambe-yellow">
+        <!-- 1. BAGIAN HERO -->
+        <section id="hero" class="relative py-12 sm:py-16 lg:py-20 overflow-hidden border-b-4 border-black bg-grid-yellow">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                     
@@ -370,21 +404,20 @@
                                 <span id="cta-contact-text" data-en="Get in Touch" data-id="HUBUNGI SAYA">HUBUNGI SAYA</span>
                             </a>
                             
-                            <!-- Drive Link triggers floating modal preview -->
                             <a href="https://drive.google.com/drive/folders/1gZ8hxUaahyUVbZqoWZghBt6N6CJLnOVf?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'CV Rahmad Nur Karim, S.Pd.')" class="btn-lambe-secondary px-5 py-3 flex items-center justify-center gap-2 shrink-0 text-xs sm:text-sm">
                                 <i class="fa-solid fa-file-pdf text-xs"></i>
                                 <span data-en="Download CV (PDF)" data-id="UNDUH CV (PDF)">UNDUH CV (PDF)</span>
                             </a>
 
-                            <a href="https://www.instagram.com/k.ariiimm/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-orange text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Instagram Profile">
+                            <a href="https://www.instagram.com/k.ariiimm/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-orange text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Profil Instagram">
                                 <i class="fa-brands fa-instagram text-base"></i>
                             </a>
 
-                            <a href="https://www.linkedin.com/in/rahmad-nur-karim/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-blue text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="LinkedIn Profile">
+                            <a href="https://www.linkedin.com/in/rahmad-nur-karim/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-blue text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Profil LinkedIn">
                                 <i class="fa-brands fa-linkedin-in text-base"></i>
                             </a>
 
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurkarim2004@gmail.com" target="_blank" rel="noopener noreferrer" onclick="openEmailDirect(event)" class="w-11 h-11 flex items-center justify-center bg-lambe-pink text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Email Direct">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurkarim2004@gmail.com" target="_blank" rel="noopener noreferrer" onclick="openEmailDirect(event)" class="w-11 h-11 flex items-center justify-center bg-lambe-pink text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Email Langsung">
                                 <i class="fa-regular fa-envelope text-base"></i>
                             </a>
                         </div>
@@ -414,8 +447,8 @@
             </div>
         </section>
 
-        <!-- 2. ABOUT SECTION (BG: WHITE) -->
-        <section id="about" class="py-16 bg-white border-b-4 border-black">
+        <!-- 2. BAGIAN TENTANG -->
+        <section id="about" class="py-16 bg-white bg-grid-light border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
                     <span id="about-tag" data-en="Professional Profile" data-id="Profil Profesional" class="poster-badge px-3 py-1 bg-lambe-orange text-white text-xs">Profil Profesional</span>
@@ -505,8 +538,8 @@
             </div>
         </section>
 
-        <!-- 3. SECTION PENDIDIKAN (BG: CREAM) -->
-        <section id="education" class="py-16 bg-lambe-cream border-b-4 border-black">
+        <!-- 3. BAGIAN PENDIDIKAN -->
+        <section id="education" class="py-16 bg-lambe-cream bg-grid-light border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
                     <span id="edu-tag" data-en="Academic Record" data-id="Rekam Akademik" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs">Rekam Akademik</span>
@@ -568,8 +601,8 @@
             </div>
         </section>
 
-        <!-- 4. SECTION PENGALAMAN KERJA (BG: WHITE) -->
-        <section id="experience" class="py-16 bg-white border-b-4 border-black">
+        <!-- 4. BAGIAN PENGALAMAN KERJA -->
+        <section id="experience" class="py-16 bg-white bg-grid-light border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
                     <span id="exp-tag" data-en="Work Experience" data-id="Pengalaman Kerja" class="poster-badge px-3 py-1 bg-lambe-pink text-white text-xs">Pengalaman Kerja</span>
@@ -697,8 +730,8 @@
             </div>
         </section>
 
-        <!-- 5. SECTION ORGANISASI (BG: YELLOW) -->
-        <section id="organizations" class="py-16 bg-lambe-yellow border-b-4 border-black">
+        <!-- 5. BAGIAN ORGANISASI -->
+        <section id="organizations" class="py-16 bg-grid-yellow border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
                     <span id="org-tag" data-en="Organizational Experience" data-id="Pengalaman Organisasi" class="poster-badge px-3 py-1 bg-lambe-blue text-white text-xs">Pengalaman Organisasi</span>
@@ -706,123 +739,123 @@
                     <div class="w-20 h-2 bg-lambe-red border-2 border-black"></div>
                 </div>
 
-                <div class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 items-stretch max-w-6xl mx-auto w-full font-heading">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch max-w-6xl mx-auto w-full font-heading">
                     
-                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
                                 <span class="truncate">Staf Media &amp; Dok.</span>
-                                <span class="px-1.5 py-0.5 bg-lambe-orange text-white border border-black shrink-0">2025</span>
+                                <span class="px-2 py-0.5 bg-lambe-orange text-white border border-black shrink-0">2025</span>
                             </div>
-                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
-                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
+                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1walGjQqkXRcuW0mq7DSlOmESY1tvQ6lp" alt="KKN MBKM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KKN'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">Universitas Lampung</span>
-                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">KKN Tematik MBKM</span>
+                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">Universitas Lampung</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">KKN Tematik MBKM</span>
                                 </div>
                             </div>
-                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">KKN MBKM Desa Toto Katon</h3>
-                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Menyusun penuh peta informasi publik, visualisasi pengenalan potensi warga, dan promosi media sosial desa.</p>
+                            <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">KKN MBKM Desa Toto Katon</h3>
+                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Menyusun penuh peta informasi publik, visualisasi pengenalan potensi warga, dan promosi media sosial desa.</p>
                         </div>
-                        <a href="https://www.instagram.com/kkn.desatotokaton2025/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                        <a href="https://www.instagram.com/kkn.desatotokaton2025/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
                             <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
-                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
                                 <span class="truncate">Wakil Ketua Umum</span>
-                                <span class="px-1.5 py-0.5 bg-lambe-pink text-white border border-black shrink-0">24-25</span>
+                                <span class="px-2 py-0.5 bg-lambe-pink text-white border border-black shrink-0">24-25</span>
                             </div>
-                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
-                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
+                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1NYaHsv4olOMTOydxxZztSZqaIMv8xRQt" alt="KSPM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KSPM'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">KSPM FKIP Unila</span>
-                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">GIS Syariah</span>
+                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">KSPM FKIP Unila</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">GIS Syariah</span>
                                 </div>
                             </div>
-                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">KSPM FKIP Universitas Lampung</h3>
-                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Mengakselerasi sistem pemahaman pasar modal, memimpin koordinasi acara literasi saham, serta mengantarkan GIS Unila ke Juara Nasional III.</p>
+                            <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">KSPM FKIP Universitas Lampung</h3>
+                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Mengakselerasi sistem pemahaman pasar modal, memimpin koordinasi acara literasi saham, serta mengantarkan GIS Unila ke Juara Nasional III.</p>
                         </div>
-                        <a href="https://www.instagram.com/kspm_fkipunila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                        <a href="https://www.instagram.com/kspm_fkipunila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
                             <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
-                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
                                 <span class="truncate">Staf Media</span>
-                                <span class="px-1.5 py-0.5 bg-lambe-green text-white border border-black shrink-0">2024</span>
+                                <span class="px-2 py-0.5 bg-lambe-green text-white border border-black shrink-0">2024</span>
                             </div>
-                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
-                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
+                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1YbgklKeI2c0UB00uXbd8IB2K7bSGaMu1" alt="SRE Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=SRE'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">SRE Unila</span>
-                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">Renewable Energy</span>
+                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">SRE Unila</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Renewable Energy</span>
                                 </div>
                             </div>
-                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">SRE Universitas Lampung</h3>
-                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Mendesain info grafis ramah lingkungan, dekarbonisasi industri, serta kampanye hijau yang menaikkan jangkauan media sebesar 67%.</p>
+                            <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">SRE Universitas Lampung</h3>
+                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Mendesain info grafis ramah lingkungan, dekarbonisasi industri, serta kampanye hijau yang menaikkan jangkauan media sebesar 67%.</p>
                         </div>
-                        <a href="https://www.instagram.com/sre.unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                        <a href="https://www.instagram.com/sre.unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
                             <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
-                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
                                 <span class="truncate">Staf Media</span>
-                                <span class="px-1.5 py-0.5 bg-lambe-yellow text-black border border-black shrink-0">23-24</span>
+                                <span class="px-2 py-0.5 bg-lambe-yellow text-black border border-black shrink-0">23-24</span>
                             </div>
-                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
-                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
+                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1-34XM4ZABXrK4YTUGNWpO-2dPUKEtvVw" alt="ASSETS Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=ASSETS'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">ASSETS Unila</span>
-                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">Hima Pend. Ekonomi</span>
+                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">ASSETS Unila</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Hima Pend. Ekonomi</span>
                                 </div>
                             </div>
-                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">Himpunan Mahasiswa ASSETS Unila</h3>
-                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Memproduksi 100+ aset pamflet promosi program studi, mempercantik feeds Instagram, dan meningkatkan engagement hingga 50%.</p>
+                            <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">Himpunan Mahasiswa ASSETS Unila</h3>
+                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Memproduksi 100+ aset pamflet promosi program studi, mempercantik feeds Instagram, dan meningkatkan engagement hingga 50%.</p>
                         </div>
-                        <a href="https://www.instagram.com/assets_unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                        <a href="https://www.instagram.com/assets_unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
                             <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
                     </div>
 
-                    <div class="p-2.5 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-2 sm:space-y-4">
-                            <div class="flex items-center justify-between text-[9px] sm:text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
                                 <span class="truncate">Staf Media</span>
-                                <span class="px-1.5 py-0.5 bg-lambe-orange text-white border border-black shrink-0">2023</span>
+                                <span class="px-2 py-0.5 bg-lambe-orange text-white border border-black shrink-0">2023</span>
                             </div>
-                            <div class="flex items-center gap-2 sm:gap-3 bg-lambe-yellow p-1.5 sm:p-2 border-2 border-black">
-                                <div class="w-8 h-7 sm:w-12 sm:h-10 bg-black p-0.5 sm:p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                            <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
+                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1Dn7vKWBI0pD48Kcxlne2cX1PL2woLk8u" alt="BEM Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=BEM'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
-                                    <span class="text-[9px] sm:text-xs font-bold text-black uppercase leading-none truncate">BEM Unila</span>
-                                    <span class="text-[8px] sm:text-[10px] text-black font-mono font-medium mt-0.5 sm:mt-1 truncate">Eksekutif Mahasiswa</span>
+                                    <span class="text-xs font-bold text-black uppercase leading-none truncate">BEM Unila</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Eksekutif Mahasiswa</span>
                                 </div>
                             </div>
-                            <h3 class="text-xs sm:text-base font-impact text-black uppercase leading-tight">BEM Universitas Lampung</h3>
-                            <p class="text-[10px] sm:text-xs font-sans text-slate-700 leading-normal font-medium line-clamp-3 sm:line-clamp-none">Merancang 150+ desain rilis kemahasiswaan, poster aksi publik, serta pamflet infografis yang menjangkau 45.000+ audiens nasional.</p>
+                            <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">BEM Universitas Lampung</h3>
+                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Merancang 150+ desain rilis kemahasiswaan, poster aksi publik, serta pamflet infografis yang menjangkau 45.000+ audiens nasional.</p>
                         </div>
-                        <a href="https://www.instagram.com/bem_unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-3 sm:mt-4 self-start">
+                        <a href="https://www.instagram.com/bem_unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
                             <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </a>
@@ -832,8 +865,8 @@
             </div>
         </section>
 
-        <!-- 6. SECTION PORTOFOLIO (BG: WHITE) -->
-        <section id="portfolio" class="py-16 bg-white border-b-4 border-black">
+        <!-- 6. BAGIAN PORTOFOLIO -->
+        <section id="portfolio" class="py-16 bg-white bg-grid-light border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
                     <span id="port-section-tag" class="poster-badge px-3 py-1 bg-lambe-yellow text-black text-xs">VISUAL GALLERY</span>
@@ -841,7 +874,7 @@
                     <div class="w-20 h-2 bg-lambe-pink border-2 border-black"></div>
                 </div>
 
-                <!-- Filter Category Buttons -->
+                <!-- Tombol Kategori Filter -->
                 <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-10 font-heading font-extrabold uppercase">
                     <button onclick="filterPortfolio('all')" id="filter-all" class="portfolio-filter-btn active px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="All Projects" data-id="Semua Desain">Semua Desain</button>
                     <button onclick="filterPortfolio('branding')" id="filter-branding" class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Branding &amp; Graphics" data-id="Branding &amp; Logo">Branding &amp; Logo</button>
@@ -849,15 +882,15 @@
                     <button onclick="filterPortfolio('webdev')" id="filter-webdev" class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Web Development" data-id="Web Dev">Web Dev</button>
                 </div>
 
-                <!-- Portfolio Grid: 2 Columns on Mobile, 3 on Large Screens -->
-                <div id="portfolioGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 items-stretch w-full max-w-6xl mx-auto">
-                    <!-- Dynamic Portfolio Items populated by JavaScript -->
+                <!-- Grid Portofolio Responsif -->
+                <div id="portfolioGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch w-full max-w-6xl mx-auto">
+                    <!-- Item Portofolio Dinamis diisi oleh JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- 7. SECTION PENGHARGAAN, SERTIFIKASI & PENGAKUAN (BG: CREAM) -->
-        <section id="achievements" class="py-16 bg-lambe-cream border-b-4 border-black">
+        <!-- 7. BAGIAN PENGHARGAAN & SERTIFIKASI -->
+        <section id="achievements" class="py-16 bg-lambe-cream bg-grid-light border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
                     <span id="ach-section-tag" data-en="Achievements, Credentials &amp; Recognition" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs">Penghargaan, Sertifikasi &amp; Pengakuan</span>
@@ -1037,8 +1070,8 @@
             </div>
         </section>
 
-        <!-- 8. SECTION KONTAK (BG: WHITE) -->
-        <section id="contact" class="py-16 bg-white border-b-4 border-black">
+        <!-- 8. BAGIAN KONTAK -->
+        <section id="contact" class="py-16 bg-white bg-grid-light border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
                     <span id="contact-section-tag" data-en="Get in Touch" data-id="Hubungi Saya" class="poster-badge px-3 py-1 bg-lambe-orange text-white text-xs">Hubungi Saya</span>
@@ -1126,7 +1159,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="py-10 bg-black text-white border-t-4 border-black flex flex-col items-center">
+    <footer class="py-10 bg-black bg-grid-dark text-white border-t-4 border-black flex flex-col items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 w-full text-center md:text-left font-heading">
             <div class="flex flex-col gap-1">
                 <span id="footer-name" data-en="Rahmad Nur Karim, S.Pd." data-id="Rahmad Nur Karim, S.Pd." class="text-sm font-impact text-lambe-yellow uppercase tracking-wider">Rahmad Nur Karim, S.Pd.</span>
@@ -1143,7 +1176,7 @@
         </div>
     </footer>
 
-    <!-- MODAL 1: INTEGRATED ACADEMIC DOCUMENTS MODAL (SKRIPSI, SINTA JOURNALS & HAKI) -->
+    <!-- MODAL DOKUMEN AKADEMIK -->
     <div id="academicDocsModal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
         <div class="w-full max-w-2xl bg-lambe-cream border-4 border-black shadow-hard-lg p-6 sm:p-8 flex flex-col gap-5 relative font-sans max-h-[90vh] overflow-y-auto">
             
@@ -1157,7 +1190,7 @@
                 </button>
             </div>
 
-            <!-- 1. SKRIPSI ABSTRAK -->
+            <!-- 1. SKRIPSI -->
             <div class="space-y-3 text-left bg-white p-4 border-2 border-black shadow-hard-sm">
                 <span class="text-[10px] font-mono font-bold uppercase bg-lambe-yellow px-2 py-0.5 border border-black inline-block">01 — SKRIPSI SARJANA</span>
                 <h4 class="text-xs sm:text-sm text-black font-extrabold leading-snug">
@@ -1234,7 +1267,7 @@
         </div>
     </div>
 
-    <!-- MODAL FLOATING GOOGLE DRIVE EMBED PREVIEW SYSTEM -->
+    <!-- MODAL FLOATING DRIVE PREVIEW -->
     <div id="driveModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-[160] bg-black/85 backdrop-blur-sm hidden items-center justify-center p-2 sm:p-4 font-sans">
         <div class="w-full max-w-5xl h-[88vh] bg-lambe-cream border-4 border-black shadow-hard-lg flex flex-col overflow-hidden relative">
             <div class="flex items-center justify-between px-4 py-3 bg-lambe-yellow text-black border-b-4 border-black shrink-0 font-heading">
@@ -1269,7 +1302,7 @@
         </div>
     </div>
 
-    <!-- TOAST NOTIFICATION -->
+    <!-- NOTIFIKASI TOAST -->
     <div id="iosToast" class="fixed bottom-6 right-6 z-[150] transform translate-y-[100px] opacity-0 transition-all duration-300 pointer-events-none font-mono">
         <div class="bg-lambe-yellow text-black px-4 py-3 border-3 border-black shadow-hard text-xs font-bold flex items-center gap-2">
             <span id="toastIcon">💡</span>
@@ -1509,7 +1542,7 @@
 
             filtered.forEach(item => {
                 const card = document.createElement('div');
-                card.className = "p-2.5 sm:p-4 bg-lambe-cream poster-card flex flex-col justify-between overflow-hidden relative group font-heading";
+                card.className = "p-4 sm:p-5 bg-lambe-cream poster-card flex flex-col justify-between overflow-hidden relative group font-heading";
                 
                 const displayDesc = (currentLanguage === 'en') ? item.descEN : item.descID;
                 const categoryLabel = (item.category === 'branding') 
@@ -1520,21 +1553,21 @@
 
                 let linksHTML = '';
                 if (item.links && item.links.length > 0) {
-                    linksHTML = `<div class="flex flex-wrap gap-1 mt-2">` + 
-                        item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[9px] sm:text-[10px] px-1.5 py-0.5"><i class="fa-solid fa-globe text-[8px]"></i> ${l.name}</a>`).join('') +
+                    linksHTML = `<div class="flex flex-wrap gap-1.5 mt-2">` + 
+                        item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px] px-2 py-0.5"><i class="fa-solid fa-globe text-[8px]"></i> ${l.name}</a>`).join('') +
                         `</div>`;
                 }
 
                 const safeTitle = item.title.replace(/'/g, "\\'");
 
                 card.innerHTML = `
-                    <div class="flex flex-col gap-2.5 font-sans">
+                    <div class="flex flex-col gap-3 font-sans">
                         <div onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="relative w-full aspect-video border-2 border-black overflow-hidden bg-black cursor-pointer">
                             <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center z-20 transition-all duration-200">
-                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-lambe-yellow text-black border-2 border-black flex items-center justify-center shadow-hard-sm mb-1 sm:mb-2">
-                                    <i class="fa-brands fa-google-drive text-xs sm:text-base"></i>
+                                <div class="w-10 h-10 bg-lambe-yellow text-black border-2 border-black flex items-center justify-center shadow-hard-sm mb-2">
+                                    <i class="fa-brands fa-google-drive text-base"></i>
                                 </div>
-                                <span class="px-2 py-0.5 sm:px-3 sm:py-1 bg-lambe-red border border-black text-white text-[8px] sm:text-[10px] font-impact uppercase tracking-wider flex items-center gap-1 shadow-hard-sm">
+                                <span class="px-3 py-1 bg-lambe-red border border-black text-white text-[10px] font-impact uppercase tracking-wider flex items-center gap-1 shadow-hard-sm">
                                     ${(currentLanguage === 'en') ? 'Explore Assets' : 'Tinjau Hasil Karya'} <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
                                 </span>
                             </div>
@@ -1542,16 +1575,16 @@
                         </div>
 
                         <div class="flex flex-col gap-1 text-left">
-                            <span class="inline-block text-[8px] sm:text-[9px] uppercase font-bold tracking-wider text-white bg-black px-1.5 py-0.5 self-start font-mono">
+                            <span class="inline-block text-[9px] uppercase font-bold tracking-wider text-white bg-black px-2 py-0.5 self-start font-mono">
                                 ${categoryLabel}
                             </span>
-                            <h3 class="text-xs sm:text-sm font-impact text-black uppercase leading-tight font-heading mt-0.5">${item.title}</h3>
-                            <p class="text-[10px] sm:text-[11px] text-slate-700 leading-normal line-clamp-2 sm:line-clamp-3 font-medium">${displayDesc}</p>
+                            <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight font-heading mt-0.5">${item.title}</h3>
+                            <p class="text-xs text-slate-700 leading-normal font-medium">${displayDesc}</p>
                             ${linksHTML}
                         </div>
                     </div>
 
-                    <div class="mt-3 pt-2 border-t-2 border-black flex items-center justify-between font-heading">
+                    <div class="mt-4 pt-2.5 border-t-2 border-black flex items-center justify-between font-heading">
                         <button onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="btn-lambe-link self-start">
                             <span>${(currentLanguage === 'en') ? 'Explore Project' : 'Pratinjau Karya'}</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
                         </button>
@@ -1864,7 +1897,7 @@
             }, 4000);
         }
 
-        /* --- FLOATING DRIVE PREVIEW ENGINE --- */
+        /* --- SISTEM MODAL DRIVE PREVIEW --- */
         function extractDriveFolderId(url) {
             if (!url) return null;
             
@@ -1939,7 +1972,7 @@
             }
         }
 
-        // Global Event Interceptor for Google Drive Links
+        // Interseptor Link Google Drive Global
         document.addEventListener('click', function(e) {
             const link = e.target.closest('a[href*="drive.google.com"]');
             if (link) {
