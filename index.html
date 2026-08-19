@@ -25,13 +25,13 @@
                     },
                     colors: {
                         lambe: {
-                            red: '#FF0000',
+                            red: '#D00000',
                             yellow: '#FFD700',
                             green: '#006400',
                             black: '#000000',
-                            orange: '#FF6600',
-                            blue: '#0066CC',
-                            pink: '#FF1493',
+                            orange: '#FF5500',
+                            blue: '#0055CC',
+                            pink: '#E0115F',
                             cream: '#FFFDF0',
                         }
                     },
@@ -46,28 +46,45 @@
     </script>
 
     <style>
-        /* Standarisasi Pola Grid Yellow untuk Halaman Utama & Section Khusus Kuning */
-        body {
-            background-color: #FFD700;
-            color: #000000;
-            background-image: 
-                linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
-                linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px),
-                radial-gradient(rgba(0, 0, 0, 0.22) 1.5px, transparent 0);
-            background-size: 24px 24px, 24px 24px, 12px 12px;
-            background-position: -1px -1px, -1px -1px, 0 0;
-            background-attachment: fixed;
+        /* Keyframe Animasi Pergerakan Texture Grid Soft */
+        @keyframes animatedGridShift {
+            0% {
+                background-position: 0px 0px, 0px 0px, 0px 0px;
+            }
+            100% {
+                background-position: 24px 24px, 24px 24px, 12px 12px;
+            }
         }
 
-        .bg-grid-yellow, .bg-grid-pattern {
+        /* Texture Grid Animasi Warna Kuning (Halaman Utama & Section Kuning) */
+        body, .bg-grid-yellow, .bg-grid-pattern {
             background-color: #FFD700 !important;
+            color: #000000;
             background-image: 
                 linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
                 linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px),
                 radial-gradient(rgba(0, 0, 0, 0.22) 1.5px, transparent 0) !important;
             background-size: 24px 24px, 24px 24px, 12px 12px !important;
-            background-position: -1px -1px, -1px -1px, 0 0 !important;
-            background-attachment: fixed !important;
+            animation: animatedGridShift 20s linear infinite !important;
+        }
+
+        /* Texture Grid Animasi Warna Putih (Section Putih) */
+        .bg-grid-white {
+            background-color: #FFFFFF !important;
+            color: #000000;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 2px, transparent 2px),
+                radial-gradient(rgba(0, 0, 0, 0.15) 1.5px, transparent 0) !important;
+            background-size: 24px 24px, 24px 24px, 12px 12px !important;
+            animation: animatedGridShift 25s linear infinite !important;
+        }
+
+        /* Nonaktifkan animasi jika pengguna memilih reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            body, .bg-grid-yellow, .bg-grid-pattern, .bg-grid-white {
+                animation: none !important;
+            }
         }
 
         /* Style Kartu Street Poster */
@@ -75,7 +92,8 @@
             border: 3px solid #000000;
             box-shadow: 5px 5px 0px 0px #000000;
             transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-            background-color: #FFFFFF;
+            background-color: #FFFDF0;
+            position: relative;
         }
         .poster-card:hover {
             transform: translate(-3px, -3px);
@@ -92,7 +110,7 @@
 
         /* Sistem Tombol & Tautan Neo-Brutalist */
         .btn-lambe-primary {
-            background-color: #FF0000;
+            background-color: #D00000;
             color: #FFFFFF;
             border: 3px solid #000000;
             box-shadow: 4px 4px 0px 0px #000000;
@@ -125,7 +143,7 @@
             cursor: pointer;
         }
         .btn-lambe-secondary:hover {
-            background-color: #FF6600;
+            background-color: #FF5500;
             color: #FFFFFF;
             transform: translate(-2px, -2px);
             box-shadow: 6px 6px 0px 0px #000000;
@@ -147,7 +165,7 @@
             cursor: pointer;
         }
         .btn-lambe-dark:hover {
-            background-color: #FF0000;
+            background-color: #D00000;
             color: #FFFFFF;
             transform: translate(-2px, -2px);
             box-shadow: 6px 6px 0px 0px #000000;
@@ -163,7 +181,7 @@
             gap: 0.375rem;
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.8125rem;
             text-transform: uppercase;
             color: #000000;
             padding: 0.375rem 0.75rem;
@@ -174,7 +192,7 @@
             cursor: pointer;
         }
         .btn-lambe-link:hover {
-            background-color: #FF0000;
+            background-color: #D00000;
             color: #FFFFFF;
             transform: translate(-1px, -1px);
             box-shadow: 4px 4px 0px 0px #000000;
@@ -186,19 +204,19 @@
 
         /* Scrollbar kustom */
         ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
         }
         ::-webkit-scrollbar-track {
             background: #FFD700;
             border-left: 2px solid #000;
         }
         ::-webkit-scrollbar-thumb {
-            background: #FF0000;
+            background: #D00000;
             border: 2px solid #000;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #FF1493;
+            background: #E0115F;
         }
 
         .scrollbar-none {
@@ -215,7 +233,7 @@
 
         /* Status Aktif Filter & Tab */
         .portfolio-filter-btn.active, .achieve-tab-btn.active {
-            background-color: #FF0000 !important;
+            background-color: #D00000 !important;
             color: #FFFFFF !important;
             box-shadow: 4px 4px 0px 0px #000000 !important;
             transform: translate(-2px, -2px);
@@ -232,27 +250,20 @@
         .typing-cursor::after {
             content: '█';
             animation: blinkCursor 0.7s infinite;
-            color: #FF0000;
+            color: #D00000;
             margin-left: 2px;
         }
         @keyframes blinkCursor {
             50% { opacity: 0; }
         }
 
-        /* Animasi Gradasi Judul */
+        /* Teks Nama Solid Red Neo-Brutalist dengan keterbacaan ekstra */
         .animated-text-name {
-            background: linear-gradient(90deg, #FF0000, #FF6600, #FF1493, #0066CC);
-            background-size: 300% 300%;
-            animation: streetGradient 6s ease infinite;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #D00000;
+            text-shadow: 1.5px 1.5px 0px #000000;
             display: inline-block;
-        }
-        @keyframes streetGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            letter-spacing: -0.01em;
+            line-height: 1.05;
         }
 
         @keyframes floatGreeting {
@@ -268,7 +279,7 @@
 
     <!-- OVERLAY INTRO (Solid Dark Background) -->
     <div id="introOverlay" class="fixed inset-0 z-[200] bg-black text-white flex flex-col items-center justify-center p-4 transition-opacity duration-700 font-heading select-none">
-        <div class="absolute inset-0 overflow-hidden pointer-events-none flex flex-wrap items-center justify-center opacity-20 gap-6 sm:gap-12 p-6 font-impact text-2xl sm:text-5xl uppercase tracking-widest text-lambe-yellow">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none flex flex-wrap items-center justify-center opacity-15 gap-4 sm:gap-12 p-4 font-impact text-2xl sm:text-5xl uppercase tracking-widest text-lambe-yellow">
             <span class="greeting-watermark" style="animation-delay: 0s;">HALO</span>
             <span class="greeting-watermark" style="animation-delay: 0.3s;">HELLO</span>
             <span class="greeting-watermark" style="animation-delay: 0.6s;">BONJOUR</span>
@@ -281,16 +292,16 @@
             <span class="greeting-watermark" style="animation-delay: 2.7s;">ANYOUNG</span>
         </div>
 
-        <div class="relative z-10 flex flex-col items-center text-center gap-2.5 max-w-lg">
+        <div class="relative z-10 flex flex-col items-center text-center gap-3 max-w-lg w-full px-2">
             <div class="px-4 py-1.5 bg-lambe-red text-white border-2 border-white text-xs sm:text-sm font-mono font-bold tracking-widest uppercase shadow-hard">
                 <span id="multilingualGreetingText" class="text-lambe-yellow font-extrabold">HALO</span> • <span data-en="WELCOME" data-id="SELAMAT DATANG">SELAMAT DATANG</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl font-impact tracking-wider uppercase text-lambe-yellow leading-[0.88] my-1">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-impact tracking-wider uppercase text-lambe-yellow leading-[0.95] my-1">
                 WELCOME TO MY PORTFOLIO
             </h1>
 
-            <button onclick="dismissIntroOverlay()" class="mt-2 btn-lambe-primary px-6 py-2.5 text-sm flex items-center gap-2">
+            <button onclick="dismissIntroOverlay()" class="mt-3 btn-lambe-primary px-6 py-3 text-xs sm:text-sm flex items-center gap-2">
                 <span>EXPLORE NOW</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
@@ -304,34 +315,34 @@
         </div>
 
         <div id="navInnerContainer" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
-            <a href="#hero" class="flex items-center gap-2 group active:scale-95 transition-all shrink-0">
+            <a href="#hero" class="flex items-center gap-2.5 group active:scale-95 transition-all shrink-0">
                 <div class="h-9 w-9 sm:h-11 sm:w-11 bg-lambe-red border-3 border-black text-white font-impact text-xl sm:text-2xl flex items-center justify-center shadow-hard-sm group-hover:rotate-6 transition-transform">
                     R
                 </div>
                 <div class="flex flex-col">
-                    <span id="nav-brand-name" data-en="RAHMAD NUR KARIM" data-id="RAHMAD NUR KARIM" class="text-xs sm:text-base font-impact tracking-wider text-black uppercase leading-none">RAHMAD NUR KARIM</span>
-                    <span class="text-[9px] font-mono font-bold uppercase tracking-widest text-black">Portofolio</span>
+                    <span id="nav-brand-name" data-en="RAHMAD NUR KARIM" data-id="RAHMAD NUR KARIM" class="text-sm sm:text-lg font-impact tracking-wider text-black uppercase leading-none">RAHMAD NUR KARIM</span>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-black/80">Portofolio</span>
                 </div>
             </a>
 
             <nav class="hidden lg:flex items-center gap-1 bg-white p-1.5 border-3 border-black shadow-hard-sm font-heading font-bold text-xs uppercase tracking-wider">
-                <a href="#about" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="About" data-id="Tentang">Tentang</a>
-                <a href="#education" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Education" data-id="Pendidikan">Pendidikan</a>
-                <a href="#experience" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Experience" data-id="Pengalaman">Pengalaman</a>
-                <a href="#organizations" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Organizations" data-id="Organisasi">Organisasi</a>
-                <a href="#portfolio" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Portfolio" data-id="Portofolio">Portofolio</a>
-                <a href="#achievements" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Awards &amp; Certs" data-id="Penghargaan">Penghargaan</a>
-                <a href="#contact" class="px-3 py-1 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Contact" data-id="Kontak">Kontak</a>
+                <a href="#about" class="px-3 py-1.5 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="About" data-id="Tentang">Tentang</a>
+                <a href="#education" class="px-3 py-1.5 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Education" data-id="Pendidikan">Pendidikan</a>
+                <a href="#experience" class="px-3 py-1.5 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Experience" data-id="Pengalaman">Pengalaman</a>
+                <a href="#organizations" class="px-3 py-1.5 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Organizations" data-id="Organisasi">Organisasi</a>
+                <a href="#portfolio" class="px-3 py-1.5 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Portfolio" data-id="Portofolio">Portofolio</a>
+                <a href="#achievements" class="px-3 py-1.5 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Awards &amp; Certs" data-id="Penghargaan">Penghargaan</a>
+                <a href="#contact" class="px-3 py-1.5 text-black hover:bg-lambe-yellow border border-transparent hover:border-black transition-all" data-en="Contact" data-id="Kontak">Kontak</a>
             </nav>
 
             <div class="flex items-center gap-2">
-                <div class="hidden xl:flex items-center gap-2 px-3 py-1 bg-white border-2 border-black font-mono text-[11px] font-bold text-black shadow-hard-sm">
+                <div class="hidden xl:flex items-center gap-2 px-3 py-1.5 bg-white border-2 border-black font-mono text-[11px] font-bold text-black shadow-hard-sm">
                     <span class="w-2.5 h-2.5 rounded-full bg-lambe-red animate-pulse"></span>
                     <span id="realtimeClockHeader">WIB --:--:--</span>
                 </div>
 
                 <!-- Pemilih Bahasa -->
-                <button onclick="toggleGlobalLanguageSuite()" class="px-3 py-1.5 bg-lambe-orange text-white border-2 border-black text-xs font-heading font-black tracking-wider shadow-hard-sm hover:bg-black hover:text-lambe-yellow transition-all flex items-center gap-1.5 active:translate-y-0.5" aria-label="Toggle language">
+                <button onclick="toggleGlobalLanguageSuite()" class="px-3.5 py-1.5 bg-lambe-orange text-white border-2 border-black text-xs font-heading font-black tracking-wider shadow-hard-sm hover:bg-black hover:text-lambe-yellow transition-all flex items-center gap-1.5 active:translate-y-0.5" aria-label="Toggle language">
                     <i class="fa-solid fa-globe text-xs"></i>
                     <span id="langDisplayLabel" class="font-mono">ID</span>
                 </button>
@@ -343,80 +354,84 @@
         </div>
 
         <div id="mobileMenu" class="hidden lg:hidden border-t-4 border-black bg-lambe-yellow py-4 px-6 flex flex-col gap-2 font-heading font-extrabold uppercase text-sm">
-            <a href="#about" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="About" data-id="Tentang">Tentang</a>
-            <a href="#education" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Education" data-id="Pendidikan">Pendidikan</a>
-            <a href="#experience" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Experience" data-id="Pengalaman">Pengalaman</a>
-            <a href="#organizations" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Organizations" data-id="Organisasi">Organisasi</a>
-            <a href="#portfolio" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Portfolio" data-id="Portofolio">Portofolio</a>
-            <a href="#achievements" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Awards &amp; Certs" data-id="Penghargaan">Penghargaan</a>
-            <a href="#contact" onclick="closeMobileMenuSuite()" class="py-2 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Contact" data-id="Kontak">Kontak</a>
+            <a href="#about" onclick="closeMobileMenuSuite()" class="py-2.5 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="About" data-id="Tentang">Tentang</a>
+            <a href="#education" onclick="closeMobileMenuSuite()" class="py-2.5 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Education" data-id="Pendidikan">Pendidikan</a>
+            <a href="#experience" onclick="closeMobileMenuSuite()" class="py-2.5 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Experience" data-id="Pengalaman">Pengalaman</a>
+            <a href="#organizations" onclick="closeMobileMenuSuite()" class="py-2.5 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Organizations" data-id="Organisasi">Organisasi</a>
+            <a href="#portfolio" onclick="closeMobileMenuSuite()" class="py-2.5 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Portfolio" data-id="Portofolio">Portofolio</a>
+            <a href="#achievements" onclick="closeMobileMenuSuite()" class="py-2.5 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Awards &amp; Certs" data-id="Penghargaan">Penghargaan</a>
+            <a href="#contact" onclick="closeMobileMenuSuite()" class="py-2.5 px-3 bg-white border-2 border-black hover:bg-lambe-red hover:text-white transition-all" data-en="Contact" data-id="Kontak">Kontak</a>
         </div>
     </header>
 
     <main class="pt-16 sm:pt-20">
         <!-- 1. BAGIAN HERO (Section 1: Yellow Grid Background) -->
-        <section id="hero" class="relative py-12 sm:py-16 lg:py-20 overflow-hidden border-b-4 border-black bg-grid-yellow">
+        <section id="hero" class="relative py-10 sm:py-14 lg:py-16 overflow-hidden border-b-4 border-black bg-grid-yellow">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                     
-                    <div class="lg:col-span-7 flex flex-col items-start justify-start text-left gap-4">
-                        <span id="hero-tag" data-en="🚀 Creative Designer &amp; Digital Communication Specialist" data-id="🚀 CREATIVE DESIGNER &amp; DIGITAL COMMUNICATION SPECIALIST" class="poster-badge px-3.5 py-1.5 bg-lambe-red text-white text-xs sm:text-sm tracking-wider">
+                    <div class="lg:col-span-7 flex flex-col items-start justify-start text-left gap-4 sm:gap-4">
+                        <span id="hero-tag" data-en="🚀 Creative Designer &amp; Digital Communication Specialist" data-id="🚀 CREATIVE DESIGNER &amp; DIGITAL COMMUNICATION SPECIALIST" class="poster-badge px-3 py-1.5 bg-lambe-red text-white text-xs sm:text-sm tracking-wider leading-snug">
                             🚀 CREATIVE DESIGNER &amp; DIGITAL COMMUNICATION SPECIALIST
                         </span>
                         
-                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-impact tracking-tight leading-none text-black uppercase text-left">
-                            <span id="hero-title" data-en="Portfolio" data-id="PORTOFOLIO">PORTOFOLIO</span><br>
-                            <span class="animated-text-name font-impact pb-1 select-all">RAHMAD NUR KARIM, S.PD.</span>
-                        </h1>
+                        <div class="flex flex-col text-left w-full">
+                            <span id="hero-title" data-en="Portfolio" data-id="PORTOFOLIO" class="text-3xl sm:text-5xl lg:text-6xl font-impact tracking-wider text-black uppercase leading-none">
+                                PORTOFOLIO
+                            </span>
+                            <h1 class="animated-text-name font-impact text-3xl sm:text-5xl lg:text-6xl xl:text-7xl uppercase text-left mt-1">
+                                RAHMAD NUR KARIM, S.PD.
+                            </h1>
+                        </div>
 
-                        <div class="h-9 flex items-center justify-start bg-black text-lambe-yellow px-4 border-3 border-black font-mono text-xs sm:text-base font-bold shadow-hard-sm">
-                            <span id="textRotator" class="typing-cursor"></span>
+                        <div class="h-9 sm:h-10 flex items-center justify-start bg-black text-lambe-yellow px-3.5 sm:px-4 border-3 border-black font-mono text-xs sm:text-sm font-bold shadow-hard-sm max-w-full overflow-hidden">
+                            <span id="textRotator" class="typing-cursor truncate"></span>
                         </div>
                         
-                        <p id="hero-desc" data-en="Professional Creative Designer &amp; Digital Communication Specialist. Expert in Brand Identity, Visual Strategy, AI-assisted Workflows, Web Development, and Google Apps Script Automation." data-id="Profesional Kreatif &amp; Spesialis Komunikasi Digital. Berkeahlian dalam Brand Identity, Strategi Visual, AI-assisted Workflows, Web Development, serta Otomasi Google Apps Script." class="text-black text-xs sm:text-sm leading-relaxed font-medium bg-white p-4 sm:p-5 border-3 border-black shadow-hard text-left">
+                        <p id="hero-desc" data-en="Professional Creative Designer &amp; Digital Communication Specialist. Expert in Brand Identity, Visual Strategy, AI-assisted Workflows, Web Development, and Google Apps Script Automation." data-id="Profesional Kreatif &amp; Spesialis Komunikasi Digital. Berkeahlian dalam Brand Identity, Strategi Visual, AI-assisted Workflows, Web Development, serta Otomasi Google Apps Script." class="text-black text-xs sm:text-sm md:text-base leading-relaxed font-medium bg-lambe-cream p-4 sm:p-5 border-3 border-black shadow-hard text-left">
                             Profesional Kreatif &amp; Spesialis Komunikasi Digital. Berkeahlian dalam Brand Identity, Strategi Visual, AI-assisted Workflows, Web Development, serta Otomasi Google Apps Script.
                         </p>
                         
-                        <div class="flex flex-wrap items-center justify-start gap-2 sm:gap-3 w-full mt-2 font-heading font-extrabold uppercase">
-                            <a href="#contact" class="btn-lambe-primary px-5 py-3 text-xs sm:text-sm flex items-center justify-center gap-2 shrink-0">
+                        <div class="flex flex-wrap items-center justify-start gap-2.5 sm:gap-3 w-full mt-1 font-heading font-extrabold uppercase">
+                            <a href="#contact" class="btn-lambe-primary px-5 py-2.5 sm:py-3 text-xs sm:text-sm flex items-center justify-center gap-2 shrink-0">
                                 <i class="fa-solid fa-paper-plane text-xs"></i>
                                 <span id="cta-contact-text" data-en="Get in Touch" data-id="HUBUNGI SAYA">HUBUNGI SAYA</span>
                             </a>
                             
-                            <a href="https://drive.google.com/drive/folders/1gZ8hxUaahyUVbZqoWZghBt6N6CJLnOVf?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'CV Rahmad Nur Karim, S.Pd.')" class="btn-lambe-secondary px-5 py-3 flex items-center justify-center gap-2 shrink-0 text-xs sm:text-sm">
+                            <a href="https://drive.google.com/drive/folders/1gZ8hxUaahyUVbZqoWZghBt6N6CJLnOVf?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'CV Rahmad Nur Karim, S.Pd.')" class="btn-lambe-secondary px-5 py-2.5 sm:py-3 flex items-center justify-center gap-2 shrink-0 text-xs sm:text-sm">
                                 <i class="fa-solid fa-file-pdf text-xs"></i>
                                 <span data-en="Download CV (PDF)" data-id="UNDUH CV (PDF)">UNDUH CV (PDF)</span>
                             </a>
 
-                            <a href="https://www.instagram.com/k.ariiimm/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-orange text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Profil Instagram">
+                            <a href="https://www.instagram.com/k.ariiimm/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center bg-lambe-orange text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Profil Instagram">
                                 <i class="fa-brands fa-instagram text-base"></i>
                             </a>
 
-                            <a href="https://www.linkedin.com/in/rahmad-nur-karim/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 flex items-center justify-center bg-lambe-blue text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Profil LinkedIn">
+                            <a href="https://www.linkedin.com/in/rahmad-nur-karim/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center bg-lambe-blue text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Profil LinkedIn">
                                 <i class="fa-brands fa-linkedin-in text-base"></i>
                             </a>
 
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurkarim2004@gmail.com" target="_blank" rel="noopener noreferrer" onclick="openEmailDirect(event)" class="w-11 h-11 flex items-center justify-center bg-lambe-pink text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Email Langsung">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurkarim2004@gmail.com" target="_blank" rel="noopener noreferrer" onclick="openEmailDirect(event)" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center bg-lambe-pink text-white border-3 border-black shadow-hard hover:bg-black hover:text-lambe-yellow transition-all active:translate-y-1 shrink-0" title="Email Langsung">
                                 <i class="fa-regular fa-envelope text-base"></i>
                             </a>
                         </div>
                     </div>
 
                     <div class="lg:col-span-5 flex justify-center items-center mt-4 lg:mt-0">
-                        <div class="relative w-64 sm:w-80 aspect-square max-w-full">
+                        <div class="relative w-60 sm:w-80 aspect-square max-w-full">
                             <div class="absolute -inset-2 bg-lambe-pink border-4 border-black rotate-2 shadow-hard"></div>
                             
                             <div id="portraitParallaxCard" class="relative z-10 w-full h-full border-4 border-black bg-white overflow-hidden shadow-hard-lg">
                                 <img src="https://lh3.googleusercontent.com/d/1k_jBUWb8_TTAB4FpMQXdlE4sxvZwbiDP" alt="Rahmad Nur Karim, S.Pd." class="w-full h-full object-cover select-none">
                             </div>
 
-                            <div id="badgeParallaxCard" class="absolute -bottom-4 -left-4 bg-lambe-yellow text-black border-3 border-black p-2.5 shadow-hard z-20 flex items-center gap-2.5 -rotate-2">
-                                <div class="w-9 h-9 bg-lambe-red text-white border-2 border-black flex items-center justify-center text-base font-impact">
+                            <div id="badgeParallaxCard" class="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-lambe-yellow text-black border-3 border-black p-2.5 sm:p-3 shadow-hard z-20 flex items-center gap-2.5 -rotate-2">
+                                <div class="w-8 h-8 sm:w-9 sm:h-9 bg-lambe-red text-white border-2 border-black flex items-center justify-center text-xs sm:text-sm font-impact">
                                     🎓
                                 </div>
                                 <div class="flex flex-col font-heading text-left">
-                                    <span id="pill-title" data-en="Academic Background" data-id="Latar Belakang Akademik" class="text-[9px] uppercase font-bold tracking-widest text-black">Latar Belakang Akademik</span>
-                                    <span id="pill-desc" data-en="Universitas Lampung • S.Pd." data-id="Universitas Lampung • S.Pd." class="text-xs font-black text-black font-mono">Universitas Lampung • S.Pd.</span>
+                                    <span id="pill-title" data-en="Academic Background" data-id="Latar Belakang Akademik" class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-black">Latar Belakang Akademik</span>
+                                    <span id="pill-desc" data-en="Universitas Lampung • S.Pd." data-id="Universitas Lampung • S.Pd." class="text-xs sm:text-sm font-black text-black font-mono">Universitas Lampung • S.Pd.</span>
                                 </div>
                             </div>
                         </div>
@@ -426,89 +441,89 @@
             </div>
         </section>
 
-        <!-- 2. BAGIAN TENTANG (Section 2: Solid White Background) -->
-        <section id="about" class="py-16 bg-white border-b-4 border-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="about-tag" data-en="Professional Profile" data-id="Profil Profesional" class="poster-badge px-3 py-1 bg-lambe-orange text-white text-xs">Profil Profesional</span>
-                    <h2 id="about-title" data-en="Creative Designer &amp; Digital Communication" data-id="Creative Designer &amp; Digital Communication" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Creative Designer &amp; Digital Communication</h2>
-                    <div class="w-20 h-2 bg-lambe-red border-2 border-black"></div>
+        <!-- 2. BAGIAN TENTANG (Section 2: Animated White Grid Background) -->
+        <section id="about" class="py-10 sm:py-14 bg-grid-white border-b-4 border-black relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="mb-6 sm:mb-10 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
+                    <span id="about-tag" data-en="Professional Profile" data-id="Profil Profesional" class="poster-badge px-3 py-1 bg-lambe-orange text-white text-xs sm:text-sm">Profil Profesional</span>
+                    <h2 id="about-title" data-en="Creative Designer &amp; Digital Communication" data-id="Creative Designer &amp; Digital Communication" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-impact uppercase tracking-normal text-black">Creative Designer &amp; Digital Communication</h2>
+                    <div class="w-16 sm:w-24 h-1.5 bg-lambe-red border-2 border-black"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-6xl mx-auto w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-stretch max-w-6xl mx-auto w-full">
                     
-                    <div class="lg:col-span-7 p-6 sm:p-8 bg-lambe-cream poster-card flex flex-col justify-between gap-6">
-                        <div class="space-y-4">
+                    <div class="lg:col-span-7 p-5 sm:p-6 bg-lambe-cream poster-card flex flex-col justify-between gap-5">
+                        <div class="space-y-3.5">
                             <p id="about-desc1" 
                                data-en="Economics Education Graduate from Universitas Lampung with cross-disciplinary professional experience in Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflows, Prompt Engineering, and Web Development across government institutions, higher education, creative agencies, organizations, and independent projects." 
                                data-id="Lulusan Pendidikan Ekonomi Universitas Lampung dengan pengalaman profesional lintas bidang dalam Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflow, Prompt Engineering, dan Web Development melalui pengalaman di institusi pemerintah, perguruan tinggi, creative agency, organisasi, dan proyek independen." 
-                               class="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium">
+                               class="text-slate-900 text-xs sm:text-sm md:text-base leading-relaxed font-medium">
                                 Lulusan Pendidikan Ekonomi Universitas Lampung dengan pengalaman profesional lintas bidang dalam Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflow, Prompt Engineering, dan Web Development melalui pengalaman di institusi pemerintah, perguruan tinggi, creative agency, organisasi, dan proyek independen.
                             </p>
                             <p id="about-desc2" 
                                data-en="Proven track record of producing 2,000+ visual communication assets, handling 300+ data and administrative documents, and building 6+ digital projects based on AI, web, and automation. Possesses expertise in Graphic Design, Digital Marketing, Content Strategy, Visual Communication, UI/UX, Prompt Engineering, AI-Assisted Development, HTML, Google Apps Script, Spreadsheet Automation, Project Management, and Stakeholder Management." 
                                data-id="Berpengalaman menghasilkan 2.000+ aset komunikasi visual, menangani 300+ data dan dokumen administratif, serta membuat 6+ proyek digital berbasis AI, web, dan automation. Memiliki kompetensi dalam Graphic Design, Digital Marketing, Content Strategy, Visual Communication, UI/UX, Prompt Engineering, AI-Assisted Development, HTML, Google Apps Script, Spreadsheet Automation, Project Management, dan Stakeholder Management." 
-                               class="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium">
+                               class="text-slate-900 text-xs sm:text-sm md:text-base leading-relaxed font-medium">
                                 Berpengalaman menghasilkan 2.000+ aset komunikasi visual, menangani 300+ data dan dokumen administratif, serta membuat 6+ proyek digital berbasis AI, web, dan automation. Memiliki kompetensi dalam Graphic Design, Digital Marketing, Content Strategy, Visual Communication, UI/UX, Prompt Engineering, AI-Assisted Development, HTML, Google Apps Script, Spreadsheet Automation, Project Management, dan Stakeholder Management.
                             </p>
                             <p id="about-desc3"
                                data-en="Synthesizes creative thinking, analytical thinking, technology, communication, and strategic execution to deliver impactful creative, digital, and administrative solutions for diverse organizations."
                                data-id="Menggabungkan creative thinking, analytical thinking, teknologi, komunikasi, dan strategic execution untuk menghasilkan solusi kreatif, digital, dan administratif yang efektif bagi berbagai institusi dan organisasi."
-                               class="text-slate-800 text-xs sm:text-sm leading-relaxed font-medium border-t-2 border-black/10 pt-3">
+                               class="text-slate-900 text-xs sm:text-sm md:text-base leading-relaxed font-medium border-t-2 border-black/15 pt-3">
                                 Menggabungkan creative thinking, analytical thinking, teknologi, komunikasi, dan strategic execution untuk menghasilkan solusi kreatif, digital, dan administratif yang efektif bagi berbagai institusi dan organisasi.
                             </p>
                         </div>
 
-                        <div class="grid grid-cols-3 gap-4 pt-4 border-t-3 border-black font-mono">
-                            <div class="flex flex-col bg-lambe-yellow p-3 border-2 border-black text-center shadow-hard-sm">
-                                <span id="stat-assets" class="text-xl sm:text-3xl font-black text-black">2000+</span>
-                                <span id="about-stat1-lbl" data-en="Visual Assets" data-id="Aset Desain" class="text-[9px] uppercase font-bold tracking-wider text-black">Aset Desain</span>
+                        <div class="grid grid-cols-3 gap-2.5 sm:gap-3 pt-3 border-t-3 border-black font-mono">
+                            <div class="flex flex-col bg-lambe-yellow p-2.5 sm:p-3 border-2 border-black text-center shadow-hard-sm">
+                                <span id="stat-assets" class="text-lg sm:text-2xl font-black text-black">2000+</span>
+                                <span id="about-stat1-lbl" data-en="Visual Assets" data-id="Aset Desain" class="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider text-black">Aset Desain</span>
                             </div>
-                            <div class="flex flex-col bg-lambe-pink text-white p-3 border-2 border-black text-center shadow-hard-sm">
-                                <span id="stat-clients" class="text-xl sm:text-3xl font-black text-white">40+</span>
-                                <span id="about-stat2-lbl" data-en="Happy Clients" data-id="Klien Puas" class="text-[9px] uppercase font-bold tracking-wider text-white">Klien Puas</span>
+                            <div class="flex flex-col bg-lambe-pink text-white p-2.5 sm:p-3 border-2 border-black text-center shadow-hard-sm">
+                                <span id="stat-clients" class="text-lg sm:text-2xl font-black text-white">40+</span>
+                                <span id="about-stat2-lbl" data-en="Happy Clients" data-id="Klien Puas" class="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider text-white">Klien Puas</span>
                             </div>
-                            <div class="flex flex-col bg-lambe-blue text-white p-3 border-2 border-black text-center shadow-hard-sm">
-                                <span id="stat-years" class="text-xl sm:text-3xl font-black text-white">3.4</span>
-                                <span id="about-stat3-lbl" data-en="Years Study" data-id="Masa Studi" class="text-[9px] uppercase font-bold tracking-wider text-white">Masa Studi</span>
+                            <div class="flex flex-col bg-lambe-blue text-white p-2.5 sm:p-3 border-2 border-black text-center shadow-hard-sm">
+                                <span id="stat-years" class="text-lg sm:text-2xl font-black text-white">3.4</span>
+                                <span id="about-stat3-lbl" data-en="Years Study" data-id="Masa Studi" class="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider text-white">Masa Studi</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 flex flex-col justify-between gap-4 font-heading">
-                        <h4 id="competency-title" class="text-xs font-mono font-bold uppercase tracking-widest text-black bg-lambe-yellow px-2 py-1 border-2 border-black self-start" data-en="Core Competencies" data-id="Kompetensi Utama">Kompetensi Utama</h4>
+                    <div class="lg:col-span-5 flex flex-col justify-between gap-3.5 font-heading">
+                        <h4 id="competency-title" class="text-xs font-mono font-bold uppercase tracking-widest text-black bg-lambe-yellow px-2.5 py-1 border-2 border-black self-start" data-en="Core Competencies" data-id="Kompetensi Utama">Kompetensi Utama</h4>
                         
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
-                            <div class="p-4 border-3 border-black bg-lambe-yellow text-black hover:bg-black hover:text-white transition-colors shadow-hard flex flex-col gap-2">
-                                <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-bold">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 h-full">
+                            <div class="p-3.5 sm:p-4 border-3 border-black bg-lambe-yellow text-black hover:bg-black hover:text-white transition-colors shadow-hard flex flex-col gap-2">
+                                <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-xs font-bold">
                                     <i class="fa-solid fa-palette"></i>
                                 </div>
-                                <span class="text-sm font-extrabold uppercase">Creative Design</span>
-                                <span class="text-[11px] leading-normal font-sans font-medium">Brand Identity, Social Media Design, Visual Communication, Layout Design.</span>
+                                <span class="text-xs sm:text-sm font-extrabold uppercase">Creative Design</span>
+                                <span class="text-xs leading-relaxed font-sans font-medium">Brand Identity, Social Media Design, Visual Communication, Layout Design.</span>
                             </div>
 
-                            <div class="p-4 border-3 border-black bg-lambe-orange text-white hover:bg-black hover:text-lambe-yellow transition-colors shadow-hard flex flex-col gap-2">
-                                <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-bold">
+                            <div class="p-3.5 sm:p-4 border-3 border-black bg-lambe-orange text-white hover:bg-black hover:text-lambe-yellow transition-colors shadow-hard flex flex-col gap-2">
+                                <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-xs font-bold">
                                     <i class="fa-solid fa-bullhorn"></i>
                                 </div>
-                                <span class="text-sm font-extrabold uppercase">Digital Communication</span>
-                                <span class="text-[11px] leading-normal font-sans font-medium">Content Strategy, Social Media Management, Public Relations, Digital Campaign.</span>
+                                <span class="text-xs sm:text-sm font-extrabold uppercase">Digital Communication</span>
+                                <span class="text-xs leading-relaxed font-sans font-medium">Content Strategy, Social Media Management, Public Relations, Digital Campaign.</span>
                             </div>
 
-                            <div class="p-4 border-3 border-black bg-lambe-pink text-white hover:bg-black hover:text-lambe-pink transition-colors shadow-hard flex flex-col gap-2">
-                                <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-bold">
+                            <div class="p-3.5 sm:p-4 border-3 border-black bg-lambe-pink text-white hover:bg-black hover:text-lambe-pink transition-colors shadow-hard flex flex-col gap-2">
+                                <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-xs font-bold">
                                     <i class="fa-solid fa-robot"></i>
                                 </div>
-                                <span class="text-sm font-extrabold uppercase">Technology &amp; Automation</span>
-                                <span class="text-[11px] leading-normal font-sans font-medium">AI-Assisted Workflow, Prompt Engineering, Web Development, Google Apps Script, Spreadsheet Automation.</span>
+                                <span class="text-xs sm:text-sm font-extrabold uppercase">Technology &amp; Automation</span>
+                                <span class="text-xs leading-relaxed font-sans font-medium">AI-Assisted Workflow, Prompt Engineering, Web Development, Google Apps Script, Spreadsheet Automation.</span>
                             </div>
 
-                            <div class="p-4 border-3 border-black bg-lambe-blue text-white hover:bg-black hover:text-lambe-blue transition-colors shadow-hard flex flex-col gap-2">
-                                <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-bold">
+                            <div class="p-3.5 sm:p-4 border-3 border-black bg-lambe-blue text-white hover:bg-black hover:text-lambe-blue transition-colors shadow-hard flex flex-col gap-2">
+                                <div class="w-8 h-8 bg-black text-white flex items-center justify-center text-xs font-bold">
                                     <i class="fa-solid fa-folder-tree"></i>
                                 </div>
-                                <span class="text-sm font-extrabold uppercase">Administration &amp; Systems</span>
-                                <span class="text-[11px] leading-normal font-sans font-medium">Data Management, Institutional Administration, Process Optimization, Archiving Systems.</span>
+                                <span class="text-xs sm:text-sm font-extrabold uppercase">Administration &amp; Systems</span>
+                                <span class="text-xs leading-relaxed font-sans font-medium">Data Management, Institutional Administration, Process Optimization, Archiving Systems.</span>
                             </div>
                         </div>
                     </div>
@@ -517,60 +532,63 @@
             </div>
         </section>
 
-        <!-- 3. BAGIAN PENDIDIKAN (Section 3: Yellow Grid Background) -->
-        <section id="education" class="py-16 bg-grid-yellow border-b-4 border-black">
+        <!-- 3. BAGIAN PENDIDIKAN (Section 3: Yellow Grid Background - Compact & Textured) -->
+        <section id="education" class="py-10 sm:py-12 bg-grid-yellow border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="edu-tag" data-en="Academic Record" data-id="Rekam Akademik" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs">Rekam Akademik</span>
-                    <h2 id="edu-title" data-en="Pendidikan &amp; Rekam Akademik" data-id="Pendidikan &amp; Rekam Akademik" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Pendidikan &amp; Rekam Akademik</h2>
-                    <div class="w-20 h-2 bg-black"></div>
+                <div class="mb-6 sm:mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-2">
+                    <span id="edu-tag" data-en="Academic Record" data-id="Rekam Akademik" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs sm:text-sm">Rekam Akademik</span>
+                    <h2 id="edu-title" data-en="Pendidikan &amp; Rekam Akademik" data-id="Pendidikan &amp; Rekam Akademik" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-impact uppercase tracking-normal text-black">Pendidikan &amp; Rekam Akademik</h2>
+                    <div class="w-16 sm:w-20 h-1.5 bg-black"></div>
                 </div>
 
-                <div class="bg-white poster-card p-6 sm:p-10 max-w-4xl mx-auto">
+                <!-- Card Pendidikan -->
+                <div class="bg-lambe-cream poster-card p-4 sm:p-6 max-w-3xl mx-auto overflow-hidden">
                     
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b-3 border-black">
-                        <div class="flex items-center gap-4 shrink-0">
-                            <div class="w-16 h-16 bg-black p-1 border-2 border-black shrink-0 shadow-hard-sm overflow-hidden flex items-center justify-center">
+                    <!-- Decorative Top Header Bar -->
+                    <div class="bg-lambe-yellow p-3 sm:p-4 border-2 border-black mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-center gap-3 shrink-0">
+                            <div class="w-11 h-11 sm:w-13 sm:h-13 bg-black p-1 border-2 border-black shrink-0 shadow-hard-sm overflow-hidden flex items-center justify-center">
                                 <img src="https://lh3.googleusercontent.com/d/1-AintN3IU9Fkc1xLJfXZ-mIGlRrY1P19" alt="Universitas Lampung" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=UNILA'">
                             </div>
                             <div class="flex flex-col font-heading">
-                                <h3 id="edu-inst" class="text-lg sm:text-2xl font-impact text-black uppercase leading-none">UNIVERSITAS LAMPUNG</h3>
-                                <p id="edu-degree" class="text-xs sm:text-sm font-bold text-lambe-red mt-1">S1 Pendidikan Ekonomi (S.Pd.)</p>
+                                <h3 id="edu-inst" class="text-base sm:text-xl font-impact text-black uppercase leading-tight">UNIVERSITAS LAMPUNG</h3>
+                                <p id="edu-degree" class="text-xs sm:text-sm font-bold text-lambe-red mt-0.5">S1 Pendidikan Ekonomi (S.Pd.)</p>
                             </div>
                         </div>
-                        <div class="text-left md:text-right shrink-0 font-mono">
-                            <span id="edu-duration" class="inline-block px-3 py-1 bg-black text-lambe-yellow border-2 border-black text-xs font-bold">AGUSTUS 2022 – MARET 2026</span>
+                        <div class="shrink-0 font-mono">
+                            <span id="edu-duration" class="inline-block px-3 py-1 bg-black text-lambe-yellow border border-black text-xs font-bold">AGUSTUS 2022 – MARET 2026</span>
                         </div>
                     </div>
 
-                    <div class="mt-8 space-y-6">
-                        <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-black bg-lambe-orange text-white px-2 py-1 border-2 border-black inline-block" data-en="Academic Achievement" data-id="Pencapaian Akademik">Pencapaian Akademik</h4>
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between border-b-2 border-black pb-1.5">
+                            <h4 class="text-xs font-mono font-bold uppercase tracking-widest text-white bg-lambe-orange px-2.5 py-0.5 border border-black" data-en="Academic Achievement" data-id="Pencapaian Akademik">Pencapaian Akademik</h4>
+                            <span class="text-xs font-mono text-slate-700 font-bold">FKIP UNILA • CUM LAUDE</span>
+                        </div>
                         
-                        <div class="p-5 bg-lambe-cream border-2 border-black shadow-hard flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="p-3.5 sm:p-4 bg-white border-2 border-black shadow-hard-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                             <div class="flex items-center gap-3">
-                                <div class="text-lambe-red text-2xl font-bold shrink-0"><i class="fa-solid fa-graduation-cap"></i></div>
-                                <p class="text-xs sm:text-sm text-black font-medium">
+                                <div class="text-lambe-red text-xl sm:text-2xl font-bold shrink-0"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <p class="text-xs sm:text-sm md:text-base text-black font-medium leading-relaxed">
                                     Menyelesaikan studi Sarjana dalam waktu <strong class="font-mono bg-lambe-yellow px-1 border border-black text-black">3,4 tahun</strong> dengan predikat <strong class="font-bold">Cum Laude</strong> dan <strong class="font-mono bg-lambe-yellow px-1 border border-black text-black">IPK 3,90 / 4,00</strong>.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="p-5 bg-black text-white border-3 border-black shadow-hard flex flex-col gap-3 font-heading">
-                            <div>
-                                <span class="text-xs uppercase font-bold tracking-widest text-lambe-yellow font-mono">Judul Skripsi</span>
-                                <p class="text-xs sm:text-sm text-white font-bold mt-1 leading-relaxed">
-                                    “Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”
-                                </p>
-                            </div>
+                        <div class="p-3.5 sm:p-4 bg-black text-white border-2 border-black shadow-hard-sm flex flex-col gap-1 sm:gap-1.5 font-heading">
+                            <span class="text-xs uppercase font-bold tracking-widest text-lambe-yellow font-mono">Judul Skripsi</span>
+                            <p class="text-xs sm:text-sm md:text-base text-white font-bold leading-snug">
+                                “Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”
+                            </p>
                         </div>
 
-                        <div class="pt-4 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-4 font-heading">
+                        <div class="pt-2 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-2.5 font-heading">
                             <div class="text-xs font-mono font-extrabold text-black">
                                 <i class="fa-solid fa-folder-open text-lambe-red mr-1"></i> Terhubung dengan Dokumen Skripsi, Jurnal SINTA, &amp; HaKI
                             </div>
-                            <button onclick="toggleAcademicDocsModal()" class="btn-lambe-primary w-full sm:w-auto px-6 py-3 text-xs sm:text-sm flex items-center justify-center gap-2">
+                            <button onclick="toggleAcademicDocsModal()" class="btn-lambe-primary w-full sm:w-auto px-4 py-2.5 text-xs sm:text-sm flex items-center justify-center gap-2">
                                 <span>🎓 DOKUMEN AKADEMIK</span>
-                                <i class="fa-solid fa-chevron-down"></i>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
                             </button>
                         </div>
 
@@ -580,54 +598,54 @@
             </div>
         </section>
 
-        <!-- 4. BAGIAN PENGALAMAN KERJA (Section 4: Solid White Background) -->
-        <section id="experience" class="py-16 bg-white border-b-4 border-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="exp-tag" data-en="Work Experience" data-id="Pengalaman Kerja" class="poster-badge px-3 py-1 bg-lambe-pink text-white text-xs">Pengalaman Kerja</span>
-                    <h2 id="exp-title" data-en="Work &amp; Industry Experience" data-id="Pengalaman Karir &amp; Industri" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Pengalaman Karir &amp; Industri</h2>
-                    <div class="w-20 h-2 bg-lambe-orange border-2 border-black"></div>
+        <!-- 4. BAGIAN PENGALAMAN KERJA (Section 4: Animated White Grid Background) -->
+        <section id="experience" class="py-10 sm:py-14 bg-grid-white border-b-4 border-black relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="mb-6 sm:mb-10 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
+                    <span id="exp-tag" data-en="Work Experience" data-id="Pengalaman Kerja" class="poster-badge px-3 py-1 bg-lambe-pink text-white text-xs sm:text-sm">Pengalaman Kerja</span>
+                    <h2 id="exp-title" data-en="Work &amp; Industry Experience" data-id="Pengalaman Karir &amp; Industri" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-impact uppercase tracking-normal text-black">Pengalaman Karir &amp; Industri</h2>
+                    <div class="w-16 sm:w-20 h-1.5 bg-lambe-orange border-2 border-black"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-6xl mx-auto w-full items-stretch font-heading">
-                    <div class="lg:col-span-4 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible gap-2 pb-2 lg:pb-0 scrollbar-none w-full justify-start">
-                        <button onclick="switchCareerTab(1)" id="careerTabBtn-1" class="career-tab-btn active shrink-0 text-left px-4 py-3 border-3 border-black bg-white text-xs uppercase font-extrabold flex items-center gap-2 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 max-w-5xl mx-auto w-full items-stretch font-heading">
+                    <div class="lg:col-span-4 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible gap-2 pb-2 lg:pb-0 scrollbar-none w-full justify-start snap-x">
+                        <button onclick="switchCareerTab(1)" id="careerTabBtn-1" class="career-tab-btn active shrink-0 snap-start text-left px-4 py-3 border-3 border-black bg-white text-xs sm:text-sm uppercase font-extrabold flex items-center gap-2.5 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
                             <span class="w-2.5 h-2.5 bg-lambe-red border border-black shrink-0"></span>
                             <span data-en="Unila Economic Education" data-id="Prodi Pend. Ekonomi Unila">Prodi Pend. Ekonomi Unila</span>
                         </button>
-                        <button onclick="switchCareerTab(2)" id="careerTabBtn-2" class="career-tab-btn shrink-0 text-left px-4 py-3 border-3 border-black bg-white text-xs uppercase font-extrabold flex items-center gap-2 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
+                        <button onclick="switchCareerTab(2)" id="careerTabBtn-2" class="career-tab-btn shrink-0 snap-start text-left px-4 py-3 border-3 border-black bg-white text-xs sm:text-sm uppercase font-extrabold flex items-center gap-2.5 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
                             <span class="w-2.5 h-2.5 bg-slate-400 border border-black shrink-0"></span>
                             <span data-en="Freelance Designer" data-id="Desainer Lepas &amp; Kreatif">Desainer Lepas &amp; Kreatif</span>
                         </button>
-                        <button onclick="switchCareerTab(3)" id="careerTabBtn-3" class="career-tab-btn shrink-0 text-left px-4 py-3 border-3 border-black bg-white text-xs uppercase font-extrabold flex items-center gap-2 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
+                        <button onclick="switchCareerTab(3)" id="careerTabBtn-3" class="career-tab-btn shrink-0 snap-start text-left px-4 py-3 border-3 border-black bg-white text-xs sm:text-sm uppercase font-extrabold flex items-center gap-2.5 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
                             <span class="w-2.5 h-2.5 bg-slate-400 border border-black shrink-0"></span>
                             <span data-en="Fana Creative Agency" data-id="Fana Creative Agency">Fana Creative Agency</span>
                         </button>
-                        <button onclick="switchCareerTab(4)" id="careerTabBtn-4" class="career-tab-btn shrink-0 text-left px-4 py-3 border-3 border-black bg-white text-xs uppercase font-extrabold flex items-center gap-2 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
+                        <button onclick="switchCareerTab(4)" id="careerTabBtn-4" class="career-tab-btn shrink-0 snap-start text-left px-4 py-3 border-3 border-black bg-white text-xs sm:text-sm uppercase font-extrabold flex items-center gap-2.5 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
                             <span class="w-2.5 h-2.5 bg-slate-400 border border-black shrink-0"></span>
                             <span data-en="Lampung Folk" data-id="Lampung Folk">Lampung Folk</span>
                         </button>
-                        <button onclick="switchCareerTab(5)" id="careerTabBtn-5" class="career-tab-btn shrink-0 text-left px-4 py-3 border-3 border-black bg-white text-xs uppercase font-extrabold flex items-center gap-2 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
+                        <button onclick="switchCareerTab(5)" id="careerTabBtn-5" class="career-tab-btn shrink-0 snap-start text-left px-4 py-3 border-3 border-black bg-white text-xs sm:text-sm uppercase font-extrabold flex items-center gap-2.5 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
                             <span class="w-2.5 h-2.5 bg-slate-400 border border-black shrink-0"></span>
                             <span data-en="PR Universitas Lampung" data-id="Humas Universitas Lampung">Humas Universitas Lampung</span>
                         </button>
-                        <button onclick="switchCareerTab(6)" id="careerTabBtn-6" class="career-tab-btn shrink-0 text-left px-4 py-3 border-3 border-black bg-white text-xs uppercase font-extrabold flex items-center gap-2 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
+                        <button onclick="switchCareerTab(6)" id="careerTabBtn-6" class="career-tab-btn shrink-0 snap-start text-left px-4 py-3 border-3 border-black bg-white text-xs sm:text-sm uppercase font-extrabold flex items-center gap-2.5 w-auto lg:w-full shadow-hard transition-all active:translate-y-0.5">
                             <span class="w-2.5 h-2.5 bg-slate-400 border border-black shrink-0"></span>
                             <span data-en="Pesawaran Kominfo Office" data-id="Dinas Kominfo Pesawaran">Dinas Kominfo Pesawaran</span>
                         </button>
                     </div>
 
-                    <div class="lg:col-span-8 bg-lambe-cream poster-card p-6 sm:p-8 h-fit w-full self-start">
+                    <div class="lg:col-span-8 bg-lambe-cream poster-card p-5 sm:p-7 h-fit w-full self-start">
                         
                         <div id="careerPanel-1" class="career-panel-item">
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
                                     <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Media, Administrasi &amp; Asisten Peneliti Pembelajaran</h4>
-                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Prodi Pendidikan Ekonomi FKIP Unila</p>
+                                    <p class="text-xs sm:text-sm font-bold text-lambe-red mt-0.5">Prodi Pendidikan Ekonomi FKIP Unila</p>
                                 </div>
-                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Maret 2024 - Maret 2026</span>
+                                <span class="px-2.5 py-1 bg-black text-lambe-yellow text-xs font-mono font-bold uppercase border border-black self-start shrink-0">Maret 2024 - Maret 2026</span>
                             </div>
-                            <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
+                            <ul class="list-disc pl-5 text-xs sm:text-sm md:text-base text-black font-sans leading-relaxed space-y-2">
                                 <li>Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet.</li>
                                 <li>Mengembangkan sistem spreadsheet untuk mendata 300+ data akademik mahasiswa, kemajuan skripsi, dan laporan berkala.</li>
                                 <li>Memproduksi 100+ media publikasi institusi, dokumentasi video, dan konten promosi digital program studi Pendidikan Ekonomi.</li>
@@ -638,11 +656,11 @@
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
                                     <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis &amp; Kreator Konten Digital Freelance</h4>
-                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Wiraswasta Mandiri (40+ Klien)</p>
+                                    <p class="text-xs sm:text-sm font-bold text-lambe-red mt-0.5">Wiraswasta Mandiri (40+ Klien)</p>
                                 </div>
-                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Januari 2023 - Sekarang</span>
+                                <span class="px-2.5 py-1 bg-black text-lambe-yellow text-xs font-mono font-bold uppercase border border-black self-start shrink-0">Januari 2023 - Sekarang</span>
                             </div>
-                            <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
+                            <ul class="list-disc pl-5 text-xs sm:text-sm md:text-base text-black font-sans leading-relaxed space-y-2">
                                 <li>Menyelesaikan 100+ desain branding untuk 40+ klien, mencakup desain media sosial, brosur cetak, dan visual UI khusus.</li>
                                 <li>Membuat lebih dari 1.000 aset unik berupa spanduk, aset Instagram, pamflet korporat, dan komponen video.</li>
                             </ul>
@@ -652,11 +670,11 @@
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
                                     <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis (Kontrak Kerja Penuh)</h4>
-                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Fana Creative Agency</p>
+                                    <p class="text-xs sm:text-sm font-bold text-lambe-red mt-0.5">Fana Creative Agency</p>
                                 </div>
-                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Agustus 2025 - Desember 2025</span>
+                                <span class="px-2.5 py-1 bg-black text-lambe-yellow text-xs font-mono font-bold uppercase border border-black self-start shrink-0">Agustus 2025 - Desember 2025</span>
                             </div>
-                            <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
+                            <ul class="list-disc pl-5 text-xs sm:text-sm md:text-base text-black font-sans leading-relaxed space-y-2">
                                 <li>Membuat 100+ aset desain promosi dan materi visual untuk lebih dari 10+ UMKM dan korporasi mitra bisnis.</li>
                                 <li>Meningkatkan performa interaksi organik media sosial klien rata-rata sebesar 30-50% melalui konten dengan konversi tinggi.</li>
                             </ul>
@@ -666,11 +684,11 @@
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
                                     <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Magang Desainer Grafis</h4>
-                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Lampung Folk</p>
+                                    <p class="text-xs sm:text-sm font-bold text-lambe-red mt-0.5">Lampung Folk</p>
                                 </div>
-                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Oktober 2025 - Desember 2025</span>
+                                <span class="px-2.5 py-1 bg-black text-lambe-yellow text-xs font-mono font-bold uppercase border border-black self-start shrink-0">Oktober 2025 - Desember 2025</span>
                             </div>
-                            <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
+                            <ul class="list-disc pl-5 text-xs sm:text-sm md:text-base text-black font-sans leading-relaxed space-y-2">
                                 <li>Mendesain 50+ materi kreatif bertema kearifan lokal, sejarah rakyat, dan info terpadu pariwisata Lampung.</li>
                                 <li>Mendongkrak tayangan konten bulanan hingga mencapai 20.000 - 50.000 akun melalui desain yang ramah seluler.</li>
                             </ul>
@@ -680,11 +698,11 @@
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
                                     <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis Humas Korporat Resmi</h4>
-                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Humas Universitas Lampung</p>
+                                    <p class="text-xs sm:text-sm font-bold text-lambe-red mt-0.5">Humas Universitas Lampung</p>
                                 </div>
-                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Januari 2023 - Desember 2025</span>
+                                <span class="px-2.5 py-1 bg-black text-lambe-yellow text-xs font-mono font-bold uppercase border border-black self-start shrink-0">Januari 2023 - Desember 2025</span>
                             </div>
-                            <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
+                            <ul class="list-disc pl-5 text-xs sm:text-sm md:text-base text-black font-sans leading-relaxed space-y-2">
                                 <li>Mendesain lebih dari 1.000+ aset visual resmi humas Unila guna mendukung rangkaian wisuda, promosi pendaftaran, dan acara nasional.</li>
                                 <li>Mengakselerasi pertumbuhan pengikut Instagram institusi secara organik hingga mencapai lebih dari 180.000 pengikut aktif.</li>
                             </ul>
@@ -694,11 +712,11 @@
                             <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b-2 border-black">
                                 <div>
                                     <h4 class="text-base sm:text-xl font-impact text-black uppercase leading-tight">Desainer Grafis (Magang MSIB)</h4>
-                                    <p class="text-xs font-bold text-lambe-red mt-0.5">Dinas Kominfo Kab. Pesawaran</p>
+                                    <p class="text-xs sm:text-sm font-bold text-lambe-red mt-0.5">Dinas Kominfo Kab. Pesawaran</p>
                                 </div>
-                                <span class="px-3 py-1 bg-black text-lambe-yellow text-[10px] font-mono font-bold uppercase border border-black">Agustus 2024 - Desember 2024</span>
+                                <span class="px-2.5 py-1 bg-black text-lambe-yellow text-xs font-mono font-bold uppercase border border-black self-start shrink-0">Agustus 2024 - Desember 2024</span>
                             </div>
-                            <ul class="list-square pl-5 text-xs sm:text-sm text-black font-sans leading-relaxed space-y-2">
+                            <ul class="list-disc pl-5 text-xs sm:text-sm md:text-base text-black font-sans leading-relaxed space-y-2">
                                 <li>Mendesain lebih dari 80+ materi informasi kebijakan publik, pengumuman daerah, dan laporan akuntabilitas pemerintah daerah.</li>
                                 <li>Berpartisipasi aktif dalam mengantarkan Kabupaten Pesawaran memenangkan predikat bergengsi sebagai Kabupaten 'Informatif'.</li>
                             </ul>
@@ -709,34 +727,34 @@
             </div>
         </section>
 
-        <!-- 5. BAGIAN ORGANISASI (Section 5: Yellow Grid Background) -->
-        <section id="organizations" class="py-16 bg-grid-yellow border-b-4 border-black">
+        <!-- 5. BAGIAN ORGANISASI (Section 5: Yellow Grid Background - Compact Cards) -->
+        <section id="organizations" class="py-10 sm:py-14 bg-grid-yellow border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="org-tag" data-en="Organizational Experience" data-id="Pengalaman Organisasi" class="poster-badge px-3 py-1 bg-lambe-blue text-white text-xs">Pengalaman Organisasi</span>
-                    <h2 id="org-title" data-en="Kepemimpinan &amp; Kontribusi Organisasi" data-id="Kepemimpinan &amp; Kontribusi Organisasi" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Kepemimpinan &amp; Kontribusi Organisasi</h2>
-                    <div class="w-20 h-2 bg-lambe-red border-2 border-black"></div>
+                <div class="mb-6 sm:mb-10 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
+                    <span id="org-tag" data-en="Organizational Experience" data-id="Pengalaman Organisasi" class="poster-badge px-3 py-1 bg-lambe-blue text-white text-xs sm:text-sm">Pengalaman Organisasi</span>
+                    <h2 id="org-title" data-en="Kepemimpinan &amp; Kontribusi Organisasi" data-id="Kepemimpinan &amp; Kontribusi Organisasi" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-impact uppercase tracking-normal text-black">Kepemimpinan &amp; Kontribusi Organisasi</h2>
+                    <div class="w-16 sm:w-20 h-1.5 bg-lambe-red border-2 border-black"></div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch max-w-6xl mx-auto w-full font-heading">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch max-w-6xl mx-auto w-full font-heading">
                     
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-3 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-5 bg-lambe-cream poster-card flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black border-b border-black/20 pb-2">
                                 <span class="truncate">Staf Media &amp; Dok.</span>
-                                <span class="px-2 py-0.5 bg-lambe-orange text-white border border-black shrink-0">2025</span>
+                                <span class="px-2 py-0.5 bg-lambe-orange text-white border border-black shrink-0 text-[10px]">2025</span>
                             </div>
                             <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                                <div class="w-10 h-9 bg-black p-0.5 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1walGjQqkXRcuW0mq7DSlOmESY1tvQ6lp" alt="KKN MBKM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KKN'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
                                     <span class="text-xs font-bold text-black uppercase leading-none truncate">Universitas Lampung</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">KKN Tematik MBKM</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-0.5 truncate">KKN Tematik MBKM</span>
                                 </div>
                             </div>
                             <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">KKN MBKM Desa Toto Katon</h3>
-                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Menyusun penuh peta informasi publik, visualisasi pengenalan potensi warga, dan promosi media sosial desa.</p>
+                            <p class="text-xs sm:text-sm font-sans text-slate-800 leading-snug font-medium">Menyusun penuh peta informasi publik, visualisasi pengenalan potensi warga, dan promosi media sosial desa.</p>
                         </div>
                         <a href="https://www.instagram.com/kkn.desatotokaton2025/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
@@ -744,23 +762,23 @@
                         </a>
                     </div>
 
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-3 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-5 bg-lambe-cream poster-card flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black border-b border-black/20 pb-2">
                                 <span class="truncate">Wakil Ketua Umum</span>
-                                <span class="px-2 py-0.5 bg-lambe-pink text-white border border-black shrink-0">24-25</span>
+                                <span class="px-2 py-0.5 bg-lambe-pink text-white border border-black shrink-0 text-[10px]">24-25</span>
                             </div>
                             <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                                <div class="w-10 h-9 bg-black p-0.5 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1NYaHsv4olOMTOydxxZztSZqaIMv8xRQt" alt="KSPM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KSPM'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
                                     <span class="text-xs font-bold text-black uppercase leading-none truncate">KSPM FKIP Unila</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">GIS Syariah</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-0.5 truncate">GIS Syariah</span>
                                 </div>
                             </div>
                             <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">KSPM FKIP Universitas Lampung</h3>
-                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Mengakselerasi sistem pemahaman pasar modal, memimpin koordinasi acara literasi saham, serta mengantarkan GIS Unila ke Juara Nasional III.</p>
+                            <p class="text-xs sm:text-sm font-sans text-slate-800 leading-snug font-medium">Mengakselerasi sistem pemahaman pasar modal, memimpin koordinasi acara literasi saham, serta mengantarkan GIS Unila ke Juara Nasional III.</p>
                         </div>
                         <a href="https://www.instagram.com/kspm_fkipunila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
@@ -768,23 +786,23 @@
                         </a>
                     </div>
 
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-3 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-5 bg-lambe-cream poster-card flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black border-b border-black/20 pb-2">
                                 <span class="truncate">Staf Media</span>
-                                <span class="px-2 py-0.5 bg-lambe-green text-white border border-black shrink-0">2024</span>
+                                <span class="px-2 py-0.5 bg-lambe-green text-white border border-black shrink-0 text-[10px]">2024</span>
                             </div>
                             <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                                <div class="w-10 h-9 bg-black p-0.5 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1YbgklKeI2c0UB00uXbd8IB2K7bSGaMu1" alt="SRE Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=SRE'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
                                     <span class="text-xs font-bold text-black uppercase leading-none truncate">SRE Unila</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Renewable Energy</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-0.5 truncate">Renewable Energy</span>
                                 </div>
                             </div>
                             <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">SRE Universitas Lampung</h3>
-                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Mendesain info grafis ramah lingkungan, dekarbonisasi industri, serta kampanye hijau yang menaikkan jangkauan media sebesar 67%.</p>
+                            <p class="text-xs sm:text-sm font-sans text-slate-800 leading-snug font-medium">Mendesain info grafis ramah lingkungan, dekarbonisasi industri, serta kampanye hijau yang menaikkan jangkauan media sebesar 67%.</p>
                         </div>
                         <a href="https://www.instagram.com/sre.unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
@@ -792,23 +810,23 @@
                         </a>
                     </div>
 
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-3 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-5 bg-lambe-cream poster-card flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black border-b border-black/20 pb-2">
                                 <span class="truncate">Staf Media</span>
-                                <span class="px-2 py-0.5 bg-lambe-yellow text-black border border-black shrink-0">23-24</span>
+                                <span class="px-2 py-0.5 bg-lambe-yellow text-black border border-black shrink-0 text-[10px]">23-24</span>
                             </div>
                             <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                                <div class="w-10 h-9 bg-black p-0.5 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1-34XM4ZABXrK4YTUGNWpO-2dPUKEtvVw" alt="ASSETS Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=ASSETS'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
                                     <span class="text-xs font-bold text-black uppercase leading-none truncate">ASSETS Unila</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Hima Pend. Ekonomi</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-0.5 truncate">Hima Pend. Ekonomi</span>
                                 </div>
                             </div>
                             <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">Himpunan Mahasiswa ASSETS Unila</h3>
-                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Memproduksi 100+ aset pamflet promosi program studi, mempercantik feeds Instagram, dan meningkatkan engagement hingga 50%.</p>
+                            <p class="text-xs sm:text-sm font-sans text-slate-800 leading-snug font-medium">Memproduksi 100+ aset pamflet promosi program studi, mempercantik feeds Instagram, dan meningkatkan engagement hingga 50%.</p>
                         </div>
                         <a href="https://www.instagram.com/assets_unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
@@ -816,23 +834,23 @@
                         </a>
                     </div>
 
-                    <div class="p-4 sm:p-6 bg-white poster-card flex flex-col justify-between">
-                        <div class="space-y-3 sm:space-y-4">
-                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black">
+                    <div class="p-4 sm:p-5 bg-lambe-cream poster-card flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between text-xs font-mono font-bold uppercase text-black border-b border-black/20 pb-2">
                                 <span class="truncate">Staf Media</span>
-                                <span class="px-2 py-0.5 bg-lambe-orange text-white border border-black shrink-0">2023</span>
+                                <span class="px-2 py-0.5 bg-lambe-orange text-white border border-black shrink-0 text-[10px]">2023</span>
                             </div>
                             <div class="flex items-center gap-3 bg-lambe-yellow p-2 border-2 border-black">
-                                <div class="w-10 h-9 sm:w-12 sm:h-10 bg-black p-1 border border-black shrink-0 overflow-hidden flex items-center justify-center">
+                                <div class="w-10 h-9 bg-black p-0.5 border border-black shrink-0 overflow-hidden flex items-center justify-center">
                                     <img src="https://lh3.googleusercontent.com/d/1Dn7vKWBI0pD48Kcxlne2cX1PL2woLk8u" alt="BEM Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=BEM'">
                                 </div>
                                 <div class="flex flex-col min-w-0">
                                     <span class="text-xs font-bold text-black uppercase leading-none truncate">BEM Unila</span>
-                                    <span class="text-[10px] text-black font-mono font-medium mt-1 truncate">Eksekutif Mahasiswa</span>
+                                    <span class="text-[10px] text-black font-mono font-medium mt-0.5 truncate">Eksekutif Mahasiswa</span>
                                 </div>
                             </div>
                             <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight">BEM Universitas Lampung</h3>
-                            <p class="text-xs font-sans text-slate-700 leading-normal font-medium">Merancang 150+ desain rilis kemahasiswaan, poster aksi publik, serta pamflet infografis yang menjangkau 45.000+ audiens nasional.</p>
+                            <p class="text-xs sm:text-sm font-sans text-slate-800 leading-snug font-medium">Merancang 150+ desain rilis kemahasiswaan, poster aksi publik, serta pamflet infografis yang menjangkau 45.000+ audiens nasional.</p>
                         </div>
                         <a href="https://www.instagram.com/bem_unila/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link mt-4 self-start">
                             <span>Buka IG</span>
@@ -844,136 +862,137 @@
             </div>
         </section>
 
-        <!-- 6. BAGIAN PORTOFOLIO (Section 6: Solid White Background) -->
-        <section id="portfolio" class="py-16 bg-white border-b-4 border-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="port-section-tag" class="poster-badge px-3 py-1 bg-lambe-yellow text-black text-xs">VISUAL GALLERY</span>
-                    <h2 id="port-section-title" data-en="Graphic Layouts &amp; Brand Identities" data-id="TATA LETAK GRAFIS &amp; IDENTITAS VISUAL" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">TATA LETAK GRAFIS &amp; IDENTITAS VISUAL</h2>
-                    <div class="w-20 h-2 bg-lambe-pink border-2 border-black"></div>
+        <!-- 6. BAGIAN PORTOFOLIO (Section 6: Animated White Grid Background) -->
+        <section id="portfolio" class="py-10 sm:py-14 bg-grid-white border-b-4 border-black relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="mb-6 sm:mb-10 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
+                    <span id="port-section-tag" class="poster-badge px-3 py-1 bg-lambe-yellow text-black text-xs sm:text-sm">VISUAL GALLERY</span>
+                    <h2 id="port-section-title" data-en="Graphic Layouts &amp; Brand Identities" data-id="TATA LETAK GRAFIS &amp; IDENTITAS VISUAL" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-impact uppercase tracking-normal text-black">TATA LETAK GRAFIS &amp; IDENTITAS VISUAL</h2>
+                    <div class="w-16 sm:w-20 h-1.5 bg-lambe-pink border-2 border-black"></div>
                 </div>
 
                 <!-- Tombol Kategori Filter -->
-                <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-10 font-heading font-extrabold uppercase">
-                    <button onclick="filterPortfolio('all')" id="filter-all" class="portfolio-filter-btn active px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="All Projects" data-id="Semua Desain">Semua Desain</button>
-                    <button onclick="filterPortfolio('branding')" id="filter-branding" class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Branding &amp; Graphics" data-id="Branding &amp; Logo">Branding &amp; Logo</button>
-                    <button onclick="filterPortfolio('social')" id="filter-social" class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Social Media &amp; Clients" data-id="Klien Sosial Media">Klien Sosial Media</button>
-                    <button onclick="filterPortfolio('webdev')" id="filter-webdev" class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Web Development" data-id="Web Dev">Web Dev</button>
+                <div class="flex overflow-x-auto sm:flex-wrap sm:justify-center items-center gap-2.5 sm:gap-3 mb-6 sm:mb-10 font-heading font-extrabold uppercase pb-2 scrollbar-none snap-x w-full">
+                    <button onclick="filterPortfolio('all')" id="filter-all" class="portfolio-filter-btn active shrink-0 snap-start px-4 py-2.5 text-xs sm:text-sm border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="All Projects" data-id="Semua Desain">Semua Desain</button>
+                    <button onclick="filterPortfolio('branding')" id="filter-branding" class="portfolio-filter-btn shrink-0 snap-start px-4 py-2.5 text-xs sm:text-sm border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Branding &amp; Graphics" data-id="Branding &amp; Logo">Branding &amp; Logo</button>
+                    <button onclick="filterPortfolio('social')" id="filter-social" class="portfolio-filter-btn shrink-0 snap-start px-4 py-2.5 text-xs sm:text-sm border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Social Media &amp; Clients" data-id="Klien Sosial Media">Klien Sosial Media</button>
+                    <button onclick="filterPortfolio('webdev')" id="filter-webdev" class="portfolio-filter-btn shrink-0 snap-start px-4 py-2.5 text-xs sm:text-sm border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5" data-en="Web Development" data-id="Web Dev">Web Dev</button>
                 </div>
 
                 <!-- Grid Portofolio Responsif -->
-                <div id="portfolioGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch w-full max-w-6xl mx-auto">
+                <div id="portfolioGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 items-stretch w-full max-w-6xl mx-auto">
                     <!-- Item Portofolio Dinamis diisi oleh JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- 7. BAGIAN PENGHARGAAN & SERTIFIKASI (Section 7: Yellow Grid Background) -->
-        <section id="achievements" class="py-16 bg-grid-yellow border-b-4 border-black">
+        <!-- 7. BAGIAN PENGHARGAAN & SERTIFIKASI (Section 7: Yellow Grid Background - Compact Container) -->
+        <section id="achievements" class="py-10 sm:py-12 bg-grid-yellow border-b-4 border-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="ach-section-tag" data-en="Achievements, Credentials &amp; Recognition" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs">Penghargaan, Sertifikasi &amp; Pengakuan</span>
-                    <h2 id="ach-section-title" data-en="Penghargaan, Sertifikasi &amp; Pengakuan" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Penghargaan, Sertifikasi &amp; Pengakuan</h2>
-                    <div class="w-20 h-2 bg-black"></div>
+                <div class="mb-6 sm:mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
+                    <span id="ach-section-tag" data-en="Achievements, Credentials &amp; Recognition" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="poster-badge px-3 py-1 bg-lambe-red text-white text-xs sm:text-sm">Penghargaan, Sertifikasi &amp; Pengakuan</span>
+                    <h2 id="ach-section-title" data-en="Penghargaan, Sertifikasi &amp; Pengakuan" data-id="Penghargaan, Sertifikasi &amp; Pengakuan" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-impact uppercase tracking-normal text-black">Penghargaan, Sertifikasi &amp; Pengakuan</h2>
+                    <div class="w-16 sm:w-20 h-1.5 bg-black"></div>
                 </div>
 
-                <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-10 font-heading font-extrabold uppercase">
-                    <button onclick="switchAchieveTab('competitions')" id="achTab-competitions" class="achieve-tab-btn active px-4 py-2 text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">01 — Kompetisi Nasional</button>
-                    <button onclick="switchAchieveTab('certifications')" id="achTab-certifications" class="achieve-tab-btn px-4 py-2 text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">02 — Sertifikasi &amp; Kredensial</button>
-                    <button onclick="switchAchieveTab('recognition')" id="achTab-recognition" class="achieve-tab-btn px-4 py-2 text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">03 — Pengakuan Profesional</button>
-                    <button onclick="switchAchieveTab('scholarships')" id="achTab-scholarships" class="achieve-tab-btn px-4 py-2 text-xs border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">04 — Beasiswa &amp; Program Nasional</button>
+                <!-- Tab Bar Horizontal di HP -->
+                <div class="flex overflow-x-auto sm:flex-wrap sm:justify-center items-center gap-2 sm:gap-3 mb-6 sm:mb-8 font-heading font-extrabold uppercase pb-2 scrollbar-none snap-x w-full">
+                    <button onclick="switchAchieveTab('competitions')" id="achTab-competitions" class="achieve-tab-btn active shrink-0 snap-start px-3.5 py-2 text-xs sm:text-sm border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">01 — Kompetisi Nasional</button>
+                    <button onclick="switchAchieveTab('certifications')" id="achTab-certifications" class="achieve-tab-btn shrink-0 snap-start px-3.5 py-2 text-xs sm:text-sm border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">02 — Sertifikasi &amp; Kredensial</button>
+                    <button onclick="switchAchieveTab('recognition')" id="achTab-recognition" class="achieve-tab-btn shrink-0 snap-start px-3.5 py-2 text-xs sm:text-sm border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">03 — Pengakuan Profesional</button>
+                    <button onclick="switchAchieveTab('scholarships')" id="achTab-scholarships" class="achieve-tab-btn shrink-0 snap-start px-3.5 py-2 text-xs sm:text-sm border-3 border-black bg-white text-black shadow-hard transition-all active:translate-y-0.5">04 — Beasiswa &amp; Program Nasional</button>
                 </div>
 
-                <div class="max-w-5xl mx-auto w-full">
+                <div class="max-w-3xl mx-auto w-full">
                     
                     <!-- 01 — Kompetisi Nasional -->
-                    <div id="achPanel-competitions" class="achieve-panel p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
+                    <div id="achPanel-competitions" class="achieve-panel p-4 sm:p-6 bg-lambe-cream poster-card flex flex-col justify-between font-heading">
                         <div class="space-y-4">
-                            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
-                                <div class="w-10 h-10 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-lg shadow-hard-sm">
+                            <div class="flex items-center gap-3 border-b-2 border-black pb-2.5 bg-lambe-yellow p-2.5 border border-black">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-base sm:text-lg shadow-hard-sm shrink-0">
                                     <i class="fa-solid fa-trophy"></i>
                                 </div>
-                                <h3 class="text-lg sm:text-2xl font-impact text-black uppercase">Kompetisi Tingkat Nasional</h3>
+                                <h3 class="text-base sm:text-xl font-impact text-black uppercase">Kompetisi Tingkat Nasional</h3>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-800 font-sans font-medium">
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-1">
-                                    <span class="text-lambe-red font-mono font-extrabold text-xs">JUARA 1</span>
-                                    <strong class="font-extrabold text-black">Lomba Desain Poster Nasional</strong>
-                                    <span class="text-xs text-slate-600">DPM FEB Universitas Brawijaya · 2023</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-900 font-sans font-medium">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col gap-1">
+                                    <span class="text-lambe-red font-mono font-extrabold text-[11px]">JUARA 1</span>
+                                    <strong class="font-extrabold text-black text-xs sm:text-sm">Lomba Desain Poster Nasional</strong>
+                                    <span class="text-[11px] text-slate-600 font-mono">DPM FEB Universitas Brawijaya · 2023</span>
                                 </div>
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-1">
-                                    <span class="text-lambe-orange font-mono font-extrabold text-xs">PRESENTASI TERBAIK</span>
-                                    <strong class="font-extrabold text-black">Lomba Infografis Nasional</strong>
-                                    <span class="text-xs text-slate-600">Komadiksi Festival, Universitas Sebelas Maret · 2025</span>
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col gap-1">
+                                    <span class="text-lambe-orange font-mono font-extrabold text-[11px]">PRESENTASI TERBAIK</span>
+                                    <strong class="font-extrabold text-black text-xs sm:text-sm">Lomba Infografis Nasional</strong>
+                                    <span class="text-[11px] text-slate-600 font-mono">Komadiksi Festival, UNS · 2025</span>
                                 </div>
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-1">
-                                    <span class="text-lambe-blue font-mono font-extrabold text-xs">FINALIS TOP 10</span>
-                                    <strong class="font-extrabold text-black">Lomba Poster Ilmiah Nasional</strong>
-                                    <span class="text-xs text-slate-600">Universitas Sriwijaya · 2025</span>
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col gap-1">
+                                    <span class="text-lambe-blue font-mono font-extrabold text-[11px]">FINALIS TOP 10</span>
+                                    <strong class="font-extrabold text-black text-xs sm:text-sm">Lomba Poster Ilmiah Nasional</strong>
+                                    <span class="text-[11px] text-slate-600 font-mono">Universitas Sriwijaya · 2025</span>
                                 </div>
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-1">
-                                    <span class="text-lambe-pink font-mono font-extrabold text-xs">FINALIS TOP 10</span>
-                                    <strong class="font-extrabold text-black">Lomba Esai Nasional</strong>
-                                    <span class="text-xs text-slate-600">Komadiksi Festival, Universitas Sebelas Maret · 2024</span>
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col gap-1">
+                                    <span class="text-lambe-pink font-mono font-extrabold text-[11px]">FINALIS TOP 10</span>
+                                    <strong class="font-extrabold text-black text-xs sm:text-sm">Lomba Esai Nasional</strong>
+                                    <span class="text-[11px] text-slate-600 font-mono">Komadiksi Festival, UNS · 2024</span>
                                 </div>
                             </div>
                         </div>
-                        <a href="https://drive.google.com/drive/folders/1e3gHto6qCq1IcLvVRhiNA4Snj2XnYHWQ?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti Sertifikat Lomba Nasional')" class="btn-lambe-dark mt-6 w-full py-3 text-sm flex items-center justify-center gap-2">
+                        <a href="https://drive.google.com/drive/folders/1e3gHto6qCq1IcLvVRhiNA4Snj2XnYHWQ?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti Sertifikat Lomba Nasional')" class="btn-lambe-dark mt-5 w-full py-3 text-xs sm:text-sm flex items-center justify-center gap-2">
                             <span>[ Lihat Bukti Sertifikat Lomba ]</span>
                             <i class="fa-solid fa-up-right-from-square text-xs"></i>
                         </a>
                     </div>
 
                     <!-- 02 — Sertifikasi & Kredensial -->
-                    <div id="achPanel-certifications" class="achieve-panel hidden p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
+                    <div id="achPanel-certifications" class="achieve-panel hidden p-4 sm:p-6 bg-lambe-cream poster-card flex flex-col justify-between font-heading">
                         <div class="space-y-4">
-                            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
-                                <div class="w-10 h-10 bg-black text-lambe-green border-2 border-black flex items-center justify-center text-lg shadow-hard-sm">
+                            <div class="flex items-center gap-3 border-b-2 border-black pb-2.5 bg-lambe-yellow p-2.5 border border-black">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-black text-lambe-green border-2 border-black flex items-center justify-center text-base sm:text-lg shadow-hard-sm shrink-0">
                                     <i class="fa-solid fa-certificate"></i>
                                 </div>
-                                <h3 class="text-lg sm:text-2xl font-impact text-black uppercase">Sertifikasi &amp; Kredensial Formal</h3>
+                                <h3 class="text-base sm:text-xl font-impact text-black uppercase">Sertifikasi &amp; Kredensial Formal</h3>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col justify-between">
                                     <div>
-                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-yellow px-1.5 border border-black inline-block mb-1">TOEFL Standard</span>
+                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-yellow px-2 py-0.5 border border-black inline-block mb-1">TOEFL Standard</span>
                                         <h4 class="text-xs sm:text-sm font-impact uppercase text-black">TOEFL English Prediction Standard (Score 450)</h4>
-                                        <p class="text-[11px] font-sans text-slate-700 mt-1">Universitas Lampung · 2025</p>
+                                        <p class="text-xs font-sans text-slate-700 mt-1">Universitas Lampung · 2025</p>
                                     </div>
-                                    <a href="https://drive.google.com/drive/folders/1wjlPjCTf58tktigu_yGJk3HHol9-Bamb?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat TOEFL Standard')" class="btn-lambe-link mt-3 self-start">
+                                    <a href="https://drive.google.com/drive/folders/1wjlPjCTf58tktigu_yGJk3HHol9-Bamb?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat TOEFL Standard')" class="btn-lambe-link mt-3 self-start text-xs py-1">
                                         <span>[ Lihat Kredensial ]</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                                     </a>
                                 </div>
 
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col justify-between">
                                     <div>
-                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-orange text-white px-1.5 border border-black inline-block mb-1">Kehumasan &amp; Media</span>
+                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-orange text-white px-2 py-0.5 border border-black inline-block mb-1">Kehumasan &amp; Media</span>
                                         <h4 class="text-xs sm:text-sm font-impact uppercase text-black">Onboarding PR &amp; Media Relations Certification</h4>
-                                        <p class="text-[11px] font-sans text-slate-700 mt-1">Humas Universitas Lampung · 2025</p>
+                                        <p class="text-xs font-sans text-slate-700 mt-1">Humas Universitas Lampung · 2025</p>
                                     </div>
-                                    <a href="https://drive.google.com/drive/folders/1OZGdb8IAwf0vLoC5SJTqJQRyOdrcI0je?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat PR &amp; Media Relations')" class="btn-lambe-link mt-3 self-start">
+                                    <a href="https://drive.google.com/drive/folders/1OZGdb8IAwf0vLoC5SJTqJQRyOdrcI0je?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat PR &amp; Media Relations')" class="btn-lambe-link mt-3 self-start text-xs py-1">
                                         <span>[ Lihat Kredensial ]</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                                     </a>
                                 </div>
 
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col justify-between">
                                     <div>
-                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-pink text-white px-1.5 border border-black inline-block mb-1">Kemendikbudristek RI</span>
+                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-pink text-white px-2 py-0.5 border border-black inline-block mb-1">Kemendikbudristek RI</span>
                                         <h4 class="text-xs sm:text-sm font-impact uppercase text-black">Graphic Designer MSIB National Certification</h4>
-                                        <p class="text-[11px] font-sans text-slate-700 mt-1">Kemendikbudristek RI · 2024</p>
+                                        <p class="text-xs font-sans text-slate-700 mt-1">Kemendikbudristek RI · 2024</p>
                                     </div>
-                                    <a href="https://drive.google.com/drive/folders/1LxMRNnzRp2ENHvZWuNtyJfbiKw8PkfEy?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat MSIB Kemendikbudristek')" class="btn-lambe-link mt-3 self-start">
+                                    <a href="https://drive.google.com/drive/folders/1LxMRNnzRp2ENHvZWuNtyJfbiKw8PkfEy?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat MSIB Kemendikbudristek')" class="btn-lambe-link mt-3 self-start text-xs py-1">
                                         <span>[ Lihat Kredensial ]</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                                     </a>
                                 </div>
 
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col justify-between">
                                     <div>
-                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-blue text-white px-1.5 border border-black inline-block mb-1">Pelatihan Visual</span>
+                                        <span class="text-[10px] font-mono font-bold uppercase bg-lambe-blue text-white px-2 py-0.5 border border-black inline-block mb-1">Pelatihan Visual</span>
                                         <h4 class="text-xs sm:text-sm font-impact uppercase text-black">Professional Visual &amp; Color Theory Training</h4>
-                                        <p class="text-[11px] font-sans text-slate-700 mt-1">UKM Penelitian Universitas Lampung · 2022</p>
+                                        <p class="text-xs font-sans text-slate-700 mt-1">UKM Penelitian Universitas Lampung · 2022</p>
                                     </div>
-                                    <a href="https://drive.google.com/drive/folders/1MXQloB9L9eYrIbEd9ZnjHxaVPoVhZyQg?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat Color Theory &amp; Visual')" class="btn-lambe-link mt-3 self-start">
+                                    <a href="https://drive.google.com/drive/folders/1MXQloB9L9eYrIbEd9ZnjHxaVPoVhZyQg?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat Color Theory &amp; Visual')" class="btn-lambe-link mt-3 self-start text-xs py-1">
                                         <span>[ Lihat Kredensial ]</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                                     </a>
                                 </div>
@@ -982,64 +1001,64 @@
                     </div>
 
                     <!-- 03 — Pengakuan Profesional -->
-                    <div id="achPanel-recognition" class="achieve-panel hidden p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
+                    <div id="achPanel-recognition" class="achieve-panel hidden p-4 sm:p-6 bg-lambe-cream poster-card flex flex-col justify-between font-heading">
                         <div class="space-y-4">
-                            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
-                                <div class="w-10 h-10 bg-black text-lambe-pink border-2 border-black flex items-center justify-center text-lg shadow-hard-sm">
+                            <div class="flex items-center gap-3 border-b-2 border-black pb-2.5 bg-lambe-yellow p-2.5 border border-black">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-black text-lambe-pink border-2 border-black flex items-center justify-center text-base sm:text-lg shadow-hard-sm shrink-0">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
-                                <h3 class="text-lg sm:text-2xl font-impact text-black uppercase">Pengakuan Profesional (Juri &amp; Pemateri)</h3>
+                                <h3 class="text-base sm:text-xl font-impact text-black uppercase">Pengakuan Profesional (Juri &amp; Pemateri)</h3>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-2">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col gap-2">
                                     <div class="flex items-center justify-between">
                                         <span class="text-xs font-mono font-bold bg-lambe-red text-white px-2 py-0.5 border border-black">JURI</span>
-                                        <a href="https://drive.google.com/drive/folders/1XB6c7EBgiknoiI9sAP5BAEtEEXsAD_s7?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti SK &amp; Sertifikat Juri')" class="btn-lambe-link text-[10px] py-1 px-2">[ Bukti SK / Sertifikat ]</a>
+                                        <a href="https://drive.google.com/drive/folders/1XB6c7EBgiknoiI9sAP5BAEtEEXsAD_s7?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti SK &amp; Sertifikat Juri')" class="btn-lambe-link text-[10px] py-0.5 px-2">[ Bukti SK ]</a>
                                     </div>
-                                    <h4 class="text-sm font-impact text-black uppercase">Juri Kompetisi Nasional</h4>
-                                    <p class="text-xs font-sans text-slate-700">Dipercaya sebagai juri pada kompetisi poster kreatif dan film pendek di lingkungan perguruan tinggi.</p>
+                                    <h4 class="text-xs sm:text-sm font-impact text-black uppercase">Juri Kompetisi Nasional</h4>
+                                    <p class="text-xs font-sans text-slate-800">Dipercaya sebagai juri pada kompetisi poster kreatif dan film pendek di lingkungan perguruan tinggi.</p>
                                 </div>
 
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col gap-2">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col gap-2">
                                     <div class="flex items-center justify-between">
                                         <span class="text-xs font-mono font-bold bg-lambe-blue text-white px-2 py-0.5 border border-black">PEMATERI</span>
-                                        <a href="https://drive.google.com/drive/folders/1kFyolybGEhmaHZexWsrwE2SdMqKDLLew?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti SK &amp; Sertifikat Pemateri')" class="btn-lambe-link text-[10px] py-1 px-2">[ Bukti SK / Sertifikat ]</a>
+                                        <a href="https://drive.google.com/drive/folders/1kFyolybGEhmaHZexWsrwE2SdMqKDLLew?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti SK &amp; Sertifikat Pemateri')" class="btn-lambe-link text-[10px] py-0.5 px-2">[ Bukti SK ]</a>
                                     </div>
-                                    <h4 class="text-sm font-impact text-black uppercase">Narasumber &amp; Pemateri Pelatihan</h4>
-                                    <p class="text-xs font-sans text-slate-700">Mengisi pelatihan terkait desain grafis, esai ilmiah, dan personal branding untuk berbagai audiens mahasiswa &amp; umum.</p>
+                                    <h4 class="text-xs sm:text-sm font-impact text-black uppercase">Narasumber &amp; Pemateri Pelatihan</h4>
+                                    <p class="text-xs font-sans text-slate-800">Mengisi pelatihan terkait desain grafis, esai ilmiah, dan personal branding untuk berbagai audiens mahasiswa &amp; umum.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- 04 — Beasiswa & Program Nasional -->
-                    <div id="achPanel-scholarships" class="achieve-panel hidden p-6 sm:p-8 bg-white poster-card flex flex-col justify-between font-heading">
+                    <div id="achPanel-scholarships" class="achieve-panel hidden p-4 sm:p-6 bg-lambe-cream poster-card flex flex-col justify-between font-heading">
                         <div class="space-y-4">
-                            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
-                                <div class="w-10 h-10 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-lg shadow-hard-sm">
+                            <div class="flex items-center gap-3 border-b-2 border-black pb-2.5 bg-lambe-yellow p-2.5 border border-black">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-base sm:text-lg shadow-hard-sm shrink-0">
                                     <i class="fa-solid fa-award"></i>
                                 </div>
-                                <h3 class="text-lg sm:text-2xl font-impact text-black uppercase">Beasiswa &amp; Program Nasional</h3>
+                                <h3 class="text-base sm:text-xl font-impact text-black uppercase">Beasiswa &amp; Program Nasional</h3>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col justify-between">
                                     <div>
-                                        <span class="text-xs font-mono font-bold bg-lambe-orange text-white px-2 py-0.5 border border-black inline-block mb-1">BEASISWA NASIONAL</span>
-                                        <h4 class="text-sm font-impact uppercase text-black">Awardee YBM PLN — Tingkat Nasional</h4>
-                                        <p class="text-xs font-sans text-slate-700 mt-1">Penerima beasiswa kepemimpinan dan akademik nasional dari Yayasan Baitul Maal PLN.</p>
+                                        <span class="text-[10px] font-mono font-bold bg-lambe-orange text-white px-2 py-0.5 border border-black inline-block mb-1">BEASISWA NASIONAL</span>
+                                        <h4 class="text-xs sm:text-sm font-impact uppercase text-black">Awardee YBM PLN — Tingkat Nasional</h4>
+                                        <p class="text-xs font-sans text-slate-800 mt-1">Penerima beasiswa kepemimpinan dan akademik nasional dari Yayasan Baitul Maal PLN.</p>
                                     </div>
                                 </div>
 
-                                <div class="p-4 bg-lambe-cream border-2 border-black shadow-hard-sm flex flex-col justify-between">
+                                <div class="p-3 bg-white border-2 border-black shadow-hard-sm flex flex-col justify-between">
                                     <div>
-                                        <span class="text-xs font-mono font-bold bg-lambe-pink text-white px-2 py-0.5 border border-black inline-block mb-1">PROGRAM KEMENDIKBUDRISTEK</span>
-                                        <h4 class="text-sm font-impact uppercase text-black">Awardee MSIB — Program Nasional Kemendikbudristek</h4>
-                                        <p class="text-xs font-sans text-slate-700 mt-1">Peserta terpilih Magang dan Studi Independen Bersertifikat (MSIB) Angkatan Nasional.</p>
+                                        <span class="text-[10px] font-mono font-bold bg-lambe-pink text-white px-2 py-0.5 border border-black inline-block mb-1">PROGRAM KEMENDIKBUDRISTEK</span>
+                                        <h4 class="text-xs sm:text-sm font-impact uppercase text-black">Awardee MSIB — Program Nasional Kemendikbudristek</h4>
+                                        <p class="text-xs font-sans text-slate-800 mt-1">Peserta terpilih Magang dan Studi Independen Bersertifikat (MSIB) Angkatan Nasional.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="https://drive.google.com/drive/folders/16nbUGEk8auZfTGBLe692GQoFjZoweUy4?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Dokumen Beasiswa &amp; Program Nasional')" class="btn-lambe-dark mt-6 w-full py-3 text-sm flex items-center justify-center gap-2">
+                        <a href="https://drive.google.com/drive/folders/16nbUGEk8auZfTGBLe692GQoFjZoweUy4?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Dokumen Beasiswa &amp; Program Nasional')" class="btn-lambe-dark mt-5 w-full py-3 text-xs sm:text-sm flex items-center justify-center gap-2">
                             <span>[ Lihat Dokumen Pendukung ]</span>
                             <i class="fa-solid fa-up-right-from-square text-xs"></i>
                         </a>
@@ -1049,85 +1068,85 @@
             </div>
         </section>
 
-        <!-- 8. BAGIAN KONTAK (Section 8: Solid White Background) -->
-        <section id="contact" class="py-16 bg-white border-b-4 border-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
-                    <span id="contact-section-tag" data-en="Get in Touch" data-id="Hubungi Saya" class="poster-badge px-3 py-1 bg-lambe-orange text-white text-xs">Hubungi Saya</span>
-                    <h2 id="contact-section-title" data-en="Let’s Connect &amp; Collaborate" data-id="Mari Berkolaborasi &amp; Terhubung" class="text-2xl sm:text-4xl font-impact uppercase tracking-normal text-black">Mari Berkolaborasi &amp; Terhubung</h2>
-                    <div class="w-20 h-2 bg-lambe-red border-2 border-black"></div>
+        <!-- 8. BAGIAN KONTAK (Section 8: Animated White Grid Background) -->
+        <section id="contact" class="py-10 sm:py-14 bg-grid-white border-b-4 border-black relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="mb-6 sm:mb-10 text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
+                    <span id="contact-section-tag" data-en="Get in Touch" data-id="Hubungi Saya" class="poster-badge px-3 py-1 bg-lambe-orange text-white text-xs sm:text-sm">Hubungi Saya</span>
+                    <h2 id="contact-section-title" data-en="Let’s Connect &amp; Collaborate" data-id="Mari Berkolaborasi &amp; Terhubung" class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-impact uppercase tracking-normal text-black">Mari Berkolaborasi &amp; Terhubung</h2>
+                    <div class="w-16 sm:w-20 h-1.5 bg-lambe-red border-2 border-black"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-stretch w-full font-heading">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 max-w-5xl mx-auto items-stretch w-full font-heading">
                     
-                    <div class="lg:col-span-5 p-6 bg-lambe-cream poster-card flex flex-col justify-between gap-6">
+                    <div class="lg:col-span-5 p-5 sm:p-6 bg-lambe-cream poster-card flex flex-col justify-between gap-5">
                         <div class="space-y-4">
-                            <h3 id="contact-sub-title" data-en="Contact Directory" data-id="Detail Kontak" class="text-xl font-impact text-black uppercase">Detail Kontak</h3>
-                            <p id="contact-desc" data-en="Do you have a project, branding needs, or collaboration opportunities? Feel free to reach out." data-id="Apakah Anda memiliki proyek kreatif, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya." class="text-xs font-sans text-slate-700 font-medium leading-relaxed">
+                            <h3 id="contact-sub-title" data-en="Contact Directory" data-id="Detail Kontak" class="text-base sm:text-xl font-impact text-black uppercase">Detail Kontak</h3>
+                            <p id="contact-desc" data-en="Do you have a project, branding needs, or collaboration opportunities? Feel free to reach out." data-id="Apakah Anda memiliki proyek kreatif, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya." class="text-xs sm:text-sm font-sans text-slate-800 font-medium leading-relaxed">
                                 Apakah Anda memiliki proyek kreatif, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya.
                             </p>
 
-                            <div class="space-y-4">
-                                <div class="flex items-center gap-3.5 bg-white p-3 border-2 border-black shadow-hard-sm cursor-pointer" onclick="openEmailDirect(event)">
-                                    <div class="w-10 h-10 bg-lambe-pink text-white flex items-center justify-center text-lg border border-black shrink-0">
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 bg-white p-3 border-2 border-black shadow-hard-sm cursor-pointer" onclick="openEmailDirect(event)">
+                                    <div class="w-9 h-9 bg-lambe-pink text-white flex items-center justify-center text-base border border-black shrink-0">
                                         <i class="fa-regular fa-envelope"></i>
                                     </div>
                                     <div class="flex flex-col flex-1 min-w-0">
-                                        <span class="text-[9px] font-mono font-bold uppercase text-black leading-none" data-en="Email Address" data-id="Alamat Email">Alamat Email</span>
-                                        <span class="text-xs font-mono font-bold text-black truncate mt-1 select-all">nurkarim2004@gmail.com</span>
+                                        <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase text-black leading-none" data-en="Email Address" data-id="Alamat Email">Alamat Email</span>
+                                        <span class="text-xs sm:text-sm font-mono font-bold text-black truncate mt-1 select-all">nurkarim2004@gmail.com</span>
                                     </div>
-                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com', this)" class="btn-lambe-dark text-xs py-1.5 px-3 flex items-center gap-1" title="Send Email">
+                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com', this)" class="btn-lambe-dark text-xs py-1.5 px-2.5 flex items-center gap-1 shrink-0" title="Send Email">
                                         <i class="fa-regular fa-paper-plane"></i>
                                         <span data-en="Send" data-id="Kirim">Kirim</span>
                                     </button>
                                 </div>
 
-                                <div class="flex items-center gap-3.5 bg-white p-3 border-2 border-black shadow-hard-sm">
-                                    <div class="w-10 h-10 bg-lambe-blue text-white flex items-center justify-center text-lg border border-black shrink-0">
+                                <div class="flex items-center gap-3 bg-white p-3 border-2 border-black shadow-hard-sm">
+                                    <div class="w-9 h-9 bg-lambe-blue text-white flex items-center justify-center text-base border border-black shrink-0">
                                         <i class="fa-solid fa-location-dot"></i>
                                     </div>
                                     <div class="flex flex-col">
-                                        <span class="text-[9px] font-mono font-bold uppercase text-black leading-none" data-en="Location Base" data-id="Domisili">Domisili</span>
-                                        <span class="text-xs font-bold text-black mt-1">Kab. Lampung Utara, Lampung, Indonesia</span>
+                                        <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase text-black leading-none" data-en="Location Base" data-id="Domisili">Domisili</span>
+                                        <span class="text-xs sm:text-sm font-bold text-black mt-1">Kab. Lampung Utara, Lampung, Indonesia</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="p-3 bg-lambe-yellow text-black border-2 border-black text-center font-mono font-extrabold text-[10px] uppercase shadow-hard-sm">
+                        <div class="p-2.5 bg-lambe-yellow text-black border-2 border-black text-center font-mono font-extrabold text-[10px] uppercase shadow-hard-sm">
                             <span>🇮🇩</span> <span data-en="Sumatera &amp; Jabodetabek Priority Services" data-id="Prioritas Layanan Sumatera &amp; Jabodetabek">Prioritas Layanan Sumatera &amp; Jabodetabek</span>
                         </div>
                     </div>
 
-                    <form onsubmit="handleSecureFormSubmit(event)" class="lg:col-span-7 p-6 bg-lambe-cream poster-card flex flex-col justify-between gap-4">
+                    <form onsubmit="handleSecureFormSubmit(event)" class="lg:col-span-7 p-5 sm:p-6 bg-lambe-cream poster-card flex flex-col justify-between gap-4">
                         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
                         
-                        <div class="space-y-4">
-                            <h3 id="form-title" data-en="Transmit Secure Message" data-id="Kirimkan Pesan Aman" class="text-xl font-impact text-black uppercase">Kirimkan Pesan Aman</h3>
+                        <div class="space-y-3.5">
+                            <h3 id="form-title" data-en="Transmit Secure Message" data-id="Kirimkan Pesan Aman" class="text-base sm:text-xl font-impact text-black uppercase">Kirimkan Pesan Aman</h3>
                             
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono">
                                 <div class="flex flex-col gap-1">
                                     <label class="text-[10px] font-bold uppercase text-black" data-en="Your Name" data-id="Nama Anda">Nama Anda</label>
-                                    <input type="text" name="name" required class="px-3.5 py-2.5 border-2 border-black bg-white text-xs font-bold outline-none focus:bg-lambe-yellow text-black" placeholder="e.g. Rahmad Nur Karim">
+                                    <input type="text" name="name" required class="px-3 py-2.5 border-2 border-black bg-white text-xs font-bold outline-none focus:bg-lambe-yellow text-black" placeholder="e.g. Rahmad Nur Karim">
                                 </div>
                                 <div class="flex flex-col gap-1">
                                     <label class="text-[10px] font-bold uppercase text-black" data-en="Email Address" data-id="Alamat Email">Alamat Email</label>
-                                    <input type="email" name="email" required class="px-3.5 py-2.5 border-2 border-black bg-white text-xs font-bold outline-none focus:bg-lambe-yellow text-black" placeholder="yourname@gmail.com">
+                                    <input type="email" name="email" required class="px-3 py-2.5 border-2 border-black bg-white text-xs font-bold outline-none focus:bg-lambe-yellow text-black" placeholder="yourname@gmail.com">
                                 </div>
                             </div>
 
                             <div class="flex flex-col gap-1 font-mono">
                                 <label class="text-[10px] font-bold uppercase text-black" data-en="Subject" data-id="Subjek">Subjek</label>
-                                <input type="text" name="subject" required class="px-3.5 py-2.5 border-2 border-black bg-white text-xs font-bold outline-none focus:bg-lambe-yellow text-black" placeholder="Design Project Offer">
+                                <input type="text" name="subject" required class="px-3 py-2.5 border-2 border-black bg-white text-xs font-bold outline-none focus:bg-lambe-yellow text-black" placeholder="Design Project Offer">
                             </div>
 
                             <div class="flex flex-col gap-1 font-mono">
                                 <label class="text-[10px] font-bold uppercase text-black" data-en="Message Details" data-id="Detail Pesan">Detail Pesan</label>
-                                <textarea name="message" required rows="3.5" class="px-3.5 py-2.5 border-2 border-black bg-white text-xs font-bold outline-none focus:bg-lambe-yellow resize-none text-black" placeholder="Tulis rincian proyek Anda di sini..."></textarea>
+                                <textarea name="message" required rows="3" class="px-3 py-2.5 border-2 border-black bg-white text-xs font-bold outline-none focus:bg-lambe-yellow resize-none text-black" placeholder="Tulis rincian proyek Anda di sini..."></textarea>
                             </div>
                         </div>
 
-                        <button type="submit" id="formSubmitBtn" class="btn-lambe-primary w-full py-3.5 text-base flex items-center justify-center gap-2">
+                        <button type="submit" id="formSubmitBtn" class="btn-lambe-primary w-full py-3 text-xs sm:text-sm flex items-center justify-center gap-2 mt-2">
                             <span data-en="Transmit Secure Message (WhatsApp)" data-id="Kirimkan Pesan Aman (WhatsApp)">Kirimkan Pesan Aman (WhatsApp)</span>
                         </button>
                     </form>
@@ -1138,14 +1157,14 @@
     </main>
 
     <!-- FOOTER (Solid Black Background) -->
-    <footer class="py-10 bg-black text-white border-t-4 border-black flex flex-col items-center">
+    <footer class="py-8 bg-black text-white border-t-4 border-black flex flex-col items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 w-full text-center md:text-left font-heading">
             <div class="flex flex-col gap-1">
-                <span id="footer-name" data-en="Rahmad Nur Karim, S.Pd." data-id="Rahmad Nur Karim, S.Pd." class="text-sm font-impact text-lambe-yellow uppercase tracking-wider">Rahmad Nur Karim, S.Pd.</span>
-                <p class="text-[11px] font-mono text-slate-400" data-en="© 2026. All rights reserved." data-id="© 2026. Seluruh hak cipta dilindungi.">© 2026. Seluruh hak cipta dilindungi.</p>
+                <span id="footer-name" data-en="Rahmad Nur Karim, S.Pd." data-id="Rahmad Nur Karim, S.Pd." class="text-sm sm:text-base font-impact text-lambe-yellow uppercase tracking-wider">Rahmad Nur Karim, S.Pd.</span>
+                <p class="text-xs font-mono text-slate-400" data-en="© 2026. All rights reserved." data-id="© 2026. Seluruh hak cipta dilindungi.">© 2026. Seluruh hak cipta dilindungi.</p>
             </div>
             
-            <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-bold uppercase">
+            <div class="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-bold uppercase">
                 <a href="#about" class="hover:text-lambe-yellow transition-colors" data-en="About" data-id="Tentang">Tentang</a>
                 <span>•</span>
                 <a href="#portfolio" class="hover:text-lambe-yellow transition-colors" data-en="Portfolio" data-id="Portofolio">Portofolio</a>
@@ -1156,31 +1175,28 @@
     </footer>
 
     <!-- MODAL DOKUMEN AKADEMIK -->
-    <div id="academicDocsModal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="w-full max-w-2xl bg-lambe-cream border-4 border-black shadow-hard-lg p-6 sm:p-8 flex flex-col gap-5 relative font-sans max-h-[90vh] overflow-y-auto">
+    <div id="academicDocsModal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-4">
+        <div class="w-full max-w-2xl bg-lambe-cream border-4 border-black shadow-hard-lg p-4 sm:p-6 flex flex-col gap-4 relative font-sans max-h-[90vh] overflow-y-auto">
             
             <div class="flex items-center justify-between border-b-3 border-black pb-3">
                 <div class="flex items-center gap-2">
-                    <span class="text-xl">🎓</span>
-                    <h3 class="text-base sm:text-xl font-impact uppercase text-black">Dokumen Akademik Universitas Lampung</h3>
+                    <span class="text-lg">🎓</span>
+                    <h3 class="text-sm sm:text-lg font-impact uppercase text-black">Dokumen Akademik Universitas Lampung</h3>
                 </div>
-                <button onclick="toggleAcademicDocsModal()" class="w-8 h-8 bg-black text-white hover:bg-lambe-red flex items-center justify-center border-2 border-black transition-all active:scale-95">
-                    <i class="fa-solid fa-xmark text-sm"></i>
-                </button>
             </div>
 
             <!-- 1. SKRIPSI -->
-            <div class="space-y-3 text-left bg-white p-4 border-2 border-black shadow-hard-sm">
+            <div class="space-y-2 text-left bg-white p-3.5 border-2 border-black shadow-hard-sm">
                 <span class="text-[10px] font-mono font-bold uppercase bg-lambe-yellow px-2 py-0.5 border border-black inline-block">01 — SKRIPSI SARJANA</span>
                 <h4 class="text-xs sm:text-sm text-black font-extrabold leading-snug">
                     “Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”
                 </h4>
-                <p class="text-xs text-slate-700 leading-relaxed font-medium">
+                <p class="text-xs text-slate-800 leading-relaxed font-medium">
                     Riset ilmiah ini membahas sistem perencanaan keuangan bagi siswa, menggunakan model analisis jalur (path analysis) untuk mengidentifikasi korelasi antara pendapatan rumah tangga, tingkat literasi ekonomi, dan gaya hidup aktif siswa. Hasil penelitian membuktikan peran mediasi krusial yang dipegang oleh perilaku pengelolaan finansial terstruktur.
                 </p>
                 <div class="pt-2 flex items-center justify-between border-t border-slate-200">
-                    <span class="text-[10px] text-slate-500 font-mono">Perpustakaan Unila ID: 96457</span>
-                    <a href="https://digilib.unila.ac.id/96457/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px]">
+                    <span class="text-[10px] text-slate-600 font-mono">Perpustakaan Unila ID: 96457</span>
+                    <a href="https://digilib.unila.ac.id/96457/" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px] py-1">
                         <span>Buka Digilib Unila</span>
                         <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
                     </a>
@@ -1188,30 +1204,30 @@
             </div>
 
             <!-- 2. JURNAL SINTA -->
-            <div class="space-y-3 text-left bg-white p-4 border-2 border-black shadow-hard-sm font-heading">
+            <div class="space-y-2 text-left bg-white p-3.5 border-2 border-black shadow-hard-sm font-heading">
                 <span class="text-[10px] font-mono font-bold uppercase bg-lambe-red text-white px-2 py-0.5 border border-black inline-block">02 — 3 PUBLIKASI SINTA</span>
                 
-                <div class="space-y-3 font-sans">
-                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
-                        <strong class="text-xs text-black font-extrabold">1. “Penerapan Komunikasi Interpersonal Berbasis Local Wisdom untuk Meningkatkan Komitmen Berorganisasi ‘Kaum Santri’ di Rajabasa”</strong>
+                <div class="space-y-2.5 font-sans">
+                    <div class="p-2.5 bg-lambe-cream border border-black flex flex-col gap-1">
+                        <strong class="text-xs sm:text-sm text-black font-extrabold">1. “Penerapan Komunikasi Interpersonal Berbasis Local Wisdom untuk Meningkatkan Komitmen Berorganisasi ‘Kaum Santri’ di Rajabasa”</strong>
                         <span class="text-[10px] text-slate-600 font-mono">Garuda Kemdiktisaintek • Karim, R. N. et al. (2025)</span>
-                        <a href="https://garuda.kemdiktisaintek.go.id/documents/detail/4694081" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[9px] py-1 self-start">
+                        <a href="https://garuda.kemdiktisaintek.go.id/documents/detail/4694081" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px] py-1 self-start mt-1">
                             <span>Baca Jurnal Garuda</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
                         </a>
                     </div>
 
-                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
-                        <strong class="text-xs text-black font-extrabold">2. “Project-Based Learning Approach Based on Interpersonal Communication in Improving Vocational School Students’ Work Readiness”</strong>
+                    <div class="p-2.5 bg-lambe-cream border border-black flex flex-col gap-1">
+                        <strong class="text-xs sm:text-sm text-black font-extrabold">2. “Project-Based Learning Approach Based on Interpersonal Communication in Improving Vocational School Students’ Work Readiness”</strong>
                         <span class="text-[10px] text-slate-600 font-mono">JPIPS FKIP Unila • Karim, R. N. et al. (2025)</span>
-                        <a href="https://jpips.fkip.unila.ac.id/index.php/e3j/article/view/113" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[9px] py-1 self-start">
+                        <a href="https://jpips.fkip.unila.ac.id/index.php/e3j/article/view/113" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px] py-1 self-start mt-1">
                             <span>Baca Jurnal JPIPS</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
                         </a>
                     </div>
 
-                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
-                        <strong class="text-xs text-black font-extrabold">3. “The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”</strong>
+                    <div class="p-2.5 bg-lambe-cream border border-black flex flex-col gap-1">
+                        <strong class="text-xs sm:text-sm text-black font-extrabold">3. “The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”</strong>
                         <span class="text-[10px] text-slate-600 font-mono">Jurnal Kependidikan Ekonomi • Karim, R. N. et al. (2025)</span>
-                        <a href="https://jos.unsoed.ac.id/index.php/seej/article/view/18756" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[9px] py-1 self-start">
+                        <a href="https://jos.unsoed.ac.id/index.php/seej/article/view/18756" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px] py-1 self-start mt-1">
                             <span>Baca Jurnal SEEJ</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
                         </a>
                     </div>
@@ -1219,29 +1235,29 @@
             </div>
 
             <!-- 3. HAKI -->
-            <div class="space-y-3 text-left bg-white p-4 border-2 border-black shadow-hard-sm font-heading">
-                <span class="text-[10px] font-mono font-bold uppercase bg-lambe-green text-white px-2 py-0.5 border border-black inline-block">03 — 2 HAK KEKAYAAN INTELEKTUAL (HAKI)</span>
+            <div class="space-y-2 text-left bg-white p-3 border-2 border-black shadow-hard-sm font-heading">
+                <span class="text-[9px] font-mono font-bold uppercase bg-lambe-green text-white px-2 py-0.5 border border-black inline-block">03 — 2 HAK KEKAYAAN INTELEKTUAL (HAKI)</span>
                 
-                <div class="space-y-3 font-sans">
-                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
-                        <strong class="text-xs text-black font-extrabold">1. Hak Cipta Corporate Identity Program Studi Pendidikan Ekonomi FKIP Unila</strong>
-                        <span class="text-[10px] text-slate-600 font-mono">Reg: No. EC00202399120 • Dirjen KI Kemenkumham RI</span>
+                <div class="space-y-2 font-sans">
+                    <div class="p-2 bg-lambe-cream border border-black flex flex-col gap-0.5">
+                        <strong class="text-[11px] text-black font-extrabold">1. Hak Cipta Corporate Identity Program Studi Pendidikan Ekonomi FKIP Unila</strong>
+                        <span class="text-[9px] text-slate-600 font-mono">Reg: No. EC00202399120 • Dirjen KI Kemenkumham RI</span>
                     </div>
 
-                    <div class="p-3 bg-lambe-cream border border-black flex flex-col gap-1.5">
-                        <strong class="text-xs text-black font-extrabold">2. Hak Cipta Publikasi Desain Media Informasi &amp; Pengabdian Kemasyarakatan</strong>
-                        <span class="text-[10px] text-slate-600 font-mono">Reg: No. EC00202399182 • Dirjen KI Kemenkumham RI</span>
+                    <div class="p-2 bg-lambe-cream border border-black flex flex-col gap-0.5">
+                        <strong class="text-[11px] text-black font-extrabold">2. Hak Cipta Publikasi Desain Media Informasi &amp; Pengabdian Kemasyarakatan</strong>
+                        <span class="text-[9px] text-slate-600 font-mono">Reg: No. EC00202399182 • Dirjen KI Kemenkumham RI</span>
                     </div>
                 </div>
 
-                <a href="https://drive.google.com/drive/folders/1PJkSfxrsWK50TOrkkT9j1RNepu8Dk1en?usp=drive_copy" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat HaKI Kemenkumham RI')" class="btn-lambe-dark text-xs py-2 w-full flex items-center justify-center gap-1.5 mt-2">
+                <a href="https://drive.google.com/drive/folders/1PJkSfxrsWK50TOrkkT9j1RNepu8Dk1en?usp=drive_copy" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat HaKI Kemenkumham RI')" class="btn-lambe-dark text-xs py-1.5 w-full flex items-center justify-center gap-1.5 mt-1">
                     <span>Lihat Sertifikat HaKI Kemenkumham</span>
-                    <i class="fa-solid fa-up-right-from-square text-xs"></i>
+                    <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
                 </a>
             </div>
 
-            <div class="flex items-center justify-end gap-3 pt-3 border-t-3 border-black font-heading font-extrabold uppercase">
-                <button onclick="toggleAcademicDocsModal()" class="btn-lambe-secondary px-5 py-2 text-xs">Tutup Modal</button>
+            <div class="flex items-center justify-end gap-2 pt-2 border-t-3 border-black font-heading font-extrabold uppercase">
+                <button onclick="toggleAcademicDocsModal()" class="btn-lambe-secondary px-4 py-1.5 text-xs">TUTUP</button>
             </div>
         </div>
     </div>
@@ -1249,19 +1265,19 @@
     <!-- MODAL FLOATING DRIVE PREVIEW -->
     <div id="driveModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-[160] bg-black/85 backdrop-blur-sm hidden items-center justify-center p-2 sm:p-4 font-sans">
         <div class="w-full max-w-5xl h-[88vh] bg-lambe-cream border-4 border-black shadow-hard-lg flex flex-col overflow-hidden relative">
-            <div class="flex items-center justify-between px-4 py-3 bg-lambe-yellow text-black border-b-4 border-black shrink-0 font-heading">
+            <div class="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 bg-lambe-yellow text-black border-b-4 border-black shrink-0 font-heading">
                 <div class="flex items-center gap-2 min-w-0 pr-2">
-                    <div class="w-8 h-8 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-xs shrink-0 shadow-hard-sm">
+                    <div class="w-7 h-7 sm:w-8 sm:h-8 bg-black text-lambe-yellow border-2 border-black flex items-center justify-center text-xs shrink-0 shadow-hard-sm">
                         <i class="fa-brands fa-google-drive"></i>
                     </div>
                     <div class="flex flex-col min-w-0">
-                        <h3 id="driveModalTitle" class="text-sm font-impact uppercase truncate text-black">Preview Google Drive</h3>
-                        <span class="text-[9px] text-black font-mono font-bold truncate">Pratinjau Mengambang Web Portofolio • Tetap di Website</span>
+                        <h3 id="driveModalTitle" class="text-xs sm:text-sm font-impact uppercase truncate text-black">Preview Google Drive</h3>
+                        <span class="text-[9px] text-black font-mono font-bold truncate">Pratinjau Mengambang Web Portofolio</span>
                     </div>
                 </div>
                 
                 <div class="flex items-center gap-2 shrink-0">
-                    <a id="driveExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-lambe-primary text-xs px-3 py-1.5 flex items-center gap-1.5">
+                    <a id="driveExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-lambe-primary text-xs px-3 py-1 flex items-center gap-1">
                         <span>Buka Tab Baru</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                     </a>
@@ -1273,7 +1289,7 @@
 
             <div class="relative flex-1 bg-black w-full h-full overflow-hidden flex flex-col items-center justify-center">
                 <div id="driveLoadingSpinner" class="absolute inset-0 flex flex-col items-center justify-center bg-black text-white gap-3 z-10">
-                    <div class="w-10 h-10 border-4 border-lambe-yellow border-t-transparent animate-spin"></div>
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 border-4 border-lambe-yellow border-t-transparent animate-spin"></div>
                     <span class="text-xs font-bold font-mono text-lambe-yellow">Memuat Berkas Google Drive...</span>
                 </div>
                 <iframe id="driveFrame" class="w-full h-full border-0 relative z-20" onload="document.getElementById('driveLoadingSpinner').classList.add('hidden')" src=""></iframe>
@@ -1282,8 +1298,8 @@
     </div>
 
     <!-- NOTIFIKASI TOAST -->
-    <div id="iosToast" class="fixed bottom-6 right-6 z-[150] transform translate-y-[100px] opacity-0 transition-all duration-300 pointer-events-none font-mono">
-        <div class="bg-lambe-yellow text-black px-4 py-3 border-3 border-black shadow-hard text-xs font-bold flex items-center gap-2">
+    <div id="iosToast" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-[150] transform translate-y-[100px] opacity-0 transition-all duration-300 pointer-events-none font-mono">
+        <div class="bg-lambe-yellow text-black px-4 py-3 border-3 border-black shadow-hard text-xs sm:text-sm font-bold flex items-center gap-2.5">
             <span id="toastIcon">💡</span>
             <span id="toastMessage">Operasi Aman Berhasil</span>
         </div>
@@ -1532,8 +1548,8 @@
 
                 let linksHTML = '';
                 if (item.links && item.links.length > 0) {
-                    linksHTML = `<div class="flex flex-wrap gap-1.5 mt-2">` + 
-                        item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px] px-2 py-0.5"><i class="fa-solid fa-globe text-[8px]"></i> ${l.name}</a>`).join('') +
+                    linksHTML = `<div class="flex flex-wrap gap-2 mt-2">` + 
+                        item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="btn-lambe-link text-[10px] px-2.5 py-1"><i class="fa-solid fa-globe text-[8px]"></i> ${l.name}</a>`).join('') +
                         `</div>`;
                 }
 
@@ -1546,8 +1562,8 @@
                                 <div class="w-10 h-10 bg-lambe-yellow text-black border-2 border-black flex items-center justify-center shadow-hard-sm mb-2">
                                     <i class="fa-brands fa-google-drive text-base"></i>
                                 </div>
-                                <span class="px-3 py-1 bg-lambe-red border border-black text-white text-[10px] font-impact uppercase tracking-wider flex items-center gap-1 shadow-hard-sm">
-                                    ${(currentLanguage === 'en') ? 'Explore Assets' : 'Tinjau Hasil Karya'} <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
+                                <span class="px-3 py-1 bg-lambe-red border border-black text-white text-[10px] font-impact uppercase tracking-wider flex items-center gap-1.5 shadow-hard-sm">
+                                    ${(currentLanguage === 'en') ? 'Explore Assets' : 'Tinjau Hasil Karya'} <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                                 </span>
                             </div>
                             <img src="${item.imgUrl}" alt="${item.title}" class="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-300 group-hover:scale-105" onerror="this.src='https://placehold.co/600x450/1e293b/ffffff?text=${encodeURIComponent(item.title)}'">
@@ -1557,15 +1573,15 @@
                             <span class="inline-block text-[9px] uppercase font-bold tracking-wider text-white bg-black px-2 py-0.5 self-start font-mono">
                                 ${categoryLabel}
                             </span>
-                            <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight font-heading mt-0.5">${item.title}</h3>
-                            <p class="text-xs text-slate-700 leading-normal font-medium">${displayDesc}</p>
+                            <h3 class="text-sm sm:text-base font-impact text-black uppercase leading-tight font-heading mt-1">${item.title}</h3>
+                            <p class="text-xs sm:text-sm text-slate-800 leading-snug font-medium">${displayDesc}</p>
                             ${linksHTML}
                         </div>
                     </div>
 
-                    <div class="mt-4 pt-2.5 border-t-2 border-black flex items-center justify-between font-heading">
-                        <button onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="btn-lambe-link self-start">
-                            <span>${(currentLanguage === 'en') ? 'Explore Project' : 'Pratinjau Karya'}</span> <i class="fa-solid fa-up-right-from-square text-[8px]"></i>
+                    <div class="mt-4 pt-3 border-t-2 border-black flex items-center justify-between font-heading">
+                        <button onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="btn-lambe-link self-start text-xs py-1.5">
+                            <span>${(currentLanguage === 'en') ? 'Explore Project' : 'Pratinjau Karya'}</span> <i class="fa-solid fa-up-right-from-square text-[9px]"></i>
                         </button>
                     </div>
                 `;
@@ -1656,14 +1672,14 @@
             "Creative Designer",
             "Digital Communication Specialist",
             "AI Workflow Engineer",
-            "Web App Developer",
+            "Web Developer",
             "Brand Identity Strategist"
         ];
         const ROTATOR_WORDS_ID = [
             "Creative Designer",
             "Spesialis Komunikasi Digital",
             "AI Workflow Engineer",
-            "Google Apps Script Developer",
+            "Web Developer",
             "Strategis Branding Identity"
         ];
         let rotatorWordIdx = 0;
