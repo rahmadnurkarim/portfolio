@@ -13,6 +13,9 @@
     <!-- FontAwesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Devicon CDN for official software & tech stack logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -34,9 +37,9 @@
                             canvas: '#ffffff',
                             parchment: '#f5f5f7',
                             pearl: '#fafafc',
-                            'tile-1': '#1c1c1e',
-                            'tile-2': '#2c2c2e',
-                            'tile-3': '#161618',
+                            'tile-1': '#111113',
+                            'tile-2': '#161619',
+                            'tile-3': '#0c0c0e',
                             black: '#000000',
                             hairline: '#e5e5ea',
                             divider: '#f0f0f0',
@@ -46,7 +49,7 @@
                         'apple-xs': '6px',
                         'apple-sm': '10px',
                         'apple-md': '14px',
-                        'apple-lg': '20px',
+                        'apple-lg': '18px',
                         'apple-pill': '9999px',
                     },
                     boxShadow: {
@@ -68,14 +71,12 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Essential Scroll Margin Top Offset for double fixed header (44px + 52px = 96px) */
         section[id] {
             scroll-margin-top: 96px;
         }
 
         .tracking-apple-hero { letter-spacing: -0.022em; }
         .tracking-apple-tight { letter-spacing: -0.015em; }
-        .tracking-apple-fine { letter-spacing: -0.01em; }
 
         .apple-btn-active {
             transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -97,25 +98,25 @@
 
         .frosted-subnav {
             background-color: rgba(255, 255, 255, 0.82);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            backdrop-filter: saturate(160%) blur(14px);
+            -webkit-backdrop-filter: saturate(160%) blur(14px);
         }
 
         .apple-glass-light {
-            background-color: rgba(255, 255, 255, 0.75);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border: 1px solid rgba(229, 229, 234, 0.8);
+            background-color: rgba(255, 255, 255, 0.82);
+            backdrop-filter: saturate(160%) blur(14px);
+            -webkit-backdrop-filter: saturate(160%) blur(14px);
+            border: 1px solid rgba(229, 229, 234, 0.85);
         }
 
         .apple-glass-dark {
-            background-color: rgba(28, 28, 30, 0.75);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background-color: rgba(20, 20, 24, 0.78);
+            backdrop-filter: saturate(160%) blur(14px);
+            -webkit-backdrop-filter: saturate(160%) blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .career-tab-btn.active, .achieve-tab-btn.active {
+        .achieve-tab-btn.active {
             background-color: #0066cc !important;
             color: #ffffff !important;
             border-color: #0066cc !important;
@@ -125,21 +126,73 @@
             color: #ffffff !important;
         }
 
-        /* Lanyard & Badge Physics Animations */
+        /* Lanyard & ID Card Styling */
         .hanging-card-wrapper {
             will-change: transform;
             touch-action: none;
             cursor: grab;
+            transition: box-shadow 0.2s ease;
         }
         .hanging-card-wrapper:active {
             cursor: grabbing;
         }
         .lanyard-ribbon {
             background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Calibrated Subtle Grid Textures & Ambient Gradients */
+        .apple-subtle-grid-light {
+            background-size: 26px 26px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 102, 204, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 102, 204, 0.08) 1px, transparent 1px);
+            animation: gridMoveLight 14s linear infinite;
+        }
+
+        .apple-subtle-grid-dark {
+            background-size: 28px 28px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            animation: gridMoveDark 16s linear infinite;
+        }
+
+        .apple-dot-grid-dark {
+            background-size: 24px 24px;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            animation: gridMoveDot 15s linear infinite;
+        }
+
+        @keyframes gridMoveLight {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 26px 26px; }
+        }
+
+        @keyframes gridMoveDark {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 28px 28px; }
+        }
+
+        @keyframes gridMoveDot {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 24px 24px; }
+        }
+
+        .apple-radial-glow {
+            background: radial-gradient(circle at 50% 30%, rgba(0, 102, 204, 0.12) 0%, rgba(0, 102, 204, 0.02) 55%, transparent 75%);
+        }
+
+        .apple-radial-glow-hero {
+            background: radial-gradient(circle at 40% 40%, rgba(0, 102, 204, 0.08) 0%, rgba(0, 102, 204, 0.015) 50%, transparent 70%);
+        }
+
+        .apple-radial-glow-dark {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 102, 204, 0.1) 0%, transparent 70%);
         }
     </style>
 </head>
-<body class="selection:bg-apple-blue selection:text-white overflow-x-hidden">
+<body class="bg-white text-apple-ink selection:bg-apple-blue selection:text-white relative">
 
     <!-- INTRO OVERLAY WITH MULTILINGUAL GREETING CYCLE -->
     <div id="introOverlay" class="fixed inset-0 z-[200] bg-black text-white flex flex-col items-center justify-center p-6 transition-opacity duration-700 select-none">
@@ -174,118 +227,111 @@
         </div>
     </div>
 
-    <!-- TOP FIXED HEADER (44px) -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-black/80 apple-glass-dark h-[44px] flex items-center text-white border-b border-white/10 font-sans">
-        <div class="w-full h-[2px] bg-apple-tile-1 absolute bottom-0 left-0">
-            <div id="scrollProgressTrack" class="h-full bg-apple-blue w-0 transition-all duration-75"></div>
-        </div>
+    <header class="sticky top-0 z-[100] w-full frosted-subnav border-b border-apple-hairline text-xs font-medium">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-12 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="#hero" class="font-display font-semibold tracking-tight text-apple-ink text-sm flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+                    <span>RAHMAD NUR KARIM</span>
+                    <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-apple-parchment text-apple-ink-muted-48 border border-apple-hairline hidden sm:inline-block">Portfolio</span>
+                </a>
+            </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between text-xs">
-            <a href="#hero" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
-                <span class="font-semibold tracking-tight text-white">RAHMAD NUR KARIM</span>
-                <span class="text-[10px] text-apple-ink-muted-48 font-sans font-medium tracking-wider">PORTFOLIO</span>
-            </a>
-
-            <nav class="hidden md:flex items-center gap-6 text-white/80 font-normal text-xs">
-                <a href="#about" class="hover:text-white transition-colors" data-en="About" data-id="Tentang">About</a>
-                <a href="#education" class="hover:text-white transition-colors" data-en="Education" data-id="Pendidikan">Education</a>
-                <a href="#experience" class="hover:text-white transition-colors" data-en="Experience" data-id="Pengalaman">Experience</a>
-                <a href="#organizations" class="hover:text-white transition-colors" data-en="Organizations" data-id="Organisasi">Organizations</a>
-                <a href="#portfolio" class="hover:text-white transition-colors" data-en="Portfolio" data-id="Portofolio">Portfolio</a>
-                <a href="#achievements" class="hover:text-white transition-colors" data-en="Credentials" data-id="Prestasi & Sertifikasi">Credentials</a>
+            <nav class="hidden md:flex items-center gap-6 text-apple-ink-muted-80 font-normal">
+                <a href="#about" class="hover:text-apple-blue transition-colors" data-en="About" data-id="Tentang">About</a>
+                <a href="#education" class="hover:text-apple-blue transition-colors" data-en="Education" data-id="Pendidikan">Education</a>
+                <a href="#experience" class="hover:text-apple-blue transition-colors" data-en="Experience" data-id="Pengalaman">Experience</a>
+                <a href="#organizations" class="hover:text-apple-blue transition-colors" data-en="Organizations" data-id="Organisasi">Organizations</a>
+                <a href="#portfolio" class="hover:text-apple-blue transition-colors" data-en="Portfolio" data-id="Portofolio">Portfolio</a>
+                <a href="#achievements" class="hover:text-apple-blue transition-colors" data-en="Credentials" data-id="Prestasi & Sertifikasi">Credentials</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <div class="hidden lg:flex items-center gap-2 font-sans text-[11px] text-white/70">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    <span id="realtimeClockHeader">WIB (UTC+7) --:--:--</span>
+                <!-- Realtime Clock -->
+                <div class="hidden lg:flex items-center gap-1.5 text-[11px] font-mono text-apple-ink-muted-48">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="realtimeClockHeader">Sat, Aug 29 | WIB 22.14.00</span>
                 </div>
 
-                <button onclick="toggleGlobalLanguageSuite()" class="apple-btn-active px-2.5 py-1 rounded-apple-pill apple-glass-dark text-white hover:bg-white/20 transition-colors text-[11px] font-sans font-medium flex items-center gap-1.5" aria-label="Change Language">
-                    <i class="fa-solid fa-globe text-[10px] text-apple-blue-dark"></i>
+                <button onclick="toggleGlobalLanguageSuite()" class="apple-btn-active px-2.5 py-1 rounded-apple-pill bg-apple-parchment hover:bg-apple-hairline text-apple-ink border border-apple-hairline flex items-center gap-1 text-[11px] font-medium" title="Switch Language">
+                    <i class="fa-solid fa-globe text-apple-blue"></i>
                     <span id="langDisplayLabel">EN</span>
                 </button>
 
-                <button id="mobileMenuBtn" class="md:hidden text-white/80 hover:text-white p-1">
+                <a href="#contact" class="hidden sm:inline-flex apple-btn-active bg-apple-blue text-white px-3.5 py-1 rounded-apple-pill text-xs font-medium hover:bg-apple-blue-focus transition-colors items-center gap-1.5" data-en="Contact" data-id="Kontak">
+                    Contact
+                </a>
+
+                <button id="mobileMenuBtn" class="md:hidden p-1.5 text-apple-ink hover:text-apple-blue focus:outline-none" aria-label="Toggle Menu">
                     <i id="mobileMenuIcon" class="fa-solid fa-bars text-sm"></i>
                 </button>
             </div>
         </div>
+
+        <!-- Scroll Progress Bar -->
+        <div class="w-full h-[2px] bg-apple-hairline/40">
+            <div id="scrollProgressTrack" class="h-full bg-apple-blue transition-all duration-75 w-0"></div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-apple-hairline px-5 py-4 space-y-3 font-sans text-xs">
+            <a href="#about" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="About" data-id="Tentang">About</a>
+            <a href="#education" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="Education" data-id="Pendidikan">Education</a>
+            <a href="#experience" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="Experience" data-id="Pengalaman">Experience</a>
+            <a href="#organizations" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="Organizations" data-id="Organisasi">Organizations</a>
+            <a href="#portfolio" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="Portfolio" data-id="Portofolio">Portfolio</a>
+            <a href="#achievements" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="Credentials" data-id="Prestasi & Sertifikasi">Credentials</a>
+            <a href="#contact" onclick="closeMobileMenuSuite()" class="block py-1 text-apple-blue font-semibold" data-en="Contact Direct" data-id="Kontak Langsung">Contact Direct</a>
+        </div>
     </header>
 
-    <!-- MOBILE NAVIGATION DRAWER -->
-    <div id="mobileMenu" class="hidden fixed top-[44px] left-0 w-full apple-glass-dark border-b border-white/10 z-40 py-4 px-6 flex flex-col gap-3 font-sans text-xs text-white/90">
-        <a href="#about" onclick="closeMobileMenuSuite()" class="py-2 border-b border-white/5" data-en="About" data-id="Tentang">About</a>
-        <a href="#education" onclick="closeMobileMenuSuite()" class="py-2 border-b border-white/5" data-en="Education" data-id="Pendidikan">Education</a>
-        <a href="#experience" onclick="closeMobileMenuSuite()" class="py-2 border-b border-white/5" data-en="Experience" data-id="Pengalaman">Experience</a>
-        <a href="#organizations" onclick="closeMobileMenuSuite()" class="py-2 border-b border-white/5" data-en="Organizations" data-id="Organisasi">Organizations</a>
-        <a href="#portfolio" onclick="closeMobileMenuSuite()" class="py-2 border-b border-white/5" data-en="Portfolio" data-id="Portofolio">Portfolio</a>
-        <a href="#achievements" onclick="closeMobileMenuSuite()" class="py-2 border-b border-white/5" data-en="Credentials" data-id="Prestasi & Sertifikasi">Credentials</a>
-        <a href="#contact" onclick="closeMobileMenuSuite()" class="py-2 text-apple-blue-dark font-medium" data-en="Contact Me" data-id="Hubungi Saya">Contact Me</a>
-    </div>
+    <main class="w-full">
+        <section id="hero" class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 overflow-hidden border-b border-apple-hairline bg-apple-canvas">
+            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
+            <div class="absolute -top-24 left-1/4 w-[600px] h-[600px] apple-radial-glow-hero pointer-events-none blur-3xl"></div>
 
-    <!-- SUBNAV BAR (52px) -->
-    <div class="fixed top-[44px] left-0 w-full z-40 h-[52px] frosted-subnav border-b border-apple-hairline flex items-center font-sans">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
-            <span class="text-lg font-display font-semibold text-apple-ink tracking-tight">Overview</span>
-            
-            <div class="flex items-center gap-3">
-                <a href="#portfolio" class="hidden sm:inline-block text-xs text-apple-blue hover:underline font-medium" data-en="View Gallery" data-id="Lihat Galeri">View Gallery</a>
-                <a href="#contact" class="apple-btn-active bg-apple-blue text-white px-3.5 py-1.5 rounded-apple-pill text-xs font-medium hover:bg-apple-blue-focus transition-colors" data-en="Connect" data-id="Kontak">Connect</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- MAIN CONTENT CONTAINER -->
-    <main class="pt-[96px]">
-
-        <!-- HERO SECTION (Left: Draggable White ID Badge, Right: Bio & Profile Text) -->
-        <section id="hero" class="scroll-mt-[96px] relative py-10 sm:py-14 bg-apple-canvas text-apple-ink border-b border-apple-hairline overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
                     <!-- LEFT COLUMN: Draggable Interactive Hanging Lanyard Photo Badge -->
                     <div class="lg:col-span-5 flex justify-center items-center">
                         <div class="relative w-64 sm:w-72 aspect-[3/4.2] max-w-full flex flex-col items-center pt-8">
                             
-                            <!-- Dynamic Lanyard Strap Assembly (Moves in sync with drag) -->
+                            <!-- Dynamic Lanyard Strap Assembly -->
                             <div id="lanyardStrapDynamic" class="lanyard-strap-dynamic absolute -top-12 left-1/2 -translate-x-1/2 z-0 flex flex-col items-center pointer-events-none">
-                                <!-- Slim Woven Strap Ribbon -->
                                 <div class="w-3.5 h-14 lanyard-ribbon rounded-t-xs flex justify-center items-center relative overflow-hidden border-x border-white/10 shadow-sm">
                                     <div class="w-0.5 h-full bg-apple-blue/70"></div>
                                 </div>
-                                <!-- Chrome Swivel Ring Clip Hook -->
                                 <div class="w-4 h-4 bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 rounded-full border border-slate-600 shadow-sm flex items-center justify-center -mt-0.5">
                                     <div class="w-2 h-2 bg-neutral-900 rounded-full"></div>
                                 </div>
-                                <!-- Metallic Clip Hook Slot Connector -->
                                 <div class="w-3 h-2.5 bg-gradient-to-b from-slate-300 to-slate-500 border border-slate-600 rounded-b-xs -mt-0.5 shadow-sm"></div>
                             </div>
 
-                            <!-- Main Draggable Hanging WHITE ID Card Wrapper (Includes Top Slot Anchor) -->
+                            <!-- Main Draggable Hanging Badge -->
                             <div id="draggableHangingBadge" class="hanging-card-wrapper relative z-10 w-full h-full rounded-apple-lg overflow-hidden bg-gradient-to-b from-white via-slate-50 to-neutral-100 text-neutral-900 shadow-apple-product border border-neutral-200/90 flex flex-col justify-between p-3.5">
                                 
-                                <!-- Metallic Slot Ring Anchor (Integrated into Card so it moves seamlessly) -->
                                 <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-8 h-2.5 bg-neutral-800 rounded-sm border border-neutral-400 flex items-center justify-center shadow-inner">
                                     <div class="w-4.5 h-1 bg-neutral-300 rounded-full border border-neutral-500"></div>
                                 </div>
 
-                                <!-- Card Header Badge Bar -->
                                 <div class="flex items-center justify-between pb-2 border-b border-neutral-200 text-[10px] font-sans mt-3">
                                     <span class="text-apple-blue font-bold tracking-wider uppercase">Official Portfolio ID</span>
                                     <span class="text-neutral-500 font-mono font-semibold">2026-REG</span>
                                 </div>
 
-                                <!-- Photo Container -->
                                 <div class="relative flex-1 w-full rounded-apple-md overflow-hidden bg-neutral-200 border border-neutral-300 my-2 shadow-inner group">
-                                    <img src="https://lh3.googleusercontent.com/d/1k_jBUWb8_TTAB4FpMQXdlE4sxvZwbiDP" alt="Rahmad Nur Karim, S.Pd." class="w-full h-full object-cover select-none pointer-events-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1k_jBUWb8_TTAB4FpMQXdlE4sxvZwbiDP" 
+                                         alt="Rahmad Nur Karim, S.Pd." 
+                                         referrerpolicy="no-referrer"
+                                         loading="eager"
+                                         class="w-full h-full object-cover select-none pointer-events-none"
+                                         onerror="if(!this.dataset.retry){this.dataset.retry='1'; this.src='https://drive.google.com/thumbnail?id=1k_jBUWb8_TTAB4FpMQXdlE4sxvZwbiDP&sz=w1000';}else{this.onerror=null; this.src='https://placehold.co/400x500/1e293b/ffffff?text=Rahmad+Nur+Karim';}">
                                     <div class="absolute bottom-2 right-2 bg-black/60 backdrop-blur-md text-white px-2 py-0.5 rounded-apple-pill text-[9px] font-sans flex items-center gap-1">
                                         <i class="fa-solid fa-hand-pointer text-[8px] animate-bounce"></i>
-                                        <span>Drag Strap & Badge</span>
+                                        <span>Drag Strap &amp; Badge</span>
                                     </div>
                                 </div>
 
-                                <!-- Card Footer Credentials -->
                                 <div class="flex items-center justify-between pt-1 font-sans">
                                     <div class="flex flex-col text-left">
                                         <span class="text-xs font-bold text-neutral-900 leading-tight">Rahmad Nur Karim</span>
@@ -300,50 +346,46 @@
                         </div>
                     </div>
 
-                    <!-- RIGHT COLUMN: Bio & Profile Text -->
-                    <div class="lg:col-span-7 flex flex-col items-start justify-start text-left gap-3.5">
-                        <span id="hero-tag" data-en="CREATIVE & DIGITAL PORTFOLIO" data-id="PORTOFOLIO KREATIF & DIGITAL" class="text-xs font-semibold uppercase tracking-wider text-apple-blue">
-                            CREATIVE & DIGITAL PORTFOLIO
-                        </span>
-                        
-                        <div class="flex flex-col text-left w-full gap-1">
-                            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-apple-ink tracking-apple-hero leading-tight">
+                    <!-- Right: Hero Typography & Actions -->
+                    <div class="lg:col-span-7 flex flex-col items-start text-left space-y-5">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-apple-pill bg-apple-parchment border border-apple-hairline text-apple-ink text-xs font-medium">
+                            <span class="w-2 h-2 rounded-full bg-apple-blue"></span>
+                            <span data-en="Available for Creative & Strategic Roles" data-id="Terbuka untuk Peran Kreatif & Strategis">Available for Creative & Strategic Roles</span>
+                        </div>
+
+                        <div class="space-y-1">
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-apple-ink tracking-apple-hero leading-tight">
                                 Rahmad Nur Karim
                             </h1>
-                            <span class="text-base sm:text-lg font-display font-medium text-apple-ink-muted-48 tracking-apple-tight" data-en="Bachelor of Education (S.Pd.)" data-id="Sarjana Pendidikan (S.Pd.)">
-                                Bachelor of Education (S.Pd.)
-                            </span>
+                            <p class="text-lg sm:text-xl font-display font-medium text-apple-ink-muted-48" data-en="Bachelor of Economics Education (S.Pd.)" data-id="Sarjana Pendidikan (S.Pd.)">
+                                Bachelor of Economics Education (S.Pd.)
+                            </p>
                         </div>
-                        
-                        <p id="hero-desc" 
-                           data-en="Specialized in Brand Identity, Visual Strategy, AI-Assisted Workflows, Web Development, and Google Apps Script Automation." 
-                           data-id="Spesialisasi dalam Identitas Merek, Strategi Visual, Alur Kerja Berbasis AI, Pengembangan Web, dan Otomasi Google Apps Script." 
-                           class="text-apple-ink text-sm sm:text-base leading-relaxed font-normal max-w-xl text-apple-ink-muted-80">
-                            Specialized in Brand Identity, Visual Strategy, AI-Assisted Workflows, Web Development, and Google Apps Script Automation.
+
+                        <p class="text-sm sm:text-base text-apple-ink-muted-80 leading-relaxed max-w-2xl font-normal" data-en="Specializing in Brand Identity, Visual Strategy, AI-Assisted Workflows, Web Development, and Google Apps Script Automation." data-id="Spesialisasi dalam Identitas Merek, Strategi Visual, Alur Kerja Berbasis AI, Pengembangan Web, dan Otomasi Google Apps Script.">
+                            Specializing in Brand Identity, Visual Strategy, AI-Assisted Workflows, Web Development, and Google Apps Script Automation.
                         </p>
-                        
-                        <div class="flex flex-wrap items-center justify-start gap-3 pt-2 font-sans">
-                            <a href="#contact" class="apple-btn-active bg-apple-blue text-white px-5 py-2.5 rounded-apple-pill text-xs font-medium hover:bg-apple-blue-focus transition-all flex items-center gap-2">
-                                <span id="cta-contact-text" data-en="Contact Me" data-id="Hubungi Saya">Contact Me</span>
+
+                        <div class="flex flex-wrap items-center gap-3 pt-2">
+                            <a href="#contact" class="apple-btn-active bg-apple-blue text-white hover:bg-apple-blue-focus px-5 py-2.5 rounded-apple-pill text-xs font-medium transition-colors flex items-center gap-2">
+                                <span data-en="Get in Touch" data-id="Hubungi Saya">Get in Touch</span>
                                 <i class="fa-solid fa-chevron-right text-[9px]"></i>
                             </a>
-                            
-                            <a href="https://drive.google.com/drive/folders/1gZ8hxUaahyUVbZqoWZghBt6N6CJLnOVf?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'CV Rahmad Nur Karim, S.Pd.')" class="apple-btn-active border border-apple-hairline text-apple-ink hover:border-apple-blue hover:text-apple-blue px-5 py-2.5 rounded-apple-pill text-xs font-medium transition-all flex items-center gap-2">
+
+                            <a href="https://drive.google.com/drive/folders/1e3gHto6qCq1IcLvVRhiNA4Snj2XnYHWQ?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Curriculum Vitae — Rahmad Nur Karim')" class="apple-btn-active bg-apple-parchment hover:bg-apple-hairline text-apple-ink px-4 py-2.5 rounded-apple-pill text-xs font-medium border border-apple-hairline transition-colors flex items-center gap-1.5">
                                 <span data-en="Download CV (PDF)" data-id="Unduh CV (PDF)">Download CV (PDF)</span>
                             </a>
 
-                            <div class="flex items-center gap-2 sm:ml-2">
-                                <a href="https://www.instagram.com/k.ariiimm/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-apple-parchment hover:bg-apple-hairline text-apple-ink flex items-center justify-center transition-colors text-xs" title="Instagram Profile">
+                            <div class="flex items-center gap-2 pl-2 border-l border-apple-hairline">
+                                <a href="https://www.instagram.com/karim_nur22/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-apple-parchment hover:bg-apple-hairline border border-apple-hairline flex items-center justify-center text-apple-ink hover:text-apple-blue transition-colors text-xs" title="Instagram">
                                     <i class="fa-brands fa-instagram"></i>
                                 </a>
-
-                                <a href="https://www.linkedin.com/in/rahmad-nur-karim/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-apple-parchment hover:bg-apple-hairline text-apple-ink flex items-center justify-center transition-colors text-xs" title="LinkedIn Profile">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-apple-parchment hover:bg-apple-hairline border border-apple-hairline flex items-center justify-center text-apple-ink hover:text-apple-blue transition-colors text-xs" title="LinkedIn">
                                     <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
-
-                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nurkarim2004@gmail.com" target="_blank" rel="noopener noreferrer" onclick="openEmailDirect(event)" class="w-8 h-8 rounded-full bg-apple-parchment hover:bg-apple-hairline text-apple-ink flex items-center justify-center transition-colors text-xs" title="Send Direct Email">
+                                <button onclick="openEmailDirect(event)" class="w-8 h-8 rounded-full bg-apple-parchment hover:bg-apple-hairline border border-apple-hairline flex items-center justify-center text-apple-ink hover:text-apple-blue transition-colors text-xs" title="Email">
                                     <i class="fa-regular fa-envelope"></i>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -352,81 +394,189 @@
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="scroll-mt-[96px] py-10 sm:py-14 bg-apple-tile-1 text-white border-b border-white/10 relative overflow-hidden">
+        <section id="about" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-1 text-white border-b border-white/10 relative overflow-hidden">
+            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_90%)]"></div>
+            <div class="absolute top-0 right-10 w-[420px] h-[420px] bg-apple-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="about-tag" data-en="PROFESSIONAL PROFILE" data-id="PROFIL PROFESIONAL" class="text-xs font-semibold uppercase tracking-wider text-apple-blue-dark">PROFESSIONAL PROFILE</span>
                     <h2 id="about-title" data-en="Creative Designer & Digital Communication Specialist" data-id="Desainer Kreatif & Spesialis Komunikasi Digital" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Creative Designer & Digital Communication Specialist</h2>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-6xl mx-auto w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch max-w-6xl mx-auto w-full">
                     
-                    <div class="lg:col-span-7 p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-5">
-                        <div class="space-y-3.5 text-apple-body-muted text-xs sm:text-sm leading-relaxed font-normal tracking-apple-tight">
+                    <div class="lg:col-span-5 p-5 sm:p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-4 border border-white/10">
+                        <div class="space-y-3 text-white/80 text-xs sm:text-sm leading-relaxed font-normal tracking-apple-tight">
                             <p id="about-desc1" 
                                data-en="Economics Education Graduate from Universitas Lampung with cross-disciplinary professional experience in Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflows, Prompt Engineering, and Web Development across government institutions, higher education, creative agencies, organizations, and independent projects." 
                                data-id="Lulusan Pendidikan Ekonomi Universitas Lampung dengan pengalaman profesional lintas bidang dalam Desain Kreatif, Komunikasi Digital, Identitas Merek, Administrasi, Alur Kerja AI, Rekayasa Prompt, dan Pengembangan Web melalui institusi pemerintah, perguruan tinggi, agensi kreatif, organisasi, dan proyek independen.">
                                 Economics Education Graduate from Universitas Lampung with cross-disciplinary professional experience in Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflows, Prompt Engineering, and Web Development across government institutions, higher education, creative agencies, organizations, and independent projects.
                             </p>
                             <p id="about-desc2" 
-                               data-en="Proven track record of producing 2,000+ visual communication assets, handling 300+ data and administrative documents, and building 6+ digital projects based on AI, web, and automation. Possesses expertise in Graphic Design, Digital Marketing, Content Strategy, Visual Communication, UI/UX, Prompt Engineering, AI-Assisted Development, HTML, Google Apps Script, Spreadsheet Automation, Project Management, and Stakeholder Management." 
-                               data-id="Berpengalaman menghasilkan lebih dari 2.000 aset komunikasi visual, menangani lebih dari 300 data dan dokumen administratif, serta membangun lebih dari 6 proyek digital berbasis AI, web, dan otomatisasi. Memiliki keahlian dalam Desain Grafis, Pemasaran Digital, Strategi Konten, Komunikasi Visual, UI/UX, Rekayasa Prompt, Pengembangan Berbasis AI, HTML, Google Apps Script, Otomasi Spreadsheet, Manajemen Proyek, dan Manajemen Pemangku Kepentingan.">
-                                Proven track record of producing 2,000+ visual communication assets, handling 300+ data and administrative documents, and building 6+ digital projects based on AI, web, and automation. Possesses expertise in Graphic Design, Digital Marketing, Content Strategy, Visual Communication, UI/UX, Prompt Engineering, AI-Assisted Development, HTML, Google Apps Script, Spreadsheet Automation, Project Management, and Stakeholder Management.
+                               data-en="Proven track record of producing 2,000+ visual communication assets, handling 300+ data and administrative documents, and building 6+ digital projects based on AI, web, and automation." 
+                               data-id="Berpengalaman menghasilkan lebih dari 2.000 aset komunikasi visual, menangani lebih dari 300 data dan dokumen administratif, serta membangun lebih dari 6 proyek digital berbasis AI, web, dan otomatisasi.">
+                                Proven track record of producing 2,000+ visual communication assets, handling 300+ data and administrative documents, and building 6+ digital projects based on AI, web, and automation.
                             </p>
+
+                            <div class="pt-1 flex flex-wrap gap-1.5 font-sans">
+                                <span class="px-2.5 py-1 rounded-apple-pill bg-white/5 border border-white/10 text-[10px] sm:text-[11px] text-white/90 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-check text-apple-blue-dark text-[9px]"></i>
+                                    <span data-en="Visual Identity & Systems" data-id="Identitas Visual & Sistem">Visual Identity &amp; Systems</span>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-apple-pill bg-white/5 border border-white/10 text-[10px] sm:text-[11px] text-white/90 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-check text-apple-blue-dark text-[9px]"></i>
+                                    <span data-en="AI & Web Automation" data-id="Otomasi AI & Web">AI &amp; Web Automation</span>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-apple-pill bg-white/5 border border-white/10 text-[10px] sm:text-[11px] text-white/90 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-check text-apple-blue-dark text-[9px]"></i>
+                                    <span data-en="Public & Academic Sector" data-id="Sektor Publik & Akademik">Public &amp; Academic Sector</span>
+                                </span>
+                            </div>
                         </div>
 
-                        <div class="grid grid-cols-3 gap-3 pt-3 border-t border-white/10 text-center font-sans">
-                            <div class="flex flex-col apple-glass-dark p-3 rounded-apple-md">
-                                <span id="stat-assets" class="text-xl sm:text-2xl font-semibold text-white">2000+</span>
-                                <span id="about-stat1-lbl" data-en="Visual Assets" data-id="Aset Desain" class="text-[11px] text-apple-ink-muted-48 mt-0.5">Visual Assets</span>
+                        <div class="grid grid-cols-3 gap-2.5 pt-3 border-t border-white/10 text-center font-sans">
+                            <div class="flex flex-col bg-white/[0.04] border border-white/10 p-2.5 sm:p-3 rounded-apple-md">
+                                <span class="text-xl sm:text-2xl font-semibold text-white">2000+</span>
+                                <span data-en="Visual Assets" data-id="Aset Desain" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Visual Assets</span>
                             </div>
-                            <div class="flex flex-col apple-glass-dark p-3 rounded-apple-md">
-                                <span id="stat-clients" class="text-xl sm:text-2xl font-semibold text-white">40+</span>
-                                <span id="about-stat2-lbl" data-en="Clients Served" data-id="Klien Puas" class="text-[11px] text-apple-ink-muted-48 mt-0.5">Clients Served</span>
+                            <div class="flex flex-col bg-white/[0.04] border border-white/10 p-2.5 sm:p-3 rounded-apple-md">
+                                <span class="text-xl sm:text-2xl font-semibold text-white">40+</span>
+                                <span data-en="Clients Served" data-id="Klien Puas" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Clients Served</span>
                             </div>
-                            <div class="flex flex-col apple-glass-dark p-3 rounded-apple-md">
-                                <span id="stat-years" class="text-xl sm:text-2xl font-semibold text-white">3.4</span>
-                                <span id="about-stat3-lbl" data-en="Years of Study" data-id="Masa Studi (Tahun)" class="text-[11px] text-apple-ink-muted-48 mt-0.5">Years of Study</span>
+                            <div class="flex flex-col bg-white/[0.04] border border-white/10 p-2.5 sm:p-3 rounded-apple-md">
+                                <span class="text-xl sm:text-2xl font-semibold text-white">3.4</span>
+                                <span data-en="Years of Study" data-id="Masa Studi (Th)" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Years of Study</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 flex flex-col justify-between gap-3 font-sans">
-                        <h4 class="text-xs font-semibold uppercase tracking-wider text-apple-ink-muted-48 self-start" data-en="Core Competencies" data-id="Kompetensi Utama">Core Competencies</h4>
+                    <!-- Tech Stack & Software -->
+                    <div class="lg:col-span-7 p-5 sm:p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-3 border border-white/10 font-sans">
+                        <div class="flex items-center justify-between pb-1.5 border-b border-white/10">
+                            <h4 class="text-xs font-semibold uppercase tracking-wider text-apple-blue-dark flex items-center gap-1.5" data-en="💻 Tech Stack & Software" data-id="💻 Tech Stack & Perangkat Lunak">
+                                <span>💻 Tech Stack &amp; Software</span>
+                            </h4>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded-apple-pill bg-white/5 border border-white/10 text-apple-ink-muted-48">7 Disciplines</span>
+                        </div>
                         
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 h-full">
-                            <div class="p-4 rounded-apple-lg apple-glass-dark hover:bg-white/10 transition-all flex flex-col gap-1.5">
-                                <div class="w-7 h-7 rounded-full bg-apple-blue/20 text-apple-blue-dark flex items-center justify-center text-xs font-semibold">
-                                    <i class="fa-solid fa-palette"></i>
+                        <div class="space-y-2.5">
+                            
+                            <div class="p-2 sm:p-2.5 rounded-apple-md bg-white/[0.03] border border-white/5 space-y-1.5">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] font-semibold text-apple-blue-dark uppercase tracking-wider flex items-center gap-1.5">
+                                        <i class="fa-solid fa-palette text-[10px]"></i> <span data-en="Design & Video Production" data-id="Desain Grafis & Video">Design &amp; Video Production</span>
+                                    </span>
                                 </div>
-                                <span class="text-xs font-semibold text-white" data-en="Creative Design" data-id="Desain Kreatif">Creative Design</span>
-                                <span class="text-[11px] text-apple-body-muted leading-relaxed" data-en="Brand Identity, Social Media Design, Visual Communication, Layout Design." data-id="Identitas Merek, Desain Media Sosial, Komunikasi Visual, Tata Letak Grafis.">Brand Identity, Social Media Design, Visual Communication, Layout Design.</span>
+                                <div class="flex flex-wrap gap-1.5 text-[10px]">
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-photoshop-plain text-[#31A8FF] text-[11px]"></i> Photoshop
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-illustrator-plain text-[#FF9A00] text-[11px]"></i> Illustrator
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded bg-[#379E33] text-white flex items-center justify-center font-bold text-[7px]">C</span> CorelDRAW
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-canva-original text-[#00C4CC] text-[11px]"></i> Canva
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-figma-plain text-[#F24E1E] text-[11px]"></i> Figma
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded bg-[#31A8FF] text-[#001E36] flex items-center justify-center font-bold text-[7px]">Lr</span> Lightroom
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="fa-solid fa-scissors text-[9px] text-white/80"></i> CapCut
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded bg-[#00D8A5] text-black flex items-center justify-center font-bold text-[7px]"><i class="fa-solid fa-play text-[6px]"></i></span> Filmora
+                                    </span>
+                                </div>
                             </div>
 
-                            <div class="p-4 rounded-apple-lg apple-glass-dark hover:bg-white/10 transition-all flex flex-col gap-1.5">
-                                <div class="w-7 h-7 rounded-full bg-apple-blue/20 text-apple-blue-dark flex items-center justify-center text-xs font-semibold">
-                                    <i class="fa-solid fa-bullhorn"></i>
+                            <div class="p-2 sm:p-2.5 rounded-apple-md bg-white/[0.03] border border-white/5 space-y-1.5">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] font-semibold text-apple-blue-dark uppercase tracking-wider flex items-center gap-1.5">
+                                        <i class="fa-solid fa-code text-[10px]"></i> <span data-en="Web Development & Code" data-id="Pengembangan Web & Kode">Web Development &amp; Code</span>
+                                    </span>
                                 </div>
-                                <span class="text-xs font-semibold text-white" data-en="Digital Communication" data-id="Komunikasi Digital">Digital Communication</span>
-                                <span class="text-[11px] text-apple-body-muted leading-relaxed" data-en="Content Strategy, Social Media Management, Public Relations, Digital Campaigns." data-id="Strategi Konten, Manajemen Media Sosial, Hubungan Masyarakat, Kampanye Digital.">Content Strategy, Social Media Management, Public Relations, Digital Campaigns.</span>
+                                <div class="flex flex-wrap gap-1.5 text-[10px]">
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-html5-plain text-[#E34F26] text-[11px]"></i> HTML5
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-css3-plain text-[#1572B6] text-[11px]"></i> CSS3
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-javascript-plain text-[#F7DF1E] text-[11px]"></i> JavaScript
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-google-plain text-[#4285F4] text-[11px]"></i> Google Apps Script
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-github-original text-white text-[11px]"></i> GitHub
+                                    </span>
+                                </div>
                             </div>
 
-                            <div class="p-4 rounded-apple-lg apple-glass-dark hover:bg-white/10 transition-all flex flex-col gap-1.5">
-                                <div class="w-7 h-7 rounded-full bg-apple-blue/20 text-apple-blue-dark flex items-center justify-center text-xs font-semibold">
-                                    <i class="fa-solid fa-robot"></i>
+                            <div class="p-2 sm:p-2.5 rounded-apple-md bg-white/[0.03] border border-white/5 space-y-1.5">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] font-semibold text-apple-blue-dark uppercase tracking-wider flex items-center gap-1.5">
+                                        <i class="fa-solid fa-brain text-[10px]"></i> <span data-en="Artificial Intelligence (AI)" data-id="Kecerdasan Buatan (AI)">Artificial Intelligence (AI)</span>
+                                    </span>
                                 </div>
-                                <span class="text-xs font-semibold text-white" data-en="Technology & Automation" data-id="Teknologi & Otomasi">Technology & Automation</span>
-                                <span class="text-[11px] text-apple-body-muted leading-relaxed" data-en="AI-Assisted Workflow, Prompt Engineering, Web Development, Google Apps Script." data-id="Alur Kerja AI, Rekayasa Prompt, Pengembangan Web, Google Apps Script.">AI-Assisted Workflow, Prompt Engineering, Web Development, Google Apps Script.</span>
+                                <div class="flex flex-wrap gap-1.5 text-[10px]">
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded-full bg-[#10A37F] text-white flex items-center justify-center text-[7px] font-bold">GPT</span> ChatGPT
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded-full bg-[#D97757] text-white flex items-center justify-center text-[7px] font-bold"><i class="fa-solid fa-asterisk text-[6px]"></i></span> Claude
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-r from-[#4E75FF] to-[#BF55EC] text-white flex items-center justify-center text-[7px] font-bold"><i class="fa-solid fa-sparkles text-[6px]"></i></span> Google Gemini
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-apple-blue-dark text-[10px]"></i> Prompt Engineering
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="fa-solid fa-microchip text-apple-blue-dark text-[10px]"></i> AI-Assisted Dev
+                                    </span>
+                                </div>
                             </div>
 
-                            <div class="p-4 rounded-apple-lg apple-glass-dark hover:bg-white/10 transition-all flex flex-col gap-1.5">
-                                <div class="w-7 h-7 rounded-full bg-apple-blue/20 text-apple-blue-dark flex items-center justify-center text-xs font-semibold">
-                                    <i class="fa-solid fa-folder-tree"></i>
+                            <div class="p-2 sm:p-2.5 rounded-apple-md bg-white/[0.03] border border-white/5 space-y-1.5">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] font-semibold text-apple-blue-dark uppercase tracking-wider flex items-center gap-1.5">
+                                        <i class="fa-solid fa-folder-tree text-[10px]"></i> <span data-en="Productivity, Data & Social Management" data-id="Produktivitas, Data & Media Sosial">Productivity, Data &amp; Social Management</span>
+                                    </span>
                                 </div>
-                                <span class="text-xs font-semibold text-white" data-en="Administration & Systems" data-id="Administrasi & Sistem">Administration & Systems</span>
-                                <span class="text-[11px] text-apple-body-muted leading-relaxed" data-en="Data Management, Institutional Administration, Process Optimization." data-id="Manajemen Data, Tata Kelola Administrasi, Optimasi Proses.">Data Management, Institutional Administration, Process Optimization.</span>
+                                <div class="flex flex-wrap gap-1.5 text-[10px]">
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="fa-brands fa-microsoft text-[#D83B01] text-[11px]"></i> MS Office
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="devicon-google-plain text-[#EA4335] text-[11px]"></i> Google Workspace
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="fa-brands fa-google-drive text-[#FFBA00] text-[11px]"></i> Drive
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded bg-[#0F9D58] text-white flex items-center justify-center font-bold text-[7px]"><i class="fa-solid fa-table text-[6px]"></i></span> Spreadsheets
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded bg-[#0062FF] text-white flex items-center justify-center text-[7px] font-bold">IBM</span> SPSS
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <span class="w-3.5 h-3.5 rounded-full bg-[#E62B1E] text-white flex items-center justify-center text-[7px] font-bold"><i class="fa-solid fa-book-bookmark text-[6px]"></i></span> Mendeley
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-apple-pill bg-white/5 hover:bg-white/10 border border-white/10 text-white/90 font-medium transition-colors">
+                                        <i class="fa-brands fa-meta text-[#0081FB] text-[11px]"></i> Meta Business Suite
+                                    </span>
+                                </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -434,40 +584,41 @@
             </div>
         </section>
 
-        <!-- EDUCATION SECTION -->
-        <section id="education" class="scroll-mt-[96px] py-10 sm:py-14 bg-apple-parchment text-apple-ink border-b border-apple-hairline">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="education" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-parchment text-apple-ink border-b border-apple-hairline relative overflow-hidden">
+            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="edu-tag" data-en="ACADEMIC RECORD" data-id="REKAM AKADEMIK" class="text-xs font-semibold uppercase tracking-wider text-apple-blue">ACADEMIC RECORD</span>
                     <h2 id="edu-title" data-en="Education & Academic Background" data-id="Pendidikan & Rekam Akademik" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Education & Academic Background</h2>
                 </div>
 
-                <div class="apple-glass-light rounded-apple-lg p-6 max-w-3xl mx-auto shadow-apple-card">
+                <div class="apple-glass-light rounded-apple-lg p-6 max-w-4xl mx-auto shadow-apple-card border border-apple-hairline">
                     
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-apple-hairline">
                         <div class="flex items-center gap-3.5">
-                            <div class="w-12 h-12 rounded-apple-md bg-white p-2 border border-apple-hairline shrink-0 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-apple-md bg-white p-2 border border-apple-hairline shrink-0 flex items-center justify-center shadow-sm">
                                 <img src="https://lh3.googleusercontent.com/d/1-AintN3IU9Fkc1xLJfXZ-mIGlRrY1P19" alt="Universitas Lampung" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=UNILA'">
                             </div>
                             <div class="flex flex-col">
-                                <h3 id="edu-inst" class="text-lg font-display font-semibold text-apple-ink leading-tight">UNIVERSITAS LAMPUNG</h3>
-                                <p id="edu-degree" class="text-xs font-medium text-apple-blue mt-0.5" data-en="Bachelor of Economics Education (S.Pd.)" data-id="S1 Pendidikan Ekonomi (S.Pd.)">Bachelor of Economics Education (S.Pd.)</p>
+                                <h3 class="text-lg font-display font-semibold text-apple-ink leading-tight">UNIVERSITAS LAMPUNG</h3>
+                                <p class="text-xs font-medium text-apple-blue mt-0.5" data-en="Bachelor of Economics Education (S.Pd.)" data-id="S1 Pendidikan Ekonomi (S.Pd.)">Bachelor of Economics Education (S.Pd.)</p>
                             </div>
                         </div>
                         <div class="shrink-0 font-sans">
-                            <span id="edu-duration" class="inline-block px-3 py-1 rounded-apple-pill bg-white text-apple-ink-muted-80 text-[11px] font-medium border border-apple-hairline" data-en="AUG 2022 – MAR 2026" data-id="AGU 2022 – MAR 2026">AUG 2022 – MAR 2026</span>
+                            <span class="inline-block px-3 py-1 rounded-apple-pill bg-white text-apple-ink-muted-80 text-[11px] font-medium border border-apple-hairline" data-en="AUG 2022 – MAR 2026" data-id="AGU 2022 – MAR 2026">AUG 2022 – MAR 2026</span>
                         </div>
                     </div>
 
                     <div class="space-y-4 pt-5 font-sans">
                         <div class="p-4 rounded-apple-md bg-apple-pearl border border-apple-hairline flex items-center gap-3">
                             <div class="text-apple-blue text-xl font-bold shrink-0"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <p id="edu-desc-stat" class="text-xs sm:text-sm text-apple-ink font-normal leading-relaxed" data-en="Completed Bachelor degree in &lt;strong class='font-semibold text-apple-blue'&gt;3.4 years&lt;/strong&gt; with &lt;strong class='font-semibold'&gt;Cum Laude&lt;/strong&gt; honors and a &lt;strong class='font-semibold text-apple-blue'&gt;GPA of 3.90 / 4.00&lt;/strong&gt;." data-id="Menyelesaikan studi Sarjana dalam waktu &lt;strong class='font-semibold text-apple-blue'&gt;3,4 tahun&lt;/strong&gt; dengan predikat &lt;strong class='font-semibold'&gt;Cum Laude&lt;/strong&gt; dan &lt;strong class='font-semibold text-apple-blue'&gt;IPK 3,90 / 4,00&lt;/strong&gt;.">
+                            <p class="text-xs sm:text-sm text-apple-ink font-normal leading-relaxed" data-en="Completed Bachelor degree in <strong class='font-semibold text-apple-blue'>3.4 years</strong> with <strong class='font-semibold'>Cum Laude</strong> honors and a <strong class='font-semibold text-apple-blue'>GPA of 3.90 / 4.00</strong>." data-id="Menyelesaikan studi Sarjana dalam waktu <strong class='font-semibold text-apple-blue'>3,4 tahun</strong> dengan predikat <strong class='font-semibold'>Cum Laude</strong> dan <strong class='font-semibold text-apple-blue'>IPK 3,90 / 4,00</strong>.">
                                 Completed Bachelor degree in <strong class="font-semibold text-apple-blue">3.4 years</strong> with <strong class="font-semibold">Cum Laude</strong> honors and a <strong class="font-semibold text-apple-blue">GPA of 3.90 / 4.00</strong>.
                             </p>
                         </div>
 
-                        <div class="p-4 rounded-apple-md bg-apple-tile-1 text-white flex flex-col gap-1 shadow-apple-card">
+                        <div class="p-4 rounded-apple-md bg-apple-tile-1 text-white flex flex-col gap-1 shadow-apple-card border border-white/10">
                             <span class="text-[10px] uppercase font-medium tracking-wider text-apple-blue-dark" data-en="Undergraduate Thesis Title" data-id="Judul Skripsi">Undergraduate Thesis Title</span>
                             <p class="text-xs sm:text-sm font-semibold text-white leading-snug" data-en="“The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”" data-id="“Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”">
                                 “The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”
@@ -483,279 +634,372 @@
                                 <i class="fa-solid fa-chevron-down text-[10px]"></i>
                             </button>
                         </div>
-
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE SECTION -->
-        <section id="experience" class="scroll-mt-[96px] py-10 sm:py-14 bg-apple-tile-2 text-white border-b border-white/10 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
+        <section id="experience" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-2 text-white border-b border-white/10 relative overflow-hidden">
+            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_85%)]"></div>
+            <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[550px] h-[300px] apple-radial-glow-dark rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="exp-tag" data-en="WORK EXPERIENCE" data-id="PENGALAMAN KERJA" class="text-xs font-semibold uppercase tracking-wider text-apple-blue-dark">WORK EXPERIENCE</span>
                     <h2 id="exp-title" data-en="Professional & Career Experience" data-id="Pengalaman Karir & Industri" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Professional & Career Experience</h2>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto w-full items-start font-sans">
-                    <div class="lg:col-span-4 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible gap-2 pb-2 lg:pb-0 scrollbar-none w-full snap-x">
-                        <button onclick="switchCareerTab(1)" id="careerTabBtn-1" class="career-tab-btn active shrink-0 snap-start text-left px-3.5 py-2.5 rounded-apple-md border border-white/10 apple-glass-dark text-white text-xs font-medium flex items-center justify-between w-auto lg:w-full transition-colors">
-                            <span data-en="Economics Education Unila" data-id="Prodi Pend. Ekonomi Unila">Economics Education Unila</span>
-                            <i class="fa-solid fa-chevron-right text-[10px] opacity-70"></i>
-                        </button>
-                        <button onclick="switchCareerTab(2)" id="careerTabBtn-2" class="career-tab-btn shrink-0 snap-start text-left px-3.5 py-2.5 rounded-apple-md border border-white/10 apple-glass-dark text-white text-xs font-medium flex items-center justify-between w-auto lg:w-full transition-colors">
-                            <span data-en="Freelance Designer" data-id="Desainer Lepas & Kreatif">Freelance Designer</span>
-                            <i class="fa-solid fa-chevron-right text-[10px] opacity-70"></i>
-                        </button>
-                        <button onclick="switchCareerTab(3)" id="careerTabBtn-3" class="career-tab-btn shrink-0 snap-start text-left px-3.5 py-2.5 rounded-apple-md border border-white/10 apple-glass-dark text-white text-xs font-medium flex items-center justify-between w-auto lg:w-full transition-colors">
-                            <span data-en="Fana Creative Agency" data-id="Fana Creative Agency">Fana Creative Agency</span>
-                            <i class="fa-solid fa-chevron-right text-[10px] opacity-70"></i>
-                        </button>
-                        <button onclick="switchCareerTab(4)" id="careerTabBtn-4" class="career-tab-btn shrink-0 snap-start text-left px-3.5 py-2.5 rounded-apple-md border border-white/10 apple-glass-dark text-white text-xs font-medium flex items-center justify-between w-auto lg:w-full transition-colors">
-                            <span data-en="Lampung Folk" data-id="Lampung Folk">Lampung Folk</span>
-                            <i class="fa-solid fa-chevron-right text-[10px] opacity-70"></i>
-                        </button>
-                        <button onclick="switchCareerTab(5)" id="careerTabBtn-5" class="career-tab-btn shrink-0 snap-start text-left px-3.5 py-2.5 rounded-apple-md border border-white/10 apple-glass-dark text-white text-xs font-medium flex items-center justify-between w-auto lg:w-full transition-colors">
-                            <span data-en="Public Relations Unila" data-id="Humas Universitas Lampung">Public Relations Unila</span>
-                            <i class="fa-solid fa-chevron-right text-[10px] opacity-70"></i>
-                        </button>
-                        <button onclick="switchCareerTab(6)" id="careerTabBtn-6" class="career-tab-btn shrink-0 snap-start text-left px-3.5 py-2.5 rounded-apple-md border border-white/10 apple-glass-dark text-white text-xs font-medium flex items-center justify-between w-auto lg:w-full transition-colors">
-                            <span data-en="Pesawaran Informatics" data-id="Dinas Kominfo Pesawaran">Pesawaran Informatics</span>
-                            <i class="fa-solid fa-chevron-right text-[10px] opacity-70"></i>
-                        </button>
-                    </div>
+                <!-- Connected Timeline List -->
+                <div id="experienceTimelineContainer" class="relative w-full font-sans">
+                    <!-- Base Track -->
+                    <div id="experienceBaseTrack" class="absolute left-[11px] sm:left-[13px] w-[1.5px] bg-white/15 z-0 pointer-events-none"></div>
+                    <!-- Active Scroll Progress Track -->
+                    <div id="experienceProgressTrack" class="absolute left-[11px] sm:left-[13px] w-[1.5px] bg-apple-blue-dark z-0 transition-all duration-100 h-0 pointer-events-none"></div>
 
-                    <div class="lg:col-span-8 apple-glass-dark rounded-apple-lg p-6 w-full">
-                        
-                        <div id="careerPanel-1" class="career-panel-item">
-                            <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b border-white/10">
-                                <div>
-                                    <h4 class="text-lg font-display font-semibold text-white leading-tight" data-en="Media, Administration & Research Assistant" data-id="Asisten Media, Administrasi & Peneliti Pembelajaran">Media, Administration & Research Assistant</h4>
-                                    <p class="text-xs font-medium text-apple-blue-dark mt-0.5" data-en="Economics Education Department FKIP Unila" data-id="Prodi Pendidikan Ekonomi FKIP Unila">Economics Education Department FKIP Unila</p>
-                                </div>
-                                <span class="px-2.5 py-0.5 bg-white/10 text-apple-body-muted text-[11px] font-sans rounded-apple-pill self-start shrink-0 border border-white/10" data-en="Mar 2024 - Mar 2026" data-id="Mar 2024 - Mar 2026">Mar 2024 - Mar 2026</span>
+                    <div class="space-y-3 relative z-10">
+                        <!-- Item 1: Humas Unila (2023 — 2025) -->
+                        <div onclick="openCareerModal(5)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                            <div class="timeline-bullet-node relative z-10 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
-                            <ul class="list-disc pl-5 text-xs text-apple-body-muted leading-relaxed space-y-2">
-                                <li data-en="Managed academic administration for 6 lecturers including research archives, accreditation portfolios, and lecture modules using Google Apps Script and spreadsheet automation." data-id="Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet.">Managed academic administration for 6 lecturers including research archives, accreditation portfolios, and lecture modules using Google Apps Script and spreadsheet automation.</li>
-                                <li data-en="Developed an integrated spreadsheet tracking system for 300+ student academic records, undergraduate thesis progress, and periodic administrative reports." data-id="Mengembangkan sistem spreadsheet untuk mendata 300+ data akademik mahasiswa, kemajuan skripsi, dan laporan berkala.">Developed an integrated spreadsheet tracking system for 300+ student academic records, undergraduate thesis progress, and periodic administrative reports.</li>
-                                <li data-en="Produced 100+ institutional media publications, event video documentations, and digital campaign assets for the department." data-id="Memproduksi 100+ media publikasi institusi, dokumentasi video, dan konten promosi digital program studi Pendidikan Ekonomi.">Produced 100+ institutional media publications, event video documentations, and digital campaign assets for the department.</li>
-                            </ul>
+
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-bullhorn text-[11px]"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Official PR Graphic Designer" data-id="Desainer Grafis Humas Resmi">Official PR Graphic Designer</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Public Relations Universitas Lampung • Institutional" data-id="Humas Universitas Lampung • Institusional">Public Relations Universitas Lampung • Institutional</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                        <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
+                                        <span>2023 — 2025</span>
+                                    </div>
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div id="careerPanel-2" class="career-panel-item hidden">
-                            <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b border-white/10">
-                                <div>
-                                    <h4 class="text-lg font-display font-semibold text-white leading-tight" data-en="Freelance Graphic Designer & Digital Content Creator" data-id="Desainer Grafis & Kreator Konten Digital Lepas">Freelance Graphic Designer & Digital Content Creator</h4>
-                                    <p class="text-xs font-medium text-apple-blue-dark mt-0.5" data-en="Self-Employed (40+ Clients)" data-id="Wiraswasta Mandiri (40+ Klien)">Self-Employed (40+ Clients)</p>
-                                </div>
-                                <span class="px-2.5 py-0.5 bg-white/10 text-apple-body-muted text-[11px] font-sans rounded-apple-pill self-start shrink-0 border border-white/10" data-en="Jan 2023 - Present" data-id="Jan 2023 - Sekarang">Jan 2023 - Present</span>
+                        <!-- Item 2: Dinas Kominfo Pesawaran (MSIB) (Aug 2024 — Dec 2024) -->
+                        <div onclick="openCareerModal(6)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
-                            <ul class="list-disc pl-5 text-xs text-apple-body-muted leading-relaxed space-y-2">
-                                <li data-en="Delivered 100+ visual branding designs for 40+ corporate clients, including social media kits, printed marketing collateral, and custom UI design assets." data-id="Menyelesaikan 100+ desain branding untuk 40+ klien, mencakup desain media sosial, brosur cetak, dan visual UI khusus.">Delivered 100+ visual branding designs for 40+ corporate clients, including social media kits, printed marketing collateral, and custom UI design assets.</li>
-                                <li data-en="Produced over 1,000 unique promotional assets such as banners, Instagram content grids, corporate pamphlets, and video motion elements." data-id="Membuat lebih dari 1.000 aset unik berupa spanduk, aset Instagram, pamflet korporat, dan komponen video.">Produced over 1,000 unique promotional assets such as banners, Instagram content grids, corporate pamphlets, and video motion elements.</li>
-                            </ul>
+
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-landmark text-[11px]"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (MSIB)" data-id="Desainer Grafis (Magang MSIB)">Graphic Designer (MSIB)</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Dinas Kominfo Pesawaran • Government" data-id="Dinas Kominfo Pesawaran • Pemerintah">Dinas Kominfo Pesawaran • Government</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                        <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
+                                        <span>Aug 2024 — Dec 2024</span>
+                                    </div>
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div id="careerPanel-3" class="career-panel-item hidden">
-                            <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b border-white/10">
-                                <div>
-                                    <h4 class="text-lg font-display font-semibold text-white leading-tight" data-en="Graphic Designer (Full-Time Contract)" data-id="Desainer Grafis (Kontrak Penuh)">Graphic Designer (Full-Time Contract)</h4>
-                                    <p class="text-xs font-medium text-apple-blue-dark mt-0.5">Fana Creative Agency</p>
-                                </div>
-                                <span class="px-2.5 py-0.5 bg-white/10 text-apple-body-muted text-[11px] font-sans rounded-apple-pill self-start shrink-0 border border-white/10" data-en="Aug 2025 - Dec 2025" data-id="Agu 2025 - Des 2025">Aug 2025 - Dec 2025</span>
+                        <!-- Item 3: Fana Creative Agency (Aug 2025 — Dec 2025) -->
+                        <div onclick="openCareerModal(3)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
-                            <ul class="list-disc pl-5 text-xs text-apple-body-muted leading-relaxed space-y-2">
-                                <li data-en="Produced 100+ promotional design assets and visual content for over 10+ SME partners and corporate clients." data-id="Membuat 100+ aset desain promosi dan materi visual untuk lebih dari 10+ UMKM dan korporasi mitra bisnis.">Produced 100+ promotional design assets and visual content for over 10+ SME partners and corporate clients.</li>
-                                <li data-en="Elevated clients' organic social media engagement by 30-50% on average through high-converting, targeted visual concepts." data-id="Meningkatkan performa interaksi organik media sosial klien rata-rata sebesar 30-50% melalui konten dengan konversi tinggi.">Elevated clients' organic social media engagement by 30-50% on average through high-converting, targeted visual concepts.</li>
-                            </ul>
+
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (Full-Time)" data-id="Desainer Grafis (Kontrak Penuh)">Graphic Designer (Full-Time)</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Fana Creative Agency • Agency" data-id="Fana Creative Agency • Agensi">Fana Creative Agency • Agency</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                        <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
+                                        <span>Aug 2025 — Dec 2025</span>
+                                    </div>
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div id="careerPanel-4" class="career-panel-item hidden">
-                            <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b border-white/10">
-                                <div>
-                                    <h4 class="text-lg font-display font-semibold text-white leading-tight" data-en="Graphic Designer Intern" data-id="Magang Desainer Grafis">Graphic Designer Intern</h4>
-                                    <p class="text-xs font-medium text-apple-blue-dark mt-0.5">Lampung Folk</p>
-                                </div>
-                                <span class="px-2.5 py-0.5 bg-white/10 text-apple-body-muted text-[11px] font-sans rounded-apple-pill self-start shrink-0 border border-white/10" data-en="Oct 2025 - Dec 2025" data-id="Okt 2025 - Des 2025">Oct 2025 - Dec 2025</span>
+                        <!-- Item 4: Lampung Folk (Oct 2025 — Dec 2025) -->
+                        <div onclick="openCareerModal(4)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
-                            <ul class="list-disc pl-5 text-xs text-apple-body-muted leading-relaxed space-y-2">
-                                <li data-en="Designed 50+ creative social media publications centered around local folklore, indigenous wisdom, and integrated Lampung regional tourism." data-id="Mendesain 50+ materi kreatif bertema kearifan lokal, sejarah rakyat, dan info terpadu pariwisata Lampung.">Designed 50+ creative social media publications centered around local folklore, indigenous wisdom, and integrated Lampung regional tourism.</li>
-                                <li data-en="Boosted monthly audience reach to 20,000 - 50,000 accounts via mobile-responsive and visually engaging social assets." data-id="Mendongkrak tayangan konten bulanan hingga mencapai 20.000 - 50.000 akun melalui desain yang ramah seluler.">Boosted monthly audience reach to 20,000 - 50,000 accounts via mobile-responsive and visually engaging social assets.</li>
-                            </ul>
+
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-feather-pointed text-[11px]"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer Intern" data-id="Magang Desainer Grafis">Graphic Designer Intern</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Lampung Folk • Regional Media" data-id="Lampung Folk • Media Daerah">Lampung Folk • Regional Media</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                        <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
+                                        <span>Oct 2025 — Dec 2025</span>
+                                    </div>
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div id="careerPanel-5" class="career-panel-item hidden">
-                            <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b border-white/10">
-                                <div>
-                                    <h4 class="text-lg font-display font-semibold text-white leading-tight" data-en="Official Public Relations Graphic Designer" data-id="Desainer Grafis Humas Resmi">Official Public Relations Graphic Designer</h4>
-                                    <p class="text-xs font-medium text-apple-blue-dark mt-0.5" data-en="Public Relations Universitas Lampung" data-id="Humas Universitas Lampung">Public Relations Universitas Lampung</p>
-                                </div>
-                                <span class="px-2.5 py-0.5 bg-white/10 text-apple-body-muted text-[11px] font-sans rounded-apple-pill self-start shrink-0 border border-white/10" data-en="Jan 2023 - Dec 2025" data-id="Jan 2023 - Des 2025">Jan 2023 - Dec 2025</span>
+                        <!-- Item 5: Media, Admin & Research Assistant (2024 — 2026) -->
+                        <div onclick="openCareerModal(1)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
-                            <ul class="list-disc pl-5 text-xs text-apple-body-muted leading-relaxed space-y-2">
-                                <li data-en="Engineered 1,000+ official visual communication assets to support university graduations, academic enrollments, and national events." data-id="Mendesain lebih dari 1.000+ aset visual resmi humas Unila guna mendukung rangkaian wisuda, promosi pendaftaran, dan acara nasional.">Engineered 1,000+ official visual communication assets to support university graduations, academic enrollments, and national events.</li>
-                                <li data-en="Accelerated organic follower growth on the university's main Instagram channel to over 180,000 active followers." data-id="Mengakselerasi pertumbuhan pengikut Instagram institusi secara organik hingga mencapai lebih dari 180.000 pengikut aktif.">Accelerated organic follower growth on the university's main Instagram channel to over 180,000 active followers.</li>
-                            </ul>
+
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-laptop-file text-[11px]"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Media, Admin & Research Assistant" data-id="Asisten Media, Admin & Riset">Media, Admin & Research Assistant</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Economics Education FKIP Unila • Academic" data-id="Pendidikan Ekonomi FKIP Unila • Akademik">Economics Education FKIP Unila • Academic</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                        <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
+                                        <span>2024 — 2026</span>
+                                    </div>
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div id="careerPanel-6" class="career-panel-item hidden">
-                            <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4 pb-3 border-b border-white/10">
-                                <div>
-                                    <h4 class="text-lg font-display font-semibold text-white leading-tight" data-en="Graphic Designer (MSIB Internship)" data-id="Desainer Grafis (Magang MSIB)">Graphic Designer (MSIB Internship)</h4>
-                                    <p class="text-xs font-medium text-apple-blue-dark mt-0.5" data-en="Office of Communication & Informatics Pesawaran" data-id="Dinas Kominfo Kab. Pesawaran">Office of Communication & Informatics Pesawaran</p>
-                                </div>
-                                <span class="px-2.5 py-0.5 bg-white/10 text-apple-body-muted text-[11px] font-sans rounded-apple-pill self-start shrink-0 border border-white/10" data-en="Aug 2024 - Dec 2024" data-id="Agu 2024 - Des 2024">Aug 2024 - Dec 2024</span>
+                        <!-- Item 6: Freelance Graphic Designer (2023 — Present) -->
+                        <div onclick="openCareerModal(2)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
-                            <ul class="list-disc pl-5 text-xs text-apple-body-muted leading-relaxed space-y-2">
-                                <li data-en="Designed over 80+ public policy infographics, regional official notices, and governmental accountability reports." data-id="Mendesain lebih dari 80+ materi informasi kebijakan publik, pengumuman daerah, dan laporan akuntabilitas pemerintah daerah.">Designed over 80+ public policy infographics, regional official notices, and governmental accountability reports.</li>
-                                <li data-en="Directly contributed to Pesawaran Regency attaining the prestigious 'Informative Regency' national transparency distinction." data-id="Berpartisipasi aktif dalam mengantarkan Kabupaten Pesawaran memenangkan predikat bergengsi sebagai Kabupaten 'Informatif'.">Directly contributed to Pesawaran Regency attaining the prestigious 'Informative Regency' national transparency distinction.</li>
-                            </ul>
-                        </div>
 
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-bezier-curve text-[11px]"></i>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Freelance Graphic Designer" data-id="Desainer Grafis Lepas">Freelance Graphic Designer</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Self-Employed (40+ Clients) • Independent" data-id="Wiraswasta Mandiri (40+ Klien) • Independen">Self-Employed (40+ Clients) • Independent</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                        <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
+                                        <span>2023 — Present</span>
+                                    </div>
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ORGANIZATIONS SECTION -->
-        <section id="organizations" class="scroll-mt-[96px] py-10 sm:py-14 bg-apple-canvas text-apple-ink border-b border-apple-hairline">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
+        <section id="organizations" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-canvas text-apple-ink border-b border-apple-hairline relative overflow-hidden">
+            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1">
                     <span id="org-tag" data-en="ORGANIZATIONAL EXPERIENCE" data-id="PENGALAMAN ORGANISASI" class="text-xs font-semibold uppercase tracking-wider text-apple-blue">ORGANIZATIONAL EXPERIENCE</span>
                     <h2 id="org-title" data-en="Leadership & Organizational Contribution" data-id="Kepemimpinan & Kontribusi Organisasi" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Leadership & Organizational Contribution</h2>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch max-w-6xl mx-auto w-full font-sans">
-                    
-                    <div class="p-5 apple-glass-light rounded-apple-lg border border-apple-hairline flex flex-col justify-between hover:border-apple-blue/50 transition-colors shadow-apple-card">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between text-xs font-sans text-apple-ink-muted-48 border-b border-apple-hairline pb-2.5">
-                                <span data-en="Media & Doc. Staff" data-id="Staf Media & Dok.">Media & Doc. Staff</span>
-                                <span class="px-2 py-0.5 bg-white rounded-apple-pill border border-apple-hairline text-apple-ink font-sans text-[10px]">2025</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-apple-md bg-white p-1 border border-apple-hairline shrink-0 flex items-center justify-center">
-                                    <img src="https://lh3.googleusercontent.com/d/1walGjQqkXRcuW0mq7DSlOmESY1tvQ6lp" alt="KKN MBKM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KKN'">
-                                </div>
-                                <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-semibold text-apple-ink truncate">Universitas Lampung</span>
-                                    <span class="text-[10px] text-apple-ink-muted-48 truncate" data-en="Community Service (MBKM)" data-id="KKN Tematik MBKM">Community Service (MBKM)</span>
-                                </div>
-                            </div>
-                            <h3 class="text-sm font-semibold text-apple-ink leading-snug" data-en="KKN MBKM Toto Katon Village" data-id="KKN MBKM Desa Toto Katon">KKN MBKM Toto Katon Village</h3>
-                            <p class="text-xs text-apple-ink-muted-80 leading-relaxed font-normal" data-en="Formulated regional information maps, curated digital village profiles, and executed public relation media strategies." data-id="Menyusun peta informasi publik, visualisasi pengenalan potensi desa, serta strategi publikasi media sosial desa.">Formulated regional information maps, curated digital village profiles, and executed public relation media strategies.</p>
-                        </div>
-                        <a href="https://www.instagram.com/kkn.desatotokaton2025/" target="_blank" rel="noopener noreferrer" class="text-xs text-apple-blue font-medium hover:underline mt-4 inline-flex items-center gap-1">
-                            <span data-en="Visit Instagram" data-id="Kunjungi Instagram">Visit Instagram</span>
-                            <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                        </a>
-                    </div>
+                <div id="orgTimelineContainer" class="relative w-full font-sans">
+                    <div id="orgBaseTrack" class="absolute left-[11px] sm:left-[13px] w-[1.5px] bg-apple-hairline z-0 pointer-events-none"></div>
+                    <div id="orgProgressTrack" class="absolute left-[11px] sm:left-[13px] w-[1.5px] bg-apple-blue z-0 transition-all duration-100 h-0 pointer-events-none"></div>
 
-                    <div class="p-5 apple-glass-light rounded-apple-lg border border-apple-hairline flex flex-col justify-between hover:border-apple-blue/50 transition-colors shadow-apple-card">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between text-xs font-sans text-apple-ink-muted-48 border-b border-apple-hairline pb-2.5">
-                                <span data-en="Vice President" data-id="Wakil Ketua Umum">Vice President</span>
-                                <span class="px-2 py-0.5 bg-white rounded-apple-pill border border-apple-hairline text-apple-ink font-sans text-[10px]">24-25</span>
+                    <div class="space-y-3 relative z-10">
+                        <!-- Card 1: BEM Unila -->
+                        <div class="timeline-row-item group flex items-center gap-3 sm:gap-4">
+                            <div class="timeline-bullet-node relative z-10 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border border-apple-hairline flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-apple-hairline transition-colors duration-200"></div>
                             </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-apple-md bg-white p-1 border border-apple-hairline shrink-0 flex items-center justify-center">
-                                    <img src="https://lh3.googleusercontent.com/d/1NYaHsv4olOMTOydxxZztSZqaIMv8xRQt" alt="KSPM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KSPM'">
-                                </div>
-                                <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-semibold text-apple-ink truncate">KSPM FKIP Unila</span>
-                                    <span class="text-[10px] text-apple-ink-muted-48 truncate" data-en="Islamic Investment Club" data-id="GIS Syariah">Islamic Investment Club</span>
-                                </div>
-                            </div>
-                            <h3 class="text-sm font-semibold text-apple-ink leading-snug">KSPM FKIP Universitas Lampung</h3>
-                            <p class="text-xs text-apple-ink-muted-80 leading-relaxed font-normal" data-en="Accelerated financial literacy programs, coordinated capital market workshops, and led the team to 3rd National GIS Award." data-id="Mengakselerasi literasi pasar modal, memimpin koordinasi edukasi investasi saham, serta membawa GIS Unila meraih Juara Nasional III.">Accelerated financial literacy programs, coordinated capital market workshops, and led the team to 3rd National GIS Award.</p>
-                        </div>
-                        <a href="https://www.instagram.com/kspm_fkipunila/" target="_blank" rel="noopener noreferrer" class="text-xs text-apple-blue font-medium hover:underline mt-4 inline-flex items-center gap-1">
-                            <span data-en="Visit Instagram" data-id="Kunjungi Instagram">Visit Instagram</span>
-                            <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                        </a>
-                    </div>
 
-                    <div class="p-5 apple-glass-light rounded-apple-lg border border-apple-hairline flex flex-col justify-between hover:border-apple-blue/50 transition-colors shadow-apple-card">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between text-xs font-sans text-apple-ink-muted-48 border-b border-apple-hairline pb-2.5">
-                                <span data-en="Media Staff" data-id="Staf Media">Media Staff</span>
-                                <span class="px-2 py-0.5 bg-white rounded-apple-pill border border-apple-hairline text-apple-ink font-sans text-[10px]">2024</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-apple-md bg-white p-1 border border-apple-hairline shrink-0 flex items-center justify-center">
-                                    <img src="https://lh3.googleusercontent.com/d/1YbgklKeI2c0UB00uXbd8IB2K7bSGaMu1" alt="SRE Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=SRE'">
+                            <div class="flex-1 bg-white hover:bg-apple-pearl border border-apple-hairline hover:border-apple-blue/50 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-xs hover:shadow-apple-card flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-apple-sm bg-white border border-apple-hairline p-1 shrink-0 flex items-center justify-center shadow-2xs group-hover:border-apple-blue/40 transition-colors">
+                                        <img src="https://lh3.googleusercontent.com/d/1Dn7vKWBI0pD48Kcxlne2cX1PL2woLk8u" alt="BEM Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=BEM'">
+                                    </div>
+                                    <div class="flex flex-col min-w-0 text-left">
+                                        <span class="text-[8px] sm:text-[9px] font-sans font-semibold uppercase tracking-wider text-apple-blue" data-en="UNIVERSITAS LAMPUNG" data-id="UNIVERSITAS LAMPUNG">UNIVERSITAS LAMPUNG</span>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-apple-ink group-hover:text-apple-blue transition-colors truncate">BEM Universitas Lampung</h3>
+                                        <span class="text-[10px] sm:text-[11px] font-medium text-apple-ink-muted-48 mt-0.5" data-en="Media Staff" data-id="Staf Media">Media Staff</span>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-semibold text-apple-ink truncate">SRE Unila</span>
-                                    <span class="text-[10px] text-apple-ink-muted-48 truncate" data-en="Renewable Energy" data-id="Energi Terbarukan">Renewable Energy</span>
-                                </div>
-                            </div>
-                            <h3 class="text-sm font-semibold text-apple-ink leading-snug">SRE Universitas Lampung</h3>
-                            <p class="text-xs text-apple-ink-muted-80 leading-relaxed font-normal" data-en="Authored ecological infographics and clean energy campaigns, driving an overall 67% boost in digital channel reach." data-id="Merancang infografis energi bersih, dekarbonisasi industri, serta kampanye hijau yang meningkatkan jangkauan media sebesar 67%.">Authored ecological infographics and clean energy campaigns, driving an overall 67% boost in digital channel reach.</p>
-                        </div>
-                        <a href="https://www.instagram.com/sre.unila/" target="_blank" rel="noopener noreferrer" class="text-xs text-apple-blue font-medium hover:underline mt-4 inline-flex items-center gap-1">
-                            <span data-en="Visit Instagram" data-id="Kunjungi Instagram">Visit Instagram</span>
-                            <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                        </a>
-                    </div>
 
-                    <div class="p-5 apple-glass-light rounded-apple-lg border border-apple-hairline flex flex-col justify-between hover:border-apple-blue/50 transition-colors shadow-apple-card">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between text-xs font-sans text-apple-ink-muted-48 border-b border-apple-hairline pb-2.5">
-                                <span data-en="Media Staff" data-id="Staf Media">Media Staff</span>
-                                <span class="px-2 py-0.5 bg-white rounded-apple-pill border border-apple-hairline text-apple-ink font-sans text-[10px]">23-24</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-apple-md bg-white p-1 border border-apple-hairline shrink-0 flex items-center justify-center">
-                                    <img src="https://lh3.googleusercontent.com/d/1-34XM4ZABXrK4YTUGNWpO-2dPUKEtvVw" alt="ASSETS Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=ASSETS'">
-                                </div>
-                                <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-semibold text-apple-ink truncate">ASSETS Unila</span>
-                                    <span class="text-[10px] text-apple-ink-muted-48 truncate" data-en="Student Association" data-id="Hima Pend. Ekonomi">Student Association</span>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="px-2 py-0.5 rounded-apple-pill bg-apple-parchment text-apple-ink-muted-80 text-[10px] sm:text-[11px] font-medium border border-apple-hairline hidden sm:inline-block">2023</span>
+                                    <a href="https://www.instagram.com/bem_unila/" target="_blank" rel="noopener noreferrer" class="apple-btn-active px-2.5 py-1 rounded-apple-pill border border-apple-hairline text-[11px] font-medium text-apple-ink hover:text-apple-blue hover:border-apple-blue flex items-center gap-1.5 bg-white shadow-2xs transition-colors">
+                                        <i class="fa-brands fa-instagram text-[11px] text-apple-blue"></i>
+                                        <span class="hidden sm:inline">Instagram</span>
+                                    </a>
                                 </div>
                             </div>
-                            <h3 class="text-sm font-semibold text-apple-ink leading-snug" data-en="ASSETS Student Association Unila" data-id="Himpunan Mahasiswa ASSETS Unila">ASSETS Student Association Unila</h3>
-                            <p class="text-xs text-apple-ink-muted-80 leading-relaxed font-normal" data-en="Produced 100+ program promotional designs, managed the brand visual grid, and increased social engagement by 50%." data-id="Memproduksi 100+ aset promosi program studi, menata visualisasi media sosial, dan meningkatkan interaksi hingga 50%.">Produced 100+ program promotional designs, managed the brand visual grid, and increased social engagement by 50%.</p>
                         </div>
-                        <a href="https://www.instagram.com/assets_unila/" target="_blank" rel="noopener noreferrer" class="text-xs text-apple-blue font-medium hover:underline mt-4 inline-flex items-center gap-1">
-                            <span data-en="Visit Instagram" data-id="Kunjungi Instagram">Visit Instagram</span>
-                            <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                        </a>
-                    </div>
 
-                    <div class="p-5 apple-glass-light rounded-apple-lg border border-apple-hairline flex flex-col justify-between hover:border-apple-blue/50 transition-colors shadow-apple-card">
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between text-xs font-sans text-apple-ink-muted-48 border-b border-apple-hairline pb-2.5">
-                                <span data-en="Media Staff" data-id="Staf Media">Media Staff</span>
-                                <span class="px-2 py-0.5 bg-white rounded-apple-pill border border-apple-hairline text-apple-ink font-sans text-[10px]">2023</span>
+                        <!-- Card 2: ASSETS FKIP Unila -->
+                        <div class="timeline-row-item group flex items-center gap-3 sm:gap-4">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border border-apple-hairline flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-apple-hairline transition-colors duration-200"></div>
                             </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-apple-md bg-white p-1 border border-apple-hairline shrink-0 flex items-center justify-center">
-                                    <img src="https://lh3.googleusercontent.com/d/1Dn7vKWBI0pD48Kcxlne2cX1PL2woLk8u" alt="BEM Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=BEM'">
+
+                            <div class="flex-1 bg-white hover:bg-apple-pearl border border-apple-hairline hover:border-apple-blue/50 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-xs hover:shadow-apple-card flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-apple-sm bg-white border border-apple-hairline p-1 shrink-0 flex items-center justify-center shadow-2xs group-hover:border-apple-blue/40 transition-colors">
+                                        <img src="https://lh3.googleusercontent.com/d/1-34XM4ZABXrK4YTUGNWpO-2dPUKEtvVw" alt="ASSETS Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=ASSETS'">
+                                    </div>
+                                    <div class="flex flex-col min-w-0 text-left">
+                                        <span class="text-[8px] sm:text-[9px] font-sans font-semibold uppercase tracking-wider text-apple-blue" data-en="STUDENT ASSOCIATION" data-id="HIMPUNAN MAHASISWA">STUDENT ASSOCIATION</span>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-apple-ink group-hover:text-apple-blue transition-colors truncate">ASSETS FKIP Universitas Lampung</h3>
+                                        <span class="text-[10px] sm:text-[11px] font-medium text-apple-ink-muted-48 mt-0.5" data-en="Media Staff" data-id="Staf Media">Media Staff</span>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col min-w-0">
-                                    <span class="text-xs font-semibold text-apple-ink truncate">BEM Unila</span>
-                                    <span class="text-[10px] text-apple-ink-muted-48 truncate" data-en="Student Executive Board" data-id="Badan Eksekutif Mahasiswa">Student Executive Board</span>
+
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="px-2 py-0.5 rounded-apple-pill bg-apple-parchment text-apple-ink-muted-80 text-[10px] sm:text-[11px] font-medium border border-apple-hairline hidden sm:inline-block">2023 — 2024</span>
+                                    <a href="https://www.instagram.com/assets_unila/" target="_blank" rel="noopener noreferrer" class="apple-btn-active px-2.5 py-1 rounded-apple-pill border border-apple-hairline text-[11px] font-medium text-apple-ink hover:text-apple-blue hover:border-apple-blue flex items-center gap-1.5 bg-white shadow-2xs transition-colors">
+                                        <i class="fa-brands fa-instagram text-[11px] text-apple-blue"></i>
+                                        <span class="hidden sm:inline">Instagram</span>
+                                    </a>
                                 </div>
                             </div>
-                            <h3 class="text-sm font-semibold text-apple-ink leading-snug">BEM Universitas Lampung</h3>
-                            <p class="text-xs text-apple-ink-muted-80 leading-relaxed font-normal" data-en="Executed 150+ visual designs for press releases, student campaigns, and nationwide public information graphics." data-id="Merancang 150+ desain rilis kemahasiswaan, poster kegiatan publik, serta pamflet infografis berskala nasional.">Executed 150+ visual designs for press releases, student campaigns, and nationwide public information graphics.</p>
                         </div>
-                        <a href="https://www.instagram.com/bem_unila/" target="_blank" rel="noopener noreferrer" class="text-xs text-apple-blue font-medium hover:underline mt-4 inline-flex items-center gap-1">
-                            <span data-en="Visit Instagram" data-id="Kunjungi Instagram">Visit Instagram</span>
-                            <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                        </a>
-                    </div>
 
+                        <!-- Card 3: SRE Unila -->
+                        <div class="timeline-row-item group flex items-center gap-3 sm:gap-4">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border border-apple-hairline flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-apple-hairline transition-colors duration-200"></div>
+                            </div>
+
+                            <div class="flex-1 bg-white hover:bg-apple-pearl border border-apple-hairline hover:border-apple-blue/50 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-xs hover:shadow-apple-card flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-apple-sm bg-white border border-apple-hairline p-1 shrink-0 flex items-center justify-center shadow-2xs group-hover:border-apple-blue/40 transition-colors">
+                                        <img src="https://lh3.googleusercontent.com/d/1YbgklKeI2c0UB00uXbd8IB2K7bSGaMu1" alt="SRE Unila" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=SRE'">
+                                    </div>
+                                    <div class="flex flex-col min-w-0 text-left">
+                                        <span class="text-[8px] sm:text-[9px] font-sans font-semibold uppercase tracking-wider text-apple-blue" data-en="RENEWABLE ENERGY" data-id="ENERGI TERBARUKAN">RENEWABLE ENERGY</span>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-apple-ink group-hover:text-apple-blue transition-colors truncate">SRE Universitas Lampung</h3>
+                                        <span class="text-[10px] sm:text-[11px] font-medium text-apple-ink-muted-48 mt-0.5" data-en="Media Staff" data-id="Staf Media">Media Staff</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="px-2 py-0.5 rounded-apple-pill bg-apple-parchment text-apple-ink-muted-80 text-[10px] sm:text-[11px] font-medium border border-apple-hairline hidden sm:inline-block">2024</span>
+                                    <a href="https://www.instagram.com/sre.unila/" target="_blank" rel="noopener noreferrer" class="apple-btn-active px-2.5 py-1 rounded-apple-pill border border-apple-hairline text-[11px] font-medium text-apple-ink hover:text-apple-blue hover:border-apple-blue flex items-center gap-1.5 bg-white shadow-2xs transition-colors">
+                                        <i class="fa-brands fa-instagram text-[11px] text-apple-blue"></i>
+                                        <span class="hidden sm:inline">Instagram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: KSPM Unila -->
+                        <div class="timeline-row-item group flex items-center gap-3 sm:gap-4">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border border-apple-hairline flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-apple-hairline transition-colors duration-200"></div>
+                            </div>
+
+                            <div class="flex-1 bg-blue-50/20 hover:bg-blue-50/40 border border-apple-blue/30 hover:border-apple-blue p-2.5 sm:p-3 rounded-apple-md transition-all shadow-xs hover:shadow-apple-card flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-apple-sm bg-white border border-apple-blue/30 p-1 shrink-0 flex items-center justify-center shadow-2xs group-hover:border-apple-blue transition-colors">
+                                        <img src="https://lh3.googleusercontent.com/d/1NYaHsv4olOMTOydxxZztSZqaIMv8xRQt" alt="KSPM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KSPM'">
+                                    </div>
+                                    <div class="flex flex-col min-w-0 text-left">
+                                        <span class="text-[8px] sm:text-[9px] font-sans font-bold uppercase tracking-wider text-apple-blue" data-en="LEADERSHIP ROLE • Capital Market" data-id="PERAN KEPEMIMPINAN • Pasar Modal">LEADERSHIP ROLE • Capital Market</span>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-apple-ink group-hover:text-apple-blue transition-colors truncate">KSPM FKIP Universitas Lampung</h3>
+                                        <span class="text-[10px] sm:text-[11px] font-bold text-apple-blue mt-0.5" data-en="Vice President" data-id="Wakil Ketua Umum">Vice President</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="px-2 py-0.5 rounded-apple-pill bg-apple-blue text-white text-[10px] sm:text-[11px] font-semibold shadow-2xs hidden sm:inline-block">2024 — 2025</span>
+                                    <a href="https://www.instagram.com/kspm_fkipunila/" target="_blank" rel="noopener noreferrer" class="apple-btn-active px-2.5 py-1 rounded-apple-pill bg-apple-blue text-white hover:bg-apple-blue-focus text-[11px] font-medium flex items-center gap-1.5 shadow-2xs transition-colors">
+                                        <i class="fa-brands fa-instagram text-[11px]"></i>
+                                        <span class="hidden sm:inline">Instagram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: KKN MBKM Toto Katon -->
+                        <div class="timeline-row-item group flex items-center gap-3 sm:gap-4">
+                            <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border border-apple-hairline flex items-center justify-center shrink-0 transition-colors duration-200">
+                                <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-apple-hairline transition-colors duration-200"></div>
+                            </div>
+
+                            <div class="flex-1 bg-white hover:bg-apple-pearl border border-apple-hairline hover:border-apple-blue/50 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-xs hover:shadow-apple-card flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-apple-sm bg-white border border-apple-hairline p-1 shrink-0 flex items-center justify-center shadow-2xs group-hover:border-apple-blue/40 transition-colors">
+                                        <img src="https://lh3.googleusercontent.com/d/1walGjQqkXRcuW0mq7DSlOmESY1tvQ6lp" alt="KKN MBKM" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=KKN'">
+                                    </div>
+                                    <div class="flex flex-col min-w-0 text-left">
+                                        <span class="text-[8px] sm:text-[9px] font-sans font-semibold uppercase tracking-wider text-apple-blue" data-en="COMMUNITY SERVICE" data-id="PENGABDIAN MASYARAKAT">COMMUNITY SERVICE</span>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-apple-ink group-hover:text-apple-blue transition-colors truncate">KKN MBKM Desa Toto Katon</h3>
+                                        <span class="text-[10px] sm:text-[11px] font-medium text-apple-ink-muted-48 mt-0.5" data-en="Media & Doc. Staff" data-id="Staf Media & Dokumentasi">Media & Doc. Staff</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="px-2 py-0.5 rounded-apple-pill bg-apple-parchment text-apple-ink-muted-80 text-[10px] sm:text-[11px] font-medium border border-apple-hairline hidden sm:inline-block">2025</span>
+                                    <a href="https://www.instagram.com/kkn.desatotokaton2025/" target="_blank" rel="noopener noreferrer" class="apple-btn-active px-2.5 py-1 rounded-apple-pill border border-apple-hairline text-[11px] font-medium text-apple-ink hover:text-apple-blue hover:border-apple-blue flex items-center gap-1.5 bg-white shadow-2xs transition-colors">
+                                        <i class="fa-brands fa-instagram text-[11px] text-apple-blue"></i>
+                                        <span class="hidden sm:inline">Instagram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- PORTFOLIO GALLERY SECTION -->
-        <section id="portfolio" class="scroll-mt-[96px] py-10 sm:py-14 bg-apple-tile-1 text-white border-b border-white/10 relative overflow-hidden">
+        <section id="portfolio" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-1 text-white border-b border-white/10 relative overflow-hidden">
+            <div class="absolute inset-0 apple-dot-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_90%)]"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[400px] apple-radial-glow pointer-events-none blur-3xl"></div>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="mb-6 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
+                <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="port-section-tag" class="text-xs font-semibold uppercase tracking-wider text-apple-blue-dark" data-en="VISUAL GALLERY" data-id="GALERI VISUAL">VISUAL GALLERY</span>
                     <h2 id="port-section-title" data-en="Graphic Layouts & Brand Identities" data-id="Tata Letak Grafis & Identitas Visual" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Graphic Layouts & Brand Identities</h2>
                 </div>
@@ -767,17 +1011,17 @@
                     <button onclick="filterPortfolio('webdev')" id="filter-webdev" class="portfolio-filter-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-dark text-white transition-colors" data-en="Web Development" data-id="Pengembangan Web">Web Development</button>
                 </div>
 
-                <!-- 4 COLUMNS ON LAPTOP (lg:grid-cols-4) -->
-                <div id="portfolioGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch w-full max-w-7xl mx-auto font-sans">
-                    <!-- Dynamic Portfolio Items render here -->
+                <div id="portfolioGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch w-full max-w-7xl mx-auto font-sans">
+                    <!-- Dynamic Portfolio Items -->
                 </div>
             </div>
         </section>
 
-        <!-- ACHIEVEMENTS & CREDENTIALS SECTION -->
-        <section id="achievements" class="scroll-mt-[96px] py-10 sm:py-14 bg-apple-parchment text-apple-ink border-b border-apple-hairline">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-6 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
+        <section id="achievements" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-parchment text-apple-ink border-b border-apple-hairline relative overflow-hidden">
+            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="ach-section-tag" data-en="HONORS & CREDENTIALS" data-id="PENGHARGAAN & PENGAKUAN" class="text-xs font-semibold uppercase tracking-wider text-apple-blue">HONORS & CREDENTIALS</span>
                     <h2 id="ach-section-title" data-en="Awards, Certifications & Credentials" data-id="Penghargaan, Sertifikasi & Pengakuan" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Awards, Certifications & Credentials</h2>
                 </div>
@@ -789,7 +1033,7 @@
                     <button onclick="switchAchieveTab('scholarships')" id="achTab-scholarships" class="achieve-tab-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="04 — Scholarships" data-id="04 — Beasiswa & Program">04 — Scholarships</button>
                 </div>
 
-                <div class="max-w-3xl mx-auto w-full font-sans">
+                <div class="max-w-4xl mx-auto w-full font-sans">
                     
                     <div id="achPanel-competitions" class="achieve-panel p-6 apple-glass-light rounded-apple-lg border border-apple-hairline shadow-apple-card flex flex-col justify-between">
                         <div class="space-y-4">
@@ -950,20 +1194,22 @@
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="scroll-mt-[96px] py-10 sm:py-14 bg-apple-tile-3 text-white border-b border-white/10 relative overflow-hidden">
+        <section id="contact" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-3 text-white border-b border-white/10 relative overflow-hidden">
+            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_90%)]"></div>
+            <div class="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-apple-blue/15 rounded-full blur-3xl pointer-events-none"></div>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
+                <div class="mb-9 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="contact-section-tag" data-en="GET IN TOUCH" data-id="HUBUNGI SAYA" class="text-xs font-semibold uppercase tracking-wider text-apple-blue-dark">GET IN TOUCH</span>
                     <h2 id="contact-section-title" data-en="Let’s Connect & Collaborate" data-id="Mari Berkolaborasi & Terhubung" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Let’s Connect & Collaborate</h2>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto items-stretch w-full font-sans">
                     
-                    <div class="lg:col-span-5 p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-5">
+                    <div class="lg:col-span-5 p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-5 border border-white/10">
                         <div class="space-y-3.5">
                             <h3 id="contact-sub-title" data-en="Contact Details" data-id="Detail Kontak" class="text-lg font-display font-semibold text-white">Contact Details</h3>
-                            <p id="contact-desc" data-en="Do you have a project, branding requirement, or collaboration opportunity? Feel free to connect." data-id="Apakah Anda memiliki proyek kreatif, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya." class="text-xs text-apple-body-muted leading-relaxed">
+                            <p id="contact-desc" data-en="Do you have a project, branding requirement, or collaboration opportunity? Feel free to connect." data-id="Apakah Anda memiliki proyek kreatif, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya." class="text-xs text-white/70 leading-relaxed">
                                 Do you have a project, branding requirement, or collaboration opportunity? Feel free to connect.
                             </p>
 
@@ -976,14 +1222,14 @@
                                         <span class="text-[9px] font-sans font-medium uppercase text-apple-ink-muted-48" data-en="Email Address" data-id="Alamat Email">Email Address</span>
                                         <span class="text-xs font-sans font-semibold text-white truncate select-all">nurkarim2004@gmail.com</span>
                                     </div>
-                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com', this)" class="apple-btn-active text-xs text-apple-blue-dark hover:underline font-medium" title="Copy Email">
+                                    <button onclick="event.stopPropagation(); copyToClipboardText('nurkarim2004@gmail.com')" class="apple-btn-active text-xs text-apple-blue-dark hover:underline font-medium" title="Copy Email">
                                         <span data-en="Copy" data-id="Salin">Copy</span>
                                     </button>
                                 </div>
 
                                 <div class="flex items-center gap-3.5 bg-white/5 p-3 rounded-apple-md border border-white/10">
                                     <div class="w-8 h-8 rounded-full bg-apple-blue/20 text-apple-blue-dark flex items-center justify-center text-xs shrink-0">
-                                        <i class="fa-solid fa-location-dot"></i>
+                                        <i class="fa-solid fa-location-dot text-apple-blue-dark"></i>
                                     </div>
                                     <div class="flex flex-col">
                                         <span class="text-[9px] font-sans font-medium uppercase text-apple-ink-muted-48" data-en="Location" data-id="Domisili">Location</span>
@@ -993,13 +1239,12 @@
                             </div>
                         </div>
 
-                        <div class="p-2.5 bg-white/5 text-apple-body-muted rounded-apple-md border border-white/10 text-center font-sans text-[11px]">
+                        <div class="p-2.5 bg-white/5 text-white/70 rounded-apple-md border border-white/10 text-center font-sans text-[11px]">
                             <span data-en="Priority Services: Sumatra & Greater Jakarta (Jabodetabek)" data-id="Prioritas Layanan: Sumatera & Wilayah Jabodetabek">Priority Services: Sumatra & Greater Jakarta (Jabodetabek)</span>
                         </div>
                     </div>
 
-                    <!-- Direct Message Form -->
-                    <form onsubmit="handleSecureFormSubmit(event)" class="lg:col-span-7 p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-4">
+                    <form onsubmit="handleSecureFormSubmit(event)" class="lg:col-span-7 p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-4 border border-white/10">
                         <div class="space-y-3">
                             <h3 id="form-title" data-en="Send Direct Message" data-id="Kirimkan Pesan Langsung" class="text-lg font-display font-semibold text-white">Send Direct Message</h3>
                             
@@ -1031,7 +1276,6 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="py-10 bg-apple-parchment text-apple-ink-muted-80 border-t border-apple-hairline font-sans">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 w-full text-center md:text-left text-xs">
             <div class="flex flex-col gap-0.5">
@@ -1044,13 +1288,50 @@
                 <a href="#about" class="hover:text-apple-blue transition-colors" data-en="About" data-id="Tentang">About</a>
                 <a href="#education" class="hover:text-apple-blue transition-colors" data-en="Education" data-id="Pendidikan">Education</a>
                 <a href="#experience" class="hover:text-apple-blue transition-colors" data-en="Experience" data-id="Pengalaman">Experience</a>
+                <a href="#organizations" class="hover:text-apple-blue transition-colors" data-en="Organizations" data-id="Organisasi">Organizations</a>
                 <a href="#portfolio" class="hover:text-apple-blue transition-colors" data-en="Portfolio" data-id="Portofolio">Portfolio</a>
                 <a href="#contact" class="hover:text-apple-blue transition-colors" data-en="Contact" data-id="Kontak">Contact</a>
             </div>
         </div>
     </footer>
 
-    <!-- ACADEMIC DOCUMENTS MODAL -->
+    <!-- Career Detail Modal -->
+    <div id="careerDetailModal" onclick="handleCareerModalBackdrop(event)" class="fixed inset-0 z-[170] bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 font-sans">
+        <div class="w-full max-w-xl bg-apple-tile-1 text-white rounded-apple-lg border border-white/10 shadow-2xl flex flex-col overflow-hidden relative">
+            <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/10 bg-white/5">
+                <div class="flex items-center gap-2.5">
+                    <div id="modalRoleIcon" class="w-7 h-7 rounded-apple-md bg-apple-blue/20 text-apple-blue-dark flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 id="modalCareerTitle" class="text-xs sm:text-sm font-semibold text-white">Experience Details</h3>
+                        <span id="modalCareerCompany" class="text-[10px] text-apple-ink-muted-48">Organization / Agency</span>
+                    </div>
+                </div>
+                <button onclick="closeCareerModal()" class="w-7 h-7 rounded-full bg-white/10 text-white hover:bg-white/20 flex items-center justify-center transition-all">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-4 max-h-[70vh] overflow-y-auto">
+                <div class="flex items-center justify-between pb-3 border-b border-white/10 text-xs">
+                    <span class="text-apple-ink-muted-48 font-medium uppercase text-[10px]" data-en="Tenure / Period" data-id="Periode Kerja">Tenure / Period</span>
+                    <span id="modalCareerPeriod" class="px-2.5 py-0.5 rounded-apple-pill bg-white/10 text-white font-medium text-[11px]"></span>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-[10px] font-sans font-medium uppercase text-apple-blue-dark tracking-wider" data-en="Key Responsibilities & Deliverables" data-id="Tanggung Jawab & Capaian Utama">Key Responsibilities & Deliverables</span>
+                    <ul id="modalCareerPoints" class="list-disc pl-5 text-xs text-white/80 leading-relaxed space-y-2.5"></ul>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-end px-5 py-3 border-t border-white/10 bg-white/5">
+                <button onclick="closeCareerModal()" class="apple-btn-active bg-white/10 hover:bg-white/20 text-white px-4 py-1.5 rounded-apple-pill text-xs font-medium" data-en="Close Details" data-id="Tutup Rincian">Close Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Academic Docs Modal -->
     <div id="academicDocsModal" class="fixed inset-0 z-[110] bg-black/50 backdrop-blur-md hidden items-center justify-center p-4">
         <div class="w-full max-w-2xl bg-white rounded-apple-lg border border-apple-hairline shadow-apple-product flex flex-col overflow-hidden relative font-sans max-h-[90vh]">
             
@@ -1140,7 +1421,7 @@
         </div>
     </div>
 
-    <!-- GOOGLE DRIVE FLOATING PREVIEW MODAL -->
+    <!-- Drive Preview Modal -->
     <div id="driveModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-[160] bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 font-sans">
         <div class="w-full max-w-5xl h-[85vh] bg-white rounded-apple-lg border border-apple-hairline shadow-2xl flex flex-col overflow-hidden relative">
             <div class="flex items-center justify-between px-4 py-3 frosted-subnav text-apple-ink border-b border-apple-hairline shrink-0">
@@ -1168,14 +1449,14 @@
             <div class="relative flex-1 bg-black w-full h-full overflow-hidden flex flex-col items-center justify-center">
                 <div id="driveLoadingSpinner" class="absolute inset-0 flex flex-col items-center justify-center bg-apple-tile-1 text-white gap-3 z-10">
                     <div class="w-7 h-7 border-2 border-apple-blue-dark border-t-transparent rounded-full animate-spin"></div>
-                    <span class="text-xs font-medium font-sans text-apple-body-muted" data-en="Loading Google Drive Document..." data-id="Memuat Dokumen Google Drive...">Loading Google Drive Document...</span>
+                    <span class="text-xs font-medium font-sans text-white/70" data-en="Loading Google Drive Document..." data-id="Memuat Dokumen Google Drive...">Loading Google Drive Document...</span>
                 </div>
                 <iframe id="driveFrame" class="w-full h-full border-0 relative z-20" onload="document.getElementById('driveLoadingSpinner').classList.add('hidden')" src=""></iframe>
             </div>
         </div>
     </div>
 
-    <!-- APPLE TOAST NOTIFICATION -->
+    <!-- Notification Toast -->
     <div id="iosToast" class="fixed bottom-6 right-6 z-[150] transform translate-y-[100px] opacity-0 transition-all duration-300 pointer-events-none font-sans">
         <div class="apple-glass-dark text-white px-4 py-2.5 rounded-apple-pill border border-white/10 shadow-lg text-xs font-medium flex items-center gap-2.5">
             <span id="toastIcon" class="text-apple-blue-dark">💡</span>
@@ -1183,9 +1464,108 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
-        // Portfolio Catalog Dataset (16 Items)
+        const CAREER_DATASET = {
+            1: {
+                icon: "fa-solid fa-laptop-file",
+                titleEN: "Media, Administration & Research Assistant",
+                titleID: "Asisten Media, Administrasi & Peneliti Pembelajaran",
+                companyEN: "Economics Education Department FKIP Unila",
+                companyID: "Prodi Pendidikan Ekonomi FKIP Unila",
+                period: "Mar 2024 — Mar 2026",
+                pointsEN: [
+                    "Managed academic administration for 6 lecturers including research archives, accreditation portfolios, and lecture modules using Google Apps Script and spreadsheet automation.",
+                    "Developed an integrated spreadsheet tracking system for 300+ student academic records, undergraduate thesis progress, and periodic administrative reports.",
+                    "Produced 100+ institutional media publications, event video documentations, and digital campaign assets for the department."
+                ],
+                pointsID: [
+                    "Mengelola administrasi akademik bagi 6 dosen melalui berkas penelitian, dokumen akreditasi, dan struktur perkuliahan menggunakan Google Apps Script dan otomatisasi spreadsheet.",
+                    "Mengembangkan sistem spreadsheet untuk mendata 300+ data akademik mahasiswa, kemajuan skripsi, dan laporan berkala.",
+                    "Memproduksi 100+ media publikasi institusi, dokumentasi video, dan konten promosi digital program studi Pendidikan Ekonomi."
+                ]
+            },
+            2: {
+                icon: "fa-solid fa-bezier-curve",
+                titleEN: "Freelance Graphic Designer & Digital Creator",
+                titleID: "Desainer Grafis & Kreator Konten Digital Lepas",
+                companyEN: "Self-Employed (40+ Clients)",
+                companyID: "Wiraswasta Mandiri (40+ Klien)",
+                period: "Jan 2023 — Present",
+                pointsEN: [
+                    "Delivered 100+ visual branding designs for 40+ corporate clients, including social media kits, printed marketing collateral, and custom UI design assets.",
+                    "Produced over 1,000 unique promotional assets such as banners, Instagram content grids, corporate pamphlets, and video motion elements."
+                ],
+                pointsID: [
+                    "Menyelesaikan 100+ desain branding untuk 40+ klien, mencakup desain media sosial, brosur cetak, dan visual UI khusus.",
+                    "Membuat lebih dari 1.000 aset unik berupa spanduk, aset Instagram, pamflet korporat, dan komponen video."
+                ]
+            },
+            3: {
+                icon: "fa-solid fa-wand-magic-sparkles",
+                titleEN: "Graphic Designer (Full-Time Contract)",
+                titleID: "Desainer Grafis (Kontrak Penuh)",
+                companyEN: "Fana Creative Agency",
+                companyID: "Fana Creative Agency",
+                period: "Aug 2025 — Dec 2025",
+                pointsEN: [
+                    "Produced 100+ promotional design assets and visual content for over 10+ SME partners and corporate clients.",
+                    "Elevated clients' organic social media engagement by 30-50% on average through high-converting, targeted visual concepts."
+                ],
+                pointsID: [
+                    "Membuat 100+ aset desain promosi dan materi visual untuk lebih dari 10+ UMKM dan korporasi mitra bisnis.",
+                    "Meningkatkan performa interaksi organik media sosial klien rata-rata sebesar 30-50% melalui konten dengan konversi tinggi."
+                ]
+            },
+            4: {
+                icon: "fa-solid fa-feather-pointed",
+                titleEN: "Graphic Designer Intern",
+                titleID: "Magang Desainer Grafis",
+                companyEN: "Lampung Folk",
+                companyID: "Lampung Folk",
+                period: "Oct 2025 — Dec 2025",
+                pointsEN: [
+                    "Designed 50+ creative social media publications centered around local folklore, indigenous wisdom, and integrated Lampung regional tourism.",
+                    "Boosted monthly audience reach to 20,000 - 50,000 accounts via mobile-responsive and visually engaging social assets."
+                ],
+                pointsID: [
+                    "Mendesain 50+ materi kreatif bertema kearifan lokal, sejarah rakyat, dan info terpadu pariwisata Lampung.",
+                    "Mendongkrak tayangan konten bulanan hingga mencapai 20.000 - 50.000 akun melalui desain yang ramah seluler."
+                ]
+            },
+            5: {
+                icon: "fa-solid fa-bullhorn",
+                titleEN: "Official Public Relations Graphic Designer",
+                titleID: "Desainer Grafis Humas Resmi",
+                companyEN: "Public Relations Universitas Lampung",
+                companyID: "Humas Universitas Lampung",
+                period: "Jan 2023 — Dec 2025",
+                pointsEN: [
+                    "Engineered 1,000+ official visual communication assets to support university graduations, academic enrollments, and national events.",
+                    "Accelerated organic follower growth on the university's main Instagram channel to over 180,000 active followers."
+                ],
+                pointsID: [
+                    "Mendesain lebih dari 1.000+ aset visual resmi humas Unila guna mendukung rangkaian wisuda, promosi pendaftaran, dan acara nasional.",
+                    "Mengakselerasi pertumbuhan pengikut Instagram institusi secara organik hingga mencapai lebih dari 180.000 pengikut aktif."
+                ]
+            },
+            6: {
+                icon: "fa-solid fa-landmark",
+                titleEN: "Graphic Designer (MSIB Internship)",
+                titleID: "Desainer Grafis (Magang MSIB)",
+                companyEN: "Office of Communication & Informatics Pesawaran",
+                companyID: "Dinas Kominfo Kab. Pesawaran",
+                period: "Aug 2024 — Dec 2024",
+                pointsEN: [
+                    "Designed over 80+ public policy infographics, regional official notices, and governmental accountability reports.",
+                    "Directly contributed to Pesawaran Regency attaining the prestigious 'Informative Regency' national transparency distinction."
+                ],
+                pointsID: [
+                    "Mendesain lebih dari 80+ materi informasi kebijakan publik, pengumuman daerah, dan laporan akuntabilitas pemerintah daerah.",
+                    "Berpartisipasi aktif dalam mengantarkan Kabupaten Pesawaran memenangkan predikat bergengsi sebagai Kabupaten 'Informatif'."
+                ]
+            }
+        };
+
         const CATALOG_PORTFOLIO_ITEMS = [
             {
                 id: 1,
@@ -1193,8 +1573,8 @@
                 title: 'Personal Portfolio (Logo & Branding)',
                 descEN: 'A collection of logo designs, visual branding kits, and corporate identity assets developed for 40+ SMEs and institutional partners.',
                 descID: 'Koleksi karya desain logo, materi identitas visual, dan pedoman merek yang dikembangkan untuk 40+ UMKM dan mitra institusi.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1FIzLz0LuzKX11ppezYTbpokaLQLI-uha',
-                link: 'https://drive.google.com/drive/folders/1G7y39G0tULnYX46C8wNtiNXS2DwuLhlE'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1PzJ5Ms1XWEkbMpWaE-o21I0xeRVajSmC',
+                link: 'https://drive.google.com/open?id=1PzJ5Ms1XWEkbMpWaE-o21I0xeRVajSmC&usp=drive_copy'
             },
             {
                 id: 2,
@@ -1202,8 +1582,8 @@
                 title: 'Stand Banner Lampung',
                 descEN: 'Promotional stand banner layouts designed for regional marketing, official academic seminars, and tourism expos across Lampung Province.',
                 descID: 'Desain tata letak stand banner promosi untuk kegiatan seminar resmi, pemasaran daerah, dan pameran pariwisata terpadu di Lampung.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1sA5mLzfYuIE9PhhW1X4nVKbYme4Yg3Vp',
-                link: 'https://drive.google.com/drive/folders/1phFa5_Jj2hy_ez1N2gwlvM6UlBox_DUO'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1p5RtOk92de1IJBHdSUxdH98P0elnL37r',
+                link: 'https://drive.google.com/open?id=1p5RtOk92de1IJBHdSUxdH98P0elnL37r&usp=drive_copy'
             },
             {
                 id: 3,
@@ -1211,8 +1591,8 @@
                 title: 'BEM Unila Social Publications',
                 descEN: 'Digital communication assets, public infographics, and publication feeds designed for the Student Executive Board, reaching over 45k audiences.',
                 descID: 'Publikasi digital kreatif, infografis publik, dan materi visual media sosial untuk mendukung kegiatan BEM Universitas Lampung ke 45k+ audiens.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1ECcVvdD4-0twBXBxuqzflwnFxOQdfUZn',
-                link: 'https://drive.google.com/drive/folders/1z0Bf2da6u_Og78lJKh-LKFjfmjsFEnuE'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1InR4gsSyOQFurxZe9oDpkBqVfbmKjvd-',
+                link: 'https://drive.google.com/open?id=1InR4gsSyOQFurxZe9oDpkBqVfbmKjvd-&usp=drive_copy'
             },
             {
                 id: 4,
@@ -1220,8 +1600,8 @@
                 title: 'ASSETS Unila Branding Assets',
                 descEN: 'Integrated visual branding system for the Economics Education Student Association, driving a 50% increase in social media engagement.',
                 descID: 'Sistem penjenamaan visual digital terpadu untuk Himpunan Mahasiswa Pendidikan Ekonomi FKIP Unila yang meningkatkan engagement sebesar 50%.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1TQIh9ndM8Y_FqkFmzW4-OIdRDBmcZekJ',
-                link: 'https://drive.google.com/drive/folders/1chridBj7gSK6PWOVHTUhjUENfav1PjQn'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1W5g5r9_pI_uXYk5p8USXjlZ5Vsu1Ef7O',
+                link: 'https://drive.google.com/open?id=1W5g5r9_pI_uXYk5p8USXjlZ5Vsu1Ef7O&usp=drive_copy'
             },
             {
                 id: 5,
@@ -1229,8 +1609,8 @@
                 title: 'Dinas Kominfo Pesawaran Information Design',
                 descEN: 'Public policy infographics, official press releases, and regional information publications for Dinas Kominfo Pesawaran.',
                 descID: 'Infografis kebijakan publik, rilis pers kedinasan, dan media informasi pemerintah daerah Kabupaten Pesawaran.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1-F2YUCvO4C0EaXdv0GeL_u1q-JsdzspZ',
-                link: 'https://drive.google.com/drive/folders/1CgFFttETjXBkqcnEnivaSy69OMn2ADs5'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1PnSnu_hOmJ_IV1Z9pzZvGpLOLF4HpRwk',
+                link: 'https://drive.google.com/open?id=1PnSnu_hOmJ_IV1Z9pzZvGpLOLF4HpRwk&usp=drive_copy'
             },
             {
                 id: 6,
@@ -1238,8 +1618,8 @@
                 title: 'KKN Toto Katon Community Empowerment',
                 descEN: 'Comprehensive visual mapping, local village profile documentation, and social media outreach for the University Community Service program.',
                 descID: 'Pemetaan visual informasi publik, dokumentasi potensi lokal warga, dan pengelolaan media sosial untuk program KKN MBKM Desa Toto Katon.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1CMZyunMup-IOSJPufCCuxGWksEWmfYua',
-                link: 'https://drive.google.com/drive/folders/1hsp_uD9bPxxR6_7dwd9PkQStXomwW1g_?usp=drive_copy'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1lPBIsC5oVLv3bUC12zl12mEX4qyFdcp-',
+                link: 'https://drive.google.com/open?id=1lPBIsC5oVLv3bUC12zl12mEX4qyFdcp-&usp=drive_copy'
             },
             {
                 id: 7,
@@ -1247,8 +1627,8 @@
                 title: 'KSPM FKIP Unila Capital Market Graphics',
                 descEN: 'Over 80 educational designs on Sharia capital market investments, driving KSPM to secure the 3rd Best National GIS Award.',
                 descID: 'Lebih dari 80 desain media promosi investasi syariah dan edukasi bursa efek yang mengantarkan KSPM meraih Juara Nasional III GIS.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1iebPbmM0Ox9AFjisUOzSkSvpJbLnCrXu',
-                link: 'https://drive.google.com/drive/folders/17jhgRVpEw6orIQ3dd4pUFeFaCNua4hDj'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1-N7Spxezog17g6F_POGW5SC6-9qxL_Rk',
+                link: 'https://drive.google.com/open?id=1-N7Spxezog17g6F_POGW5SC6-9qxL_Rk&usp=drive_copy'
             },
             {
                 id: 8,
@@ -1256,8 +1636,8 @@
                 title: 'Harum Tour Travel Campaign',
                 descEN: 'Travel agency social feeds and advertising layouts for domestic destination packages, regional tours, and Umrah travel programs.',
                 descID: 'Desain materi promosi feed Instagram korporat untuk paket wisata, tur pariwisata domestik, dan perjalanan ibadah umroh.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1_-60Q5xb9BCtbvCw9JCcpS0pf7SGWgZF',
-                link: 'https://drive.google.com/drive/folders/1SsI20gn1OAeJxNoU9Jl_GMD1F5Rf5A52'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1ab9q3d4L7OBEspf-Rcc7HBRxBqCsl0ve',
+                link: 'https://drive.google.com/open?id=1ab9q3d4L7OBEspf-Rcc7HBRxBqCsl0ve&usp=drive_copy'
             },
             {
                 id: 9,
@@ -1265,8 +1645,8 @@
                 title: 'Ayah Ibu Heritage Product Design',
                 descEN: 'Heritage-inspired local product typography and packaging visuals celebrating culinary traditions and family values.',
                 descID: 'Desain visual kemasan produk lokal dengan sentuhan tipografi bertema kekeluargaan untuk memperluas jangkauan pasar.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1Nj9Sxqz9YIlyudGctUdUBxijYe22wAqO',
-                link: 'https://drive.google.com/drive/folders/1iSsQp06RiKr7bliePZiIEbJY5ZItdtMo'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1HWsMQTklq2uAQV47K_axhCGHWiKyDh6H',
+                link: 'https://drive.google.com/open?id=1HWsMQTklq2uAQV47K_axhCGHWiKyDh6H&usp=drive_copy'
             },
             {
                 id: 10,
@@ -1274,8 +1654,8 @@
                 title: 'Klik Berbagi Philanthropic Campaign',
                 descEN: 'Fundraising campaign designs, humanitarian documentation, and charity outreach collateral created to drive donor conversions.',
                 descID: 'Penyusunan desain kampanye donasi kemanusiaan, dokumentasi program filantropi, dan materi visual penyaluran bantuan.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1_bp0RwlARDIM1OPnMW7eWii9apJVhftp',
-                link: 'https://drive.google.com/drive/folders/1ND8ns4VhUq6em3rrPeBEbcKl9x9eDhUY?usp=drive_copy'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1sknZQkJ8mlT1-avfb30l_PLTdJ7QLRrS',
+                link: 'https://drive.google.com/open?id=1sknZQkJ8mlT1-avfb30l_PLTdJ7QLRrS&usp=drive_copy'
             },
             {
                 id: 11,
@@ -1283,8 +1663,8 @@
                 title: 'Humas Unila Institutional Feeds',
                 descEN: 'Over 1,000 official visual assets engineered for Universitas Lampung, expanding its official Instagram reach to over 180k+ accounts.',
                 descID: 'Lebih dari 1.000 aset komunikasi visual resmi Humas Universitas Lampung, memperluas pengikut Instagram hingga lebih dari 180k+ akun aktif.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1mFle7AZ77tErV-qOtaRXtulMhY_2QEm7',
-                link: 'https://drive.google.com/drive/folders/1YcTdCttXN9SzQMiAOD600zvx4NnGBOQ2?usp=drive_copy'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1aitIm8CWlQ7LrM9UGEwU1PzTZchOdbWG',
+                link: 'https://drive.google.com/open?id=1aitIm8CWlQ7LrM9UGEwU1PzTZchOdbWG&usp=drive_copy'
             },
             {
                 id: 12,
@@ -1292,8 +1672,8 @@
                 title: 'SRE Unila Decarbonisation Graphics',
                 descEN: 'Educational visual campaigns focusing on renewable energy adoption, environmental sustainability, and industrial decarbonization.',
                 descID: 'Kampanye visual edukasi tentang adopsi energi terbarukan, dekarbonisasi industri, dan pemeliharaan lingkungan hidup.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1YbgklKeI2c0UB00uXbd8IB2K7bSGaMu1',
-                link: 'https://drive.google.com/drive/folders/1PpDOATdUcCLW935rYhhAkPTy90X1rlyo?usp=drive_copy'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1UP-3ejrUzYaEu6rSJHkhmOE79Bg3oAIW',
+                link: 'https://drive.google.com/open?id=1UP-3ejrUzYaEu6rSJHkhmOE79Bg3oAIW&usp=drive_copy'
             },
             {
                 id: 13,
@@ -1301,8 +1681,8 @@
                 title: 'Lampung Folk Regional Identity',
                 descEN: '50+ layout concepts highlighting local folklore, heritage preservation, indigenous stories, and regional tourism in Lampung.',
                 descID: '50+ materi tata letak visual yang mengangkat kearifan lokal, sejarah masyarakat adat, serta potensi wisata unggulan Lampung.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1W5m1IK5zW9S-lZYWVVpq7Wx5Ys86uHNo',
-                link: 'https://drive.google.com/drive/folders/16J5V6-uHZGbxgp4M2ae2KjZbMZEHqJ4j?usp=drive_copy'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1gXOT7Vy2nvX6xC4DAtv2OHtcfB3QCE11',
+                link: 'https://drive.google.com/open?id=1gXOT7Vy2nvX6xC4DAtv2OHtcfB3QCE11&usp=drive_copy'
             },
             {
                 id: 14,
@@ -1310,8 +1690,8 @@
                 title: 'Fana Creative Agency Advertising Kits',
                 descEN: 'Commercial graphic designs and advertising kits produced to elevate digital performance and marketing campaigns for MSMEs.',
                 descID: 'Rangkaian materi desain grafis komersial untuk memperkuat promosi digital dan strategi penjualan mitra bisnis UMKM.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1S53qjaHZWWROvJtCqXfRSoYzFWCr_VS2',
-                link: 'https://drive.google.com/drive/folders/1grquPd-tRl_SZ21MYdw6zRDQzNWVzLl5?usp=drive_copy'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1kOnwCOypOIIYbW5EaYEsM9bToPYn4ryd',
+                link: 'https://drive.google.com/open?id=1kOnwCOypOIIYbW5EaYEsM9bToPYn4ryd&usp=drive_copy'
             },
             {
                 id: 15,
@@ -1319,8 +1699,8 @@
                 title: 'Economics Education Unila Department Media',
                 descEN: 'Departmental registration brochures, official curricula announcements, and integrated digital branding layouts.',
                 descID: 'Desain brosur pendaftaran mahasiswa baru, informasi agenda akademik perkuliahan, dan panduan visual program studi.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1-pOuPqrggGgnQcXwJvKaxEfaqmSqForq',
-                link: 'https://drive.google.com/drive/folders/1moNrudLz8aG8uUXPJ1ornCJ-ebl-dUHD?usp=drive_copy'
+                imgUrl: 'https://lh3.googleusercontent.com/d/1YkaoIbt0RNLoVCbyDOvckq_BpZJdv42s',
+                link: 'https://drive.google.com/open?id=1YkaoIbt0RNLoVCbyDOvckq_BPZJdv42s&usp=drive_copy'
             },
             {
                 id: 16,
@@ -1328,7 +1708,7 @@
                 title: 'Web Development & Interactive Systems',
                 descEN: 'Modern, fully responsive web applications and interactive systems built with clean semantic code, automated workflows, and fast visual components.',
                 descID: 'Aplikasi web interaktif responsif berbasis kode bersih, alur kerja otomatis, dan kinerja komponen visual cepat.',
-                imgUrl: 'https://lh3.googleusercontent.com/d/1ikIA8vc0g-RjhyT0GEpMk6NVa8DAQSO4',
+                imgUrl: 'https://lh3.googleusercontent.com/d/1WbB1Bt9Zvx2N4XA38o_7bLhAMkjSYqog',
                 link: 'https://rahmadnurkarim.github.io/portfolio/',
                 links: [
                     { name: 'FeedGrid', url: 'https://rahmadnurkarim.github.io/feedgrid/' },
@@ -1360,6 +1740,7 @@
             initBilingualEngine();
             setupLOBScrollProgress();
             setupKeyboardShortcuts();
+            setupTimelineScrollTracking();
             updateIndonesianClock();
             setInterval(updateIndonesianClock, 1000);
             startMultilingualGreetingCycle();
@@ -1369,6 +1750,92 @@
                 dismissIntroOverlay();
             }, 3000);
         });
+
+        function setupTimelineScrollTracking() {
+            function updateTimelineSection(containerId, baseTrackId, trackId, isDarkTheme) {
+                const container = document.getElementById(containerId);
+                const baseTrack = document.getElementById(baseTrackId);
+                const track = document.getElementById(trackId);
+                if (!container || !track) return;
+
+                const rows = container.querySelectorAll('.timeline-row-item');
+                if (rows.length === 0) return;
+
+                const firstNode = rows[0].querySelector('.timeline-bullet-node');
+                const lastNode = rows[rows.length - 1].querySelector('.timeline-bullet-node');
+                if (!firstNode || !lastNode) return;
+
+                const containerRect = container.getBoundingClientRect();
+                const firstNodeRect = firstNode.getBoundingClientRect();
+                const lastNodeRect = lastNode.getBoundingClientRect();
+
+                const firstCenterOffset = (firstNodeRect.top + firstNodeRect.height / 2) - containerRect.top;
+                const lastCenterOffset = (lastNodeRect.top + lastNodeRect.height / 2) - containerRect.top;
+                const totalTrackLength = Math.max(lastCenterOffset - firstCenterOffset, 0);
+
+                if (baseTrack) {
+                    baseTrack.style.top = `${firstCenterOffset.toFixed(1)}px`;
+                    baseTrack.style.height = `${totalTrackLength.toFixed(1)}px`;
+                }
+
+                track.style.top = `${firstCenterOffset.toFixed(1)}px`;
+
+                const windowHeight = window.innerHeight;
+                const triggerPoint = windowHeight * 0.65;
+                const firstCenterViewport = firstNodeRect.top + (firstNodeRect.height / 2);
+
+                let progress = 0;
+                if (firstCenterViewport < triggerPoint && totalTrackLength > 0) {
+                    const scrolledDistance = triggerPoint - firstCenterViewport;
+                    progress = Math.min(Math.max(scrolledDistance / totalTrackLength, 0), 1);
+                }
+
+                track.style.height = `${(progress * totalTrackLength).toFixed(1)}px`;
+
+                rows.forEach(row => {
+                    const node = row.querySelector('.timeline-bullet-node');
+                    const dot = row.querySelector('.timeline-bullet-dot');
+                    if (!node || !dot) return;
+
+                    const nodeCenter = node.getBoundingClientRect().top + (node.offsetHeight / 2);
+
+                    if (nodeCenter <= triggerPoint) {
+                        if (isDarkTheme) {
+                            node.classList.remove('border-white/20');
+                            node.classList.add('border-apple-blue-dark');
+                            dot.classList.remove('bg-white/30');
+                            dot.classList.add('bg-apple-blue-dark');
+                        } else {
+                            node.classList.remove('border-apple-hairline');
+                            node.classList.add('border-apple-blue');
+                            dot.classList.remove('bg-apple-hairline');
+                            dot.classList.add('bg-apple-blue');
+                        }
+                    } else {
+                        if (isDarkTheme) {
+                            node.classList.add('border-white/20');
+                            node.classList.remove('border-apple-blue-dark');
+                            dot.classList.add('bg-white/30');
+                            dot.classList.remove('bg-apple-blue-dark');
+                        } else {
+                            node.classList.add('border-apple-hairline');
+                            node.classList.remove('border-apple-blue');
+                            dot.classList.add('bg-apple-hairline');
+                            dot.classList.remove('bg-apple-blue');
+                        }
+                    }
+                });
+            }
+
+            function onScrollHandler() {
+                updateTimelineSection('experienceTimelineContainer', 'experienceBaseTrack', 'experienceProgressTrack', true);
+                updateTimelineSection('orgTimelineContainer', 'orgBaseTrack', 'orgProgressTrack', false);
+            }
+
+            window.addEventListener('scroll', onScrollHandler, { passive: true });
+            window.addEventListener('resize', onScrollHandler, { passive: true });
+            onScrollHandler();
+        }
 
         function startMultilingualGreetingCycle() {
             setInterval(() => {
@@ -1430,9 +1897,16 @@
                 return item.category === currentFilter;
             });
 
-            filtered.forEach(item => {
+            filtered.forEach((item, index) => {
                 const card = document.createElement('div');
-                card.className = "p-5 apple-glass-dark rounded-apple-lg flex flex-col justify-between overflow-hidden relative group font-sans hover:border-white/20 transition-all";
+                
+                // If this is the last item and sits alone on the 3-column desktop row, center it in col 2
+                let extraClasses = '';
+                if (index === filtered.length - 1 && (filtered.length % 3 === 1)) {
+                    extraClasses = ' lg:col-start-2';
+                }
+
+                card.className = "apple-glass-dark rounded-apple-lg flex flex-col justify-between overflow-hidden relative group font-sans border border-white/10 hover:border-apple-blue-dark/50 transition-all shadow-md" + extraClasses;
                 
                 const displayDesc = (currentLanguage === 'en') ? item.descEN : item.descID;
                 
@@ -1447,7 +1921,7 @@
 
                 let linksHTML = '';
                 if (item.links && item.links.length > 0) {
-                    linksHTML = `<div class="flex flex-wrap gap-1.5 mt-2.5">` + 
+                    linksHTML = `<div class="flex flex-wrap gap-1.5 mt-2">` + 
                         item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="apple-btn-active text-[10px] px-2 py-0.5 rounded-apple-pill bg-white/10 text-white hover:bg-white/20 inline-flex items-center gap-1"><i class="fa-solid fa-globe text-[8px]"></i> ${l.name}</a>`).join('') +
                         `</div>`;
                 }
@@ -1455,30 +1929,30 @@
                 const safeTitle = item.title.replace(/'/g, "\\'");
 
                 card.innerHTML = `
-                    <div class="flex flex-col gap-3 font-sans">
-                        <div onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="relative w-full aspect-video rounded-apple-md border border-white/10 overflow-hidden bg-black cursor-pointer shadow-md">
-                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center z-20 transition-all duration-200">
-                                <div class="w-8 h-8 rounded-full bg-apple-blue/20 text-apple-blue-dark flex items-center justify-center text-xs mb-1">
+                    <div class="flex flex-col font-sans">
+                        <div onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="relative w-full aspect-video border-b border-white/10 overflow-hidden bg-black cursor-pointer group/thumb">
+                            <img src="${item.imgUrl}" alt="${item.title}" class="w-full h-full object-cover object-center transition-transform duration-300 group-hover/thumb:scale-105" onerror="this.src='https://placehold.co/600x450/1e293b/ffffff?text=${encodeURIComponent(item.title)}'">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/thumb:opacity-100 flex flex-col items-center justify-center z-20 transition-all duration-200">
+                                <div class="w-8 h-8 rounded-full bg-apple-blue/30 text-white flex items-center justify-center text-xs mb-1 shadow-sm">
                                     <i class="fa-brands fa-google-drive"></i>
                                 </div>
-                                <span class="px-2.5 py-0.5 rounded-apple-pill bg-apple-blue text-white text-[10px] font-medium flex items-center gap-1">
+                                <span class="px-2.5 py-0.5 rounded-apple-pill bg-apple-blue text-white text-[10px] font-medium flex items-center gap-1 shadow-sm">
                                     ${(currentLanguage === 'en') ? 'Explore Project' : 'Lihat Desain'} <i class="fa-solid fa-chevron-right text-[7px]"></i>
                                 </span>
                             </div>
-                            <img src="${item.imgUrl}" alt="${item.title}" class="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-300 group-hover:scale-105" onerror="this.src='https://placehold.co/600x450/1e293b/ffffff?text=${encodeURIComponent(item.title)}'">
                         </div>
 
-                        <div class="flex flex-col gap-0.5 text-left">
+                        <div class="p-4 flex flex-col gap-1 text-left">
                             <span class="inline-block text-[9px] font-sans font-medium uppercase text-apple-blue-dark self-start">
                                 ${categoryLabel}
                             </span>
-                            <h3 class="text-xs sm:text-sm font-semibold text-white leading-snug mt-0.5">${item.title}</h3>
-                            <p class="text-[11px] text-apple-body-muted leading-relaxed font-normal">${displayDesc}</p>
+                            <h3 class="text-xs sm:text-sm font-semibold text-white leading-snug">${item.title}</h3>
+                            <p class="text-[11px] text-white/70 leading-relaxed font-normal">${displayDesc}</p>
                             ${linksHTML}
                         </div>
                     </div>
 
-                    <div class="mt-4 pt-2.5 border-t border-white/10 flex items-center justify-between font-sans">
+                    <div class="px-4 pb-3.5 pt-1 border-t border-white/10 flex items-center justify-between font-sans">
                         <button onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="text-xs text-apple-blue-dark font-medium hover:underline inline-flex items-center gap-1">
                             <span>${(currentLanguage === 'en') ? 'View Details' : 'Pratinjau Karya'}</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
                         </button>
@@ -1528,21 +2002,46 @@
             if (headerClock) headerClock.textContent = formattedDisplay;
         }
 
-        function switchCareerTab(id) {
-            document.querySelectorAll('.career-tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+        function openCareerModal(id) {
+            const data = CAREER_DATASET[id];
+            if (!data) return;
 
-            const activeBtn = document.getElementById(`careerTabBtn-${id}`);
-            if (activeBtn) {
-                activeBtn.classList.add('active');
+            const modal = document.getElementById('careerDetailModal');
+            const iconEl = document.getElementById('modalRoleIcon');
+            const titleEl = document.getElementById('modalCareerTitle');
+            const compEl = document.getElementById('modalCareerCompany');
+            const periodEl = document.getElementById('modalCareerPeriod');
+            const pointsEl = document.getElementById('modalCareerPoints');
+
+            const isEn = (currentLanguage === 'en');
+            if (iconEl) iconEl.innerHTML = `<i class="${data.icon}"></i>`;
+            if (titleEl) titleEl.textContent = isEn ? data.titleEN : data.titleID;
+            if (compEl) compEl.textContent = isEn ? data.companyEN : data.companyID;
+            if (periodEl) periodEl.textContent = data.period;
+
+            const points = isEn ? data.pointsEN : data.pointsID;
+            if (pointsEl) {
+                pointsEl.innerHTML = points.map(pt => `<li>${pt}</li>`).join('');
             }
 
-            document.querySelectorAll('.career-panel-item').forEach(panel => {
-                panel.classList.add('hidden');
-            });
-            const targetPanel = document.getElementById(`careerPanel-${id}`);
-            if (targetPanel) targetPanel.classList.remove('hidden');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeCareerModal() {
+            const modal = document.getElementById('careerDetailModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function handleCareerModalBackdrop(e) {
+            if (e.target.id === 'careerDetailModal') {
+                closeCareerModal();
+            }
         }
 
         function switchAchieveTab(tabName) {
@@ -1606,6 +2105,7 @@
                     if (portEl) portEl.scrollIntoView({ behavior: 'smooth' });
                 } else if (key === 'ESCAPE') {
                     closeDriveModal();
+                    closeCareerModal();
                     const academicModal = document.getElementById('academicDocsModal');
                     if (academicModal && !academicModal.classList.contains('hidden')) {
                         toggleAcademicDocsModal();
@@ -1614,7 +2114,6 @@
             });
         }
 
-        // Lanyard ID Badge Spring Drag Physics Engine
         function initLanyardDragPhysics() {
             const badge = document.getElementById('draggableHangingBadge');
             const strap = document.getElementById('lanyardStrapDynamic');
