@@ -126,15 +126,22 @@
             color: #ffffff !important;
         }
 
-        /* Lanyard & ID Card Styling */
+        /* Lanyard & ID Card Hardware Accelerated Styling */
         .hanging-card-wrapper {
             will-change: transform;
             touch-action: none;
             cursor: grab;
             transition: box-shadow 0.2s ease;
+            transform: translateZ(0);
+            backface-visibility: hidden;
         }
         .hanging-card-wrapper:active {
             cursor: grabbing;
+        }
+        .lanyard-strap-dynamic {
+            will-change: transform;
+            transform: translateX(-50%) translateZ(0);
+            backface-visibility: hidden;
         }
         .lanyard-ribbon {
             background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
@@ -292,7 +299,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
-                    <!-- LEFT COLUMN: Draggable Interactive Hanging Lanyard Photo Badge -->
+                    <!-- LEFT COLUMN: High Performance Interactive Hanging Lanyard Photo Badge -->
                     <div class="lg:col-span-5 flex justify-center items-center">
                         <div class="relative w-64 sm:w-72 aspect-[3/4.2] max-w-full flex flex-col items-center pt-8">
                             
@@ -314,12 +321,7 @@
                                     <div class="w-4.5 h-1 bg-neutral-300 rounded-full border border-neutral-500"></div>
                                 </div>
 
-                                <div class="flex items-center justify-between pb-2 border-b border-neutral-200 text-[10px] font-sans mt-3">
-                                    <span class="text-apple-blue font-bold tracking-wider uppercase">Official Portfolio ID</span>
-                                    <span class="text-neutral-500 font-mono font-semibold">2026-REG</span>
-                                </div>
-
-                                <div class="relative flex-1 w-full rounded-apple-md overflow-hidden bg-neutral-200 border border-neutral-300 my-2 shadow-inner group">
+                                <div class="relative flex-1 w-full rounded-apple-md overflow-hidden bg-neutral-200 border border-neutral-300 my-2 shadow-inner group mt-4">
                                     <img src="https://lh3.googleusercontent.com/d/1k_jBUWb8_TTAB4FpMQXdlE4sxvZwbiDP" 
                                          alt="Rahmad Nur Karim, S.Pd." 
                                          referrerpolicy="no-referrer"
@@ -659,12 +661,12 @@
 
                     <div class="space-y-3 relative z-10">
                         <!-- Item 1: Humas Unila (2023 — 2025) -->
-                        <div onclick="openCareerModal(5)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                        <div onclick="openCareerModal(5)" class="timeline-row-item group flex items-center gap-2.5 sm:gap-4 cursor-pointer">
                             <div class="timeline-bullet-node relative z-10 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3">
                                 <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                                     <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
                                         <i class="fa-solid fa-bullhorn text-[11px]"></i>
@@ -675,7 +677,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                <div class="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 shrink-0 pt-1 sm:pt-0 border-t border-white/5 sm:border-t-0">
                                     <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2023 — 2025</span>
@@ -687,13 +689,13 @@
                             </div>
                         </div>
 
-                        <!-- Item 2: Dinas Kominfo Pesawaran (MSIB) (Aug 2024 — Dec 2024) -->
-                        <div onclick="openCareerModal(6)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                        <!-- Item 2: Dinas Kominfo Pesawaran (MSIB) (Aug - Dec 2024) -->
+                        <div onclick="openCareerModal(6)" class="timeline-row-item group flex items-center gap-2.5 sm:gap-4 cursor-pointer">
                             <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3">
                                 <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                                     <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
                                         <i class="fa-solid fa-landmark text-[11px]"></i>
@@ -704,10 +706,10 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                <div class="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 shrink-0 pt-1 sm:pt-0 border-t border-white/5 sm:border-t-0">
                                     <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
-                                        <span>Aug 2024 — Dec 2024</span>
+                                        <span>Aug — Dec 2024</span>
                                     </div>
                                     <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
@@ -717,12 +719,12 @@
                         </div>
 
                         <!-- Item 3: Fana Creative Agency (Aug 2025 — Dec 2025) -->
-                        <div onclick="openCareerModal(3)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                        <div onclick="openCareerModal(3)" class="timeline-row-item group flex items-center gap-2.5 sm:gap-4 cursor-pointer">
                             <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3">
                                 <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                                     <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
                                         <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i>
@@ -733,10 +735,10 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                <div class="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 shrink-0 pt-1 sm:pt-0 border-t border-white/5 sm:border-t-0">
                                     <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
-                                        <span>Aug 2025 — Dec 2025</span>
+                                        <span>Aug — Dec 2025</span>
                                     </div>
                                     <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
@@ -746,12 +748,12 @@
                         </div>
 
                         <!-- Item 4: Lampung Folk (Oct 2025 — Dec 2025) -->
-                        <div onclick="openCareerModal(4)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                        <div onclick="openCareerModal(4)" class="timeline-row-item group flex items-center gap-2.5 sm:gap-4 cursor-pointer">
                             <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3">
                                 <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                                     <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
                                         <i class="fa-solid fa-feather-pointed text-[11px]"></i>
@@ -762,10 +764,10 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                <div class="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 shrink-0 pt-1 sm:pt-0 border-t border-white/5 sm:border-t-0">
                                     <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
-                                        <span>Oct 2025 — Dec 2025</span>
+                                        <span>Oct — Dec 2025</span>
                                     </div>
                                     <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
@@ -775,12 +777,12 @@
                         </div>
 
                         <!-- Item 5: Media, Admin & Research Assistant (2024 — 2026) -->
-                        <div onclick="openCareerModal(1)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                        <div onclick="openCareerModal(1)" class="timeline-row-item group flex items-center gap-2.5 sm:gap-4 cursor-pointer">
                             <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3">
                                 <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                                     <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
                                         <i class="fa-solid fa-laptop-file text-[11px]"></i>
@@ -791,7 +793,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                <div class="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 shrink-0 pt-1 sm:pt-0 border-t border-white/5 sm:border-t-0">
                                     <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2024 — 2026</span>
@@ -804,12 +806,12 @@
                         </div>
 
                         <!-- Item 6: Freelance Graphic Designer (2023 — Present) -->
-                        <div onclick="openCareerModal(2)" class="timeline-row-item group flex items-center gap-3 sm:gap-4 cursor-pointer">
+                        <div onclick="openCareerModal(2)" class="timeline-row-item group flex items-center gap-2.5 sm:gap-4 cursor-pointer">
                             <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3">
                                 <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                                     <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
                                         <i class="fa-solid fa-bezier-curve text-[11px]"></i>
@@ -820,7 +822,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                <div class="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 shrink-0 pt-1 sm:pt-0 border-t border-white/5 sm:border-t-0">
                                     <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2023 — Present</span>
@@ -1900,7 +1902,6 @@
             filtered.forEach((item, index) => {
                 const card = document.createElement('div');
                 
-                // If this is the last item and sits alone on the 3-column desktop row, center it in col 2
                 let extraClasses = '';
                 if (index === filtered.length - 1 && (filtered.length % 3 === 1)) {
                     extraClasses = ' lg:col-start-2';
@@ -2069,7 +2070,7 @@
                 const currentProgress = totalHeight > 0 ? (window.pageYOffset / totalHeight) * 100 : 0;
                 const progressTrack = document.getElementById('scrollProgressTrack');
                 if (progressTrack) progressTrack.style.width = `${currentProgress}%`;
-            });
+            }, { passive: true });
         }
 
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -2114,20 +2115,22 @@
             });
         }
 
+        /* HIGH-PERFORMANCE LANYARD DRAG PHYSICS (Auto-sleeps when stationary) */
         function initLanyardDragPhysics() {
             const badge = document.getElementById('draggableHangingBadge');
             const strap = document.getElementById('lanyardStrapDynamic');
             if (!badge) return;
 
             let isDragging = false;
+            let animId = null;
             let startX = 0, startY = 0;
             let currentX = 0, currentY = 0;
             let targetX = 0, targetY = 0;
             let rotation = 0;
-
             let vx = 0, vy = 0;
+
             const stiffness = 0.08;
-            const damping = 0.85;
+            const damping = 0.82;
 
             function updateTransforms(x, y, rot) {
                 badge.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) rotate(${rot.toFixed(2)}deg)`;
@@ -2137,8 +2140,20 @@
                 }
             }
 
+            function startPhysicsLoop() {
+                if (!animId) {
+                    animId = requestAnimationFrame(physicsLoop);
+                }
+            }
+
             function physicsLoop() {
-                if (!isDragging) {
+                if (isDragging) {
+                    currentX += (targetX - currentX) * 0.35;
+                    currentY += (targetY - currentY) * 0.35;
+                    rotation = currentX * 0.15;
+                    updateTransforms(currentX, currentY, rotation);
+                    animId = requestAnimationFrame(physicsLoop);
+                } else {
                     const fx = (0 - currentX) * stiffness;
                     const fy = (0 - currentY) * stiffness;
                     vx = (vx + fx) * damping;
@@ -2148,10 +2163,19 @@
                     rotation = currentX * 0.15;
 
                     updateTransforms(currentX, currentY, rotation);
+
+                    // Auto-sleep physics thread when badge comes to rest
+                    if (Math.abs(vx) < 0.01 && Math.abs(vy) < 0.01 && Math.abs(currentX) < 0.05 && Math.abs(currentY) < 0.05) {
+                        currentX = 0;
+                        currentY = 0;
+                        rotation = 0;
+                        updateTransforms(0, 0, 0);
+                        animId = null;
+                    } else {
+                        animId = requestAnimationFrame(physicsLoop);
+                    }
                 }
-                requestAnimationFrame(physicsLoop);
             }
-            requestAnimationFrame(physicsLoop);
 
             function onPointerDown(e) {
                 isDragging = true;
@@ -2160,6 +2184,7 @@
                 startX = clientX - currentX;
                 startY = clientY - currentY;
                 badge.style.boxShadow = '0 30px 60px -15px rgba(0, 0, 0, 0.3)';
+                startPhysicsLoop();
             }
 
             function onPointerMove(e) {
@@ -2169,12 +2194,6 @@
 
                 targetX = clientX - startX;
                 targetY = clientY - startY;
-
-                currentX += (targetX - currentX) * 0.4;
-                currentY += (targetY - currentY) * 0.4;
-                rotation = currentX * 0.18;
-
-                updateTransforms(currentX, currentY, rotation);
             }
 
             function onPointerUp() {
@@ -2183,10 +2202,11 @@
                 vx = (targetX - currentX) * 0.2;
                 vy = (targetY - currentY) * 0.2;
                 badge.style.boxShadow = '';
+                startPhysicsLoop();
             }
 
             badge.addEventListener('mousedown', onPointerDown);
-            window.addEventListener('mousemove', onPointerMove);
+            window.addEventListener('mousemove', onPointerMove, { passive: true });
             window.addEventListener('mouseup', onPointerUp);
 
             badge.addEventListener('touchstart', onPointerDown, { passive: true });
