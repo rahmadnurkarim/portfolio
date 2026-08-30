@@ -197,6 +197,84 @@
         .apple-radial-glow-dark {
             background: radial-gradient(circle at 50% 50%, rgba(0, 102, 204, 0.1) 0%, transparent 70%);
         }
+
+        /* =========================================================
+           MOBILE PERFORMANCE LAYER
+           Keeps the original layout, content, links and interactions
+           while reducing GPU/CPU work on phones.
+           ========================================================= */
+        html {
+            text-rendering: optimizeLegibility;
+        }
+
+        img {
+            content-visibility: auto;
+        }
+
+        @media (max-width: 767px) {
+            /* Avoid expensive backdrop-filter/blur compositing on mobile. */
+            .frosted-subnav,
+            .apple-glass-light,
+            .apple-glass-dark,
+            #mobileMenu,
+            #introOverlay .backdrop-blur-md,
+            .backdrop-blur-md,
+            .backdrop-blur-xl {
+                -webkit-backdrop-filter: none !important;
+                backdrop-filter: none !important;
+            }
+
+            /* Replace expensive large blur surfaces with lightweight static rendering. */
+            .blur-3xl {
+                filter: none !important;
+                -webkit-filter: none !important;
+            }
+
+            /* Keep the visual grid/glow, but stop continuously repainting it. */
+            .apple-subtle-grid-light,
+            .apple-subtle-grid-dark,
+            .apple-dot-grid-dark {
+                animation: none !important;
+            }
+
+            /* Intro animation is decorative; make it static on low-power/mobile devices. */
+            #introOverlay .animate-pulse,
+            #introOverlay .animate-ping,
+            #introOverlay .animate-bounce,
+            header .animate-pulse {
+                animation: none !important;
+            }
+
+            /* The badge remains draggable; only remove costly animated shadow transitions. */
+            .hanging-card-wrapper {
+                transition: none !important;
+            }
+
+            /* Reduce continuous transition work while scrolling. */
+            .transition-all {
+                transition-property: opacity, color, background-color, border-color !important;
+            }
+
+            /* Let the browser optimize isolated transforms. */
+            .hanging-card-wrapper,
+            .lanyard-strap-dynamic,
+            #scrollProgressTrack,
+            #experienceProgressTrack,
+            #orgProgressTrack {
+                contain: paint;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-white text-apple-ink selection:bg-apple-blue selection:text-white relative">
@@ -326,6 +404,8 @@
                                          alt="Rahmad Nur Karim, S.Pd." 
                                          referrerpolicy="no-referrer"
                                          loading="eager"
+                                         fetchpriority="high"
+                                         decoding="async"
                                          class="w-full h-full object-cover select-none pointer-events-none"
                                          onerror="if(!this.dataset.retry){this.dataset.retry='1'; this.src='https://drive.google.com/thumbnail?id=1k_jBUWb8_TTAB4FpMQXdlE4sxvZwbiDP&sz=w1000';}else{this.onerror=null; this.src='https://placehold.co/400x500/1e293b/ffffff?text=Rahmad+Nur+Karim';}">
                                     <div class="absolute bottom-2 right-2 bg-black/60 backdrop-blur-md text-white px-2 py-0.5 rounded-apple-pill text-[9px] font-sans flex items-center gap-1">
@@ -1750,7 +1830,7 @@
 
             setTimeout(() => {
                 dismissIntroOverlay();
-            }, 3000);
+            }, window.matchMedia('(max-width: 767px)').matches ? 1800 : 3000);
         });
 
         function setupTimelineScrollTracking() {
@@ -1829,9 +1909,17 @@
                 });
             }
 
+            let ticking = false;
+
             function onScrollHandler() {
-                updateTimelineSection('experienceTimelineContainer', 'experienceBaseTrack', 'experienceProgressTrack', true);
-                updateTimelineSection('orgTimelineContainer', 'orgBaseTrack', 'orgProgressTrack', false);
+                if (ticking) return;
+                ticking = true;
+
+                requestAnimationFrame(() => {
+                    updateTimelineSection('experienceTimelineContainer', 'experienceBaseTrack', 'experienceProgressTrack', true);
+                    updateTimelineSection('orgTimelineContainer', 'orgBaseTrack', 'orgProgressTrack', false);
+                    ticking = false;
+                });
             }
 
             window.addEventListener('scroll', onScrollHandler, { passive: true });
@@ -1863,6 +1951,18 @@
 
         function initBilingualEngine() {
             setLanguageProperties(currentLanguage);
+
+            /* Portfolio cards/images are below the fold. Let the first mobile
+               frame render before creating the catalog DOM. */
+            const renderCatalog = () => {
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(() => { window.__portfolioCatalogReady = true; renderDynamicCatalog(); }, { timeout: 1200 });
+                } else {
+                    setTimeout(() => { window.__portfolioCatalogReady = true; renderDynamicCatalog(); }, 120);
+                }
+            };
+
+            renderCatalog();
         }
 
         function toggleGlobalLanguageSuite() {
@@ -1886,7 +1986,11 @@
                 el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
             });
 
-            renderDynamicCatalog();
+            /* The catalog is scheduled by initBilingualEngine(). During a
+               language switch it is rendered immediately so the UI stays in sync. */
+            if (window.__portfolioCatalogReady) {
+                renderDynamicCatalog();
+            }
         }
 
         function renderDynamicCatalog() {
@@ -1932,7 +2036,7 @@
                 card.innerHTML = `
                     <div class="flex flex-col font-sans">
                         <div onclick="handleDriveLinkClick(event, '${item.link}', '${safeTitle}')" class="relative w-full aspect-video border-b border-white/10 overflow-hidden bg-black cursor-pointer group/thumb">
-                            <img src="${item.imgUrl}" alt="${item.title}" class="w-full h-full object-cover object-center transition-transform duration-300 group-hover/thumb:scale-105" onerror="this.src='https://placehold.co/600x450/1e293b/ffffff?text=${encodeURIComponent(item.title)}'">
+                            <img src="${item.imgUrl}" alt="${item.title}" loading="lazy" decoding="async" fetchpriority="low" class="w-full h-full object-cover object-center transition-transform duration-300 group-hover/thumb:scale-105" onerror="this.src='https://placehold.co/600x450/1e293b/ffffff?text=${encodeURIComponent(item.title)}'">
                             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/thumb:opacity-100 flex flex-col items-center justify-center z-20 transition-all duration-200">
                                 <div class="w-8 h-8 rounded-full bg-apple-blue/30 text-white flex items-center justify-center text-xs mb-1 shadow-sm">
                                     <i class="fa-brands fa-google-drive"></i>
@@ -2065,12 +2169,39 @@
         }
 
         function setupLOBScrollProgress() {
-            window.addEventListener('scroll', () => {
-                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const currentProgress = totalHeight > 0 ? (window.pageYOffset / totalHeight) * 100 : 0;
-                const progressTrack = document.getElementById('scrollProgressTrack');
-                if (progressTrack) progressTrack.style.width = `${currentProgress}%`;
+            const progressTrack = document.getElementById('scrollProgressTrack');
+            if (!progressTrack) return;
+
+            let ticking = false;
+            let totalHeight = 0;
+
+            const refreshMetrics = () => {
+                totalHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
+            };
+
+            const update = () => {
+                const currentProgress = totalHeight > 0
+                    ? (window.scrollY / totalHeight) * 100
+                    : 0;
+
+                progressTrack.style.width = `${Math.min(100, Math.max(0, currentProgress))}%`;
+                ticking = false;
+            };
+
+            const onScroll = () => {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(update);
+            };
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', () => {
+                refreshMetrics();
+                onScroll();
             }, { passive: true });
+
+            refreshMetrics();
+            update();
         }
 
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -2205,13 +2336,21 @@
                 startPhysicsLoop();
             }
 
-            badge.addEventListener('mousedown', onPointerDown);
-            window.addEventListener('mousemove', onPointerMove, { passive: true });
-            window.addEventListener('mouseup', onPointerUp);
-
-            badge.addEventListener('touchstart', onPointerDown, { passive: true });
-            window.addEventListener('touchmove', onPointerMove, { passive: true });
-            window.addEventListener('touchend', onPointerUp);
+            /* Pointer Events cover mouse + touch with one event path.
+               Fallback keeps compatibility with older browsers. */
+            if (window.PointerEvent) {
+                badge.addEventListener('pointerdown', onPointerDown);
+                window.addEventListener('pointermove', onPointerMove, { passive: true });
+                window.addEventListener('pointerup', onPointerUp, { passive: true });
+                window.addEventListener('pointercancel', onPointerUp, { passive: true });
+            } else {
+                badge.addEventListener('mousedown', onPointerDown);
+                window.addEventListener('mousemove', onPointerMove, { passive: true });
+                window.addEventListener('mouseup', onPointerUp);
+                badge.addEventListener('touchstart', onPointerDown, { passive: true });
+                window.addEventListener('touchmove', onPointerMove, { passive: true });
+                window.addEventListener('touchend', onPointerUp);
+            }
         }
 
         function copyToClipboardText(text) {
