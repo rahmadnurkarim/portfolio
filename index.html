@@ -143,22 +143,44 @@
 
         /* Calibrated Subtle Grid Textures & Ambient Gradients */
         .apple-subtle-grid-light {
-            background-size: 26px 26px;
+            position: absolute;
+            inset: -28px;
+            background-size: 28px 28px;
             background-image: 
                 linear-gradient(to right, rgba(0, 102, 204, 0.08) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(0, 102, 204, 0.08) 1px, transparent 1px);
+            will-change: transform;
+            animation: gridMoveGPU 8s linear infinite;
         }
 
         .apple-subtle-grid-dark {
+            position: absolute;
+            inset: -28px;
             background-size: 28px 28px;
             background-image: 
                 linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            will-change: transform;
+            animation: gridMoveGPU 8s linear infinite;
         }
 
         .apple-dot-grid-dark {
+            position: absolute;
+            inset: -24px;
             background-size: 24px 24px;
             background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            will-change: transform;
+            animation: gridMoveDotGPU 8s linear infinite;
+        }
+
+        @keyframes gridMoveGPU {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(28px, 28px, 0); }
+        }
+
+        @keyframes gridMoveDotGPU {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(24px, 24px, 0); }
         }
 
         .apple-radial-glow {
@@ -174,12 +196,12 @@
         }
     </style>
 </head>
-<body class="bg-white text-apple-ink selection:bg-apple-blue selection:text-white relative">
+<body class="bg-white text-apple-ink selection:bg-apple-blue selection:text-white relative overflow-x-hidden w-full max-w-full">
 
     <!-- INTRO OVERLAY WITH MULTILINGUAL GREETING CYCLE -->
-    <div id="introOverlay" class="fixed inset-0 z-[200] bg-black text-white flex flex-col items-center justify-center p-6 transition-opacity duration-700 select-none">
+    <div id="introOverlay" class="fixed inset-0 z-[200] bg-black text-white flex flex-col items-center justify-center p-6 transition-opacity duration-700 select-none overflow-hidden">
         <!-- Ambient Background Glow -->
-        <div class="absolute w-96 h-96 bg-apple-blue/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+        <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-apple-blue/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
         
         <div class="relative z-10 flex flex-col items-center text-center gap-5 max-w-md w-full">
             <div class="w-14 h-14 rounded-full bg-apple-tile-1 border border-white/20 flex items-center justify-center text-apple-blue-dark text-2xl font-light shadow-2xl apple-glass-dark">
@@ -267,8 +289,8 @@
     </header>
 
     <main class="w-full">
-        <section id="hero" class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 overflow-hidden border-b border-apple-hairline bg-apple-canvas">
-            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-75 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
+        <section id="hero" class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 overflow-hidden border-b border-apple-hairline bg-apple-canvas w-full max-w-full">
+            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
             <div class="absolute -top-24 left-1/4 w-[600px] h-[600px] apple-radial-glow-hero pointer-events-none blur-3xl"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -276,7 +298,7 @@
                     
                     <!-- LEFT COLUMN: Draggable Interactive Hanging Lanyard Photo Badge -->
                     <div class="lg:col-span-5 flex justify-center items-center">
-                        <div class="relative w-64 sm:w-72 aspect-[3/4.2] max-w-full flex flex-col items-center pt-8">
+                        <div class="relative w-64 sm:w-72 aspect-[3/4.2] max-w-[calc(100vw-2.5rem)] flex flex-col items-center pt-8">
                             
                             <!-- Dynamic Lanyard Strap Assembly -->
                             <div id="lanyardStrapDynamic" class="lanyard-strap-dynamic absolute -top-12 left-1/2 -translate-x-1/2 z-0 flex flex-col items-center pointer-events-none">
@@ -296,9 +318,8 @@
                                     <div class="w-4.5 h-1 bg-neutral-300 rounded-full border border-neutral-500"></div>
                                 </div>
 
-                                <div class="flex items-center justify-between pb-2 border-b border-neutral-200 text-[10px] font-sans mt-3">
+                                <div class="flex items-center justify-center pb-2 border-b border-neutral-200 text-[10px] font-sans mt-3 text-center">
                                     <span class="text-apple-blue font-bold tracking-wider uppercase">Official Portfolio ID</span>
-                                    <span class="text-neutral-500 font-mono font-semibold">2026-REG</span>
                                 </div>
 
                                 <div class="relative flex-1 w-full rounded-apple-md overflow-hidden bg-neutral-200 border border-neutral-300 my-2 shadow-inner group">
@@ -377,7 +398,7 @@
         </section>
 
         <section id="about" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-1 text-white border-b border-white/10 relative overflow-hidden">
-            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-75 [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_90%)]"></div>
+            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_90%)]"></div>
             <div class="absolute top-0 right-10 w-[420px] h-[420px] bg-apple-blue/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -567,7 +588,7 @@
         </section>
 
         <section id="education" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-parchment text-apple-ink border-b border-apple-hairline relative overflow-hidden">
-            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-75 [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"></div>
+            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1.5">
@@ -604,26 +625,8 @@
                             <span class="text-[10px] uppercase font-medium tracking-wider text-apple-blue-dark" data-en="Undergraduate Thesis Title" data-id="Judul Skripsi">Undergraduate Thesis Title</span>
                             <p class="text-xs sm:text-sm font-semibold text-white leading-snug" data-en="“The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”" data-id="“Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”">
                                 “The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”
-                            </p>
-                        </div>
-
-                        <div class="pt-1 flex flex-col sm:flex-row items-center justify-between gap-3">
-                            <div class="text-[11px] text-apple-ink-muted-48 font-sans">
-                                <i class="fa-solid fa-folder-open text-apple-blue mr-1"></i> Linked with Thesis, SINTA Journals, & Copyrights
-                            </div>
-                            <button onclick="toggleAcademicDocsModal()" class="apple-btn-active bg-apple-blue text-white px-4 py-1.5 rounded-apple-pill text-xs font-medium hover:bg-apple-blue-focus transition-colors flex items-center justify-center gap-2">
-                                <span data-en="Academic Documents" data-id="Dokumen Akademik">Academic Documents</span>
-                                <i class="fa-solid fa-chevron-down text-[10px]"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-2 text-white border-b border-white/10 relative overflow-hidden">
-            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-75 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_85%)]"></div>
+        <section id="experience" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-2 text-white border-b border-white/10 relative overflow-hidden w-full max-w-full">
+            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_85%)]"></div>
             <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[550px] h-[300px] apple-radial-glow-dark rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -646,23 +649,26 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
-                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-bullhorn text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
+                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-bullhorn text-[10px] sm:text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0">
+                                    <div class="flex flex-col min-w-0 flex-1">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Official PR Graphic Designer" data-id="Desainer Grafis Humas Resmi">Official PR Graphic Designer</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Public Relations Universitas Lampung • Institutional" data-id="Humas Universitas Lampung • Institusional">Public Relations Universitas Lampung • Institutional</p>
+                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
+                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Public Relations Universitas Lampung • Institutional" data-id="Humas Universitas Lampung • Institusional">Public Relations Universitas Lampung • Institutional</p>
+                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• 2023 — 2025</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
-                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
+                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2023 — 2025</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -675,23 +681,26 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
-                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-landmark text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
+                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-landmark text-[10px] sm:text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0">
+                                    <div class="flex flex-col min-w-0 flex-1">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (MSIB)" data-id="Desainer Grafis (Magang MSIB)">Graphic Designer (MSIB)</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Dinas Kominfo Pesawaran • Government" data-id="Dinas Kominfo Pesawaran • Pemerintah">Dinas Kominfo Pesawaran • Government</p>
+                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
+                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Dinas Kominfo Pesawaran • Government" data-id="Dinas Kominfo Pesawaran • Pemerintah">Dinas Kominfo Pesawaran • Government</p>
+                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• Aug — Dec 2024</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
-                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
+                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>Aug 2024 — Dec 2024</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -704,23 +713,26 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
-                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
+                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-[10px] sm:text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0">
+                                    <div class="flex flex-col min-w-0 flex-1">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (Full-Time)" data-id="Desainer Grafis (Kontrak Penuh)">Graphic Designer (Full-Time)</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Fana Creative Agency • Agency" data-id="Fana Creative Agency • Agensi">Fana Creative Agency • Agency</p>
+                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
+                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Fana Creative Agency • Agency" data-id="Fana Creative Agency • Agensi">Fana Creative Agency • Agency</p>
+                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• Aug — Dec 2025</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
-                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
+                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>Aug 2025 — Dec 2025</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -733,23 +745,26 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
-                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-feather-pointed text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
+                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-feather-pointed text-[10px] sm:text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0">
+                                    <div class="flex flex-col min-w-0 flex-1">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer Intern" data-id="Magang Desainer Grafis">Graphic Designer Intern</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Lampung Folk • Regional Media" data-id="Lampung Folk • Media Daerah">Lampung Folk • Regional Media</p>
+                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
+                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Lampung Folk • Regional Media" data-id="Lampung Folk • Media Daerah">Lampung Folk • Regional Media</p>
+                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• Oct — Dec 2025</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
-                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
+                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>Oct 2025 — Dec 2025</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -762,23 +777,26 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
-                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-laptop-file text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
+                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-laptop-file text-[10px] sm:text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0">
+                                    <div class="flex flex-col min-w-0 flex-1">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Media, Admin & Research Assistant" data-id="Asisten Media, Admin & Riset">Media, Admin & Research Assistant</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Economics Education FKIP Unila • Academic" data-id="Pendidikan Ekonomi FKIP Unila • Akademik">Economics Education FKIP Unila • Academic</p>
+                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
+                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Economics Education FKIP Unila • Academic" data-id="Pendidikan Ekonomi FKIP Unila • Akademik">Economics Education FKIP Unila • Academic</p>
+                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• 2024 — 2026</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
-                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
+                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2024 — 2026</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -791,23 +809,26 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
-                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-bezier-curve text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
+                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-bezier-curve text-[10px] sm:text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0">
+                                    <div class="flex flex-col min-w-0 flex-1">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Freelance Graphic Designer" data-id="Desainer Grafis Lepas">Freelance Graphic Designer</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Self-Employed (40+ Clients) • Independent" data-id="Wiraswasta Mandiri (40+ Klien) • Independen">Self-Employed (40+ Clients) • Independent</p>
+                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
+                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Self-Employed (40+ Clients) • Independent" data-id="Wiraswasta Mandiri (40+ Klien) • Independen">Self-Employed (40+ Clients) • Independent</p>
+                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• 2023 — Present</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
-                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
+                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2023 — Present</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -818,8 +839,8 @@
             </div>
         </section>
 
-        <section id="organizations" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-canvas text-apple-ink border-b border-apple-hairline relative overflow-hidden">
-            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-75 [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"></div>
+        <section id="organizations" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-canvas text-apple-ink border-b border-apple-hairline relative overflow-hidden w-full max-w-full">
+            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"></div>
 
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1">
@@ -977,7 +998,7 @@
         </section>
 
         <section id="portfolio" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-1 text-white border-b border-white/10 relative overflow-hidden">
-            <div class="absolute inset-0 apple-dot-grid-dark pointer-events-none opacity-75 [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_90%)]"></div>
+            <div class="absolute inset-0 apple-dot-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_90%)]"></div>
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[400px] apple-radial-glow pointer-events-none blur-3xl"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1000,7 +1021,7 @@
         </section>
 
         <section id="achievements" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-parchment text-apple-ink border-b border-apple-hairline relative overflow-hidden">
-            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-75 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
+            <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
@@ -1177,7 +1198,7 @@
         </section>
 
         <section id="contact" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-3 text-white border-b border-white/10 relative overflow-hidden">
-            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-75 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_90%)]"></div>
+            <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_90%)]"></div>
             <div class="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-apple-blue/15 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1556,7 +1577,7 @@
                 descEN: 'A collection of logo designs, visual branding kits, and corporate identity assets developed for 40+ SMEs and institutional partners.',
                 descID: 'Koleksi karya desain logo, materi identitas visual, dan pedoman merek yang dikembangkan untuk 40+ UMKM dan mitra institusi.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1PzJ5Ms1XWEkbMpWaE-o21I0xeRVajSmC',
-                link: 'https://drive.google.com/open?id=1PzJ5Ms1XWEkbMpWaE-o21I0xeRVajSmC&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1G7y39G0tULnYX46C8wNtiNXS2DwuLhlE&usp=drive_copy'
             },
             {
                 id: 2,
@@ -1565,7 +1586,7 @@
                 descEN: 'Promotional stand banner layouts designed for regional marketing, official academic seminars, and tourism expos across Lampung Province.',
                 descID: 'Desain tata letak stand banner promosi untuk kegiatan seminar resmi, pemasaran daerah, dan pameran pariwisata terpadu di Lampung.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1p5RtOk92de1IJBHdSUxdH98P0elnL37r',
-                link: 'https://drive.google.com/open?id=1p5RtOk92de1IJBHdSUxdH98P0elnL37r&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1phFa5_Jj2hy_ez1N2gwlvM6UlBox_DUO&usp=drive_copy'
             },
             {
                 id: 3,
@@ -1574,7 +1595,7 @@
                 descEN: 'Digital communication assets, public infographics, and publication feeds designed for the Student Executive Board, reaching over 45k audiences.',
                 descID: 'Publikasi digital kreatif, infografis publik, dan materi visual media sosial untuk mendukung kegiatan BEM Universitas Lampung ke 45k+ audiens.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1InR4gsSyOQFurxZe9oDpkBqVfbmKjvd-',
-                link: 'https://drive.google.com/open?id=1InR4gsSyOQFurxZe9oDpkBqVfbmKjvd-&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1z0Bf2da6u_Og78lJKh-LKFjfmjsFEnuE&usp=drive_copy'
             },
             {
                 id: 4,
@@ -1583,7 +1604,7 @@
                 descEN: 'Integrated visual branding system for the Economics Education Student Association, driving a 50% increase in social media engagement.',
                 descID: 'Sistem penjenamaan visual digital terpadu untuk Himpunan Mahasiswa Pendidikan Ekonomi FKIP Unila yang meningkatkan engagement sebesar 50%.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1W5g5r9_pI_uXYk5p8USXjlZ5Vsu1Ef7O',
-                link: 'https://drive.google.com/open?id=1W5g5r9_pI_uXYk5p8USXjlZ5Vsu1Ef7O&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1chridBj7gSK6PWOVHTUhjUENfav1PjQn&usp=drive_copy'
             },
             {
                 id: 5,
@@ -1592,7 +1613,7 @@
                 descEN: 'Public policy infographics, official press releases, and regional information publications for Dinas Kominfo Pesawaran.',
                 descID: 'Infografis kebijakan publik, rilis pers kedinasan, dan media informasi pemerintah daerah Kabupaten Pesawaran.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1PnSnu_hOmJ_IV1Z9pzZvGpLOLF4HpRwk',
-                link: 'https://drive.google.com/open?id=1PnSnu_hOmJ_IV1Z9pzZvGpLOLF4HpRwk&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1CgFFttETjXBkqcnEnivaSy69OMn2ADs5&usp=drive_copy'
             },
             {
                 id: 6,
@@ -1601,7 +1622,7 @@
                 descEN: 'Comprehensive visual mapping, local village profile documentation, and social media outreach for the University Community Service program.',
                 descID: 'Pemetaan visual informasi publik, dokumentasi potensi lokal warga, dan pengelolaan media sosial untuk program KKN MBKM Desa Toto Katon.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1lPBIsC5oVLv3bUC12zl12mEX4qyFdcp-',
-                link: 'https://drive.google.com/open?id=1lPBIsC5oVLv3bUC12zl12mEX4qyFdcp-&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1hsp_uD9bPxxR6_7dwd9PkQStXomwW1g_&usp=drive_copy'
             },
             {
                 id: 7,
@@ -1610,7 +1631,7 @@
                 descEN: 'Over 80 educational designs on Sharia capital market investments, driving KSPM to secure the 3rd Best National GIS Award.',
                 descID: 'Lebih dari 80 desain media promosi investasi syariah dan edukasi bursa efek yang mengantarkan KSPM meraih Juara Nasional III GIS.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1-N7Spxezog17g6F_POGW5SC6-9qxL_Rk',
-                link: 'https://drive.google.com/open?id=1-N7Spxezog17g6F_POGW5SC6-9qxL_Rk&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=17jhgRVpEw6orIQ3dd4pUFeFaCNua4hDj&usp=drive_copy'
             },
             {
                 id: 8,
@@ -1619,7 +1640,7 @@
                 descEN: 'Travel agency social feeds and advertising layouts for domestic destination packages, regional tours, and Umrah travel programs.',
                 descID: 'Desain materi promosi feed Instagram korporat untuk paket wisata, tur pariwisata domestik, dan perjalanan ibadah umroh.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1ab9q3d4L7OBEspf-Rcc7HBRxBqCsl0ve',
-                link: 'https://drive.google.com/open?id=1ab9q3d4L7OBEspf-Rcc7HBRxBqCsl0ve&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1SsI20gn1OAeJxNoU9Jl_GMD1F5Rf5A52&usp=drive_copy'
             },
             {
                 id: 9,
@@ -1628,7 +1649,7 @@
                 descEN: 'Heritage-inspired local product typography and packaging visuals celebrating culinary traditions and family values.',
                 descID: 'Desain visual kemasan produk lokal dengan sentuhan tipografi bertema kekeluargaan untuk memperluas jangkauan pasar.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1HWsMQTklq2uAQV47K_axhCGHWiKyDh6H',
-                link: 'https://drive.google.com/open?id=1HWsMQTklq2uAQV47K_axhCGHWiKyDh6H&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1iSsQp06RiKr7bliePZiIEbJY5ZItdtMo&usp=drive_copy'
             },
             {
                 id: 10,
@@ -1637,7 +1658,7 @@
                 descEN: 'Fundraising campaign designs, humanitarian documentation, and charity outreach collateral created to drive donor conversions.',
                 descID: 'Penyusunan desain kampanye donasi kemanusiaan, dokumentasi program filantropi, dan materi visual penyaluran bantuan.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1sknZQkJ8mlT1-avfb30l_PLTdJ7QLRrS',
-                link: 'https://drive.google.com/open?id=1sknZQkJ8mlT1-avfb30l_PLTdJ7QLRrS&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1ND8ns4VhUq6em3rrPeBEbcKl9x9eDhUY&usp=drive_copy'
             },
             {
                 id: 11,
@@ -1646,7 +1667,7 @@
                 descEN: 'Over 1,000 official visual assets engineered for Universitas Lampung, expanding its official Instagram reach to over 180k+ accounts.',
                 descID: 'Lebih dari 1.000 aset komunikasi visual resmi Humas Universitas Lampung, memperluas pengikut Instagram hingga lebih dari 180k+ akun aktif.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1aitIm8CWlQ7LrM9UGEwU1PzTZchOdbWG',
-                link: 'https://drive.google.com/open?id=1aitIm8CWlQ7LrM9UGEwU1PzTZchOdbWG&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1YcTdCttXN9SzQMiAOD600zvx4NnGBOQ2&usp=drive_copy'
             },
             {
                 id: 12,
@@ -1655,7 +1676,7 @@
                 descEN: 'Educational visual campaigns focusing on renewable energy adoption, environmental sustainability, and industrial decarbonization.',
                 descID: 'Kampanye visual edukasi tentang adopsi energi terbarukan, dekarbonisasi industri, dan pemeliharaan lingkungan hidup.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1UP-3ejrUzYaEu6rSJHkhmOE79Bg3oAIW',
-                link: 'https://drive.google.com/open?id=1UP-3ejrUzYaEu6rSJHkhmOE79Bg3oAIW&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1PpDOATdUcCLW935rYhhAkPTy90X1rlyo&usp=drive_copy'
             },
             {
                 id: 13,
@@ -1664,7 +1685,7 @@
                 descEN: '50+ layout concepts highlighting local folklore, heritage preservation, indigenous stories, and regional tourism in Lampung.',
                 descID: '50+ materi tata letak visual yang mengangkat kearifan lokal, sejarah masyarakat adat, serta potensi wisata unggulan Lampung.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1gXOT7Vy2nvX6xC4DAtv2OHtcfB3QCE11',
-                link: 'https://drive.google.com/open?id=1gXOT7Vy2nvX6xC4DAtv2OHtcfB3QCE11&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=16J5V6-uHZGbxgp4M2ae2KjZbMZEHqJ4j&usp=drive_copy'
             },
             {
                 id: 14,
@@ -1673,7 +1694,7 @@
                 descEN: 'Commercial graphic designs and advertising kits produced to elevate digital performance and marketing campaigns for MSMEs.',
                 descID: 'Rangkaian materi desain grafis komersial untuk memperkuat promosi digital dan strategi penjualan mitra bisnis UMKM.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1kOnwCOypOIIYbW5EaYEsM9bToPYn4ryd',
-                link: 'https://drive.google.com/open?id=1kOnwCOypOIIYbW5EaYEsM9bToPYn4ryd&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1grquPd-tRl_SZ21MYdw6zRDQzNWVzLl5&usp=drive_copy'
             },
             {
                 id: 15,
@@ -1682,7 +1703,7 @@
                 descEN: 'Departmental registration brochures, official curricula announcements, and integrated digital branding layouts.',
                 descID: 'Desain brosur pendaftaran mahasiswa baru, informasi agenda akademik perkuliahan, dan panduan visual program studi.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1YkaoIbt0RNLoVCbyDOvckq_BpZJdv42s',
-                link: 'https://drive.google.com/open?id=1YkaoIbt0RNLoVCbyDOvckq_BPZJdv42s&usp=drive_copy'
+                link: 'https://drive.google.com/open?id=1moNrudLz8aG8uUXPJ1ornCJ-ebl-dUHD&usp=drive_copy'
             },
             {
                 id: 16,
@@ -2108,8 +2129,8 @@
             let rotation = 0;
 
             let vx = 0, vy = 0;
-            const stiffness = 0.08;
-            const damping = 0.85;
+            const stiffness = 0.12;
+            const damping = 0.82;
 
             function updateTransforms(x, y, rot) {
                 badge.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) rotate(${rot.toFixed(2)}deg)`;
@@ -2152,8 +2173,8 @@
                 targetX = clientX - startX;
                 targetY = clientY - startY;
 
-                currentX += (targetX - currentX) * 0.4;
-                currentY += (targetY - currentY) * 0.4;
+                currentX += (targetX - currentX) * 0.6;
+                currentY += (targetY - currentY) * 0.6;
                 rotation = currentX * 0.18;
 
                 updateTransforms(currentX, currentY, rotation);
@@ -2162,13 +2183,13 @@
             function onPointerUp() {
                 if (!isDragging) return;
                 isDragging = false;
-                vx = (targetX - currentX) * 0.2;
-                vy = (targetY - currentY) * 0.2;
+                vx = (targetX - currentX) * 0.25;
+                vy = (targetY - currentY) * 0.25;
                 badge.style.boxShadow = '';
             }
 
             badge.addEventListener('mousedown', onPointerDown);
-            window.addEventListener('mousemove', onPointerMove);
+            window.addEventListener('mousemove', onPointerMove, { passive: true });
             window.addEventListener('mouseup', onPointerUp);
 
             badge.addEventListener('touchstart', onPointerDown, { passive: true });
