@@ -143,44 +143,40 @@
 
         /* Calibrated Subtle Grid Textures & Ambient Gradients */
         .apple-subtle-grid-light {
-            position: absolute;
-            inset: -28px;
-            background-size: 28px 28px;
+            background-size: 26px 26px;
             background-image: 
                 linear-gradient(to right, rgba(0, 102, 204, 0.08) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(0, 102, 204, 0.08) 1px, transparent 1px);
-            will-change: transform;
-            animation: gridMoveGPU 8s linear infinite;
+            animation: gridMoveLight 14s linear infinite;
         }
 
         .apple-subtle-grid-dark {
-            position: absolute;
-            inset: -28px;
             background-size: 28px 28px;
             background-image: 
                 linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-            will-change: transform;
-            animation: gridMoveGPU 8s linear infinite;
+            animation: gridMoveDark 16s linear infinite;
         }
 
         .apple-dot-grid-dark {
-            position: absolute;
-            inset: -24px;
             background-size: 24px 24px;
             background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            will-change: transform;
-            animation: gridMoveDotGPU 8s linear infinite;
+            animation: gridMoveDot 15s linear infinite;
         }
 
-        @keyframes gridMoveGPU {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(28px, 28px, 0); }
+        @keyframes gridMoveLight {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 26px 26px; }
         }
 
-        @keyframes gridMoveDotGPU {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(24px, 24px, 0); }
+        @keyframes gridMoveDark {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 28px 28px; }
+        }
+
+        @keyframes gridMoveDot {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 24px 24px; }
         }
 
         .apple-radial-glow {
@@ -196,12 +192,12 @@
         }
     </style>
 </head>
-<body class="bg-white text-apple-ink selection:bg-apple-blue selection:text-white relative overflow-x-hidden w-full max-w-full">
+<body class="bg-white text-apple-ink selection:bg-apple-blue selection:text-white relative">
 
     <!-- INTRO OVERLAY WITH MULTILINGUAL GREETING CYCLE -->
-    <div id="introOverlay" class="fixed inset-0 z-[200] bg-black text-white flex flex-col items-center justify-center p-6 transition-opacity duration-700 select-none overflow-hidden">
+    <div id="introOverlay" class="fixed inset-0 z-[200] bg-black text-white flex flex-col items-center justify-center p-6 transition-opacity duration-700 select-none">
         <!-- Ambient Background Glow -->
-        <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-apple-blue/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+        <div class="absolute w-96 h-96 bg-apple-blue/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
         
         <div class="relative z-10 flex flex-col items-center text-center gap-5 max-w-md w-full">
             <div class="w-14 h-14 rounded-full bg-apple-tile-1 border border-white/20 flex items-center justify-center text-apple-blue-dark text-2xl font-light shadow-2xl apple-glass-dark">
@@ -289,7 +285,7 @@
     </header>
 
     <main class="w-full">
-        <section id="hero" class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 overflow-hidden border-b border-apple-hairline bg-apple-canvas w-full max-w-full">
+        <section id="hero" class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 overflow-hidden border-b border-apple-hairline bg-apple-canvas">
             <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
             <div class="absolute -top-24 left-1/4 w-[600px] h-[600px] apple-radial-glow-hero pointer-events-none blur-3xl"></div>
 
@@ -298,7 +294,7 @@
                     
                     <!-- LEFT COLUMN: Draggable Interactive Hanging Lanyard Photo Badge -->
                     <div class="lg:col-span-5 flex justify-center items-center">
-                        <div class="relative w-64 sm:w-72 aspect-[3/4.2] max-w-[calc(100vw-2.5rem)] flex flex-col items-center pt-8">
+                        <div class="relative w-64 sm:w-72 aspect-[3/4.2] max-w-full flex flex-col items-center pt-8">
                             
                             <!-- Dynamic Lanyard Strap Assembly -->
                             <div id="lanyardStrapDynamic" class="lanyard-strap-dynamic absolute -top-12 left-1/2 -translate-x-1/2 z-0 flex flex-col items-center pointer-events-none">
@@ -318,8 +314,9 @@
                                     <div class="w-4.5 h-1 bg-neutral-300 rounded-full border border-neutral-500"></div>
                                 </div>
 
-                                <div class="flex items-center justify-center pb-2 border-b border-neutral-200 text-[10px] font-sans mt-3 text-center">
+                                <div class="flex items-center justify-between pb-2 border-b border-neutral-200 text-[10px] font-sans mt-3">
                                     <span class="text-apple-blue font-bold tracking-wider uppercase">Official Portfolio ID</span>
+                                    <span class="text-neutral-500 font-mono font-semibold">2026-REG</span>
                                 </div>
 
                                 <div class="relative flex-1 w-full rounded-apple-md overflow-hidden bg-neutral-200 border border-neutral-300 my-2 shadow-inner group">
@@ -625,7 +622,25 @@
                             <span class="text-[10px] uppercase font-medium tracking-wider text-apple-blue-dark" data-en="Undergraduate Thesis Title" data-id="Judul Skripsi">Undergraduate Thesis Title</span>
                             <p class="text-xs sm:text-sm font-semibold text-white leading-snug" data-en="“The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”" data-id="“Pengaruh Literasi Keuangan dan Pendapatan Orang Tua terhadap Gaya Hidup melalui Perilaku Manajemen Keuangan Siswa”">
                                 “The Influence of Financial Literacy and Parental Income on Lifestyle Through Students’ Financial Management Behaviour”
-        <section id="experience" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-2 text-white border-b border-white/10 relative overflow-hidden w-full max-w-full">
+                            </p>
+                        </div>
+
+                        <div class="pt-1 flex flex-col sm:flex-row items-center justify-between gap-3">
+                            <div class="text-[11px] text-apple-ink-muted-48 font-sans">
+                                <i class="fa-solid fa-folder-open text-apple-blue mr-1"></i> Linked with Thesis, SINTA Journals, & Copyrights
+                            </div>
+                            <button onclick="toggleAcademicDocsModal()" class="apple-btn-active bg-apple-blue text-white px-4 py-1.5 rounded-apple-pill text-xs font-medium hover:bg-apple-blue-focus transition-colors flex items-center justify-center gap-2">
+                                <span data-en="Academic Documents" data-id="Dokumen Akademik">Academic Documents</span>
+                                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-2 text-white border-b border-white/10 relative overflow-hidden">
             <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_85%)]"></div>
             <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[550px] h-[300px] apple-radial-glow-dark rounded-full blur-3xl pointer-events-none"></div>
 
@@ -649,26 +664,23 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
-                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-bullhorn text-[10px] sm:text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-bullhorn text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0 flex-1">
+                                    <div class="flex flex-col min-w-0">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Official PR Graphic Designer" data-id="Desainer Grafis Humas Resmi">Official PR Graphic Designer</h3>
-                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
-                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Public Relations Universitas Lampung • Institutional" data-id="Humas Universitas Lampung • Institusional">Public Relations Universitas Lampung • Institutional</p>
-                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• 2023 — 2025</span>
-                                        </div>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Public Relations Universitas Lampung • Institutional" data-id="Humas Universitas Lampung • Institusional">Public Relations Universitas Lampung • Institutional</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
-                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2023 — 2025</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -681,26 +693,23 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
-                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-landmark text-[10px] sm:text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-landmark text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0 flex-1">
+                                    <div class="flex flex-col min-w-0">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (MSIB)" data-id="Desainer Grafis (Magang MSIB)">Graphic Designer (MSIB)</h3>
-                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
-                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Dinas Kominfo Pesawaran • Government" data-id="Dinas Kominfo Pesawaran • Pemerintah">Dinas Kominfo Pesawaran • Government</p>
-                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• Aug — Dec 2024</span>
-                                        </div>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Dinas Kominfo Pesawaran • Government" data-id="Dinas Kominfo Pesawaran • Pemerintah">Dinas Kominfo Pesawaran • Government</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
-                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>Aug 2024 — Dec 2024</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -713,26 +722,23 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
-                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-wand-magic-sparkles text-[10px] sm:text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0 flex-1">
+                                    <div class="flex flex-col min-w-0">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (Full-Time)" data-id="Desainer Grafis (Kontrak Penuh)">Graphic Designer (Full-Time)</h3>
-                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
-                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Fana Creative Agency • Agency" data-id="Fana Creative Agency • Agensi">Fana Creative Agency • Agency</p>
-                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• Aug — Dec 2025</span>
-                                        </div>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Fana Creative Agency • Agency" data-id="Fana Creative Agency • Agensi">Fana Creative Agency • Agency</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
-                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>Aug 2025 — Dec 2025</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -745,26 +751,23 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
-                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-feather-pointed text-[10px] sm:text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-feather-pointed text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0 flex-1">
+                                    <div class="flex flex-col min-w-0">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer Intern" data-id="Magang Desainer Grafis">Graphic Designer Intern</h3>
-                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
-                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Lampung Folk • Regional Media" data-id="Lampung Folk • Media Daerah">Lampung Folk • Regional Media</p>
-                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• Oct — Dec 2025</span>
-                                        </div>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Lampung Folk • Regional Media" data-id="Lampung Folk • Media Daerah">Lampung Folk • Regional Media</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
-                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>Oct 2025 — Dec 2025</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -777,26 +780,23 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
-                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-laptop-file text-[10px] sm:text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-laptop-file text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0 flex-1">
+                                    <div class="flex flex-col min-w-0">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Media, Admin & Research Assistant" data-id="Asisten Media, Admin & Riset">Media, Admin & Research Assistant</h3>
-                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
-                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Economics Education FKIP Unila • Academic" data-id="Pendidikan Ekonomi FKIP Unila • Akademik">Economics Education FKIP Unila • Academic</p>
-                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• 2024 — 2026</span>
-                                        </div>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Economics Education FKIP Unila • Academic" data-id="Pendidikan Ekonomi FKIP Unila • Akademik">Economics Education FKIP Unila • Academic</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
-                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2024 — 2026</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -809,26 +809,23 @@
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
                             </div>
 
-                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-2 sm:gap-3 min-w-0">
-                                <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
-                                        <i class="fa-solid fa-bezier-curve text-[10px] sm:text-[11px]"></i>
+                            <div class="flex-1 bg-[#141416] hover:bg-[#1a1a1e] border border-white/10 hover:border-apple-blue-dark/40 p-2.5 sm:p-3 rounded-apple-md transition-all shadow-sm flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 border border-white/10 text-white/80 group-hover:text-apple-blue-dark group-hover:border-apple-blue-dark/50 group-hover:bg-apple-blue/10 flex items-center justify-center text-xs shrink-0 transition-colors">
+                                        <i class="fa-solid fa-bezier-curve text-[11px]"></i>
                                     </div>
-                                    <div class="flex flex-col min-w-0 flex-1">
+                                    <div class="flex flex-col min-w-0">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Freelance Graphic Designer" data-id="Desainer Grafis Lepas">Freelance Graphic Designer</h3>
-                                        <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 min-w-0">
-                                            <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate" data-en="Self-Employed (40+ Clients) • Independent" data-id="Wiraswasta Mandiri (40+ Klien) • Independen">Self-Employed (40+ Clients) • Independent</p>
-                                            <span class="text-[9px] text-white/50 font-mono sm:hidden">• 2023 — Present</span>
-                                        </div>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Self-Employed (40+ Clients) • Independent" data-id="Wiraswasta Mandiri (40+ Klien) • Independen">Self-Employed (40+ Clients) • Independent</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 ml-1">
-                                    <div class="hidden sm:flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
+                                <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                                    <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-white/60">
                                         <i class="fa-regular fa-calendar text-[9px] text-white/40"></i>
                                         <span>2023 — Present</span>
                                     </div>
-                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm shrink-0">
+                                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 border border-white/10 text-white/70 group-hover:bg-apple-blue group-hover:text-white group-hover:border-apple-blue flex items-center justify-center transition-all shadow-sm">
                                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                                     </div>
                                 </div>
@@ -839,7 +836,7 @@
             </div>
         </section>
 
-        <section id="organizations" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-canvas text-apple-ink border-b border-apple-hairline relative overflow-hidden w-full max-w-full">
+        <section id="organizations" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-canvas text-apple-ink border-b border-apple-hairline relative overflow-hidden">
             <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"></div>
 
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -2129,8 +2126,8 @@
             let rotation = 0;
 
             let vx = 0, vy = 0;
-            const stiffness = 0.12;
-            const damping = 0.82;
+            const stiffness = 0.08;
+            const damping = 0.85;
 
             function updateTransforms(x, y, rot) {
                 badge.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) rotate(${rot.toFixed(2)}deg)`;
@@ -2173,8 +2170,8 @@
                 targetX = clientX - startX;
                 targetY = clientY - startY;
 
-                currentX += (targetX - currentX) * 0.6;
-                currentY += (targetY - currentY) * 0.6;
+                currentX += (targetX - currentX) * 0.4;
+                currentY += (targetY - currentY) * 0.4;
                 rotation = currentX * 0.18;
 
                 updateTransforms(currentX, currentY, rotation);
@@ -2183,13 +2180,13 @@
             function onPointerUp() {
                 if (!isDragging) return;
                 isDragging = false;
-                vx = (targetX - currentX) * 0.25;
-                vy = (targetY - currentY) * 0.25;
+                vx = (targetX - currentX) * 0.2;
+                vy = (targetY - currentY) * 0.2;
                 badge.style.boxShadow = '';
             }
 
             badge.addEventListener('mousedown', onPointerDown);
-            window.addEventListener('mousemove', onPointerMove, { passive: true });
+            window.addEventListener('mousemove', onPointerMove);
             window.addEventListener('mouseup', onPointerUp);
 
             badge.addEventListener('touchstart', onPointerDown, { passive: true });
