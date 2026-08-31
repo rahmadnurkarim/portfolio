@@ -275,6 +275,38 @@
                 transition-duration: 0.01ms !important;
             }
         }
+    
+        /* FINAL TYPOGRAPHY SYSTEM
+           Consistent corporate hierarchy across desktop and mobile. */
+        :root {
+            --type-body: 14px;
+            --type-small: 12px;
+            --type-label: 11px;
+            --type-h3: 18px;
+            --type-h2: 30px;
+        }
+        body {
+            font-size: var(--type-body);
+            line-height: 1.6;
+        }
+        p { line-height: 1.65; }
+        input, textarea, button, select { font-family: inherit; }
+        h2 { line-height: 1.2; }
+        h3 { line-height: 1.3; }
+        /* Remove the scattered 6–13px text scale from content/UI copy. */
+        [class*="text-[6px]"],
+        [class*="text-[7px]"],
+        [class*="text-[8px]"],
+        [class*="text-[9px]"] { font-size: 10px !important; }
+        [class*="text-[10px]"],
+        [class*="text-[11px]"] { font-size: 12px !important; }
+        [class*="text-[13px]"] { font-size: 14px !important; }
+        /* Preserve intentionally tiny icon glyphs. */
+        i[class*="text-[6px]"],
+        i[class*="text-[7px]"],
+        i[class*="text-[8px]"],
+        i[class*="text-[9px]"] { font-size: 9px !important; }
+
     </style>
 </head>
 <body class="bg-white text-apple-ink selection:bg-apple-blue selection:text-white relative">
@@ -365,7 +397,7 @@
             <a href="#organizations" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="Organizations" data-id="Organisasi">Organizations</a>
             <a href="#portfolio" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="Portfolio" data-id="Portofolio">Portfolio</a>
             <a href="#achievements" onclick="closeMobileMenuSuite()" class="block py-1 hover:text-apple-blue" data-en="Credentials" data-id="Prestasi & Sertifikasi">Credentials</a>
-            <a href="#contact" onclick="closeMobileMenuSuite()" class="block py-1 text-apple-blue font-semibold" data-en="Contact Direct" data-id="Kontak Langsung">Contact Direct</a>
+            <a href="#contact" onclick="closeMobileMenuSuite()" class="block py-1 text-apple-blue font-semibold" data-en="Contact" data-id="Kontak">Contact</a>
         </div>
     </header>
 
@@ -439,13 +471,13 @@
                             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-apple-ink tracking-apple-hero leading-tight">
                                 Rahmad Nur Karim
                             </h1>
-                            <p class="text-lg sm:text-xl font-display font-medium text-apple-ink-muted-48" data-en="Bachelor of Economics Education (S.Pd.)" data-id="Sarjana Pendidikan (S.Pd.)">
-                                Bachelor of Economics Education (S.Pd.)
+                            <p class="text-lg sm:text-xl font-display font-medium text-apple-ink-muted-48" data-en="Bachelor’s Degree in Economics Education (S.Pd.)" data-id="Sarjana Pendidikan Ekonomi (S.Pd.)">
+                                Bachelor's Degree in Economics Education (S.Pd.)
                             </p>
                         </div>
 
-                        <p class="text-sm sm:text-base text-apple-ink-muted-80 leading-relaxed max-w-2xl font-normal" data-en="Specializing in Brand Identity, Visual Strategy, AI-Assisted Workflows, Web Development, and Google Apps Script Automation." data-id="Spesialisasi dalam Identitas Merek, Strategi Visual, Alur Kerja Berbasis AI, Pengembangan Web, dan Otomasi Google Apps Script.">
-                            Specializing in Brand Identity, Visual Strategy, AI-Assisted Workflows, Web Development, and Google Apps Script Automation.
+                        <p class="text-sm sm:text-base text-apple-ink-muted-80 leading-relaxed max-w-2xl font-normal" data-en="Specializing in brand identity, visual strategy, AI-assisted workflows, web development, and Google Apps Script automation." data-id="Berfokus pada identitas merek, strategi visual, alur kerja berbasis AI, pengembangan web, dan otomasi Google Apps Script.">
+                            Specializing in brand identity, visual strategy, AI-assisted workflows, web development, and Google Apps Script automation.
                         </p>
 
                         <div class="flex flex-wrap items-center gap-3 pt-2">
@@ -491,14 +523,14 @@
                     <div class="lg:col-span-5 p-5 sm:p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-4 border border-white/10">
                         <div class="space-y-3 text-white/80 text-xs sm:text-sm leading-relaxed font-normal tracking-apple-tight">
                             <p id="about-desc1" 
-                               data-en="Economics Education Graduate from Universitas Lampung with cross-disciplinary professional experience in Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflows, Prompt Engineering, and Web Development across government institutions, higher education, creative agencies, organizations, and independent projects." 
-                               data-id="Lulusan Pendidikan Ekonomi Universitas Lampung dengan pengalaman profesional lintas bidang dalam Desain Kreatif, Komunikasi Digital, Identitas Merek, Administrasi, Alur Kerja AI, Rekayasa Prompt, dan Pengembangan Web melalui institusi pemerintah, perguruan tinggi, agensi kreatif, organisasi, dan proyek independen.">
-                                Economics Education Graduate from Universitas Lampung with cross-disciplinary professional experience in Creative Design, Digital Communication, Branding, Administration, AI-Assisted Workflows, Prompt Engineering, and Web Development across government institutions, higher education, creative agencies, organizations, and independent projects.
+                               data-en="Economics Education graduate from Universitas Lampung with cross-disciplinary experience in creative design, digital communication, branding, administration, AI-assisted workflows, prompt engineering, and web development across government institutions, higher education, creative agencies, organizations, and independent projects." 
+                               data-id="Lulusan Pendidikan Ekonomi Universitas Lampung dengan pengalaman lintas bidang dalam desain kreatif, komunikasi digital, identitas merek, administrasi, alur kerja berbasis AI, rekayasa prompt, dan pengembangan web di lingkungan pemerintahan, perguruan tinggi, agensi kreatif, organisasi, dan proyek independen.">
+                                Economics Education graduate from Universitas Lampung with cross-disciplinary experience in creative design, digital communication, branding, administration, AI-assisted workflows, prompt engineering, and web development across government institutions, higher education, creative agencies, organizations, and independent projects.
                             </p>
                             <p id="about-desc2" 
-                               data-en="Proven track record of producing 2,000+ visual communication assets, handling 300+ data and administrative documents, and building 6+ digital projects based on AI, web, and automation." 
-                               data-id="Berpengalaman menghasilkan lebih dari 2.000 aset komunikasi visual, menangani lebih dari 300 data dan dokumen administratif, serta membangun lebih dari 6 proyek digital berbasis AI, web, dan otomatisasi.">
-                                Proven track record of producing 2,000+ visual communication assets, handling 300+ data and administrative documents, and building 6+ digital projects based on AI, web, and automation.
+                               data-en="Proven experience producing 2,000+ visual communication assets, managing 300+ data and administrative documents, and developing 6+ digital projects using AI, web technologies, and automation." 
+                               data-id="Berpengalaman menghasilkan lebih dari 2.000 aset komunikasi visual, mengelola lebih dari 300 data dan dokumen administratif, serta mengembangkan lebih dari 6 proyek digital berbasis AI, web, dan otomatisasi.">
+                                Proven experience producing 2,000+ visual communication assets, managing 300+ data and administrative documents, and developing 6+ digital projects using AI, web technologies, and automation.
                             </p>
 
                             <div class="pt-1 flex flex-wrap gap-1.5 font-sans">
@@ -520,15 +552,15 @@
                         <div class="grid grid-cols-3 gap-2.5 pt-3 border-t border-white/10 text-center font-sans">
                             <div class="flex flex-col bg-white/[0.04] border border-white/10 p-2.5 sm:p-3 rounded-apple-md">
                                 <span class="text-xl sm:text-2xl font-semibold text-white">2000+</span>
-                                <span data-en="Visual Assets" data-id="Aset Desain" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Visual Assets</span>
+                                <span data-en="Visual Assets" data-id="Aset Visual" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Visual Assets</span>
                             </div>
                             <div class="flex flex-col bg-white/[0.04] border border-white/10 p-2.5 sm:p-3 rounded-apple-md">
                                 <span class="text-xl sm:text-2xl font-semibold text-white">40+</span>
-                                <span data-en="Clients Served" data-id="Klien Puas" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Clients Served</span>
+                                <span data-en="Clients Served" data-id="Klien Dilayani" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Clients Served</span>
                             </div>
                             <div class="flex flex-col bg-white/[0.04] border border-white/10 p-2.5 sm:p-3 rounded-apple-md">
                                 <span class="text-xl sm:text-2xl font-semibold text-white">3.4</span>
-                                <span data-en="Years of Study" data-id="Masa Studi (Th)" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Years of Study</span>
+                                <span data-en="Years of Study" data-id="Masa Studi" class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 mt-0.5">Years of Study</span>
                             </div>
                         </div>
                     </div>
@@ -547,7 +579,7 @@
                             <div class="p-2 sm:p-2.5 rounded-apple-md bg-white/[0.03] border border-white/5 space-y-1.5">
                                 <div class="flex items-center justify-between">
                                     <span class="text-[10px] font-semibold text-apple-blue-dark uppercase tracking-wider flex items-center gap-1.5">
-                                        <i class="fa-solid fa-palette text-[10px]"></i> <span data-en="Design & Video Production" data-id="Desain Grafis & Video">Design &amp; Video Production</span>
+                                        <i class="fa-solid fa-palette text-[10px]"></i> <span data-en="Design & Video Production" data-id="Desain & Produksi Video">Design &amp; Video Production</span>
                                     </span>
                                 </div>
                                 <div class="flex flex-wrap gap-1.5 text-[10px]">
@@ -581,7 +613,7 @@
                             <div class="p-2 sm:p-2.5 rounded-apple-md bg-white/[0.03] border border-white/5 space-y-1.5">
                                 <div class="flex items-center justify-between">
                                     <span class="text-[10px] font-semibold text-apple-blue-dark uppercase tracking-wider flex items-center gap-1.5">
-                                        <i class="fa-solid fa-code text-[10px]"></i> <span data-en="Web Development & Code" data-id="Pengembangan Web & Kode">Web Development &amp; Code</span>
+                                        <i class="fa-solid fa-code text-[10px]"></i> <span data-en="Web Development & Code" data-id="Pengembangan Web & Pemrograman">Web Development &amp; Code</span>
                                     </span>
                                 </div>
                                 <div class="flex flex-wrap gap-1.5 text-[10px]">
@@ -631,7 +663,7 @@
                             <div class="p-2 sm:p-2.5 rounded-apple-md bg-white/[0.03] border border-white/5 space-y-1.5">
                                 <div class="flex items-center justify-between">
                                     <span class="text-[10px] font-semibold text-apple-blue-dark uppercase tracking-wider flex items-center gap-1.5">
-                                        <i class="fa-solid fa-folder-tree text-[10px]"></i> <span data-en="Productivity, Data & Social Management" data-id="Produktivitas, Data & Media Sosial">Productivity, Data &amp; Social Management</span>
+                                        <i class="fa-solid fa-folder-tree text-[10px]"></i> <span data-en="Productivity, Data & Social Media" data-id="Produktivitas, Data & Media Sosial">Productivity, Data &amp; Social Management</span>
                                     </span>
                                 </div>
                                 <div class="flex flex-wrap gap-1.5 text-[10px]">
@@ -672,7 +704,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="edu-tag" data-en="ACADEMIC RECORD" data-id="REKAM AKADEMIK" class="text-xs font-semibold uppercase tracking-wider text-apple-blue">ACADEMIC RECORD</span>
-                    <h2 id="edu-title" data-en="Education & Academic Background" data-id="Pendidikan & Rekam Akademik" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Education & Academic Background</h2>
+                    <h2 id="edu-title" data-en="Education & Academic Background" data-id="Pendidikan & Latar Belakang Akademik" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Education & Academic Background</h2>
                 </div>
 
                 <div class="apple-glass-light rounded-apple-lg p-6 max-w-4xl mx-auto shadow-apple-card border border-apple-hairline">
@@ -684,7 +716,7 @@
                             </div>
                             <div class="flex flex-col">
                                 <h3 class="text-lg font-display font-semibold text-apple-ink leading-tight">UNIVERSITAS LAMPUNG</h3>
-                                <p class="text-xs font-medium text-apple-blue mt-0.5" data-en="Bachelor of Economics Education (S.Pd.)" data-id="S1 Pendidikan Ekonomi (S.Pd.)">Bachelor of Economics Education (S.Pd.)</p>
+                                <p class="text-xs font-medium text-apple-blue mt-0.5" data-en="Bachelor's Degree in Economics Education (S.Pd.)" data-id="S1 Pendidikan Ekonomi (S.Pd.)">Bachelor's Degree in Economics Education (S.Pd.)</p>
                             </div>
                         </div>
                         <div class="shrink-0 font-sans">
@@ -695,8 +727,8 @@
                     <div class="space-y-4 pt-5 font-sans">
                         <div class="p-4 rounded-apple-md bg-apple-pearl border border-apple-hairline flex items-center gap-3">
                             <div class="text-apple-blue text-xl font-bold shrink-0"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <p class="text-xs sm:text-sm text-apple-ink font-normal leading-relaxed" data-en="Completed Bachelor degree in <strong class='font-semibold text-apple-blue'>3.4 years</strong> with <strong class='font-semibold'>Cum Laude</strong> honors and a <strong class='font-semibold text-apple-blue'>GPA of 3.90 / 4.00</strong>." data-id="Menyelesaikan studi Sarjana dalam waktu <strong class='font-semibold text-apple-blue'>3,4 tahun</strong> dengan predikat <strong class='font-semibold'>Cum Laude</strong> dan <strong class='font-semibold text-apple-blue'>IPK 3,90 / 4,00</strong>.">
-                                Completed Bachelor degree in <strong class="font-semibold text-apple-blue">3.4 years</strong> with <strong class="font-semibold">Cum Laude</strong> honors and a <strong class="font-semibold text-apple-blue">GPA of 3.90 / 4.00</strong>.
+                            <p class="text-xs sm:text-sm text-apple-ink font-normal leading-relaxed" data-en="Completed a Bachelor’s degree in <strong class='font-semibold text-apple-blue'>3.4 years</strong> with <strong class='font-semibold'>Cum Laude</strong> distinction and a <strong class='font-semibold text-apple-blue'>GPA of 3.90 / 4.00</strong>." data-id="Menyelesaikan studi Sarjana dalam <strong class='font-semibold text-apple-blue'>3,4 tahun</strong> dengan predikat <strong class='font-semibold'>Cum Laude</strong> dan <strong class='font-semibold text-apple-blue'>IPK 3,90 / 4,00</strong>.">
+                                Completed a Bachelor’s degree in <strong class="font-semibold text-apple-blue">3.4 years</strong> with <strong class="font-semibold">Cum Laude</strong> honors and a <strong class="font-semibold text-apple-blue">GPA of 3.90 / 4.00</strong>.
                             </p>
                         </div>
 
@@ -729,7 +761,7 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="exp-tag" data-en="WORK EXPERIENCE" data-id="PENGALAMAN KERJA" class="text-xs font-semibold uppercase tracking-wider text-apple-blue-dark">WORK EXPERIENCE</span>
-                    <h2 id="exp-title" data-en="Professional & Career Experience" data-id="Pengalaman Karir & Industri" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Professional & Career Experience</h2>
+                    <h2 id="exp-title" data-en="Professional Experience" data-id="Pengalaman Profesional" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Professional Experience</h2>
                 </div>
 
                 <!-- Connected Timeline List -->
@@ -752,8 +784,8 @@
                                         <i class="fa-solid fa-bullhorn text-[11px]"></i>
                                     </div>
                                     <div class="flex flex-col min-w-0">
-                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Official PR Graphic Designer" data-id="Desainer Grafis Humas Resmi">Official PR Graphic Designer</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Public Relations Universitas Lampung • Institutional" data-id="Humas Universitas Lampung • Institusional">Public Relations Universitas Lampung • Institutional</p>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Official Public Relations Graphic Designer" data-id="Desainer Grafis Humas">Official Public Relations Graphic Designer</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Public Relations Universitas Lampung • Higher Education" data-id="Humas Universitas Lampung • Perguruan Tinggi">Public Relations Universitas Lampung • Higher Education</p>
                                     </div>
                                 </div>
 
@@ -781,8 +813,8 @@
                                         <i class="fa-solid fa-landmark text-[11px]"></i>
                                     </div>
                                     <div class="flex flex-col min-w-0">
-                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (MSIB)" data-id="Desainer Grafis (Magang MSIB)">Graphic Designer (MSIB)</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Dinas Kominfo Pesawaran • Government" data-id="Dinas Kominfo Pesawaran • Pemerintah">Dinas Kominfo Pesawaran • Government</p>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (MSIB Internship)" data-id="Desainer Grafis (Magang MSIB)">Graphic Designer (MSIB Internship)</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Dinas Kominfo Pesawaran • Government" data-id="Dinas Kominfo Pesawaran • Pemerintah Daerah">Dinas Kominfo Pesawaran • Government</p>
                                     </div>
                                 </div>
 
@@ -810,8 +842,8 @@
                                         <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i>
                                     </div>
                                     <div class="flex flex-col min-w-0">
-                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (Full-Time)" data-id="Desainer Grafis (Kontrak Penuh)">Graphic Designer (Full-Time)</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Fana Creative Agency • Agency" data-id="Fana Creative Agency • Agensi">Fana Creative Agency • Agency</p>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Graphic Designer (Full-Time Contract)" data-id="Desainer Grafis (Kontrak)">Graphic Designer (Full-Time Contract)</h3>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Fana Creative Agency • Creative Agency" data-id="Fana Creative Agency • Agensi Kreatif">Fana Creative Agency • Creative Agency</p>
                                     </div>
                                 </div>
 
@@ -856,7 +888,7 @@
                             </div>
                         </div>
 
-                        <!-- Item 5: Media, Admin & Research Assistant (2024 — 2026) -->
+                        <!-- Item 5: Media, Administration & Research Assistant (2024 — 2026) -->
                         <div onclick="openCareerModal(1)" class="timeline-row-item group flex items-center gap-2.5 sm:gap-4 cursor-pointer">
                             <div class="timeline-bullet-node w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#141416] border border-white/20 flex items-center justify-center shrink-0 transition-colors duration-200">
                                 <div class="timeline-bullet-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/30 transition-colors duration-200"></div>
@@ -868,7 +900,7 @@
                                         <i class="fa-solid fa-laptop-file text-[11px]"></i>
                                     </div>
                                     <div class="flex flex-col min-w-0">
-                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Media, Admin & Research Assistant" data-id="Asisten Media, Admin & Riset">Media, Admin & Research Assistant</h3>
+                                        <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Media, Administration & Research Assistant" data-id="Asisten Media, Admin & Riset">Media, Administration & Research Assistant</h3>
                                         <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Economics Education FKIP Unila • Academic" data-id="Pendidikan Ekonomi FKIP Unila • Akademik">Economics Education FKIP Unila • Academic</p>
                                     </div>
                                 </div>
@@ -898,7 +930,7 @@
                                     </div>
                                     <div class="flex flex-col min-w-0">
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-white group-hover:text-apple-blue-dark transition-colors truncate" data-en="Freelance Graphic Designer" data-id="Desainer Grafis Lepas">Freelance Graphic Designer</h3>
-                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Self-Employed (40+ Clients) • Independent" data-id="Wiraswasta Mandiri (40+ Klien) • Independen">Self-Employed (40+ Clients) • Independent</p>
+                                        <p class="text-[10px] sm:text-[11px] text-apple-ink-muted-48 truncate mt-0.5" data-en="Independent • 40+ Clients" data-id="Mandiri • 40+ Klien">Independent • 40+ Clients</p>
                                     </div>
                                 </div>
 
@@ -924,7 +956,7 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1">
                     <span id="org-tag" data-en="ORGANIZATIONAL EXPERIENCE" data-id="PENGALAMAN ORGANISASI" class="text-xs font-semibold uppercase tracking-wider text-apple-blue">ORGANIZATIONAL EXPERIENCE</span>
-                    <h2 id="org-title" data-en="Leadership & Organizational Contribution" data-id="Kepemimpinan & Kontribusi Organisasi" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Leadership & Organizational Contribution</h2>
+                    <h2 id="org-title" data-en="Leadership & Organizational Experience" data-id="Kepemimpinan & Pengalaman Organisasi" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Leadership & Organizational Experience</h2>
                 </div>
 
                 <div id="orgTimelineContainer" class="relative w-full font-sans">
@@ -1058,7 +1090,7 @@
                                     <div class="flex flex-col min-w-0 text-left">
                                         <span class="text-[8px] sm:text-[9px] font-sans font-semibold uppercase tracking-wider text-apple-blue" data-en="COMMUNITY SERVICE" data-id="PENGABDIAN MASYARAKAT">COMMUNITY SERVICE</span>
                                         <h3 class="text-xs sm:text-[13px] font-semibold text-apple-ink group-hover:text-apple-blue transition-colors truncate">KKN MBKM Desa Toto Katon</h3>
-                                        <span class="text-[10px] sm:text-[11px] font-medium text-apple-ink-muted-48 mt-0.5" data-en="Media & Doc. Staff" data-id="Staf Media & Dokumentasi">Media & Doc. Staff</span>
+                                        <span class="text-[10px] sm:text-[11px] font-medium text-apple-ink-muted-48 mt-0.5" data-en="Media & Documentation Staff" data-id="Staf Media & Dokumentasi">Media & Documentation Staff</span>
                                     </div>
                                 </div>
 
@@ -1083,11 +1115,11 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="port-section-tag" class="text-xs font-semibold uppercase tracking-wider text-apple-blue-dark" data-en="VISUAL GALLERY" data-id="GALERI VISUAL">VISUAL GALLERY</span>
-                    <h2 id="port-section-title" data-en="Graphic Layouts & Brand Identities" data-id="Tata Letak Grafis & Identitas Visual" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Graphic Layouts & Brand Identities</h2>
+                    <h2 id="port-section-title" data-en="Graphic Design & Brand Identity" data-id="Desain Grafis & Identitas Merek" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Graphic Design & Brand Identity</h2>
                 </div>
 
                 <div class="flex overflow-x-auto sm:flex-wrap sm:justify-center items-center gap-2 mb-8 font-sans pb-2 scrollbar-none snap-x w-full">
-                    <button onclick="filterPortfolio('all')" id="filter-all" class="portfolio-filter-btn active apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-dark text-white transition-colors" data-en="All Projects" data-id="Semua Desain">All Projects</button>
+                    <button onclick="filterPortfolio('all')" id="filter-all" class="portfolio-filter-btn active apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-dark text-white transition-colors" data-en="All Projects" data-id="Semua Proyek">All Projects</button>
                     <button onclick="filterPortfolio('branding')" id="filter-branding" class="portfolio-filter-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-dark text-white transition-colors" data-en="Branding & Logo" data-id="Branding & Logo">Branding & Logo</button>
                     <button onclick="filterPortfolio('social')" id="filter-social" class="portfolio-filter-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-dark text-white transition-colors" data-en="Social Media" data-id="Media Sosial">Social Media</button>
                     <button onclick="filterPortfolio('webdev')" id="filter-webdev" class="portfolio-filter-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-dark text-white transition-colors" data-en="Web Development" data-id="Pengembangan Web">Web Development</button>
@@ -1105,14 +1137,14 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="ach-section-tag" data-en="HONORS & CREDENTIALS" data-id="PENGHARGAAN & PENGAKUAN" class="text-xs font-semibold uppercase tracking-wider text-apple-blue">HONORS & CREDENTIALS</span>
-                    <h2 id="ach-section-title" data-en="Awards, Certifications & Credentials" data-id="Penghargaan, Sertifikasi & Pengakuan" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Awards, Certifications & Credentials</h2>
+                    <h2 id="ach-section-title" data-en="Awards, Certifications & Professional Recognition" data-id="Penghargaan, Sertifikasi & Pengakuan Profesional" class="text-2xl sm:text-3xl font-display font-semibold text-apple-ink tracking-apple-tight">Awards, Certifications & Professional Recognition</h2>
                 </div>
 
                 <div class="flex overflow-x-auto sm:flex-wrap sm:justify-center items-center gap-2 mb-6 font-sans pb-2 scrollbar-none snap-x w-full">
-                    <button onclick="switchAchieveTab('competitions')" id="achTab-competitions" class="achieve-tab-btn active apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="01 — Competitions" data-id="01 — Kompetisi Nasional">01 — Competitions</button>
-                    <button onclick="switchAchieveTab('certifications')" id="achTab-certifications" class="achieve-tab-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="02 — Certifications" data-id="02 — Sertifikasi Formal">02 — Certifications</button>
-                    <button onclick="switchAchieveTab('recognition')" id="achTab-recognition" class="achieve-tab-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="03 — Jury & Speaker" data-id="03 — Peran Profesional">03 — Jury & Speaker</button>
-                    <button onclick="switchAchieveTab('scholarships')" id="achTab-scholarships" class="achieve-tab-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="04 — Scholarships" data-id="04 — Beasiswa & Program">04 — Scholarships</button>
+                    <button onclick="switchAchieveTab('competitions')" id="achTab-competitions" class="achieve-tab-btn active apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="01 — Competitions" data-id="01 — Kompetisi">01 — Competitions</button>
+                    <button onclick="switchAchieveTab('certifications')" id="achTab-certifications" class="achieve-tab-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="02 — Certifications" data-id="02 — Sertifikasi">02 — Certifications</button>
+                    <button onclick="switchAchieveTab('recognition')" id="achTab-recognition" class="achieve-tab-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="03 — Jury & Speaker" data-id="03 — Juri & Pemateri">03 — Jury & Speaker</button>
+                    <button onclick="switchAchieveTab('scholarships')" id="achTab-scholarships" class="achieve-tab-btn apple-btn-active shrink-0 snap-start px-3.5 py-1.5 rounded-apple-pill text-xs font-medium apple-glass-light text-apple-ink border border-apple-hairline transition-colors" data-en="04 — Scholarships & Programs" data-id="04 — Beasiswa & Program">04 — Scholarships & Programs</button>
                 </div>
 
                 <div class="max-w-4xl mx-auto w-full font-sans">
@@ -1123,7 +1155,7 @@
                                 <div class="w-8 h-8 rounded-full bg-apple-blue/10 text-apple-blue flex items-center justify-center text-sm shrink-0">
                                     <i class="fa-solid fa-trophy"></i>
                                 </div>
-                                <h3 class="text-base font-display font-semibold text-apple-ink" data-en="National Level Competitions" data-id="Kompetisi Tingkat Nasional">National Level Competitions</h3>
+                                <h3 class="text-base font-display font-semibold text-apple-ink" data-en="National Competitions" data-id="Kompetisi Nasional">National Competitions</h3>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-apple-ink">
                                 <div class="p-3.5 rounded-apple-md bg-apple-pearl border border-apple-hairline flex flex-col gap-0.5">
@@ -1160,7 +1192,7 @@
                                 <div class="w-8 h-8 rounded-full bg-apple-blue/10 text-apple-blue flex items-center justify-center text-sm shrink-0">
                                     <i class="fa-solid fa-certificate"></i>
                                 </div>
-                                <h3 class="text-base font-display font-semibold text-apple-ink" data-en="Formal Certifications & Credentials" data-id="Sertifikasi & Kredensial Formal">Formal Certifications & Credentials</h3>
+                                <h3 class="text-base font-display font-semibold text-apple-ink" data-en="Formal Certifications" data-id="Sertifikasi Formal">Formal Certifications</h3>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div class="p-3.5 rounded-apple-md bg-apple-pearl border border-apple-hairline flex flex-col justify-between">
@@ -1170,7 +1202,7 @@
                                         <p class="text-[11px] text-apple-ink-muted-48 mt-0.5">Universitas Lampung · 2025</p>
                                     </div>
                                     <a href="https://drive.google.com/drive/folders/1wjlPjCTf58tktigu_yGJk3HHol9-Bamb?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat TOEFL Standard')" class="text-xs text-apple-blue font-medium hover:underline mt-3 inline-flex items-center gap-1">
-                                        <span data-en="View Certificate" data-id="Lihat Kredensial">View Certificate</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                                        <span data-en="View Certificate" data-id="Lihat Sertifikat">View Certificate</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
                                     </a>
                                 </div>
 
@@ -1181,7 +1213,7 @@
                                         <p class="text-[11px] text-apple-ink-muted-48 mt-0.5">Humas Universitas Lampung · 2025</p>
                                     </div>
                                     <a href="https://drive.google.com/drive/folders/1OZGdb8IAwf0vLoC5SJTqJQRyOdrcI0je?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat PR & Media Relations')" class="text-xs text-apple-blue font-medium hover:underline mt-3 inline-flex items-center gap-1">
-                                        <span data-en="View Certificate" data-id="Lihat Kredensial">View Certificate</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                                        <span data-en="View Certificate" data-id="Lihat Sertifikat">View Certificate</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
                                     </a>
                                 </div>
 
@@ -1192,7 +1224,7 @@
                                         <p class="text-[11px] text-apple-ink-muted-48 mt-0.5">Kemendikbudristek RI · 2024</p>
                                     </div>
                                     <a href="https://drive.google.com/drive/folders/1LxMRNnzRp2ENHvZWuNtyJfbiKw8PkfEy?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat MSIB Kemendikbudristek')" class="text-xs text-apple-blue font-medium hover:underline mt-3 inline-flex items-center gap-1">
-                                        <span data-en="View Certificate" data-id="Lihat Kredensial">View Certificate</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                                        <span data-en="View Certificate" data-id="Lihat Sertifikat">View Certificate</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
                                     </a>
                                 </div>
 
@@ -1203,7 +1235,7 @@
                                         <p class="text-[11px] text-apple-ink-muted-48 mt-0.5">UKM Penelitian Universitas Lampung · 2022</p>
                                     </div>
                                     <a href="https://drive.google.com/drive/folders/1MXQloB9L9eYrIbEd9ZnjHxaVPoVhZyQg?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat Color Theory & Visual')" class="text-xs text-apple-blue font-medium hover:underline mt-3 inline-flex items-center gap-1">
-                                        <span data-en="View Certificate" data-id="Lihat Kredensial">View Certificate</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                                        <span data-en="View Certificate" data-id="Lihat Sertifikat">View Certificate</span> <i class="fa-solid fa-chevron-right text-[8px]"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1216,7 +1248,7 @@
                                 <div class="w-8 h-8 rounded-full bg-apple-blue/10 text-apple-blue flex items-center justify-center text-sm shrink-0">
                                     <i class="fa-solid fa-microphone"></i>
                                 </div>
-                                <h3 class="text-base font-display font-semibold text-apple-ink" data-en="Professional Experience (Jury & Speaker)" data-id="Pengakuan Profesional (Juri & Pemateri)">Professional Experience (Jury & Speaker)</h3>
+                                <h3 class="text-base font-display font-semibold text-apple-ink" data-en="Professional Recognition (Jury & Speaker)" data-id="Pengakuan Profesional (Juri & Pemateri)">Professional Recognition (Jury & Speaker)</h3>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div class="p-3.5 rounded-apple-md bg-apple-pearl border border-apple-hairline flex flex-col gap-2">
@@ -1224,8 +1256,8 @@
                                         <span class="text-xs font-sans font-semibold text-apple-blue" data-en="JURY" data-id="JURI">JURY</span>
                                         <a href="https://drive.google.com/drive/folders/1XB6c7EBgiknoiI9sAP5BAEtEEXsAD_s7?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti SK & Sertifikat Juri')" class="text-[11px] text-apple-blue font-medium hover:underline" data-en="Official Decree" data-id="Bukti SK">Official Decree</a>
                                     </div>
-                                    <h4 class="text-xs font-semibold text-apple-ink" data-en="National Level Competition Jury" data-id="Juri Kompetisi Nasional">National Level Competition Jury</h4>
-                                    <p class="text-[11px] text-apple-ink-muted-80 leading-relaxed" data-en="Appointed as official jury for university creative poster and short film competitions." data-id="Dipercaya sebagai juri pada kompetisi poster kreatif dan film pendek di lingkungan perguruan tinggi.">Appointed as official jury for university creative poster and short film competitions.</p>
+                                    <h4 class="text-xs font-semibold text-apple-ink" data-en="National Competition Jury" data-id="Juri Kompetisi Nasional">National Competition Jury</h4>
+                                    <p class="text-[11px] text-apple-ink-muted-80 leading-relaxed" data-en="Appointed as a jury member for university-level creative poster and short film competitions." data-id="Dipercaya sebagai juri pada kompetisi poster kreatif dan film pendek tingkat perguruan tinggi.">Appointed as a jury member for university-level creative poster and short film competitions.</p>
                                 </div>
 
                                 <div class="p-3.5 rounded-apple-md bg-apple-pearl border border-apple-hairline flex flex-col gap-2">
@@ -1233,8 +1265,8 @@
                                         <span class="text-xs font-sans font-semibold text-apple-blue" data-en="SPEAKER" data-id="PEMATERI">SPEAKER</span>
                                         <a href="https://drive.google.com/drive/folders/1kFyolybGEhmaHZexWsrwE2SdMqKDLLew?usp=drive_link" onclick="handleDriveLinkClick(event, this.href, 'Bukti SK & Sertifikat Pemateri')" class="text-[11px] text-apple-blue font-medium hover:underline" data-en="Official Decree" data-id="Bukti SK">Official Decree</a>
                                     </div>
-                                    <h4 class="text-xs font-semibold text-apple-ink" data-en="Speaker & Workshop Trainer" data-id="Narasumber & Pemateri Pelatihan">Speaker & Workshop Trainer</h4>
-                                    <p class="text-[11px] text-apple-ink-muted-80 leading-relaxed" data-en="Delivered workshops on graphic design, academic writing, and personal branding for diverse audiences." data-id="Mengisi pelatihan terkait desain grafis, esai ilmiah, dan penjenamaan personal untuk berbagai audiens.">Delivered workshops on graphic design, academic writing, and personal branding for diverse audiences.</p>
+                                    <h4 class="text-xs font-semibold text-apple-ink" data-en="Speaker & Workshop Facilitator" data-id="Narasumber & Fasilitator Pelatihan">Speaker & Workshop Facilitator</h4>
+                                    <p class="text-[11px] text-apple-ink-muted-80 leading-relaxed" data-en="Delivered workshops on graphic design, academic writing, and personal branding for diverse audiences." data-id="Menyampaikan pelatihan tentang desain grafis, penulisan akademik, dan personal branding untuk berbagai audiens.">Delivered workshops on graphic design, academic writing, and personal branding for diverse audiences.</p>
                                 </div>
                             </div>
                         </div>
@@ -1246,14 +1278,14 @@
                                 <div class="w-8 h-8 rounded-full bg-apple-blue/10 text-apple-blue flex items-center justify-center text-sm shrink-0">
                                     <i class="fa-solid fa-award"></i>
                                 </div>
-                                <h3 class="text-base font-display font-semibold text-apple-ink" data-en="Scholarships & National Initiatives" data-id="Beasiswa & Program Nasional">Scholarships & National Initiatives</h3>
+                                <h3 class="text-base font-display font-semibold text-apple-ink" data-en="Scholarships & National Programs" data-id="Beasiswa & Program Nasional">Scholarships & National Programs</h3>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div class="p-3.5 rounded-apple-md bg-apple-pearl border border-apple-hairline flex flex-col justify-between">
                                     <div>
                                         <span class="text-[9px] font-sans font-medium uppercase bg-white px-2 py-0.5 rounded-apple-xs border border-apple-hairline inline-block mb-1" data-en="NATIONAL SCHOLARSHIP" data-id="BEASISWA NASIONAL">NATIONAL SCHOLARSHIP</span>
-                                        <h4 class="text-xs font-semibold text-apple-ink" data-en="YBM PLN Scholarship Awardee" data-id="Penerima Beasiswa YBM PLN — Tingkat Nasional">YBM PLN Scholarship Awardee</h4>
-                                        <p class="text-[11px] text-apple-ink-muted-80 mt-1" data-en="Recipient of nationwide academic and leadership scholarship from Yayasan Baitul Maal PLN." data-id="Penerima beasiswa kepemimpinan dan akademik nasional dari Yayasan Baitul Maal PLN.">Recipient of nationwide academic and leadership scholarship from Yayasan Baitul Maal PLN.</p>
+                                        <h4 class="text-xs font-semibold text-apple-ink" data-en="YBM PLN Scholarship Recipient" data-id="Penerima Beasiswa YBM PLN — Tingkat Nasional">YBM PLN Scholarship Recipient</h4>
+                                        <p class="text-[11px] text-apple-ink-muted-80 mt-1" data-en="Recipient of a national academic and leadership scholarship from Yayasan Baitul Maal PLN." data-id="Penerima beasiswa akademik dan kepemimpinan tingkat nasional dari Yayasan Baitul Maal PLN.">Recipient of a national academic and leadership scholarship from Yayasan Baitul Maal PLN.</p>
                                     </div>
                                 </div>
 
@@ -1261,7 +1293,7 @@
                                     <div>
                                         <span class="text-[9px] font-sans font-medium uppercase bg-white px-2 py-0.5 rounded-apple-xs border border-apple-hairline inline-block mb-1" data-en="MINISTRY PROGRAM" data-id="PROGRAM KEMENDIKBUDRISTEK">MINISTRY PROGRAM</span>
                                         <h4 class="text-xs font-semibold text-apple-ink" data-en="MSIB Awardee — Ministry of Education" data-id="Peserta MSIB — Program Nasional Kemendikbudristek">MSIB Awardee — Ministry of Education</h4>
-                                        <p class="text-[11px] text-apple-ink-muted-80 mt-1" data-en="Selected participant for Certified Independent Study & Internship Batch under the Ministry of Education." data-id="Peserta terpilih Magang dan Studi Independen Bersertifikat (MSIB) Angkatan Nasional.">Selected participant for Certified Independent Study & Internship Batch under the Ministry of Education.</p>
+                                        <p class="text-[11px] text-apple-ink-muted-80 mt-1" data-en="Selected participant in the Certified Independent Study and Internship (MSIB) program under the Ministry of Education." data-id="Peserta terpilih dalam program Magang dan Studi Independen Bersertifikat (MSIB) di bawah Kementerian Pendidikan.">Selected participant in the Certified Independent Study and Internship (MSIB) program under the Ministry of Education.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1283,7 +1315,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-9 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
                     <span id="contact-section-tag" data-en="GET IN TOUCH" data-id="HUBUNGI SAYA" class="text-xs font-semibold uppercase tracking-wider text-apple-blue-dark">GET IN TOUCH</span>
-                    <h2 id="contact-section-title" data-en="Let’s Connect & Collaborate" data-id="Mari Berkolaborasi & Terhubung" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Let’s Connect & Collaborate</h2>
+                    <h2 id="contact-section-title" data-en="Let’s Connect & Collaborate" data-id="Mari Terhubung & Berkolaborasi" class="text-2xl sm:text-3xl font-display font-semibold text-white tracking-apple-tight">Let’s Connect & Collaborate</h2>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto items-stretch w-full font-sans">
@@ -1291,8 +1323,8 @@
                     <div class="lg:col-span-5 p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-5 border border-white/10">
                         <div class="space-y-3.5">
                             <h3 id="contact-sub-title" data-en="Contact Details" data-id="Detail Kontak" class="text-lg font-display font-semibold text-white">Contact Details</h3>
-                            <p id="contact-desc" data-en="Do you have a project, branding requirement, or collaboration opportunity? Feel free to connect." data-id="Apakah Anda memiliki proyek kreatif, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya." class="text-xs text-white/70 leading-relaxed">
-                                Do you have a project, branding requirement, or collaboration opportunity? Feel free to connect.
+                            <p id="contact-desc" data-en="Have a project, branding need, or collaboration opportunity? Feel free to get in touch." data-id="Memiliki proyek, kebutuhan branding, atau peluang kerja sama? Silakan hubungi saya." class="text-xs text-white/70 leading-relaxed">
+                                Have a project, branding need, or collaboration opportunity? Feel free to get in touch.
                             </p>
 
                             <div class="space-y-2.5 pt-1">
@@ -1328,11 +1360,11 @@
 
                     <form onsubmit="handleSecureFormSubmit(event)" class="lg:col-span-7 p-6 apple-glass-dark rounded-apple-lg flex flex-col justify-between gap-4 border border-white/10">
                         <div class="space-y-3">
-                            <h3 id="form-title" data-en="Send Direct Message" data-id="Kirimkan Pesan Langsung" class="text-lg font-display font-semibold text-white">Send Direct Message</h3>
+                            <h3 id="form-title" data-en="Send a Direct Message" data-id="Kirim Pesan Langsung" class="text-lg font-display font-semibold text-white">Send a Direct Message</h3>
                             
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-sans text-xs">
                                 <div class="flex flex-col gap-1">
-                                    <label class="text-apple-ink-muted-48 uppercase font-sans text-[10px] font-medium" data-en="Your Name" data-id="Nama Anda">Your Name</label>
+                                    <label class="text-apple-ink-muted-48 uppercase font-sans text-[10px] font-medium" data-en="Your Name" data-id="Nama">Your Name</label>
                                     <input type="text" name="name" required data-en-placeholder="e.g. John Doe" data-id-placeholder="mis. Budi Santoso" placeholder="e.g. John Doe" class="px-3.5 py-2.5 rounded-apple-md bg-white/5 border border-white/10 text-white text-xs font-medium outline-none placeholder:text-white/30 focus:ring-2 focus:ring-apple-blue-dark/40 focus:border-apple-blue-dark focus:bg-white/[0.07] transition-all">
                                 </div>
                                 <div class="flex flex-col gap-1">
@@ -1342,13 +1374,13 @@
                             </div>
 
                             <div class="flex flex-col gap-1 font-sans text-xs">
-                                <label class="text-apple-ink-muted-48 uppercase font-sans text-[10px] font-medium" data-en="Message" data-id="Detail Pesan">Message</label>
+                                <label class="text-apple-ink-muted-48 uppercase font-sans text-[10px] font-medium" data-en="Message" data-id="Pesan">Message</label>
                                 <textarea name="message" required rows="3" data-en-placeholder="Write project details or collaboration notes..." data-id-placeholder="Tuliskan detail proyek atau catatan kolaborasi..." placeholder="Write project details or collaboration notes..." class="px-3.5 py-2.5 rounded-apple-md bg-white/5 border border-white/10 text-white text-xs font-medium outline-none placeholder:text-white/30 focus:ring-2 focus:ring-apple-blue-dark/40 focus:border-apple-blue-dark focus:bg-white/[0.07] resize-none transition-all"></textarea>
                             </div>
                         </div>
 
                         <button type="submit" id="formSubmitBtn" class="apple-btn-active bg-apple-blue text-white hover:bg-apple-blue-focus py-3 rounded-apple-md text-xs font-medium transition-colors flex items-center justify-center gap-2 mt-1 w-full">
-                            <span data-en="Send Message via WhatsApp" data-id="Kirimkan Pesan via WhatsApp">Send Message via WhatsApp</span>
+                            <span data-en="Send via WhatsApp" data-id="Kirim via WhatsApp">Send via WhatsApp</span>
                             <i class="fa-solid fa-paper-plane text-[10px]"></i>
                         </button>
                     </form>
@@ -1397,7 +1429,7 @@
 
             <div class="p-6 space-y-4 max-h-[70vh] overflow-y-auto">
                 <div class="flex items-center justify-between pb-3 border-b border-white/10 text-xs">
-                    <span class="text-apple-ink-muted-48 font-medium uppercase text-[10px]" data-en="Tenure / Period" data-id="Periode Kerja">Tenure / Period</span>
+                    <span class="text-apple-ink-muted-48 font-medium uppercase text-[10px]" data-en="Period" data-id="Periode">Period</span>
                     <span id="modalCareerPeriod" class="px-2.5 py-0.5 rounded-apple-pill bg-white/10 text-white font-medium text-[11px]"></span>
                 </div>
 
@@ -1491,7 +1523,7 @@
                     </div>
 
                     <a href="https://drive.google.com/drive/folders/1PJkSfxrsWK50TOrkkT9j1RNepu8Dk1en?usp=drive_copy" onclick="handleDriveLinkClick(event, this.href, 'Sertifikat HaKI Kemenkumham RI')" class="apple-btn-active mt-2 bg-apple-tile-1 text-white hover:bg-black py-2 rounded-apple-pill text-xs font-medium text-center flex items-center justify-center gap-1.5 w-full">
-                        <span data-en="View Copyright Certificates" data-id="Lihat Sertifikat HaKI Kemenkumham">View Copyright Certificates</span>
+                        <span data-en="View Copyright Certificates" data-id="Lihat Sertifikat HaKI">View Copyright Certificates</span>
                         <i class="fa-solid fa-chevron-right text-[9px]"></i>
                     </a>
                 </div>
@@ -1513,13 +1545,13 @@
                     </div>
                     <div class="flex flex-col min-w-0">
                         <h3 id="driveModalTitle" class="text-xs font-semibold truncate text-apple-ink">Google Drive Preview</h3>
-                        <span class="text-[10px] text-apple-ink-muted-48 font-sans font-medium truncate" data-en="Floating Drive Viewer" data-id="Pratinjau Mengambang Google Drive">Floating Drive Viewer</span>
+                        <span class="text-[10px] text-apple-ink-muted-48 font-sans font-medium truncate" data-en="Google Drive Preview" data-id="Pratinjau Google Drive">Google Drive Preview</span>
                     </div>
                 </div>
                 
                 <div class="flex items-center gap-2 shrink-0">
                     <a id="driveExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="apple-btn-active bg-apple-blue text-white px-3 py-1 rounded-apple-pill text-xs font-medium hover:bg-apple-blue-focus transition-colors flex items-center gap-1">
-                        <span data-en="Open Tab" data-id="Buka Tab">Open Tab</span>
+                        <span data-en="Open in New Tab" data-id="Buka Tab Baru">Open in New Tab</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                     </a>
                     <button onclick="closeDriveModal()" class="w-6 h-6 rounded-full bg-apple-canvas text-apple-ink hover:bg-apple-hairline border border-apple-hairline flex items-center justify-center transition-all">
@@ -1531,7 +1563,7 @@
             <div class="relative flex-1 bg-black w-full h-full overflow-hidden flex flex-col items-center justify-center">
                 <div id="driveLoadingSpinner" class="absolute inset-0 flex flex-col items-center justify-center bg-apple-tile-1 text-white gap-3 z-10">
                     <div class="w-7 h-7 border-2 border-apple-blue-dark border-t-transparent rounded-full animate-spin"></div>
-                    <span class="text-xs font-medium font-sans text-white/70" data-en="Loading Google Drive Document..." data-id="Memuat Dokumen Google Drive...">Loading Google Drive Document...</span>
+                    <span class="text-xs font-medium font-sans text-white/70" data-en="Loading Google Drive document…" data-id="Memuat dokumen Google Drive…">Loading Google Drive document…</span>
                 </div>
                 <iframe id="driveFrame" class="w-full h-full border-0 relative z-20" onload="document.getElementById('driveLoadingSpinner').classList.add('hidden')" src=""></iframe>
             </div>
@@ -1551,7 +1583,7 @@
             1: {
                 icon: "fa-solid fa-laptop-file",
                 titleEN: "Media, Administration & Research Assistant",
-                titleID: "Asisten Media, Administrasi & Peneliti Pembelajaran",
+                titleID: "Asisten Media, Administrasi & Riset",
                 companyEN: "Economics Education Department FKIP Unila",
                 companyID: "Prodi Pendidikan Ekonomi FKIP Unila",
                 period: "Mar 2024 — Mar 2026",
@@ -1585,7 +1617,7 @@
             3: {
                 icon: "fa-solid fa-wand-magic-sparkles",
                 titleEN: "Graphic Designer (Full-Time Contract)",
-                titleID: "Desainer Grafis (Kontrak Penuh)",
+                titleID: "Desainer Grafis (Kontrak)",
                 companyEN: "Fana Creative Agency",
                 companyID: "Fana Creative Agency",
                 period: "Aug 2025 — Dec 2025",
@@ -1617,7 +1649,7 @@
             5: {
                 icon: "fa-solid fa-bullhorn",
                 titleEN: "Official Public Relations Graphic Designer",
-                titleID: "Desainer Grafis Humas Resmi",
+                titleID: "Desainer Grafis Humas",
                 companyEN: "Public Relations Universitas Lampung",
                 companyID: "Humas Universitas Lampung",
                 period: "Jan 2023 — Dec 2025",
@@ -1653,8 +1685,8 @@
                 id: 1,
                 category: 'branding',
                 title: 'Personal Portfolio (Logo & Branding)',
-                descEN: 'A collection of logo designs, visual branding kits, and corporate identity assets developed for 40+ SMEs and institutional partners.',
-                descID: 'Koleksi karya desain logo, materi identitas visual, dan pedoman merek yang dikembangkan untuk 40+ UMKM dan mitra institusi.',
+                descEN: 'A collection of logo designs, visual identity systems, and branding assets developed for 40+ SMEs and institutional partners.',
+                descID: 'Koleksi desain logo, identitas visual, dan materi branding yang dikembangkan untuk 40+ UMKM dan mitra institusi.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1PzJ5Ms1XWEkbMpWaE-o21I0xeRVajSmC',
                 link: 'https://drive.google.com/open?id=1G7y39G0tULnYX46C8wNtiNXS2DwuLhlE&usp=drive_copy'
             },
@@ -1662,8 +1694,8 @@
                 id: 2,
                 category: 'branding',
                 title: 'Stand Banner Lampung',
-                descEN: 'Promotional stand banner layouts designed for regional marketing, official academic seminars, and tourism expos across Lampung Province.',
-                descID: 'Desain tata letak stand banner promosi untuk kegiatan seminar resmi, pemasaran daerah, dan pameran pariwisata terpadu di Lampung.',
+                descEN: 'Promotional stand banner designs for regional marketing, academic seminars, and tourism exhibitions across Lampung Province.',
+                descID: 'Desain stand banner promosi untuk seminar resmi, kegiatan pemasaran daerah, dan pameran pariwisata di Lampung.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1p5RtOk92de1IJBHdSUxdH98P0elnL37r',
                 link: 'https://drive.google.com/open?id=1phFa5_Jj2hy_ez1N2gwlvM6UlBox_DUO&usp=drive_copy'
             },
@@ -1671,8 +1703,8 @@
                 id: 3,
                 category: 'social',
                 title: 'BEM Unila Social Publications',
-                descEN: 'Digital communication assets, public infographics, and publication feeds designed for the Student Executive Board, reaching over 45k audiences.',
-                descID: 'Publikasi digital kreatif, infografis publik, dan materi visual media sosial untuk mendukung kegiatan BEM Universitas Lampung ke 45k+ audiens.',
+                descEN: 'Digital communication assets, public infographics, and social media content for the Student Executive Board, reaching 45k+ people.',
+                descID: 'Publikasi digital, infografis, dan materi media sosial untuk mendukung kegiatan BEM Universitas Lampung dan menjangkau 45 ribu+ audiens.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1InR4gsSyOQFurxZe9oDpkBqVfbmKjvd-',
                 link: 'https://drive.google.com/open?id=1z0Bf2da6u_Og78lJKh-LKFjfmjsFEnuE&usp=drive_copy'
             },
@@ -1680,8 +1712,8 @@
                 id: 4,
                 category: 'social',
                 title: 'ASSETS Unila Branding Assets',
-                descEN: 'Integrated visual branding system for the Economics Education Student Association, driving a 50% increase in social media engagement.',
-                descID: 'Sistem penjenamaan visual digital terpadu untuk Himpunan Mahasiswa Pendidikan Ekonomi FKIP Unila yang meningkatkan engagement sebesar 50%.',
+                descEN: 'An integrated visual identity system for the Economics Education Student Association, contributing to a 50% increase in social media engagement.',
+                descID: 'Sistem identitas visual digital terpadu untuk Himpunan Mahasiswa Pendidikan Ekonomi FKIP Unila yang meningkatkan engagement sebesar 50%.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1W5g5r9_pI_uXYk5p8USXjlZ5Vsu1Ef7O',
                 link: 'https://drive.google.com/open?id=1chridBj7gSK6PWOVHTUhjUENfav1PjQn&usp=drive_copy'
             },
@@ -1689,8 +1721,8 @@
                 id: 5,
                 category: 'social',
                 title: 'Dinas Kominfo Pesawaran Information Design',
-                descEN: 'Public policy infographics, official press releases, and regional information publications for Dinas Kominfo Pesawaran.',
-                descID: 'Infografis kebijakan publik, rilis pers kedinasan, dan media informasi pemerintah daerah Kabupaten Pesawaran.',
+                descEN: 'Public policy infographics, official press releases, and government information materials for Dinas Kominfo Pesawaran.',
+                descID: 'Infografis kebijakan publik, rilis pers kedinasan, dan materi informasi Pemerintah Kabupaten Pesawaran.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1PnSnu_hOmJ_IV1Z9pzZvGpLOLF4HpRwk',
                 link: 'https://drive.google.com/open?id=1CgFFttETjXBkqcnEnivaSy69OMn2ADs5&usp=drive_copy'
             },
@@ -1698,8 +1730,8 @@
                 id: 6,
                 category: 'social',
                 title: 'KKN Toto Katon Community Empowerment',
-                descEN: 'Comprehensive visual mapping, local village profile documentation, and social media outreach for the University Community Service program.',
-                descID: 'Pemetaan visual informasi publik, dokumentasi potensi lokal warga, dan pengelolaan media sosial untuk program KKN MBKM Desa Toto Katon.',
+                descEN: 'Visual information mapping, village profile documentation, and social media outreach for the University Community Service program.',
+                descID: 'Pemetaan visual informasi publik, dokumentasi potensi desa, dan pengelolaan media sosial untuk program KKN MBKM Desa Toto Katon.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1lPBIsC5oVLv3bUC12zl12mEX4qyFdcp-',
                 link: 'https://drive.google.com/open?id=1hsp_uD9bPxxR6_7dwd9PkQStXomwW1g_&usp=drive_copy'
             },
@@ -1707,8 +1739,8 @@
                 id: 7,
                 category: 'social',
                 title: 'KSPM FKIP Unila Capital Market Graphics',
-                descEN: 'Over 80 educational designs on Sharia capital market investments, driving KSPM to secure the 3rd Best National GIS Award.',
-                descID: 'Lebih dari 80 desain media promosi investasi syariah dan edukasi bursa efek yang mengantarkan KSPM meraih Juara Nasional III GIS.',
+                descEN: '80+ educational designs on Islamic capital market investment that supported KSPM in earning 3rd Place nationally at the GIS Awards.',
+                descID: 'Lebih dari 80 desain edukasi investasi syariah dan pasar modal yang mendukung KSPM meraih Juara III Nasional GIS.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1-N7Spxezog17g6F_POGW5SC6-9qxL_Rk',
                 link: 'https://drive.google.com/open?id=17jhgRVpEw6orIQ3dd4pUFeFaCNua4hDj&usp=drive_copy'
             },
@@ -1716,8 +1748,8 @@
                 id: 8,
                 category: 'social',
                 title: 'Harum Tour Travel Campaign',
-                descEN: 'Travel agency social feeds and advertising layouts for domestic destination packages, regional tours, and Umrah travel programs.',
-                descID: 'Desain materi promosi feed Instagram korporat untuk paket wisata, tur pariwisata domestik, dan perjalanan ibadah umroh.',
+                descEN: 'Social media content and advertising layouts for domestic travel packages, regional tours, and Umrah programs.',
+                descID: 'Desain materi promosi Instagram untuk paket wisata domestik, tur regional, dan perjalanan ibadah umrah.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1ab9q3d4L7OBEspf-Rcc7HBRxBqCsl0ve',
                 link: 'https://drive.google.com/open?id=1SsI20gn1OAeJxNoU9Jl_GMD1F5Rf5A52&usp=drive_copy'
             },
@@ -1725,8 +1757,8 @@
                 id: 9,
                 category: 'social',
                 title: 'Ayah Ibu Heritage Product Design',
-                descEN: 'Heritage-inspired local product typography and packaging visuals celebrating culinary traditions and family values.',
-                descID: 'Desain visual kemasan produk lokal dengan sentuhan tipografi bertema kekeluargaan untuk memperluas jangkauan pasar.',
+                descEN: 'Typography and packaging visuals for local products, inspired by cultural heritage, culinary traditions, and family values.',
+                descID: 'Desain kemasan produk lokal dengan pendekatan tipografi yang menonjolkan nilai kekeluargaan untuk memperluas jangkauan pasar.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1HWsMQTklq2uAQV47K_axhCGHWiKyDh6H',
                 link: 'https://drive.google.com/open?id=1iSsQp06RiKr7bliePZiIEbJY5ZItdtMo&usp=drive_copy'
             },
@@ -1734,8 +1766,8 @@
                 id: 10,
                 category: 'social',
                 title: 'Klik Berbagi Philanthropic Campaign',
-                descEN: 'Fundraising campaign designs, humanitarian documentation, and charity outreach collateral created to drive donor conversions.',
-                descID: 'Penyusunan desain kampanye donasi kemanusiaan, dokumentasi program filantropi, dan materi visual penyaluran bantuan.',
+                descEN: 'Fundraising campaign designs, humanitarian documentation, and communication materials supporting donor outreach.',
+                descID: 'Desain kampanye donasi, dokumentasi program filantropi, dan materi komunikasi visual untuk mendukung penyaluran bantuan.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1sknZQkJ8mlT1-avfb30l_PLTdJ7QLRrS',
                 link: 'https://drive.google.com/open?id=1ND8ns4VhUq6em3rrPeBEbcKl9x9eDhUY&usp=drive_copy'
             },
@@ -1743,8 +1775,8 @@
                 id: 11,
                 category: 'social',
                 title: 'Humas Unila Institutional Feeds',
-                descEN: 'Over 1,000 official visual assets engineered for Universitas Lampung, expanding its official Instagram reach to over 180k+ accounts.',
-                descID: 'Lebih dari 1.000 aset komunikasi visual resmi Humas Universitas Lampung, memperluas pengikut Instagram hingga lebih dari 180k+ akun aktif.',
+                descEN: '1,000+ official visual communication assets for Universitas Lampung, supporting growth of its official Instagram audience to 180k+ accounts.',
+                descID: 'Lebih dari 1.000 aset komunikasi visual resmi Humas Universitas Lampung yang mendukung pertumbuhan Instagram hingga lebih dari 180 ribu akun aktif.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1aitIm8CWlQ7LrM9UGEwU1PzTZchOdbWG',
                 link: 'https://drive.google.com/open?id=1YcTdCttXN9SzQMiAOD600zvx4NnGBOQ2&usp=drive_copy'
             },
@@ -1752,8 +1784,8 @@
                 id: 12,
                 category: 'social',
                 title: 'SRE Unila Decarbonisation Graphics',
-                descEN: 'Educational visual campaigns focusing on renewable energy adoption, environmental sustainability, and industrial decarbonization.',
-                descID: 'Kampanye visual edukasi tentang adopsi energi terbarukan, dekarbonisasi industri, dan pemeliharaan lingkungan hidup.',
+                descEN: 'Educational visual campaigns focused on renewable energy, environmental sustainability, and industrial decarbonization.',
+                descID: 'Kampanye visual edukasi tentang energi terbarukan, dekarbonisasi industri, dan keberlanjutan lingkungan.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1UP-3ejrUzYaEu6rSJHkhmOE79Bg3oAIW',
                 link: 'https://drive.google.com/open?id=1PpDOATdUcCLW935rYhhAkPTy90X1rlyo&usp=drive_copy'
             },
@@ -1761,8 +1793,8 @@
                 id: 13,
                 category: 'social',
                 title: 'Lampung Folk Regional Identity',
-                descEN: '50+ layout concepts highlighting local folklore, heritage preservation, indigenous stories, and regional tourism in Lampung.',
-                descID: '50+ materi tata letak visual yang mengangkat kearifan lokal, sejarah masyarakat adat, serta potensi wisata unggulan Lampung.',
+                descEN: '50+ visual layout concepts highlighting local folklore, heritage, indigenous stories, and tourism in Lampung.',
+                descID: 'Lebih dari 50 materi visual yang mengangkat kearifan lokal, sejarah masyarakat adat, dan potensi wisata Lampung.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1gXOT7Vy2nvX6xC4DAtv2OHtcfB3QCE11',
                 link: 'https://drive.google.com/open?id=16J5V6-uHZGbxgp4M2ae2KjZbMZEHqJ4j&usp=drive_copy'
             },
@@ -1770,8 +1802,8 @@
                 id: 14,
                 category: 'social',
                 title: 'Fana Creative Agency Advertising Kits',
-                descEN: 'Commercial graphic designs and advertising kits produced to elevate digital performance and marketing campaigns for MSMEs.',
-                descID: 'Rangkaian materi desain grafis komersial untuk memperkuat promosi digital dan strategi penjualan mitra bisnis UMKM.',
+                descEN: 'Commercial graphic designs and advertising kits created to strengthen digital promotion and marketing for SMEs.',
+                descID: 'Rangkaian materi desain grafis komersial untuk memperkuat promosi digital dan strategi pemasaran mitra UMKM.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1kOnwCOypOIIYbW5EaYEsM9bToPYn4ryd',
                 link: 'https://drive.google.com/open?id=1grquPd-tRl_SZ21MYdw6zRDQzNWVzLl5&usp=drive_copy'
             },
@@ -1779,8 +1811,8 @@
                 id: 15,
                 category: 'social',
                 title: 'Economics Education Unila Department Media',
-                descEN: 'Departmental registration brochures, official curricula announcements, and integrated digital branding layouts.',
-                descID: 'Desain brosur pendaftaran mahasiswa baru, informasi agenda akademik perkuliahan, dan panduan visual program studi.',
+                descEN: 'Student registration brochures, academic announcements, and integrated digital branding materials for the department.',
+                descID: 'Desain brosur penerimaan mahasiswa baru, informasi agenda akademik, dan panduan visual program studi.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1YkaoIbt0RNLoVCbyDOvckq_BpZJdv42s',
                 link: 'https://drive.google.com/open?id=1moNrudLz8aG8uUXPJ1ornCJ-ebl-dUHD&usp=drive_copy'
             },
@@ -1788,8 +1820,8 @@
                 id: 16,
                 category: 'webdev',
                 title: 'Web Development & Interactive Systems',
-                descEN: 'Modern, fully responsive web applications and interactive systems built with clean semantic code, automated workflows, and fast visual components.',
-                descID: 'Aplikasi web interaktif responsif berbasis kode bersih, alur kerja otomatis, dan kinerja komponen visual cepat.',
+                descEN: 'Responsive web applications and interactive systems built with clean code, automated workflows, and lightweight visual components.',
+                descID: 'Aplikasi web interaktif yang responsif dengan struktur kode yang rapi, alur kerja otomatis, dan komponen visual yang ringan.',
                 imgUrl: 'https://lh3.googleusercontent.com/d/1WbB1Bt9Zvx2N4XA38o_7bLhAMkjSYqog',
                 link: 'https://rahmadnurkarim.github.io/portfolio/',
                 links: [
@@ -2395,7 +2427,7 @@
 
             const isEn = (currentLanguage === 'en');
             const headerGreetings = isEn ? `Hello Rahmad Nur Karim,\n\nI would like to collaborate:` : `Halo Rahmad Nur Karim,\n\nSaya hendak berkolaborasi:`;
-            const formattedBody = `${headerGreetings}\n\n• ${isEn ? 'Name' : 'Nama'}: ${name}\n• ${isEn ? 'Subject' : 'Subjek'}: ${subject}\n\n${isEn ? 'Message Details' : 'Detail Pesan'}:\n${message}`;
+            const formattedBody = `${headerGreetings}\n\n• ${isEn ? 'Name' : 'Nama'}: ${name}\n• ${isEn ? 'Subject' : 'Subjek'}: ${subject}\n\n${isEn ? 'Message Details' : 'Pesan'}:\n${message}`;
             const encodedMsg = encodeURIComponent(formattedBody);
 
             showiOSNotificationToast(
