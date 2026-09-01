@@ -224,6 +224,13 @@
                 backdrop-filter: none !important;
             }
 
+            /* Hide large decorative ambient circles on mobile.
+               Their blur is intentionally disabled for performance, which would otherwise
+               expose the raw circular shape as a hard-edged blue blob. */
+            .ambient-bg-circle {
+                display: none !important;
+            }
+
             /* Replace expensive large blur surfaces with lightweight static rendering. */
             .blur-3xl {
                 filter: none !important;
@@ -404,7 +411,7 @@
     <main class="w-full">
         <section id="hero" class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 overflow-hidden border-b border-apple-hairline bg-apple-canvas">
             <div class="absolute inset-0 apple-subtle-grid-light pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
-            <div class="absolute -top-24 left-1/4 w-[600px] h-[600px] apple-radial-glow-hero pointer-events-none blur-3xl"></div>
+            <div class="ambient-bg-circle absolute -top-24 left-1/4 w-[600px] h-[600px] apple-radial-glow-hero pointer-events-none blur-3xl"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -510,7 +517,7 @@
 
         <section id="about" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-1 text-white border-b border-white/10 relative overflow-hidden">
             <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_90%)]"></div>
-            <div class="absolute top-0 right-10 w-[420px] h-[420px] bg-apple-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="ambient-bg-circle absolute top-0 right-10 w-[420px] h-[420px] bg-apple-blue/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
@@ -756,7 +763,7 @@
 
         <section id="experience" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-2 text-white border-b border-white/10 relative overflow-hidden">
             <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_85%)]"></div>
-            <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[550px] h-[300px] apple-radial-glow-dark rounded-full blur-3xl pointer-events-none"></div>
+            <div class="ambient-bg-circle absolute -bottom-16 left-1/2 -translate-x-1/2 w-[550px] h-[300px] apple-radial-glow-dark rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-2xl mx-auto flex flex-col items-center gap-1.5">
@@ -1110,7 +1117,7 @@
 
         <section id="portfolio" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-1 text-white border-b border-white/10 relative overflow-hidden">
             <div class="absolute inset-0 apple-dot-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_top,black_50%,transparent_90%)]"></div>
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[400px] apple-radial-glow pointer-events-none blur-3xl"></div>
+            <div class="ambient-bg-circle absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[400px] apple-radial-glow pointer-events-none blur-3xl"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-8 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
@@ -1310,7 +1317,7 @@
 
         <section id="contact" class="scroll-mt-[96px] py-12 sm:py-16 bg-apple-tile-3 text-white border-b border-white/10 relative overflow-hidden">
             <div class="absolute inset-0 apple-subtle-grid-dark pointer-events-none opacity-85 [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_90%)]"></div>
-            <div class="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-apple-blue/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="ambient-bg-circle absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-apple-blue/15 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-9 text-center max-w-3xl mx-auto flex flex-col items-center gap-1.5">
